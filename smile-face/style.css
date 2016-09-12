@@ -1,0 +1,55 @@
+body {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	background-color: #5BC0EB;
+}
+
+div#face {
+	background: #FDE74C;
+	width: 40vw;
+	height: 40vw;
+	max-width: 500px;
+	max-height: 500px;
+	position: relative;
+	margin: 0 auto;
+	margin-top: 2rem;
+	border-radius: 50%;
+}
+
+.eye {
+	background: #fff;
+	width: 25%;
+	height: 25%;
+	position: absolute;
+	top: 20%;
+}
+
+.left.eye {
+	left: 20%;
+}
+
+.right.eye {
+	right: 20%;
+}
+
+.eyeball {
+	background: #000;
+	width: 50%;
+	height: 50%;
+	position: relative;
+	left: 25%;
+	transform-origin: bottom;
+}
+
+#mouth {
+	position: relative;
+	border: 1vw solid transparent;
+	border-radius: 50%;
+	border-bottom-color: #000;
+	width: 60%;
+	height: 25%;
+	top: 50%;
+	left: 20%;
+}
+
