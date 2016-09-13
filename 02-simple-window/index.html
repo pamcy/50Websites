@@ -5,16 +5,8 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="script.js">
 	<script type="text/javascript" src="jquery-3.1.0.min.js"></script>
-	<script>
-		$( document ).ready(function() {
-  			$('.trigger').on('click', function() {
-     			$('.modal-wrapper').toggleClass('open');
-    			$('.page-wrapper').toggleClass('blur');
-     			return false;
-  			});
-		});
-	</script>
 </head>
 <body>
 	<!-- Button -->
@@ -32,7 +24,7 @@
 			</div>
 			<div class="content">
 				<div class="need-travel">
-					<i class="fa fa-battery-quarter" aria-hidden="true"></i>
+					<i id="battery" class="fa fa-battery-quarter" aria-hidden="true"></i>
 					<h1>You Need Travel</h1>
 				</div>
 			</div>
