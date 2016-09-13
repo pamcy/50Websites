@@ -87,13 +87,16 @@ a.btn {
 .content {
   padding: 10%;
 }
+
 .need-travel {
   text-align: center;
   color: #e2525c;
 }
-.need-travel .fa-battery-quarter {
+
+#battery {
   font-size: 60px;
 }
+
 .need-travel h1 {
   font-size: 45px;
 }
