@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Good Job</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script>
+		$( document ).ready(function() {
+  			$('.trigger').on('click', function() {
+     			$('.modal-wrapper').toggleClass('open');
+    			$('.page-wrapper').toggleClass('blur');
+     			return false;
+  			});
+		});
+	</script>
+</head>
+<body>
+	<!-- Button -->
+	<div class="page-wrapper">
+		<a class="btn trigger" href="javascript:;">Click me</a>
+	</div>
+
+	<!-- Modal -->
+	<div class="modal-wrapper">
+		<div class="modal">
+			<div class="head">
+				<a class="btn-close trigger" href="javascript:;">
+					<i class="fa fa-times" aria-hidden="true"></i>
+				</a>
+			</div>
+			<div class="content">
+				<div class="good-job">
+					<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+					<h1>Good Job!</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
