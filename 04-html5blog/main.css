@@ -1,5 +1,9 @@
 @import "normalize.css";
 
+input[type="search"] {
+    box-sizing: border-box;
+}
+
 @font-face {
   font-family: 'BebasNeueRegular';
   src: url('fonts/BebasNeue-webfont.eot');
@@ -86,6 +90,13 @@ h4, h5, h6 {
   margin: 0 0 10px;
 }
 
+h3 {
+    font-size: 24px;
+    border-bottom: 1px solid #858c78;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
+    margin-bottom: 20px;
+}
+
 p, figure {
     margin-bottom: 20px;
 }
@@ -119,6 +130,73 @@ a:hover {
     margin: 0 auto;
     padding: 0 40px;
     width: 820px;
+}
+
+.media {
+    background: #fff;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+    display: inline-block;
+    color: #fff;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    font-weight: bold;
+    background: #c44743;
+    background: linear-gradient(to bottom, #c44743, #a13633);
+    border: 0;
+    border: 1px solid #541c1a;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    padding: 5px 25px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.65);
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #d56d68;
+    background: linear-gradient(to bottom, #d56d68, #a13633);
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn:active {
+    background: #a13633;
+    background: linear-gradient(to bottom, #a13633, #c44743);
+}
+
+.btn--submit {
+    width: 40px;
+    height: 29px;
+    border-radius: 0 20px 20px 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.form {
+    position: relative;
+}
+
+.input {
+    width: 100%;
+    border: 0;
+    border-radius: 20px;
+    padding: 5px 45px 5px 15px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+input:focus {
+    box-shadow: 0 0 6px rgba(196, 72, 67, 0.9);
+    outline: none;
 }
 
 .masthead {
@@ -215,6 +293,15 @@ a:hover {
     padding-right: 5%;
 }
 
+.sidebar {
+    float: right;
+    width: 30%;
+}
+
+.sidebar p {
+    font-size: 14px;
+}
+
 .article {
     background: #fff;
     border-radius: 4px;
@@ -256,4 +343,13 @@ a:hover {
     float: left;
     width: 150px;
     margin: 10px;
+}
+
+.search {
+    margin-bottom: 20px;
+}
+
+.about img {
+    float: left;
+    margin: 0 10px 10px 0;
 }
