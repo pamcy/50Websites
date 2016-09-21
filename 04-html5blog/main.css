@@ -71,6 +71,7 @@ input[type="search"] {
  * White: #fff
 */
 
+/***** Basic Elements *****/
 html {
   font-size: 16px;
 }
@@ -120,6 +121,7 @@ a:hover {
   color: #d56d68;
 }
 
+/***** Generic Classes *****/
 .group:after {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -217,6 +219,7 @@ a:hover {
     margin-right: 0;
 }
 
+/***** Header *****/
 .masthead {
     background: #1e3e4d;
     background: radial-gradient(circle, #1e3e4d, #102028);
@@ -295,6 +298,7 @@ a:hover {
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
+/***** Content *****/
 .content {
     margin-bottom: 80px;
     overflow: auto;
@@ -317,17 +321,6 @@ a:hover {
 
 .sidebar p {
     font-size: 14px;
-}
-
-.footer {
-    background: #b7bbaf;
-    text-align: center;
-    padding: 20px 0;
-    clear: both;
-}
-
-.footer p {
-    margin: 0;
 }
 
 .article {
@@ -380,6 +373,18 @@ a:hover {
 .about img {
     float: left;
     margin: 0 10px 10px 0;
+}
+
+/***** Footer *****/
+.footer {
+    background: #b7bbaf;
+    text-align: center;
+    padding: 20px 0;
+    clear: both;
+}
+
+.footer p {
+    margin: 0;
 }
 
 .copyright {
