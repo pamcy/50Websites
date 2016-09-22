@@ -1,3 +1,8 @@
+/*
+** Courtesy of Retro Character Sprite Sheet
+** https://openclipart.org/detail/215080/retro-character-sprite-sheet
+*/
+
 body, html {
 	margin: 0;
 	padding: 0;
@@ -14,7 +19,7 @@ blockquote.twitter-tweet {
 .boy {
 	height: 401px;
 	width: 271px;
-	margin: 2% auto;
+	margin: 5% auto;
 	background: url(boy.png) left center;
 	animation: play .8s steps(4) infinite;
 }
@@ -25,13 +30,8 @@ blockquote.twitter-tweet {
 
 .message {
 	width: 300px;
+	margin: 0 10px 10px 0;
 	position: absolute;
 	right: 10px;
 	bottom: 10px;
 }
-
-
-
-https://openclipart.org/detail/215080/retro-character-sprite-sheet
-
-CSS Only Sprite Animation Tutorial
