@@ -1,3 +1,5 @@
+@import "normalize.css";
+
 body {
 	background: #FFE066;
 }
@@ -16,8 +18,12 @@ body {
 
 .message {
 	position: absolute;
-	right: 0;
-	bottom: 0;
+	right: 10px;
+	bottom: 10px;
+}
+
+blockquote.twitter-tweet {
+	width: 300px;
 }
 
 https://openclipart.org/detail/215080/retro-character-sprite-sheet
