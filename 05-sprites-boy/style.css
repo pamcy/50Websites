@@ -4,6 +4,10 @@ body {
 	background: #FFE066;
 }
 
+main {
+	position: relative;
+}
+
 .boy {
 	height: 401px;
 	width: 271px;
@@ -17,13 +21,14 @@ body {
 }
 
 .message {
+	width: 300px;
 	position: absolute;
-	right: 10px;
+	right: 20px;
 	bottom: 10px;
 }
 
 blockquote.twitter-tweet {
-	width: 300px;
+	max-width: 280px;
 }
 
 https://openclipart.org/detail/215080/retro-character-sprite-sheet
