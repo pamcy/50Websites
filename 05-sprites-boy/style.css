@@ -1,0 +1,25 @@
+body {
+	background: #FFE066;
+}
+
+.boy {
+	height: 401px;
+	width: 271px;
+	margin: 2% auto;
+	background: url(boy.png) left center;
+	animation: play .8s steps(4) infinite;
+}
+
+@keyframes play {
+	100% { background-position: -1084px; }
+}
+
+.message {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+https://openclipart.org/detail/215080/retro-character-sprite-sheet
+
+CSS Only Sprite Animation Tutorial
