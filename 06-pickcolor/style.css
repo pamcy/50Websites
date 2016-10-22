@@ -32,10 +32,10 @@ h1 {
     box-shadow: 1px 1px #fff;
     cursor: pointer;
     display: inline-block;
-    height: 75px;
+    height: 64px;
     list-style-type: none;
     margin: 0 5px;
-    width: 75px;
+    width: 64px;
 }
 
 .pickcolor li:nth-child(1) {
