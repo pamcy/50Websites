@@ -1,5 +1,9 @@
+html, body {
+    margin: 0;
+}
+
 body {
-    background: #FFBA08;
+    background: #59344F;
     height: 100vh;
     position: relative;
     width: 100vw;
