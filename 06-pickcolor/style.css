@@ -69,3 +69,12 @@ h1 {
 .pickcolor li:nth-child(7) {
     background: #D6FFB7;
 }
+
+.message {
+    position: fixed;
+    width: 300px;
+    margin: 0 10px 10px 0;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
