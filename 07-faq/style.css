@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,500');
+
+html, body, h1, h2, p, ul {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: url(rocket.png) bottom right no-repeat fixed;
+    background-color: #00171F;
+    font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+    color: #FFFFFF;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin: 0 0 10px 10px;
+}
+
+h2 {
+    color: #2EC4B6;
+    cursor: pointer;
+    font-size: 1.4em;
+    font-weight: 400;
+    margin: 0 0 15px 10px;
+}
+
+h2 > span {
+    color: #67707F;
+    font-size: 1.4em;   
+    vertical-align: middle;
+    margin-right: 0.1em;
+}
+
+h2 .plus:before {
+    content: '+';
+}
+
+h2 .minus:before {
+    content: '-';
+}
+
+.container {
+    margin: 3% auto;  
+    width: 600px;
+}
+
+.whitebox {
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.faq li {
+    list-style-type: none;
+}
+
+.texts {
+    background: #FDFCFA;
+    border: 4px solid #F2EEE6;
+    border-radius: 4px;
+    color: #67707F;
+    font-weight: 300;
+    line-height: 1.5em;
+    margin-bottom: 30px;
+    padding: 20px;
+    position: relative;
+}
+
+.texts:before {
+    border: 16px solid transparent;
+    border-bottom-color: #F2EEE6;
+    bottom: 100% ;
+    content: "";
+    height: 0;
+    left: 6%;
+    margin-left: -16px;
+    position: absolute;
+    width: 0;
+}
+
+.texts p{
+    margin-bottom: 15px;
+}
+
+.texts p:last-child{
+    margin-bottom: 0;
+}
+
+.hide {
+    display: none;
+}
