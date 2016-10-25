@@ -1,10 +1,13 @@
 # 100websites
 🚀 Doing a website a day forces me to move on.
 
+[07 - A Simple FAQ: Journey to Mars](https://chinyi3005.github.io/100websites/07-faq/index.html)  
+I create a pure CSS triangle and use JQuery toggle() to display / hide content.
+
 [06 - Pick Your Favorite Color](https://chinyi3005.github.io/100websites/06-pickcolor/)  
 With CSS nth-child() and jQuery event handler I made a simple pick and change background color function.
 
-[05 - Simple CSS Only Sprites Boy](https://chinyi3005.github.io/100websites/05-sprites-boy/" target="_blank">)  
+[05 - A simple CSS Only Sprites Boy](https://chinyi3005.github.io/100websites/05-sprites-boy/)  
 A CSS Only animation with a simple character sprite sheet and steps() to run the frame-by-frame effect.
 
 [04 - HTML5 Blog](https://chinyi3005.github.io/100websites/04-html5blog/)  
