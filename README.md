@@ -2,7 +2,7 @@
 🚀 Doing a website a day forces me to move on.
 
 [08 - Random Creative Journal Ideas Generator](https://chinyi3005.github.io/100websites/08-random-inspiration/index.html)  
-Responsive random creative ideas generator to inspire you to write a journal, using html, css, jquery and bootstrap. I also learned how to return the querystring part of a URL after the question mark.
+Responsive random creative ideas generator to inspire you to write a journal. Using html, css, jquery and bootstrap. I also learned how to return the querystring part of a URL after the question mark.
 
 [07 - A Simple FAQ: Journey to Mars](https://chinyi3005.github.io/100websites/07-faq/index.html)  
 I create a pure CSS triangle and use JQuery toggle() to display / hide content.
