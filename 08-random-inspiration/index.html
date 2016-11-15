@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css">
+	<script src="../jquery-3.1.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="https://use.fontawesome.com/e85a2b82fc.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<!--LEFT TITLE-->
+			<div class="col-sm-6">
+				<h1><span class="main-color">Creative Journal</span><br>Generator</h1>
+				<p class="description">Do One Thing Every Day That Inspires You: A little bit of fun to help you see the world differently.</p>
+			</div>
+
+			<!--RIGHT SIDEBAR-->
+			<div class="col-sm-6">
+				<!--TWO BUTTON-->
+				<div class="row">
+					<div class="col-xs-6">
+						<a id="next-idea" class="btn btn-default btn-lg btn-block" href="#"><i class="fa fa-refresh" aria-hidden="true"></i> Next Idea</a>
+					</div>
+					<div class="col-xs-6">
+						<a id="share" class="btn btn-default btn-lg btn-block" href="#" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> Share</a>
+					</div>
+				</div>
+				
+				<!--IDEA BOX-->
+				<div id="idea-box" class="animated">
+					<i id="idea-left" class="fa fa-quote-left" aria-hidden="true"></i>
+					<p id="idea"></p>
+					<span id="title" class="main-color"></span>
+					<i id="idea-right" class="fa fa-quote-right" aria-hidden="true"></i>
+				</div>
+				
+				<!--FOLLOW ME-->
+				<div class="row">
+					<div class="col-xs-12">
+						<ul>
+							<li>Follow me</li>
+							<li><a href="https://twitter.com/impamcy" class="main-color" target="_blank" >@impamcy</a></li>
+						</ul>
+					</div>
+				</div>
+
+			</div>	<!--END OF RIGHT SIDEBAR-->
+		</div>	<!--END OF ROW-->
+	</div>	<!--END OF CONTAINER-->
+
+	<div id="hidden"></div>
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+body {
+	background-color: #B9D7EA;
+	color: #ffffff;
+	font-family: 'Raleway', sans-serif;
+	font-size: 18px;
+	padding-top: 50px;
+}
+
+h1 {
+	font-size: 3.8em;
+	font-weight: 700;
+	line-height: 70px;
+	margin-bottom: 40px;
+}
+
+a:hover, a:focus, a:active {
+	color: #fff;
+	text-decoration: none;
+	transition: color 0.8s;
+}
+
+ul {
+	list-style-type: none;
+	margin: 10px 5px 0 0;
+	float: right;
+}
+
+li {
+	display: inline-block;
+}
+
+.main-color {
+	color: #0084b4;
+	font-weight: 700;
+	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.description {
+	font-size: 1.01em;
+}
+
+.animated {
+  	animation-duration: 0.8s;
+  	animation-fill-mode: both;
+	animation-name: pulse;
+}
+
+#idea-box {
+	background-color: rgba(255, 255, 255, 0.3);
+	border-radius: 10px;
+	margin-top: 20px;
+	padding: 100px 40px;
+	position: relative;
+}
+
+#idea-left, #idea-right {
+	color: #F4FAB3;
+	font-size: 3em;
+	position: absolute;
+}
+
+#idea-left {
+	left: 25px;
+	top: 25px;
+}
+
+#idea-right {
+	right: 25px;
+	bottom: 25px;
+}
+
+#idea {
+	font-size: 1.5em;
+}
+
+#title {
+	bottom: 40px;
+	left: 40px;
+	font-size: 1.1em;
+	position: absolute;
+}
+
+.btn {
+	border: 1px solid #fff !important;
+	border-radius: 10px;
+	color: #00aced;
+	line-height: 30px;
+	margin-top: 30px;
+	transition: all 0.8s;
+}
+
+.btn:hover, .btn:active, .btn:focus {
+	background-color: #7BBDE5;
+	box-shadow: none;
+	color: #fff;
+}
+
+#hidden {
+	display: none;
+}
