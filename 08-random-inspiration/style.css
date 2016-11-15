@@ -86,6 +86,7 @@ li {
 }
 
 #idea {
+	color: #7BBDE5;
 	font-size: 1.5em;
 }
 
@@ -109,6 +110,14 @@ li {
 	background-color: #7BBDE5;
 	box-shadow: none;
 	color: #fff;
+}
+
+.twitter {
+	position: fixed;
+    width: 300px;
+    margin: 0 10px 10px 0;
+    right: 10px;
+    bottom: 10px;
 }
 
 #hidden {
