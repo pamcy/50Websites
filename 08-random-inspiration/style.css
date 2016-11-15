@@ -112,14 +112,6 @@ li {
 	color: #fff;
 }
 
-.twitter {
-	position: fixed;
-    width: 300px;
-    margin: 0 10px 10px 0;
-    right: 10px;
-    bottom: 10px;
-}
-
 #hidden {
 	display: none;
 }
