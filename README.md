@@ -1,5 +1,8 @@
 # 100websites
-🚀 Doing a website a day forces me to move on.
+🚀 Doing a website a day forces me to move on.  
+
+[09 - Gmail Progress Bar animation in pure CSS](https://chinyi3005.github.io/100websites/09-gmail-loading/index.html)  
+This animation is composed of 2 layers, one is given a gray border and linear-gradient background, another is to create an overlay animated progress bar using keyframes property.  
 
 [08 - Random Creative Journal Ideas Generator](https://chinyi3005.github.io/100websites/08-random-inspiration/index.html)  
 Responsive random creative ideas generator to inspire you to write a journal. Using html, css, jQuery and bootstrap. I also learned how to return the querystring part of a URL after the question mark.
