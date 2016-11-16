@@ -1,0 +1,62 @@
+body {
+	background-color: #F5F5F5;
+	font-family: Arial, Sans-Serif;
+}
+
+a:link, a:visited, a:hover, a:active {
+	color: #0000EE;
+}
+
+@keyframes loading {
+	from { background-position: 0px 0px; }
+	to { background-position: -15px 0px; }
+}
+
+@keyframes loadprogress {
+	0% { width: 99%; }
+	30% { width: 80%; }
+	50% { width: 65%; }
+	69% { width: 20%; }
+	85% { width: 0; }
+	100% { width: 0; }
+}
+
+.container {
+	margin: 15% auto;
+	position: relative;
+	text-align: center;
+	width: 320px;
+}
+
+.email {
+	font-weight: 600;
+}
+
+.loading-bar {
+	animation: loading 1s linear infinite;  /* @keyframes loading */
+	background-image: linear-gradient(135deg, #6187f2 0%, #6187f2 25%, #5679da 25%, #5679da 50%, #6187f2 50%, #6187f2 75%, #5679da 75%, #5679da 100%);
+	background-clip: content-box;
+	background-repeat: repeat;
+	background-position: 0px 0px;
+	background-size: 15px 15px;	
+	border: 1px solid #a4a4a4;
+	height: 8px;
+	padding: 1px;
+}
+
+.loading-bar:after {
+	animation: loadprogress 5s ease-in-out infinite; /* @keyframes loadprogress */
+	background: #F5F5F5;
+	content: '';
+	height: 8px;
+	right: 2px;
+	position: absolute;
+}
+
+.note {
+	bottom: 10px;
+	font-size: 0.78em;
+	font-weight: 400;
+	position: fixed;
+	right: 10px;
+}
