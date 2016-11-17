@@ -1,6 +1,9 @@
 # 100websites
 🚀 Doing a website a day forces me to move on.  
 
+[10 - Pricing Tables](https://chinyi3005.github.io/100websites/10-pricingtable/index.html)  
+A common pricing table design is responsive supported using bootstrap and hover effects with jQuery.
+
 [09 - Gmail Progress Bar animation in pure CSS](https://chinyi3005.github.io/100websites/09-gmail-loading/index.html)  
 This animation is composed of 2 layers, one is given a gray border and linear-gradient background, another is to create an overlay animated progress bar using keyframes property.  
 
