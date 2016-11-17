@@ -1,0 +1,107 @@
+* {
+	box-sizing: border-box;	
+}
+
+body {
+	background: #30353c;
+	color: #fff;
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+	text-align: center;
+	margin: 0 0 1.2em 0;
+}
+
+h2 {
+	font-size: 1.5em;
+	font-weight: 600;
+	margin: 0 0 1.2em 0;
+}
+
+.container {
+	margin: 50px auto 0 auto;
+}
+
+.item {
+	background: #1F1F1F;
+	border: 1px solid #5c6552;
+	height: 500px;
+	position: relative;
+	text-align: center;
+}
+
+/*HOVER ANIMATION IN PURE CSS*/
+/*
+.item:hover {
+	z-index: 1;
+}
+
+.item:hover:after {
+	border: 5px solid #8bc34a;
+	box-sizing: content-box;
+	content: '';
+	position: absolute;
+	top: -5px;
+	left: -5px;
+	width: 100%;
+	height: 100%;
+}
+*/
+/*HOVER ANIMATION IN CSS*/
+
+#icon {
+	color: #EA9215;
+	font-size: 2.5em;
+	margin: 1em 0 .8em 0;;
+}
+
+.price {
+	color: #EA9215;
+	font-size: 2.5em;
+	font-weight: 600;
+	margin: 0 0 1em 0;
+}
+
+.price-sign {
+	font-size: .5em;
+	vertical-align: super;
+}
+
+.price-month {
+	color: #BFC0C0;
+	font-size: .38em;
+	padding: 0 0 0 .5em;
+}
+
+.feature {
+	color: #BFC0C0;
+	list-style-type: none;
+	margin: 0;
+	padding: 0 0 5em;
+}
+
+.feature li {
+	line-height: 2em;
+}
+
+.subscribe {
+	background-color: #EA9215;
+	border: none;
+	border-radius: 40px;
+	color: #FFFFFF;
+	cursor: pointer;
+	font-size: 1.1em;
+	padding: 1em 3em;
+	transition: background-color .3s ease-in-out, color .4s ease-in-out;
+}
+
+.subscribe:hover {
+	background-color: #F5F5F5;
+	color: #EA9215;
+}
+
+/*JQUERY MOUSEOVER EVENTS*/
+.highlight {
+	border: 5px solid #EA9215;
+}
