@@ -1,0 +1,85 @@
+body {
+	background: #083D77;
+	color: #fff;
+	font-family: 'Roboto', sans-serif;
+	position: relative;
+}
+
+h1 {
+	text-align: center;
+}
+
+h2 {
+	font-weight: 500;
+	padding: 0 20px;
+}
+
+p {
+	line-height: 1.4em;
+	padding: 20px;
+}
+
+.container {
+	margin: 10% auto 1.5%;
+	width: 350px;
+}
+
+.wrapper {
+	display: block;
+	position: relative;
+	overflow: hidden;
+}
+
+.slideshow {
+	background-color: #fff;
+	height: 200px;
+	margin: 0 auto;
+	max-width: 340px;
+	overflow: hidden;
+}
+
+/* 單張 slide */
+.slide {
+	float: left;
+	height: 200px;
+	max-width: 340px;
+}
+
+#slide-1 {
+	background-color: #F25F5C;
+}
+
+#slide-2 {
+	background-color: #D8C320;
+}
+
+#slide-3 {
+	background-color: #70C1B3;
+}
+
+#slide-4 {
+	background-color: #9BC53D;
+}
+
+/* 圓點導航列 */
+.nav-dots {
+	display: block;
+	width: 340px;
+	margin: 0 auto 3%;
+	text-align: center;
+}
+
+.nav-dots a {
+	background-color: #EBEBD3;
+	border-radius: 100%;
+	display: inline-block;
+	font-size: 0;   /* hide nav numbers */
+	height: 12px;
+	margin: 0 8px 0 0;
+	overflow: hidden;
+	width: 12px;
+}
+
+.nav-dots .active {
+	background-color: #F4D35E;
+}
