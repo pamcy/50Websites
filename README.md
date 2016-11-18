@@ -2,7 +2,7 @@
 🚀 Doing a website a day forces me to move on.  
 
 [11 - Simple Text Slider](https://chinyi3005.github.io/100websites/11-simple-slider/index.html)  
-4 flat sliders with a sliding motion in jQuery.
+4 flat slides with a automatic sliding motion and manual controls in jQuery.
 
 [10 - Pricing Tables](https://chinyi3005.github.io/100websites/10-pricingtable/index.html)  
 A common pricing table design is responsive supported using bootstrap and hover effects with jQuery.
