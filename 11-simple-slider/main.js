@@ -12,9 +12,9 @@ $(document).ready(function(){
 	
 	//設定 wrapper 的長寬，包住所有橫向排列的 slideshow
 	wrapper.css({
-    'position': 'relative',
-    'width'   : slideshow_width,
-    'height'  : slideshow_height
+		'position': 'relative',
+		'width'   : slideshow_width,
+		'height'  : slideshow_height
   	});
 	
 	//每張 slide 網址加上編號
