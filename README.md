@@ -1,7 +1,7 @@
 # 100websites
 🚀 Doing a website a day forces me to move on. 
 
-[12 - Random Creative Journal Ideas Generator](https://chinyi3005.github.io/100websites/12-random-inspiration-ajax/index.html)  
+[12 - Random Creative Journal Ideas Generator (AJAX)](https://chinyi3005.github.io/100websites/12-random-inspiration-ajax/index.html)  
 Refactor the original [08](https://chinyi3005.github.io/100websites/08-random-inspiration) a bit of code to practice how to load JSON data using AJAX.
 
 [11 - Simple Text Slider](https://chinyi3005.github.io/100websites/11-simple-slider/index.html)  
