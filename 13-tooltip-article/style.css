@@ -1,0 +1,142 @@
+*, *:after, *:before {
+	box-sizing: border-box;
+}
+
+.clearfix:before, .clearfix:after {
+	content: '';
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+body {
+	background: #f8f2e3;
+	font-family: 'Raleway', sans-serif;
+	position: relative;
+}
+
+header {
+	text-align: center;
+}
+
+article {
+	font-size: 1.4em;
+	line-height: 1.8em;
+	text-align: justify;
+}
+
+h1 {
+	font-size: 4em;
+	font-weight: 600;
+	margin: 0;
+}
+
+.container {
+	margin: 5em auto 3em;
+	max-width: 800px;
+}
+
+.description {
+	color: #8d8a80;
+	font-size: 1.65em;
+	font-weight: 300;
+	margin: .5em 0 1.5em
+}
+
+.tooltip {
+	display: inline;
+	position: relative;
+	z-index: 999;
+}
+
+.tooltip-keyword {
+	background-color: #c4aa6b;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-weight: 600;
+	padding: 0 .5em;
+}
+
+/* Create an invisible 18px height gap */
+.tooltip-keyword:after {
+	/* border: 2px solid red; */
+	/* Toggle comment to see the invisible gap */
+	bottom: 100%;
+	content: '';
+	height: 18px;
+	left: 50%;
+	pointer-events: none;
+	position: absolute;
+	transform: translateX(-50%);
+	width: 360px;
+}
+
+.tooltip:hover .tooltip-keyword:after {
+	pointer-events: auto;
+}
+
+/* Tooltip Box */
+/* Creatte a tooltip above the gap */
+.tooltip-content {
+	background-color: #c4aa6b;
+	box-shadow: -5px -5px 15px rgba(48, 54, 61, 0.1);
+	bottom: 100%;
+	left: 50%;
+	margin: 0 0 18px -180px; 
+	opacity: 0;
+	pointer-events: none;
+	position: absolute;
+	text-align: left;
+	transform: translate(0, -10px);
+	width: 360px;
+	z-index: 9999;
+}
+
+.tooltip:hover .tooltip-content {
+	pointer-events: auto;
+	opacity: 1;
+	transform: translate(0, 0) ;
+	transition: opacity .3s, transform .3s;
+}
+
+/* Create an arrow */
+.tooltip-content:after {
+	border: 10px solid transparent;
+	border-top-color: #c4aa6b;
+	content: '';
+	height: 0;
+	margin-left: -10px;
+	left: 50%;
+	position: absolute;
+	top: 100%;
+	width: 0;
+}
+
+/* Inside of tooltip content */
+.tooltip-content img {
+	display: block;
+	float: left;
+	height: 155px;
+	margin-right: 1em;
+	position: relative;
+}
+
+.tooltip-text {
+	color: #fff;
+	display: block;
+	font-size: .6em;
+	line-height: 1.35em;
+	padding: 1em;
+}
+
+.tooltip a {
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.tooltip a:hover, .tooltip a:visited {
+	color: #04395E;
+}
