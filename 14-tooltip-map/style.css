@@ -1,0 +1,138 @@
+body {
+	box-sizing: border-box;
+	height: 100%;
+}
+
+header {
+	font-family: 'Open Sans', sans-serif;
+	text-align: center;
+}
+
+h1 {
+	color: #472D30;
+	font-size: 3.8em;
+	font-weight: 700;
+	margin: .5em 0 .1em;
+}
+
+p {
+	color: #723D46;
+	font-size: 2em;
+	font-weight: 300;
+	margin: 0;
+}
+
+.container {
+	background: url('img/gmap.png') no-repeat 50% 50%;
+	background-size: cover;
+	margin: 0 auto;
+	min-height: 1000px;
+	position: relative;
+	z-index: 999;
+}
+
+.tooltip {
+	position: absolute;
+}
+
+/* Tooltip dots & location */
+.tooltip-dot {
+	animation: pulse .6s infinite alternate; /* alternate: do the animation once, then do the animation backwards */
+	border: 3px solid #e35583;
+	border-radius: 50%;
+	cursor: pointer;
+	display: inline-block;
+	height: 30px;
+	position: absolute;
+	width: 30px;
+}
+
+@keyframes pulse {
+	from { transform: scale3d(0.5, 0.5, 1); }
+	to { transform: scale3d(1, 1, 1); }
+}
+
+.tooltip-dot:hover {
+	border-color: #DD2D4A;
+}
+
+.tooltip:nth-child(1) {
+	top: 75%;
+	left: 50%;
+}
+
+.tooltip:nth-child(2) {
+	top: 65%;
+	left: 25%;
+}
+
+.tooltip:nth-child(3) {
+	top: 30%;
+	left: 40%;
+}
+
+.tooltip:nth-child(4) {
+	top: 30%;
+	left: 80%;
+}
+
+.tooltip:nth-child(5) {
+	top: 55%;
+	left: 70%;
+}
+
+/* Inside of tooltip content */
+.tooltip-content {
+	background: #e35583;
+	border-radius: 20px;
+	color: #F4F1BB;
+	font-family: 'Schoolbell', cursive;
+	font-size: 1.2em;
+	line-height: 1.2em;
+	opacity: 0;
+	padding: 1.5em;
+	pointer-events: none;
+	position: absolute;
+	transition: opacity .6s, transform .6s;
+	text-align: center;
+	width: 200px;
+	z-index: 9999;
+}
+
+.tooltip-left .tooltip-content {	
+	left: 4em;
+}
+
+.tooltip-right .tooltip-content {
+	right: 2em; 
+}
+
+.tooltip:hover .tooltip-content {
+	opacity: 1;
+	pointer-events: auto;
+	transform: translate3d(0,-10%,0);
+}
+
+/* Tooltip arrow */
+.tooltip-content:before {
+	content: '';
+	position: absolute;
+	background: url('img/tooltip.svg') no-repeat center center;
+	background-size: 100%;
+	/* border: 3px solid red; toggle comment to see the invisble box */
+	height: 1.8em;
+	top: 30%;
+	width: 1.8em; /* Create an arrow */
+}
+
+.tooltip-left .tooltip-content:before {
+	right: 99%;
+}
+
+.tooltip-right .tooltip-content:before {
+	left: 99%;
+}
+
+.tooltip-right .tooltip-content:before {
+	transform: scaleX(-1); /* flip the arrow in another directions */
+}
