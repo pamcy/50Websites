@@ -1,0 +1,208 @@
+ body {
+	background: #0084b4;
+	box-sizing: border-box;
+} 
+
+.container {
+	display: block;
+	height: 100vh;
+	position: relative;
+	width: 100vw;
+}
+
+.wrapper {
+	box-shadow: 5px 8px 25px rgba(255, 255, 255, 0.1);
+	height: 500px;
+	left: 50%;
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 350px;
+}
+
+/* Begin ----------> header */
+.chat-header {
+	background: #E2E0DC;
+	color: #97a6b1;
+	border-bottom: 3px solid #BFBBB1;
+	box-shadow: 0 1px 1px #888888;
+	height: 60px;
+	left: 0;
+	top: 0;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	z-index: 1;
+}
+
+.chat-header h2 {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.8em;
+	font-weight: 600;
+	margin: 0;
+	padding: 10px 0;
+	position: relative;
+}
+
+.chat-header #icon {
+	font-size: .8em;
+	vertical-align: super 
+}
+
+/* Begin ----------> textarea */
+.textarea {
+	background: #fff;
+	border: 0;
+	box-shadow: -1px 0 1px #888888;
+	bottom: 5px;
+	font-size: 18px;
+	left: 0;
+	padding: 10px;
+	position: absolute;
+	width: calc(100% - 20px);
+}
+
+.textarea:focus {
+	outline: none;
+}
+
+/* Begin ----------> send button */
+.button {
+	background: #45a8e5;
+	border: 0;
+	bottom: 5px;
+	display: block;
+	height: 40px;
+	padding: 0;
+	position: absolute;
+	right: 0;
+	width: 40px;
+}
+
+.button-icon {
+	bottom: 14px;
+	color: #fff;
+	cursor: pointer;
+	display: block;
+	font-size: 20px;
+	position: absolute;
+	right: 10px;
+	z-index: 1;
+}
+
+/* Begin ----------> chat content */
+.chat-content {
+	background: #c0deed;
+	bottom: 45px;
+	left: 0;
+	height: auto;
+	min-height: 332px;
+	padding: 40px 0 20px;
+	position: absolute;
+	width: 100%;
+}
+
+/* Create bubbles */
+.chat-content .left,
+.chat-content .right {
+	animation: bouncedIn .3s 1 ease-in-out;
+	border-radius: 25px;
+	clear: both;
+	display: block;
+	margin: 8px 10px;;
+	max-width: 80%;
+	padding: 10px 20px;
+	position: relative;
+}
+
+@keyframes bouncedIn {
+	0% { transform: scale3d(0, 0, 0); }
+	50% { transform: scale3d(1.05, 1.05, 1.05); }
+	100% { transform: scale3d(1, 1, 1); }
+}
+
+.chat-content .left {
+	background: #fff;
+	float: left;
+}
+
+.chat-content .right {
+	background: #e0e895;
+	float: right;
+}
+
+/* Create a bubble arrow */
+.chat-content .left:before,
+.chat-content .right:before {
+	border-color: transparent #e0e895;
+	border-style: solid;
+	border-width: 0 15px 10px 0;
+	bottom: -10px;
+	content: '';
+	height: 0;
+	position: absolute;
+	right: 16px;
+	width: 0;
+}
+
+.chat-content .left:before {
+	border-color: transparent #fff;
+	left: 20px;
+	transform: scaleX(-1);
+}
+
+/* left bubble animation */
+.chat-content p {
+	animation: fadeIn 2s 1;
+	display: inline;
+	font-size: 1em;
+	line-height: 1.5px;
+	margin: 0;
+}
+
+@keyframes fadeIn {
+	0% { font-size: 0em; }
+	99.99% { font-size: 0em; }
+	100% { font-size: 1em; }  /* Make the content disppear then display on the screen */
+}
+
+.chat-content .ing {
+	animation: fadeOut 2s 1;
+	display: inline;
+	font-size: 0em;  /* Make ... invisible */
+}
+
+@keyframes fadeOut {
+	0% { font-size: 1em; }
+	99.99% { font-size: 1em; }
+	100% { font-size: 0em; }
+}
+
+.chat-content span {
+	animation: bouncing 2s infinite;
+	color: rgba(0, 0, 0, 0.6);
+}
+
+.chat-content span:nth-of-type(2) {
+	animation-delay: .5s;
+}
+
+.chat-content span:nth-of-type(3) {
+	animation-delay: 1s;
+}
+
+@keyframes bouncing {
+	0% {
+		margin-top: 0;
+		opacity: 0;
+	}
+	50% {
+		margin-top: -5px;
+		opacity: 1;
+	}
+	100% {
+		margin-top: 0;
+		opacity: 0;
+	}
+}
