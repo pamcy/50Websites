@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Shopping Checkout Form</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+</head>
+<body>
+	<div class="wrapper">
+	
+		<!---------- form Input ---------->
+		<div class="container">
+		
+			<!-- progress bar -->
+			<div class="row">
+				<h2>Checkout</h2>
+				<div class="progress">
+					<div class="one success-color"></div>
+					<div class="two success-color"></div>
+					<div class="three success-color"></div>
+					<div class="progress-bar"></div>
+				</div>
+			</div>
+
+			<!-- pay method -->
+			<div class="row">
+				<label for="creditcard" class="col-sm-6 method add-border">
+					<div class="card-logo">
+						<img src="img/visa_logo.png" alt="visacard">
+						<img src="img/mastercard_logo.png" alt="master card ">
+					</div>
+					<div class="radio-select">
+						<input type="radio" id="card" name="paymethod" checked>
+						Pay $99 with credit card
+					</div>
+				</label>
+				<label for="paypal" class="col-sm-6 method">
+					<img src="img/paypal_logo.png" alt="">
+					<div class="radio-select">
+						<input type="radio" id="paypal" name="paymethod">
+						Pay $99 with PayPal
+					</div>
+				</label>
+			</div>
+
+			<!-- input area -->
+			<form action="" method="post" class="row input-fields">
+				<fieldset>
+					<div class="col-md-6">
+						<label for="name">Cardholder's Name</label>
+						<input type="text" id="name" value="" name="name" required>
+					</div>
+
+					<div class="col-md-6">
+						<label for="cardnumber">Card Number</label>
+						<input type="password" id="cardnumber" value="" name="cardnumber" required>
+					</div>
+
+					<div class="col-md-3 space">
+						<label for="date">Expiration Date</label>
+						<input type="text" id="date" value="" name="date" required placeholder="MM / YY">
+					</div>
+
+					<div class="col-md-3 space">
+						<label for="code">CVV2 Code</label>
+						<input type="password" id="code" name="code" required>	
+					</div>
+
+					<div class="col-md-6">
+						<span class="note">* CVV or CVC is the card security code, unique three digits number on the back of your card separate from its number.</span>
+					</div>
+				</fieldset>
+			</form>
+		</div> <!-- ^container form Input -->
+		
+		<!---------- footer button ---------->
+		<div class="footer">
+			<div class="container">
+				<div class="row">
+					<button class="btn btn-back">Back</button>
+					<button class="btn btn-next" type="submit">Next Step</button>
+				</div>
+			</div>
+		</div> <!-- ^footer -->
+	
+	</div> <!-- ^wrapper -->
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>

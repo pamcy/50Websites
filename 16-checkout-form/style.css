@@ -1,0 +1,237 @@
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	align-items: center;
+	background: #f4f4ef;
+	display: flex;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1em;
+	height: 100%;
+	justify-content: center;
+	width: 100%;
+}
+
+h2 {
+	color: #2e2e2e;
+	font-weight: 700;
+	margin: 0 0 40px 0;
+}
+
+.wrapper {
+	background: #ffffff;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+	flex-direction: column;  /* same as text direction but top to bottom */
+	display: flex;
+}
+
+.container {
+	padding: 45px 80px 0;
+}
+
+.row {
+	margin: 0 0 30px;
+}
+
+/* --------------------
+Progress bar
+ -------------------- */
+.progress {
+	height: 6px;
+	margin-bottom: 50px;
+}
+
+.success-color{
+	background-color: #00ccbb;
+}
+
+.one, .two, .three{
+	border: 5px solid #fff;
+	border-radius: 50%;
+	height: 25px;
+	margin-top: -10px;
+    position: absolute;
+	width: 25px;
+	z-index: 1;
+}
+
+.one{
+	color: #00ccbb;
+	left: 25%;
+}
+
+.one:before {
+	content: 'Delivery';
+	left: -15px;
+	position: absolute;
+	top: 30px;
+}
+
+.two{
+	color: #00ccbb;
+	left: 50%;
+}
+
+.two:before {
+	content: 'Payment';
+	left: -18px;
+	position: absolute;
+	top: 30px;
+}
+
+.three{
+	left: 75%;
+}
+
+.three:before {
+	content: 'Finish';
+	left: -10px;
+	position: absolute;
+	top: 30px;
+}
+
+.progress-bar {
+	background-color: #00ccbb;
+	position: relative;
+	width: 100%;
+}
+
+.progress-bar:after {
+	border: solid #efefef;
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 25%;
+}
+
+/* --------------------
+pay method
+ -------------------- */
+.method {
+	align-items: center;
+	background-color: #f9f9f9;
+	border: 1px solid transparent;
+	border-radius: 2px;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	height: 120px;
+	justify-content: center;
+	padding: 20px 30px;
+}
+
+.add-border {
+	border: 1px solid #00ccbb;
+}
+
+.card-logo img:nth-child(2) {
+	margin-left: 10px;
+}
+
+.radio-select {
+	margin-top: 20px;
+}
+
+input[type='radio'] {
+	display: inline-block;
+}
+
+/* --------------------
+form input
+ -------------------- */
+.input-fields label {
+	color: #b4b4b4;
+	display: block;
+	margin-bottom: 5px;
+}
+
+input[type='text'],
+input[type='password'] {
+	border: 1px solid #E1E1E1;
+	border-radius: 4px;
+	color: #5f656a;
+	height: 45px;
+	outline: none;
+	padding: 0 45px 0 16px;
+	width: 100%;
+}
+
+input[type='text']:focus,
+input[type='password']:focus {
+	border-color: #00ccbb;
+}
+
+#name {
+	background: url(img/icons_person_black.png) no-repeat 95%
+}
+
+#cardnumber {
+	background: url(img/icons_card_black.png) no-repeat 95%;
+}
+
+#date {
+	background: url(img/icons_calendar_black.png) no-repeat 95%;
+}
+
+#code {
+	background: url(img/icons_lock_black.png) no-repeat 95%;
+}
+
+.space {
+	margin-top: 20px;
+}
+
+.note {
+	color: rgba(46, 46, 46, 0.5);
+	display: block;
+	font-size: .8em;
+	margin-top: 40px;
+}
+
+.warning {
+	border-color: #00ccbb !important;
+}
+
+/* --------------------
+footer button
+ -------------------- */
+.footer {
+	background-color: #efefef;
+	height: 100px;
+	position: relative;
+}
+
+.btn {
+	border-radius: 50px;
+	font-size: 1em;
+	letter-spacing: 1px;
+	padding: 15px 30px;
+	transition: all 0.3s ease-in-out;
+	width: 160px;
+}
+
+.btn:focus {
+	outline: none;
+}
+
+.btn:hover {
+	transform: scale(1.1, 1.1);
+}
+
+.btn-back {
+	background-color: #ffffff;
+	color: #00ccbb;
+	left: 8%;
+	position: absolute;
+	top: 25%;
+}
+
+.btn-next {
+	background-color: #00ccbb;
+	color: #ffffff;
+	right: 8%;
+	position: absolute;
+	top: 25%;
+}

@@ -1,6 +1,9 @@
 # 100websites
 🚀 Doing a website a day forces me to move on. 
 
+[16 - Shopping Checkout Form](https://chinyi3005.github.io/100websites/16-checkout-form)
+A responsive checkout form using HTML, CSS, Bootstrap, a little bit of flexbox and jQuery to validate the input fields.
+
 [15 - Funny Chat Messenger]
 (https://chinyi3005.github.io/100websites/15-chatmessenger)  
 A simple chat box UI is made with CSS, and jQuery to add messages on the screen.
