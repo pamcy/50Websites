@@ -6,6 +6,6 @@ Memory game is built using mostly javascript. With functions to shuffle the arra
 
 - [SweetAlert2](https://limonte.github.io/sweetalert2/) to display a popup box after completing the game.  
 
-[View Demo](https://chinyi3005.github.io/100websites/17-memory-game)
+[**View Demo**](https://chinyi3005.github.io/100websites/17-memory-game)
 
 ![how good is your memory](./demo-memory-game.png)
