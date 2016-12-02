@@ -1,8 +1,11 @@
 # 100websites
 🚀 Doing a website a day forces me to move on. 
 
+[17 - Memory Game](https://chinyi3005.github.io/100websites/17-memory-game)  
+The image match game is built using mostly javascript, with functions to shuffle, lay out in the grid, flip cards and set scores.  
+
 [16 - Shopping Checkout Form](https://chinyi3005.github.io/100websites/16-checkout-form)  
-A responsive checkout form using HTML, CSS, Bootstrap, a little bit of flexbox and jQuery to validate the input fields.
+A responsive checkout form using HTML, CSS, Bootstrap, a little bit of flexbox and jQuery to validate the input fields.  
 
 [15 - Funny Chat Messenger]
 (https://chinyi3005.github.io/100websites/15-chatmessenger)  

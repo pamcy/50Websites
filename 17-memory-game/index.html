@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Memory Game</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../normalize.css">
+        <link rel="stylesheet" href="main.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/6.1.1/sweetalert2.min.css">
+    </head>
+    <body>
+		<h1>How Good is Your Memory?</h1>
+		
+		<!-- Top Score Board -->
+		<div class="scoreboard">
+			<div class="star-rating">
+				<ul>
+					<li><i class="fa fa-star" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star" aria-hidden="true"></i></li>
+					<li><i class="fa fa-star" aria-hidden="true"></i></li>
+				</ul>
+			</div>
+			<span class="moves">0</span> Moves
+			<div class="restart">
+				<i class="fa fa-refresh" aria-hidden="true"></i>
+			</div>
+        </div>
+        
+        <!-- Main Game -->
+        <ul class="game"></ul>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="main.js"></script>
+        <script src="https://cdn.jsdelivr.net/sweetalert2/6.1.1/sweetalert2.min.js"></script>
+    </body>
+</html>

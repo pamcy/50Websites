@@ -1,0 +1,113 @@
+/* ==================================
+   Base Styles
+   ================================== */
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	align-items: center;
+	background: #EEE3AB;
+    color: #584D3D; 
+	display: flex;
+	flex-direction: column;
+	font-family: 'Montserrat', sans-serif;
+	height: 100%;
+	justify-content: center;
+	overflow: hidden;
+	width: 100%;
+}
+
+h1 {
+	margin: 0 0 30px 0;
+}
+
+/* ==================================
+   Main Game 
+   ================================== */
+.game {
+ 	background: #FDE74C;
+	box-shadow: 8px 8px 1px rgba(255,255,255,0.5);
+	border-radius: 8px;
+	margin: 0 auto;
+	padding: 20px;
+	width: 500px; 
+}
+
+.game .card {
+ 	background: #FFCF7F url('smile.png') no-repeat 50%;
+	border-radius: 5px;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-family: FontAwesome;
+	font-size: 0; /* make icons disappear */
+	height: 100px;
+	line-height: 100px;
+	margin: 0 20px 20px 0;	
+	text-align: center;
+	transform: rotateY(180deg);
+	transform-style: preserve-3d;   /* Let the transformed child elements preserve the 3D transformations  */
+	transition: transform .3s ease;
+	vertical-align: top;
+	width: 100px; 
+}
+
+.game .card:nth-child(4n) {
+	margin-right: 0;
+}
+
+.game .card:nth-child(n+13) {
+	margin-bottom: 0;
+}
+
+.game .card.open {
+	background: #5BC0EB;
+	transform: rotateY(360deg);
+}
+
+.game .card.show {
+	font-size: 3em;
+}
+
+.game .card.match {
+	background: #9BC53D;
+	transform: rotateY(360deg);
+}
+
+.game .card.nomatch {
+	background: #E55934;
+	transform: rotateY(360deg);
+}
+
+/* ==================================
+   Scoreboard
+   ================================== */
+.scoreboard {
+	font-size: 1.2em;
+	text-align: left;
+	width: 450px;
+}
+
+.star-rating {
+	display: inline-block;
+}
+
+.star-rating ul {
+	margin: 0 5px 10px 0;
+	padding: 0;
+}
+
+.star-rating ul li {
+	display: inline-block;
+	list-style: none;
+}
+
+.restart {
+	cursor: pointer;
+	float: right;
+}
+
+.restart:hover {
+	color: #9F956C;
+}
