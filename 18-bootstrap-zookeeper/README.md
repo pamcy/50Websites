@@ -3,4 +3,4 @@ This is my first practice to build a website about animal protection with 100% B
 
 [**View Demo**](https://chinyi3005.github.io/100websites/18-bootstrap-zookeeper)
 
-![Animal Protection website with Bootstrap](./demo-zookeeper)
+![Animal Protection website with Bootstrap](./demo-zookeeper.png)
