@@ -28,30 +28,6 @@ a:hover, a:focus, a:active {
 	color: #ce4743;
 }
 
-section {
-	padding: 100px 0;
-}
-
-section h2 {
-	font-size: 40px;
-	font-weight: 700;
-	margin: 0 0 15px;
-}
-
-section h3 {
-	font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 16px;
-	font-style: italic;
-	font-weight: 400;
-	margin-bottom: 75px;
-	text-transform: none;
-}
-
-section h4 {
-	margin: 15px 0;
-	text-transform: none;
-}
-
 ul.social-buttons {
 	margin-bottom: 0;
 }
@@ -129,13 +105,12 @@ ul.social-buttons a:active {
 .navbar-custom {
 	background: #222222;
 	border-color: transparent;
-	padding: 10px 0;
 }
 
 .navbar-custom .navbar-brand {
 	color: #d9534f;
 	font-family: 'Caveat', cursive, Helvetica, Arial, cursive;
-	font-size: 2.5em;
+	font-size: 2em;
 	font-weight: 700;
 }
 
@@ -189,6 +164,15 @@ ul.social-buttons a:active {
 	color: #fff;
 }
 
+@media (min-width: 768px) {
+	.navbar-custom {
+		padding: 10px 0;
+	}
+	
+	.navbar-custom .navbar-brand {
+		font-size: 2.8em;
+	}
+}
 
 /* ==================================
    Header
@@ -241,13 +225,35 @@ header .intro-text .intro-main {
 /* ==================================
    Section
    ================================== */
+section {
+	padding: 100px 0;
+}
 
+section h2 {
+	font-size: 40px;
+	font-weight: 700;
+	margin: 0 0 15px;
+}
 
-/* @media (min-width: 768px) {
+section h3 {
+	font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	font-style: italic;
+	font-weight: 400;
+	margin-bottom: 75px;
+	text-transform: none;
+}
+
+section h4 {
+	margin: 15px 0;
+	text-transform: none;
+}
+
+ @media (min-width: 768px) {
   section {
     padding: 150px 0;
   }
-} */
+} 
 
 /* ==================================
    Project
@@ -580,7 +586,6 @@ header .intro-text .intro-main {
 		padding: 0 100px 20px 20px;
 	}
 }
-
 
 /* ==================================
    Team
