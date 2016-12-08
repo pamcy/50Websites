@@ -1,19 +1,13 @@
 * {
 	box-sizing: border-box;
 }
-body {
-	background: green;
-	height: 100%;
-	width: 100%;
-}
 
-#input-text {
-	background: #28254d;
-	color: #fff;
-	border: 0;
-	height: 500px;
-	outline: none;
-	padding: 15px;
+body {
+	background: url('mac-desktop-wallpaper.jpg') no-repeat center center;
+	background-attachment: fixed;
+	background-size: cover;
+	font-family: 'Open Sans', sans-serif;
+	height: 100%;
 	width: 100%;
 }
 
@@ -23,11 +17,22 @@ body {
 }
 
 .wrapper {
-	margin: 0 100px;
+/*	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8);*/
+	margin: 0 20px;
 }
 
+@media (min-width: 768px) {
+	.wrapper {
+		margin: 0 100px;
+	}
+}
+
+/* ==================================
+   Editor Control Bar
+   ================================== */
 .editor-bar {
-	background: #fafafa;
+	background: #e4e4e4;
+/*	box-shadow: 0 2px 2px rgba(224, 217, 217, 0.3);*/
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 	height: 35px;
@@ -40,16 +45,17 @@ body {
 	left: 50%;
 	position: absolute;
 	text-transform: uppercase;
-	top: 10px;
+	top: 12px;
 	transform: translateX(-50%);
 }
 
 .editor-bar .control-panel {
 	cursor: pointer;
-	float: right;
+	float: left;
 	line-height: 35px;
 	list-style: none;
-	margin: 5px 15px 0 0;
+	margin: 3px 0 0 20px;
+	padding: 0;
 }
 
 .control-panel .button {
@@ -69,4 +75,35 @@ body {
 
 .button-3 {
 	background: #97c38a;
+}
+
+/* ==================================
+   Textarea
+   ================================== */
+.input-text {
+	background: #f5f5f5;
+	box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.2);
+	color: #7b7b7b;
+	border: 0;
+	height: 500px;
+	outline: none;
+	padding: 20px;
+	width: 100%;
+}
+
+.input-text #heading {
+	font-size: 2em;
+	font-weight: 600;
+	margin-bottom: 15px;
+}
+
+.input-text #content {
+	font-size: 1.1em;
+	height: 410px;
+	line-height: 1.5;
+	overflow: scroll;
+}
+
+div:focus {
+	outline: none;
 }

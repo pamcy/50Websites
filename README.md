@@ -1,6 +1,9 @@
 # 100websites
 🚀 Doing a website a day forces me to move on. 
 
+[19 - Autosave Text Editor](https://chinyi3005.github.io/100websites/19-texteditor)  
+A Mac sytle text editor that autosaves and is responsive, if you refresh the page or leave and visit next time, the written text still there.  
+
 [18 - Animal Protection website with Bootstrap](https://chinyi3005.github.io/100websites/18-bootstrap-zookeeper)  
 This is my first practice to build a website about animal protection with 100% Bootstrap framework, including collapse navigatoin, modal popup previews and responsive timeline.
 

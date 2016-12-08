@@ -1,5 +1,5 @@
-document.getElementById('heading').innerHTML = localStorage['title'] || 'Just Write';
-document.getElementById('content').innerHTML = localStorage['text'] || 'Your text is automatically saved every second :)';
+document.getElementById('heading').innerHTML = localStorage['title'] || 'Happy Typing!';
+document.getElementById('content').innerHTML = localStorage['text'] || 'Your text is automatically saved every second, even when you refresh the browser :)';
 
 setInterval(function() {
 	localStorage['title'] = document.getElementById('heading').innerHTML;
@@ -9,6 +9,7 @@ setInterval(function() {
 
 
 
+//Question
 //$('#heading').html() = localStorage.setItem('title', 'Just write');
 
 //var headingText = document.getElementById('heading').innerHTML,

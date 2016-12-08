@@ -6,10 +6,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../vendor/normalize/normalize.css">
 	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
 </head>
 <body>
 	<div class="container">
 		<div class="wrapper">
+			
+			<!-- Editor Control Bar -->
 			<div class="editor-bar">
 				<span class="heading">Autosave Text Editor</span>
 				<ul class="control-panel">
@@ -19,17 +22,11 @@
 				</ul>
 			</div>
 			
-			<div id="input-text" contenteditable="true">
-				<div id="heading"></div>
-				<div id="content"></div>
+			<!-- Textarea -->
+			<div class="input-text" >
+				<div id="heading" contenteditable="true"></div>
+				<div id="content" contenteditable="true"></div>
 			</div>
-
-<!--
-			<textarea id="input-text" contenteditable="true">
-				<div class="title"></div>
-				<div class="content"></div>
-			</textarea>
--->
 		</div>
 	</div>
 	
