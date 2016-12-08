@@ -23,9 +23,3 @@ $(document).ready(function() {
 		});
 	});
 }); // ^ready
-
-
-
-//Question:
-//var this = $(this)
-//creditcard no radio button
