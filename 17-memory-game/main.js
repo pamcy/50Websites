@@ -157,13 +157,3 @@ $game.on('click', '.card:not(".match, .open")', function() {
 });
 
 startGame();
-
-
-
-// QUESTION
-
-//2. opened[0]，開過的所有卡會不斷存在 arrary 裡？
-//3. if (opened.length > 1) / if = 2 / if no if?
-//4. opened = []
-//5. moves 怎麼判斷++
-//6. score: rating
