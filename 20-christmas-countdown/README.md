@@ -3,4 +3,4 @@ I hope you enjoy this simple countdown for Christmas I made with snow falling ef
 
 [**View Demo**](https://chinyi3005.github.io/100websites/20-christmas-countdown)
 
-![Christmas Countdown](./demo-countdown.png)
+![Christmas Countdown](./img/demo-countdown.png)
