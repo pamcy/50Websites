@@ -1,7 +1,7 @@
 # 100websites
 🚀 Doing a website a day forces me to move on. 
 
-[20 - Christmas Countdown with snowing](https://chinyi3005.github.io/100websites/20-christmas-countdown)  
+[20 - Christmas Countdown with Snowing](https://chinyi3005.github.io/100websites/20-christmas-countdown)  
 I hope you enjoy this simple countdown for Christmas I made with snow falling effects in Javascript.
 
 [19 - Autosave Text Editor](https://chinyi3005.github.io/100websites/19-texteditor)  
