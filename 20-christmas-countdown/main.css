@@ -1,0 +1,102 @@
+/* ==================================
+   Base Styles
+   ================================== */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: #E53935 url(img/santa.png) no-repeat fixed bottom right;
+	height: 100%;
+	margin: 0 auto;
+	width: 100%;
+}
+
+.container {
+	margin: 5em auto;
+	max-width: 800px;
+	text-align: center;
+}
+
+.container h2 {
+	color: #CBE896;
+	font-family: 'Mountains of Christmas', cursive;
+	font-size: 6.2em;
+	font-weight: 700;
+	margin: 0;
+}
+
+/* ==================================
+   Countdown Timer
+   ================================== */
+.countdown-content {
+	margin-top: 40px;
+}
+ 
+.countdown-content .timer {
+	border: 3px solid #fff;
+	border-radius: 3px;
+	background: #FDBE0C;
+	color: #fff;
+	display: inline-block;
+	font-family: 'Oswald', sans-serif;
+	font-weight: 700;
+	font-size: 3.8em;
+	height: 180px;
+	letter-spacing: 3px;
+	line-height: 180px;
+	margin: 0 20px;
+	position: relative;
+	width: 150px;
+}
+
+.countdown-title {
+	display: inline-block;
+	height: 50px;
+	position: relative;
+}
+
+.countdown-title span {
+	color: #fff;
+	display: inline-block;
+	font-size: 1.3em;
+	line-height: 60px;
+	width: 190px;
+}
+ 
+
+/* ==================================
+   Snow Falling Effect
+   ================================== */
+.drop {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+}
+
+.snow {
+	background: #ffffff;
+	border-radius: 100%;
+	box-shadow: 0 0 10px #fff;
+	height: 8px;
+	width: 8px;
+}
+
+.animate {
+	animation: falling 10s infinite ease-in;
+}
+
+@keyframes falling {
+	0% {
+		opacity: 1;
+		top: 0;	
+	}
+	50% {
+		top: 600px;
+		opacity: 0.5;
+	}
+	100% {
+		top: 800px;
+		opacity: 0;
+	}
+}
