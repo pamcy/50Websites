@@ -1,6 +1,9 @@
 # 100websites
 🚀 Doing a website a day forces me to move on. 
 
+[21 - Top Bar Notification](https://chinyi3005.github.io/100websites/21-notification)  
+This small notification is initially outside at the very left and top of the screen, then expanding into the page with jQuery animate() method.  
+
 [20 - Christmas Countdown with Snowing](https://chinyi3005.github.io/100websites/20-christmas-countdown)  
 I hope you enjoy this simple countdown for Christmas I made with snow falling effects in Javascript.
 

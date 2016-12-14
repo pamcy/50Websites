@@ -1,0 +1,83 @@
+/* ==================================
+   Base Styles
+   ================================== */
+body {
+	background: #EFE7DA;
+	font-family: 'Roboto', sans-serif;
+	height: 100%;
+	width: 100%;
+}
+
+h1 {
+	color: #342E37;
+}
+
+p {
+	margin: 0;
+}
+
+.container {
+	left: 50%;
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/* ==================================
+   Click Me Button
+   ================================== */
+.container button {
+	background: #fff;
+	border: 3px solid #90b900;
+	border-radius: 25px;
+	color: #90b900;
+	cursor: pointer;
+	font-size: 1.2em;
+	font-weight: 600;
+	outline: none;
+	padding: .8em 2em;
+	transition: all .3s ease-in-out;
+}
+
+.container button:hover {
+	background: #90b900;
+	color: #fff;
+}
+
+/* ==================================
+   Notification Bar
+   ================================== */
+.notification {
+	background: rgba(144, 185, 0, 0.8);
+	border-bottom: 3px solid #8db405;
+	color: #fff;
+	display: inline-block;
+	font-family: 'Space Mono', monospace;
+	font-size: 1.2em;
+	left: -1150px;
+	top: -60px;
+	padding: 1.2em 2em;
+	position: fixed;
+	width: 900px;
+}
+
+.notification #icon-smile {
+	font-size: 1.5em;
+}
+
+.notification #icon-close {
+	cursor: pointer;
+	float: right;
+	margin-right: 70px;
+}
+
+.notification #icon-close:hover {
+	color: #3C5A14;
+}
+
+@media (max-width: 768px) {
+	.notification {
+		font-size: 1em;
+	}
+}
