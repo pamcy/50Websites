@@ -9,6 +9,7 @@ body {
 	background: #E53935 url(img/santa.png) no-repeat fixed bottom right;
 	height: 100%;
 	margin: 0 auto;
+	overflow: hidden;
 	width: 100%;
 }
 
