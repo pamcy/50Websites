@@ -1,3 +1,238 @@
 /* ==================================
    Base Styles
    ================================== */
+body {
+    background: #F9F9F9;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+    margin: 25px 0;
+    text-align: center;
+}
+
+/* ==================================
+   Filter
+   ================================== */
+.panel-body ul {
+	text-align: right;
+}
+
+.panel-body ul span.filter-text {
+    font-size: .85em;
+    font-weight: 700;
+    margin: 0 5px 0 0;
+	text-transform: uppercase;
+}
+
+.panel-body ul li {
+    background: #000;
+    border-bottom: 4px solid #fff;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    color: #fff;
+    font-size: .75em;
+    font-weight: 600;
+    padding: 6px;
+    text-transform: uppercase;
+}
+
+.panel-body ul li:hover {
+    cursor: pointer;
+}
+
+.panel-body ul li.filter-all:hover {
+    border-bottom-color: #88868d;
+}
+
+.panel-body ul li.filter-html:hover {
+    border-bottom-color: #E55126;
+}
+
+.panel-body ul li.filter-css:hover {
+    border-bottom-color: #29A9DF;
+}
+
+.panel-body ul li.filter-js:hover {
+    border-bottom-color: #E5A228;
+}
+
+
+/* ==================================
+   Table
+   ================================== */
+.panel {
+	border: 1px solid #ddd;
+    padding: 20px;
+}
+
+.table-content {
+	border-bottom: 1px solid #eee; 
+}
+
+.table-content tbody tr:hover {
+    background: #eee;
+    cursor: pointer;
+}
+
+.table-content tbody tr.selected {
+    background: #eee;
+}
+
+.table-content tbody tr td {
+    border-top-color: #eee;
+    padding: 10px;
+    vertical-align: middle;
+}
+
+.table-content tbody tr td:first-child {
+    width: 38px;
+}
+
+.table-content tbody tr td:nth-child(2) {
+    width: 35px;
+}
+
+/* Checkbox */
+.ckbox {
+	position: relative;
+}
+
+.ckbox input[type='checkbox'] {
+    /* Make the initial checkbox disappear */
+    opacity: 0;
+}
+
+.ckbox label:before {
+    /* Create a new check box */
+    background: #fff;
+    border: 1px solid #bbb;
+    border-radius: 2px;
+    content: '';
+    display: block;
+    left: 0;
+    height: 18px;
+    position: absolute;
+    top: 1px;
+    width: 18px;
+}
+
+.ckbox input[type="checkbox"]:checked + label:before {
+    background: #000;
+}
+
+.ckbox input[type="checkbox"]:checked + label:after {
+    /* Create a new check symbol */
+    color: #fff;
+    content:"\e013";
+    display: block;
+    font-family: 'Glyphicons Halflings';
+    font-size: .8em;
+    left: 3.5px;
+    position: absolute;
+    top: 3px;
+}
+
+/* Star */
+.table-content .star {
+    color: #ccc;
+    display: block;
+    text-align: center;
+}
+
+.table-content .star:hover {
+    color: #ccc;
+}
+
+.table-content .star.star-checked {
+    color: #F0AD4E; 
+}
+
+/* Icon */
+.table-content .icon {
+    font-size: 2.2em;
+}
+
+/* Table Info & Summary */
+.table-content .info-body {
+    display: table-cell;
+    max-width: 25em;
+}
+
+.table-content .info-body h2.info-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.table-content .info-body .info-summary {
+    display: block;
+    font-size: 1em;
+}
+
+/* Category */
+.table-content .info-category {
+	border: 2px solid #000;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: .7em;
+    font-weight: 700;
+    line-height: 1;
+    padding: 5px;
+    text-transform: uppercase;
+}
+
+.table-content .info-category.javascript {
+    background: #E5A228;
+}
+
+.table-content .info-category.html {
+    background: #E55126;
+}
+
+.table-content .info-category.css {
+    background: #29A9DF;
+}
+
+/* Date */
+.table-content .info-date {
+    display: inline-block;
+	font-size: .9em;
+}
+
+/* ==================================
+   Responsive
+   ================================== */
+@media only screen and (max-width: 640px) { 
+    table td:nth-child(2),
+    table td:nth-child(3),
+    table td:nth-child(4),
+    table td:nth-child(6), 
+    table td:nth-child(7) {
+        display: none;
+    }
+    
+    .table-content .info-body .info-title {
+        margin: 0 0 5px 0 ;
+    }
+    
+    .table-content .info-body .info-summary {
+        margin: 0 0 5px 0 ;
+    }
+    
+    .panel-body ul {
+        text-align: center;
+    }
+
+    .panel-body ul span.filter-text {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 641px) {
+    table td.mobile-only {
+        display: none;
+    }
+}

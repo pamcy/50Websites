@@ -2,56 +2,253 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Table Filter</title>
+	<title>Responsive Table Filter</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="../vendor/fontawesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css">
 </head>
 
 <body>
     
     <div class="container">
         <div class="row">
-            <section class="content">
-           
-                <div class="table-container">
-                    <table class="table table-filter">
+            <div class="col-md-10 col-md-offset-1">
+                <h1>Responsive Table Filter</h1>
+                <p></p>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <ul class="list-inline">
+                            <span class="filter-text">Filter by :</span>
+                            <li class="filter-all">all</li>
+                            <li class="filter-html">html</li>
+                            <li class="filter-css">css</li>
+                            <li class="filter-js">javascript</li>
+                        </ul>
+                    </div>
+                    
+                    <table class="table table-content">
                         <tbody>
-                            <tr class="javascript">
+                            <tr data-status="javascript">
                                 <td>
                                     <div class="ckbox">
-                                        <label for="checkbox-1"></label>
                                         <input type="checkbox" id="checkbox-1">
+                                        <label for="checkbox-1"></label>     
                                     </div>
                                 </td>
                                 <td>
                                     <a href="#" class="star">
-                                        <i class="fa fa-star"></i>
+                                        <i class="glyphicon glyphicon-star"></i>
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="#" class="star">
-                                        <img src="" alt="" class="info-photo">
-                                    </a>
+                                    <i class="devicon-javascript-plain icon"></i>
                                 </td>
                                 <td>
                                     <div class="info-body">
-                                        <p class="info-title">Autosave Text Editor</p>
-                                        <span class="info-summary">A Mac sytle text editor that autosaves and is responsive</span>
+                                        <h2 class="info-title">Autosave Text Editor</h2>
+                                        <p class="info-summary">A Mac sytle text editor that autosaves and is responsive</p>
                                     </div>
                                 </td>
+                                <td class="mobile-only">
+                                    <div class="info-body">
+                                        <h2 class="info-title">Autosave Text Editor</h2>
+                                        <p class="info-summary">A Mac sytle text editor that autosaves and is responsive</p>
+                                        <span class="info-category javascript">Javascript</span>
+                                    </div>
+                                </td>    
                                 <td>
-                                    <span class="info-category">(Javascript)</span>
+                                    <span class="info-category javascript">Javascript</span>
                                 </td>
                                 <td>
                                     <span class="info-date">Dec 15, 2016</span>
                                 </td>
                             </tr>
+                            
+                            <tr data-status="html">
+                                <td>
+                                    <div class="ckbox">
+                                        <input type="checkbox" id="checkbox-2">
+                                        <label for="checkbox-2"></label>     
+                                    </div>
+                                </td>
+                                <td>
+                                    <a href="#" class="star">
+                                        <i class="glyphicon glyphicon-star"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <i class="devicon-html5-plain icon"></i>
+                                </td>
+                                <td>
+                                    <div class="info-body">
+                                        <h2 class="info-title">Pricing Tables</h2>
+                                        <p class="info-summary">Responsive supported using bootstrap</p>
+                                    </div>
+                                </td>
+                                <td class="mobile-only">
+                                    <div class="info-body">
+                                        <h2 class="info-title">Pricing Tables</h2>
+                                        <p class="info-summary">Responsive supported using bootstrap</p>
+                                        <span class="info-category html">Html</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="info-category html">Html</span>
+                                </td>
+                                <td>
+                                    <span class="info-date">Dec 19, 2016</span>
+                                </td>
+                            </tr>
+                            
+                            <tr data-status="css">
+                                <td>
+                                    <div class="ckbox">
+                                        <input type="checkbox" id="checkbox-3">
+                                        <label for="checkbox-3"></label>     
+                                    </div>
+                                </td>
+                                <td>
+                                    <a href="#" class="star">
+                                        <i class="glyphicon glyphicon-star"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <i class="devicon-css3-plain icon"></i>
+                                </td>
+                                <td>
+                                    <div class="info-body">
+                                        <h2 class="info-title">Gmail Progress Bar animation</h2>
+                                        <p class="info-summary">An overlay animated progress bar using keyframes property</p>
+                                    </div>
+                                </td>
+                                <td class="mobile-only">
+                                    <div class="info-body">
+                                        <h2 class="info-title">Gmail Progress Bar animation</h2>
+                                        <p class="info-summary">An overlay animated progress bar using keyframes property</p>
+                                        <span class="info-category css">Css</span>
+                                    </div>
+                                </td>    
+                                <td>
+                                    <span class="info-category css">Css</span>
+                                </td>
+                                <td>
+                                    <span class="info-date">Oct 31, 2016</span>
+                                </td>
+                            </tr>
+                            
+                            <tr data-status="javascript">
+                                <td>
+                                    <div class="ckbox">
+                                        <input type="checkbox" id="checkbox-4">
+                                        <label for="checkbox-4"></label>     
+                                    </div>
+                                </td>
+                                <td>
+                                    <a href="#" class="star">
+                                        <i class="glyphicon glyphicon-star"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <i class="devicon-javascript-plain icon"></i>
+                                </td>
+                                <td>
+                                    <div class="info-body">
+                                        <h2 class="info-title">Random Creative Journal Ideas Generator</h2>
+                                        <p class="info-summary">To inspire you to write a journal and return the querystring part of a URL after the question mark.</p>
+                                    </div>
+                                </td>
+                                <td class="mobile-only">
+                                    <div class="info-body">
+                                        <h2 class="info-title">Random Creative Journal Ideas Generator</h2>
+                                        <p class="info-summary">To inspire you to write a journal and return the querystring part of a URL after the question mark.</p>
+                                        <span class="info-category javascript">Javascript</span>
+                                    </div>
+                                </td>    
+                                <td>
+                                    <span class="info-category javascript">Javascript</span>
+                                </td>
+                                <td>
+                                    <span class="info-date">Jul 03, 2016</span>
+                                </td>
+                            </tr>
+                            
+                            <tr data-status="javascript">
+                                <td>
+                                    <div class="ckbox">
+                                        <input type="checkbox" id="checkbox-5">
+                                        <label for="checkbox-5"></label>     
+                                    </div>
+                                </td>
+                                <td>
+                                    <a href="#" class="star">
+                                        <i class="glyphicon glyphicon-star"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <i class="devicon-javascript-plain icon"></i>
+                                </td>
+                                <td>
+                                    <div class="info-body">
+                                        <h2 class="info-title">Simple Text Slider</h2>
+                                        <p class="info-summary">Automatic sliding motion & manual controls</p>
+                                    </div>
+                                </td>
+                                <td class="mobile-only">
+                                    <div class="info-body">
+                                        <h2 class="info-title">Simple Text Slider</h2>
+                                        <p class="info-summary">Automatic sliding motion & manual controls</p>
+                                        <span class="info-category javascript">Javascript</span>
+                                    </div>
+                                </td>    
+                                <td>
+                                    <span class="info-category javascript">Javascript</span>
+                                </td>
+                                <td>
+                                    <span class="info-date">Oct 15, 2016</span>
+                                </td>
+                            </tr>
+                            
+                            <tr data-status="css">
+                                <td>
+                                    <div class="ckbox">
+                                        <input type="checkbox" id="checkbox-6">
+                                        <label for="checkbox-6"></label>     
+                                    </div>
+                                </td>
+                                <td>
+                                    <a href="#" class="star">
+                                        <i class="glyphicon glyphicon-star"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <i class="devicon-css3-plain icon"></i>
+                                </td>
+                                <td>
+                                    <div class="info-body">
+                                        <h2 class="info-title">Christmas Countdown with Snowing</h2>
+                                        <p class="info-summary">I hope you enjoy this simple countdown for Christmas</p>
+                                    </div>
+                                </td>
+                                <td class="mobile-only">
+                                    <div class="info-body">
+                                        <h2 class="info-title">Christmas Countdown with Snowing</h2>
+                                        <p class="info-summary">I hope you enjoy this simple countdown for Christmas</p>
+                                        <span class="info-category css">Css</span>
+                                    </div>
+                                </td>    
+                                <td>
+                                    <span class="info-category css">Css</span>
+                                </td>
+                                <td>
+                                    <span class="info-date">Sep 14, 2016</span>
+                                </td>
+                            </tr>    
                         </tbody>
                     </table>
-                </div> <!-- ^.table-container -->
-            </section> <!-- ^.content -->
+                </div> <!-- ^.panel .panel-default -->
+            </div> <!-- ^col-md-10 -->
         </div> <!-- ^.row -->
     </div> <!-- ^.container -->
 	
