@@ -27,7 +27,7 @@ $(document).ready(function() {
 });
 
 
-//WHY
+// QUESTION
 //$('.filter-menu').on('click', function() {
 //    var $target = $(this).data('target');
 //    var $status = $('table tr').data('status');
