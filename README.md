@@ -1,6 +1,9 @@
 # 100websites
 🚀 Doing a website a day forces me to move on. 
 
+[22 - Responsive Table Filter](https://chinyi3005.github.io/100websites/22-table-filter)  
+Table filter with jQuery and bootstrap. Columns collapses into a list on small screens, drag window to see the effect.
+
 [21 - Top Bar Notification](https://chinyi3005.github.io/100websites/21-notification)  
 This small notification is initially outside at the very left and top of the screen, then expanding into the page with jQuery animate() method.  
 

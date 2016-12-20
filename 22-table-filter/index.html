@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Responsive Table Filter</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
@@ -11,23 +11,24 @@
 </head>
 
 <body>
-    
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <h1>Responsive Table Filter</h1>
-                <p></p>
                 <div class="panel panel-default">
+                   
+                    <!-- Table Filter -->
                     <div class="panel-body">
                         <ul class="list-inline">
                             <span class="filter-text">Filter by :</span>
-                            <li class="filter-all">all</li>
-                            <li class="filter-html">html</li>
-                            <li class="filter-css">css</li>
-                            <li class="filter-js">javascript</li>
+                            <li class="filter-menu filter-all" data-target="all">all</li>
+                            <li class="filter-menu filter-html" data-target="html">html</li>
+                            <li class="filter-menu filter-css" data-target="css">css</li>
+                            <li class="filter-menu filter-js" data-target="javascript">javascript</li>
                         </ul>
                     </div>
                     
+                    <!-- Table Content -->
                     <table class="table table-content">
                         <tbody>
                             <tr data-status="javascript">
@@ -174,15 +175,16 @@
                                 </td>
                             </tr>
                             
-                            <tr data-status="javascript">
+                            <tr data-status="javascript" class="
+                               selected">
                                 <td>
                                     <div class="ckbox">
-                                        <input type="checkbox" id="checkbox-5">
+                                        <input type="checkbox" id="checkbox-5" checked>
                                         <label for="checkbox-5"></label>     
                                     </div>
                                 </td>
                                 <td>
-                                    <a href="#" class="star">
+                                    <a href="#" class="star star-checked">
                                         <i class="glyphicon glyphicon-star"></i>
                                     </a>
                                 </td>
@@ -251,8 +253,7 @@
             </div> <!-- ^col-md-10 -->
         </div> <!-- ^.row -->
     </div> <!-- ^.container -->
-	
-	
+    
 	<script src="../vendor/jquery/jquery-3.1.1.min.js"></script>
 	<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="main.js"></script>

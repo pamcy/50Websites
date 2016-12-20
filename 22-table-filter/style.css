@@ -105,6 +105,14 @@ h1 {
     opacity: 0;
 }
 
+.ckbox label {
+    /* Make checkox unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 .ckbox label:before {
     /* Create a new check box */
     background: #fff;
@@ -212,6 +220,10 @@ h1 {
     table td:nth-child(6), 
     table td:nth-child(7) {
         display: none;
+    }
+    
+    .table-content tbody tr td {
+        padding: 20px 10px;
     }
     
     .table-content .info-body .info-title {
