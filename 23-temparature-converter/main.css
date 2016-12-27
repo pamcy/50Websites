@@ -83,7 +83,7 @@ table.converter-box tbody tr td input:focus {
 /* ==================================
    Responsive Layout
    ================================== */
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
 	.container {
 		width: 90%;
 	}
