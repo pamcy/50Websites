@@ -104,6 +104,6 @@ table.converter-box tbody tr td input:focus {
 	table.converter-box tbody tr td input {
 		font-size: 1.3em;
 		line-height: 1.3em;
-		width: 60%;
+		width: 50%;
 	}
 }
