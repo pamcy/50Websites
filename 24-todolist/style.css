@@ -1,0 +1,194 @@
+/* ==================================
+   Base Styles
+   ================================== */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: #EDF0F1;
+	font-family: 'Roboto', sans-serif;
+	padding: 80px 0 0 0; 
+}
+
+html, 
+body {
+	height: 100%;
+	width: 100%;	
+}
+
+ul,
+li {
+	padding: 0;
+}
+
+button {
+	background: none;
+	border: 0;
+	box-shadow: none;
+	cursor: pointer;
+	outline: none;
+}
+
+.container {
+}
+
+/* ==================================
+   To-Do List Header
+   ================================== */
+.todolist-header {
+	background: #25B99A;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	box-shadow: 0 2px 4px rgba(44, 62, 80, 0.15);
+	height: 80px;
+	left: 0;
+	padding: 15px;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 5;
+}
+
+.todolist-header .todolist-input {
+	background: rgba(255, 255, 255, 0.2);
+	border: 0;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 25px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 25px;
+	box-shadow: none;
+	color: #fff;
+	float: left;
+	font-size: 1.3em;
+	font-weight: 400;
+	height: 50px;
+	outline: none;
+	padding: 0 60px 0 0;
+	text-indent: 18px;
+	/* To specify the indentation of the first line in a text-block. */
+	width: 100%;
+}
+
+.todolist-header .todolist-input::-webkit-input-placeholder {
+	/* change the color of placeholder text */
+	color: rgba(255, 255, 255, 0.75);
+}
+
+.todolist-header button.todolist-addBtn {
+	background: #fff;
+	border-radius: 25px;
+	height: 50px;
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	width: 50px;
+	z-index: 2;
+}
+
+.todolist-header button.todolist-addBtn svg {
+	height: 16px;
+	left: 50%;
+	margin: -8px 0 0 -8px;
+	position: absolute;
+	top: 50%;
+	width: 16px;
+}
+
+.todolist-header button.todolist-addBtn svg path.todolist-svgAdd {
+	fill: #25B99A;
+}
+
+/* ==================================
+   To-Do List Task Item
+   ================================== */
+.todolist-taskArea {
+	float: left;
+	padding: 15px;
+	width: 100%;
+}
+
+.todolist-taskArea ul.todolist-taskItem {
+	float: left;
+	width: 100%;
+}
+
+.todolist-taskArea ul.todolist-taskItem li {
+	background: #fff;
+	border-radius: 5px;
+	box-shadow: 0 1px 2px rgba(44, 62, 80, 0.1);
+	color: #444545;
+	float: left;
+	font-size: 1.1em;
+	font-weight: 500;
+	line-height: 25px;
+	min-height: 50px;
+	list-style: none;
+	margin: 0 0 10px 0;
+	padding: 16px 100px 16px 16px;
+	position: relative;
+	width: 100%;
+}
+
+.todolist-taskArea ul.todolist-taskItem li:last-of-type {
+	margin: 0;
+}
+
+/* ==================================
+   To-Do List Done & Delete Buttons
+   ================================== */
+.todolist-statusBtns {
+	height: 57px;
+	right: 0;
+	top: 0;
+	position: absolute;
+	width: 100px;
+}
+
+.todolist-statusBtns button {
+	float: left;
+	height: 57px;
+	position: relative;
+	width: 50px;
+}
+
+.todolist-statusBtns button.todolist-doneBtn:before {
+	/* Create a lightgrey seperate line */
+	background: #EDF0F1;
+	content:'';
+	height: 30px;
+	position: absolute;
+	left: 0;
+	top: 16px;
+	width: 1px;
+}
+
+.todolist-statusBtns button svg  {
+	height: 25px;
+	left: 50%;
+	margin: -12px 0 0 -12px;
+	position: absolute;
+	top: 50%;
+	width: 25px;
+}
+
+/* Delete Button */
+.todolist-statusBtns button.todolist-deleteBtn svg path.todolist-svgDelete {
+	fill: #C0CECB;
+	transition: fill .3s ease;
+}
+
+.todolist-statusBtns button.todolist-deleteBtn:hover svg path.todolist-svgDelete {
+	fill: #E85656;
+}
+
+/* Done Button */
+.todolist-statusBtns button.todolist-doneBtn svg {
+	border-radius: 50%;
+	border: 2px solid #25B99A;
+}
+
+.todolist-statusBtns button.todolist-doneBtn svg path.todolist-svgDone {
+	fill: #25B99A;
+}
+
