@@ -1,6 +1,6 @@
-# Temperature Converter
-Simple table elements that handle Fahrenheit / Celsius calculator without submit button in jQuery. 
+# To-Do List App
+A responsive To-Do List App completed in plain javascript, with add, delete, mark completed and readded functions. 
 
-[**View Demo**](https://chinyi3005.github.io/100websites/23-temparature-converter)
+[**View Demo**](https://chinyi3005.github.io/100websites/24-todolist)
 
-![Temperature Converter](./demo-temp-converter.png)
+![Temperature Converter](./demo-todolist.png)

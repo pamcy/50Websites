@@ -1,6 +1,9 @@
 # 100websites
 🚀 Doing a website a day forces me to move on. 
 
+[24 - To-Do List App](https://chinyi3005.github.io/100websites/24-todolist)  
+A responsive To-Do List App completed in plain javascript, with add, delete, mark completed and readded functions.
+
 [23 - Temperature Converter](https://chinyi3005.github.io/100websites/23-temparature-converter)  
 Simple table elements that handle Fahrenheit / Celsius calculator without submit button in jQuery.
 
