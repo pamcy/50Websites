@@ -30,6 +30,16 @@ function addTaskToList (item) {
 	taskList.insertBefore(taskItem, taskList.childNodes[0]);
 }
 
+// If there is any value in the input field, add the task to the list.
+function inputTask() {
+	var newTask = document.getElementById('todolist-addTask').value;
+
+	if (newTask) {
+		addTaskToList (newTask);
+		document.getElementById('todolist-addTask').value = '';
+	}
+}
+
 // Delete the task from the list
 function deleteTask() {
 	var wantDelete = this.parentNode.parentNode;
@@ -50,16 +60,14 @@ function checkTask() {
 }
 
 // Click on add button
-// If there is any value in the input field, add the task to the list.
 document.getElementById('todolist-addTaskBtn').addEventListener('click', function() {
-	var newTask = document.getElementById('todolist-addTask').value;
-
-	if (newTask) {
-		addTaskToList (newTask);
-		document.getElementById('todolist-addTask').value = '';
-	}
+	inputTask();
 });
 
-
-//QUESTION
-//60. Using newTask = '' instead
+// Add task on pressing ENTER key 
+document.getElementById('todolist-addTask').addEventListener('keyup', function (e) {
+	var key = e.which || e.keyCode;
+	if (key === 13) { // 13 is enter
+		inputTask();
+	}
+});
