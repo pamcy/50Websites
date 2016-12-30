@@ -5,20 +5,18 @@
 	box-sizing: border-box;
 }
 
+html, body {
+	height: 100%;
+	width: 100%;	
+}
+
 body {
 	background: #EDF0F1;
 	font-family: 'Roboto', sans-serif;
 	padding: 80px 0 0 0; 
 }
 
-html, 
-body {
-	height: 100%;
-	width: 100%;	
-}
-
-ul,
-li {
+ul, li {
 	padding: 0;
 }
 
@@ -30,23 +28,27 @@ button {
 	outline: none;
 }
 
-.container {
-}
-
 /* ==================================
    To-Do List Header
    ================================== */
+.todolist {
+	height: 100%;
+	margin: 0 auto;
+	width: 80%;
+}
+
 .todolist-header {
 	background: #25B99A;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
 	box-shadow: 0 2px 4px rgba(44, 62, 80, 0.15);
 	height: 80px;
-	left: 0;
+	left: 50%;
 	padding: 15px;
 	position: fixed;
 	top: 0;
-	width: 100%;
+	transform: translateX(-50%);
+	width: 80%;
 	z-index: 5;
 }
 
@@ -132,6 +134,11 @@ button {
 
 .todolist-taskArea ul.todolist-taskItem li:last-of-type {
 	margin: 0;
+}
+
+/* If the task is in the completed area, change the font color to lightgrey. */
+.todolist-taskArea ul#todolist-doneTask li {
+	color: #C0CECB;
 }
 
 /* If there is any completed task， show the seperate line */
@@ -232,10 +239,27 @@ li:not(#todolist-isDone) .todolist-statusBtns button.todolist-doneBtn:hover svg 
 
 /* When the task is done, change the 'Check' icon's background. */
 ul#todolist-doneTask li .todolist-statusBtns button.todolist-doneBtn svg {
-	background: #25B99A;
+	background: #C0CECB;
 	border: 0;
 }
 
 ul#todolist-doneTask li .todolist-statusBtns button.todolist-doneBtn svg path.todolist-svgDone {
 	fill: #fff;
+}
+
+/* ==================================
+   Responsive Layout
+   ================================== */
+@media only screen and (max-width: 425px) {
+	.todolist {
+		width: 100%;
+	}
+	
+	.todolist-header {
+		width: 100%;
+	}
+	
+	.todolist-header .todolist-input {
+		font-size: 1em;
+	}
 }
