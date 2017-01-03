@@ -1,0 +1,72 @@
+/* ==================================
+   Base Styles
+   ================================== */
+body {
+	background: url(imgs/bg-drumkit.jpg) no-repeat center center;
+	background-size: cover;
+	font-family: 'Space Mono', monospace;
+}
+
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+h1 {
+	text-shadow: 0 0 .5em rgba(234, 240, 206, 0.8);
+	color: #333333;
+	font-size: 2.6em;
+	font-weight: 700;
+	margin: 0 0 1.2em 0;
+}
+
+.container {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 100vh;
+}
+
+/* ==================================
+   Keyboards
+   ================================== */
+.keys {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.keys .key {
+	background: rgba(0, 0, 0, 0.6);
+	border: .3rem solid #000;
+	border-radius: .3rem;
+	color: #fff;
+	font-size: .75rem;
+	margin: .8rem;
+	padding: .5em;
+	text-align: center;
+	text-shadow: 0 0 .5rem black;
+	transition: all .1s ease;
+	width: 4.5rem;
+}
+
+/* Visible only when the key is pressed */
+.keys .key.playing {
+	border-color: #ffc600;
+	box-shadow: 0 0 1rem #ffc600;
+	transform: scale(1.1);
+}
+
+.keys .key kbd {
+	display: block;
+	font-size: 2rem;
+}
+
+.keys .key .sound {
+	color: #ffc600;
+	display: block;
+	padding: .8rem 0;
+	text-transform: uppercase;
+}

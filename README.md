@@ -1,6 +1,9 @@
 # 100websites
 🚀 Doing a website a day forces me to move on. 
 
+[25 - Drum Kit](https://chinyi3005.github.io/100websites/25-drumkit)  
+Tap your keyboard to play the drum! It's all made with vanilla JS. I learned about using keydown event handler and interacting with audio elements.
+
 [24 - To-Do List App](https://chinyi3005.github.io/100websites/24-todolist)  
 A responsive To-Do List App completed in plain javascript, with add, delete, mark completed and readded functions. (Check out another version of [jQuery](https://github.com/chinyi3005/100websites/blob/master/24-todolist/js/dojquery.js))
 
