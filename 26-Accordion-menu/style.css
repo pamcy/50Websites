@@ -1,0 +1,95 @@
+/* ==================================
+   Base Styles
+   ================================== */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: #a5dff9;
+}
+
+ul, li, dd {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	margin: 0 auto;
+	max-width: 360px;
+	padding: 2em 0;
+}
+
+/* ==================================
+   Accordion Menu
+   ================================== */
+.accordion dl {
+	background: #E5E5E5;
+	border: 1px solid #ddd;
+}
+
+.accordion dl::after{
+	background: #ff5957;
+	content: '';
+	display: block;
+	height: .3em;
+	width: 100%;
+}
+
+/* Title Heading */
+.accordion dl dt .accordion-title {
+	background: #ff7473;
+	color: #fff;
+	display: block;
+	font-weight: 700;
+	padding: 1.2em 2em;
+	position: relative;
+	text-decoration: none;
+	transition: background .3s ease-in-out;
+}
+
+.accordion dl dt .accordion-title:hover {
+	background: #ff5957;
+}
+
+.accordion dl dt .accordion-title::after {
+	content: "\f078";
+	font-family: FontAwesome;
+	position: absolute;
+	right: 8%;
+	top: 30%;
+	transition: transform .3s ease-in-out;
+}
+
+.accordion dl dt .accordion-title.accordion-title-isActive {
+	background: #ff5957;
+}
+
+.accordion dl dt .accordion-title.accordion-title-isActive::after {
+	transform: rotate(180deg);
+}
+
+/* Menu Item */
+.accordion dl dd ul {
+	line-height: 1.5em;
+	list-style: none;
+}
+
+.accordion dl dd ul li {
+	background: #e1eef6;
+	color: #566270;
+	cursor: pointer;
+	padding: .6em 2em;
+}
+
+.accordion dl dd ul li .icon {
+	margin: 0 .6em 0 0;
+}
+
+.accordion dl dd ul li:hover .icon {
+	color: #ff5957;
+}
+
+.accordion dl dd p {
+	padding: 1em 2em;
+}
