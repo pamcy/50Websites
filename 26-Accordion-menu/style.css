@@ -6,26 +6,40 @@
 }
 
 body {
-	background: #a5dff9;
+	background: #2A2B2A;
+	color: #566270;
+	font-family: 'Open Sans', sans-serif;
 }
 
-ul, li, dd {
+ul,li, dd {
 	margin: 0;
 	padding: 0;
 }
 
+a:link, 
+a:visited, 
+a:hover, 
+a:active {
+	color: #fff;
+	text-decoration: none;
+}
+
+h1 {
+	color: #E1E6E1;
+	text-align: center;
+}
+
 .container {
-	margin: 0 auto;
+	margin: 3em auto 0;
 	max-width: 360px;
-	padding: 2em 0;
 }
 
 /* ==================================
    Accordion Menu
    ================================== */
 .accordion dl {
-	background: #E5E5E5;
-	border: 1px solid #ddd;
+	background: #e1eef6;
+/*	border: 1px solid #ddd;*/
 }
 
 .accordion dl::after{
@@ -37,7 +51,7 @@ ul, li, dd {
 }
 
 /* Title Heading */
-.accordion dl dt .accordion-title {
+.accordion dl dt.accordion-title {
 	background: #ff7473;
 	color: #fff;
 	display: block;
@@ -48,11 +62,11 @@ ul, li, dd {
 	transition: background .3s ease-in-out;
 }
 
-.accordion dl dt .accordion-title:hover {
+.accordion dl dt.accordion-title:hover {
 	background: #ff5957;
 }
 
-.accordion dl dt .accordion-title::after {
+.accordion dl dt.accordion-title::after {
 	content: "\f078";
 	font-family: FontAwesome;
 	position: absolute;
@@ -61,25 +75,27 @@ ul, li, dd {
 	transition: transform .3s ease-in-out;
 }
 
-.accordion dl dt .accordion-title.accordion-title-isActive {
+.accordion dl dt.accordion-title.accordion-title-isActive {
 	background: #ff5957;
 }
 
-.accordion dl dt .accordion-title.accordion-title-isActive::after {
+.accordion dl dt.accordion-title.accordion-title-isActive::after {
 	transform: rotate(180deg);
 }
 
-/* Menu Item */
-.accordion dl dd ul {
+/* Menu List Item */
+.accordion dl dd {
+	cursor: pointer;
 	line-height: 1.5em;
-	list-style: none;
 }
 
 .accordion dl dd ul li {
-	background: #e1eef6;
-	color: #566270;
-	cursor: pointer;
+	list-style: none;
 	padding: .6em 2em;
+}
+
+.accordion dl dd ul li:hover {
+	background: #e1e9ed;
 }
 
 .accordion dl dd ul li .icon {
@@ -88,6 +104,11 @@ ul, li, dd {
 
 .accordion dl dd ul li:hover .icon {
 	color: #ff5957;
+}
+
+.accordion dl dd img {
+	display: block;
+	margin: 2em auto 1em;
 }
 
 .accordion dl dd p {

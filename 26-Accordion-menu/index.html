@@ -3,23 +3,24 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="../vendor/fontawesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="../vendor/normalize/normalize.css">
 	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+	<link rel="stylesheet" href="../vendor/fontawesome/css/font-awesome.min.css">
 	<title>Accordion Menu</title>
 </head>
 <body>
 	<div class="container">
-		<h1>I am Header</h1>
+		<h1>Accordian Menu</h1>
 		<div class="accordion">
 			<dl>
-				<dt class="accorTitle">
-					<a href="#" class="accordion-title">Write a story</a>
+				<dt class="accordion-title">
+					<a href="#">Navigation</a>
 				</dt>
-				<dd class="accorItem">
+				<dd class="accordion-item">
 					<ul>
 						<li>
-							<i class="fa fa-pencil-square icon"></i>Compose
+							<i class="fa fa-pencil-square icon"></i>Write
 						</li>
 						<li>
 							<i class="fa fa-refresh  icon"></i>Publish
@@ -30,42 +31,23 @@
 					</ul>
 				</dd>
 
-				<dt class="accorTitle">
-					<a href="#" class="accordion-title">Write a story</a>
+				<dt class="accordion-title">
+					<a href="#">Paragrapgh</a>
 				</dt>
-				<dd class="accorItem">
-					<ul>
-						<li>
-							<i class="fa fa-pencil-square icon"></i>Compose
-						</li>
-						<li>
-							<i class="fa fa-refresh  icon"></i>Publish
-						</li>
-						<li>
-							<i class="fa fa-commenting  icon"></i>Comments
-						</li>
-					</ul>
+				<dd class="accordion-item">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam iusto iure quod sed asperiores voluptates, ipsa mollitia eum architecto, at provident, placeat excepturi saepe molestiae obcaecati quaerat quibusdam repellendus blanditiis.</p>
 				</dd>
 				
-				<dt class="accorTitle">
-					<a href="#" class="accordion-title">Write a story</a>
+				<dt class="accordion-title">
+					<a href="#">Photo of the day</a>
 				</dt>
-				<dd class="accorItem">
-					<ul>
-						<li>
-							<i class="fa fa-pencil-square icon"></i>Compose
-						</li>
-						<li>
-							<i class="fa fa-refresh  icon"></i>Publish
-						</li>
-						<li>
-							<i class="fa fa-commenting  icon"></i>Comments
-						</li>
-					</ul>
+				<dd class="accordion-item">
+					<img src="imgs/text-img.jpg" alt="iceland bird">
+					<p>Lorem ipsum dolor sit amet elit. Vel reiciendis, at? At dolores eum voluptatem inventore, illo eligendi harum quos facilis, cumque sint asperiores recusandae repellendus voluptatum! Corporis, quia, mollitia.</p>
 				</dd>
 			</dl>
-		</div>
-	</div>
+		</div> <!-- ^.accordion -->
+	</div> <!-- ^.container -->
 
 	<script src="../vendor/jquery/jquery-3.1.1.min.js"></script>
 	<script src="script.js"></script>

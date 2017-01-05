@@ -1,6 +1,6 @@
-# Temperature Converter
-Simple table elements that handle Fahrenheit / Celsius calculator without submit button in jQuery. 
+# Accordion Menu
+An animated accordion using CSS and jQuery. I make use of some DOM traversal methods to expand or collapse a section. 
 
-[**View Demo**](https://chinyi3005.github.io/100websites/23-temparature-converter)
+[**View Demo**](https://chinyi3005.github.io/100websites/26-accordion-menu)
 
-![Temperature Converter](./demo-temp-converter.png)
+![Accordion Menu](./imgs/demo-accordion.png)

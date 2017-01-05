@@ -1,19 +1,15 @@
-var menuTitle = $('.accorTitle');
-var menuItem = $('.accorItem');
+function openAndClose () {
+	var $this = $(this);
 
-$(document).ready(function () {
+	$this.toggleClass('accordion-title-isActive')
+		.next().slideToggle()
+		.siblings('dd:visible').slideUp()
+		.prev('dt').removeClass('accordion-title-isActive');
+}
+
+$(document).ready(function () {	
+	//	hide all Items except the last one
+	$('.accordion-item:not(:last)').hide();
 	
-	menuItem.hide().first().show();
-	
-	menuTitle.on('click', function () {
-		var $this = $(this);
-		
-		menuItem.slideUp();
-		$this.next().slideDown();
-		
-		
-	});
+	$('.accordion-title').on('click', openAndClose);
 });
-
-//$(this).find('.accordion-title').toggleClass('accordion-title-isActive');
-//$(this).next().slideToggle(300);
