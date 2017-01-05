@@ -2,7 +2,7 @@
 🚀 Doing a website a day forces me to move on. 
 
 [26 - Accordion Menu](https://chinyi3005.github.io/100websites/26-accordion-menu)  
-An animated accordion using CSS and jQuery. I make use of some DOM traversal methods to expand or collapse a section.  
+An animated accordion using CSS and jQuery. I make use of some DOM traversal methods to add a little indicator icon to show whether a section is expanded or collapsed.  
 
 [25 - Drum Kit](https://chinyi3005.github.io/100websites/25-drumkit)  
 Tap your keyboard to play the drum! It's all made with vanilla JS. I learned about using keydown event handler and interacting with audio elements.
