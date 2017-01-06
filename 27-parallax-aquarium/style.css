@@ -22,7 +22,7 @@ body {
    Notification
    ================================== */
 .container .notification {
-	animation: fadeOut 8s ease-out 2s 1; 
+	animation: fadeOut 8s ease-out 1s 1; 
 	background: rgba(0, 0, 0, 0.3);
 	border-radius: 5px;
 	box-shadow: 0 1px 1px #1c4963;
