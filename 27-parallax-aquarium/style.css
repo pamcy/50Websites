@@ -1,0 +1,126 @@
+/* ==================================
+   Base Styles
+   ================================== */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	height: 25000px;
+}
+
+.container {
+	background: url(imgs/bg-water.jpg) no-repeat bottom center;
+	background-size: cover;
+	height: 100vh;
+	position: fixed;
+	width: 100%;
+	z-index: 1;
+}
+
+/* ==================================
+   Notification
+   ================================== */
+.container .notification {
+	animation: fadeOut 8s 1 ease-out; 
+	background: rgba(0, 0, 0, 0.3);
+	border-radius: 5px;
+	box-shadow: 0 1px 1px #1c4963;
+	color: #eee;
+	cursor: pointer;
+	height: 60px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	right: 20px;
+	top: 25px;
+	width: 280px;
+}
+
+@keyframes fadeOut {
+	0% { opacity: 1; }
+	25% { opacity: 0.75; }
+	50% { opacity: 0.5; }
+	75% { opacity: 0.25; }
+	100% { opacity: 0; }
+}
+
+.container .notification .notification-iconInfo {
+	display: inline-block;
+	font-size: 1.9em;
+	padding: 15px;
+}
+
+.container .notification .notification-text {
+	display: inline-block;
+	font-size: 1.25em;
+	transform: translate(3px, -3px);
+	width: 180px;
+}
+
+/* ==================================
+   Aquarium
+   ================================== */
+.container span {
+/*	border: solid;*/
+	display: block;
+	position: fixed;
+	z-index: 10;
+}
+
+#fish-01 {
+	background: url(imgs/fish-04.png) no-repeat;
+	background-size: 320px;
+	height: 210px;
+	left: -400px;
+	top: 30px;
+	width: 320px;
+}
+
+#fish-02 {
+	background: url(imgs/fish-01.png) no-repeat;
+	background-size: 150px;
+	height: 80px;
+	left: 250px;
+	top: 220px;
+	transform: rotate(15deg);
+	width: 150px;
+}
+
+#fish-03 {
+	background: url(imgs/fish-05.png) no-repeat;
+	background-size: 130px;
+	bottom: 50px;
+	height: 100px;
+	left: 150px;
+	transform: rotate(30deg);
+	width: 130px;
+}
+
+#fish-04 {
+	background: url(imgs/fish-02.png) no-repeat;
+	background-size: 200px;
+	bottom: 0;
+	height: 95px;
+	right: -200px;
+	width: 200px;
+}
+
+#fish-05 {
+	background: url(imgs/fish-06.png) no-repeat;
+	background-size: 200px;
+	height: 130px;
+	right: 380px;
+	top: 400px;
+	width: 200px;
+}
+
+#fish-06 {
+	background: url(imgs/fish-03.png) no-repeat;
+	background-size: 230px;
+	height: 200px;
+	right: -50px;
+	top: 250px;
+	transform: rotate(20deg);
+	width: 230px;
+}

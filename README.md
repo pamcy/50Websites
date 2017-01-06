@@ -1,6 +1,9 @@
 # 100websites
 🚀 Doing a website a day forces me to move on. 
 
+[27 - Parallax Scrolling Aquarium](https://chinyi3005.github.io/100websites/27-parallax-aquarium)  
+Scroll down the page to see fishes swimming around. While the background is fixed, with the help of 'pageYOffset' property in javascript, I learned how to manipulate a parallax scrolling effect website. 
+
 [26 - Accordion Menu](https://chinyi3005.github.io/100websites/26-accordion-menu)  
 An animated accordion using CSS and jQuery. I make use of some DOM traversal methods to add a little indicator icon to show whether a section is expanded or collapsed.  
 
