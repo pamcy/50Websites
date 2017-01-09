@@ -1,8 +1,11 @@
 # 100websites
 🚀 Doing a website a day forces me to move on. 
 
+[28 - JS + CSS Clock](https://chinyi3005.github.io/100websites/28-clock)  
+With the help of CSS transform's `rotate()` property to exceed 360 degrees and Javascript's built in `Date` function, the functionality of the clock looks great, it has hour, minute and seconds hands move to display the current time.  
+
 [27 - Parallax Scrolling Aquarium](https://chinyi3005.github.io/100websites/27-parallax-aquarium)  
-Scroll down the page to see fishes swimming around. While the background is fixed, with the help of 'pageYOffset' property in javascript, I learned how to manipulate a parallax scrolling effect website. 
+Scroll down the page to see fishes swimming around. While the background is fixed, with the help of `pageYOffset()` property in javascript, I learned how to manipulate a parallax scrolling effect website. 
 
 [26 - Accordion Menu](https://chinyi3005.github.io/100websites/26-accordion-menu)  
 An animated accordion using CSS and jQuery. I make use of some DOM traversal methods to add a little indicator icon to show whether a section is expanded or collapsed.  

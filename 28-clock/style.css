@@ -1,0 +1,90 @@
+body {
+	align-items: center;
+	background: #F18C79;
+	display: flex;
+	flex: 1;
+	font-family: 'Montserrat', sans-serif;
+	min-height: 100vh;
+}
+
+.clock {
+	background: #fff url(imgs/bg-clock-number.svg);
+	border: 10px solid #027074;
+	border-radius: 50%;
+	height: 30rem;
+	margin: 0 auto;
+	padding: 2rem;
+	position: relative;
+	width: 30rem;
+}
+
+.clock .clock-face {
+	height: 100%;
+	position: relative;
+	transform: translateY(-3px);
+	/* account for the height of the clock hands */
+	width: 100%;
+}
+
+.clock .clock-face:after {
+	background: #036F73;
+	border-radius: 50%;
+	content: '';
+	height: 10%;
+	margin: -20px -25px;
+	position: absolute;
+	right: 50%;
+	top: 50%;
+	width: 10%;
+}
+
+/* Clock title & author */
+.clock .clock-face .clock-notes {
+	bottom: 25%;
+	left: 50%;
+	position: absolute;
+	text-align: center;
+	transform: translate(-50%);
+}
+
+.clock .clock-face .clock-notes .clock-title {
+	display: block;
+	font-size: .9em;
+	font-weight: 700;
+	margin: 0 0 .8em;
+}
+
+.clock .clock-face .clock-notes .clock-author {
+	display: block;
+	font-size: .8em;
+	font-weight: 400;
+}
+
+/* Clock hands */
+.clock .clock-face .clock-hand {
+	background: #F18C79;
+	box-shadow: 2px -3px 1px rgba(0, 0, 0, .5);
+	height: 12px;
+	position: absolute;
+	right: 50%;
+	top: 50%;
+	transform: rotate(90deg);
+	/* The hands are all laying flat, Rotate all of hands by 90 degrees so that they are vertical. */
+	transform-origin: 100%;
+	transition: all .5s;
+	width: 50%;
+}
+
+.clock .clock-face .clock-hand.hour-hand {
+	width: 25%;
+}
+
+.clock .clock-face .clock-hand.minute-hand {
+	width: 40%;
+}
+
+.clock .clock-face .clock-hand.second-hand {
+	background: #84CDC2;
+	height: 6px;
+	width: 50%;
+}
