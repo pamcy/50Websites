@@ -15,7 +15,7 @@ function setDate() {
 	if (secondsDegree === 90) secondHand.style.transition = 'all 0s';
 	else secondHand.style.transition = 'all .5s';
 	
-	if (minutesDegree === 90) minutesDegree.style.transition = 'all 0s';
+	if (minutesDegree === 90) minutesHand.style.transition = 'all 0s';
 	else minuteHand.style.transition = 'all .5s';
 	
 	//	To display the percentage rotation
