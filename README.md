@@ -1,11 +1,14 @@
 # 100websites
-🚀 Doing a website a day forces me to move on. 
+🚀 Doing a website a day forces me to move on.
+
+[29 - A responsive fade effect slideshow](https://chinyi3005.github.io/100websites/29-fade-slideshow)  
+It's an auto-playing slideshow with navigation menu, including CSS `fade` transition and jQuery code to calculates the next slide to display.
 
 [28 - JS + CSS Clock](https://chinyi3005.github.io/100websites/28-clock)  
 With the help of CSS transform's `rotate()` property to exceed 360 degrees and Javascript's built in `Date` function, the functionality of the clock looks great, it has hour, minute and seconds hands move to display the current time.  
 
 [27 - Parallax Scrolling Aquarium](https://chinyi3005.github.io/100websites/27-parallax-aquarium)  
-Scroll down the page to see fishes swimming around. While the background is fixed, with the help of `pageYOffset()` property in javascript, I learned how to manipulate a parallax scrolling effect website. 
+Scroll down the page to see fishes swimming around. While the background is fixed, with `pageYOffset()` property in javascript, I learned how to manipulate a parallax scrolling effect website.
 
 [26 - Accordion Menu](https://chinyi3005.github.io/100websites/26-accordion-menu)  
 An animated accordion using CSS and jQuery. I make use of some DOM traversal methods to add a little indicator icon to show whether a section is expanded or collapsed.  
@@ -45,7 +48,7 @@ A responsive checkout form using HTML, CSS, Bootstrap, a little bit of flexbox a
 A simple chat box UI is made with CSS, and jQuery to add messages on the screen.
 
 [14 - Tooltip on map](https://chinyi3005.github.io/100websites/14-tooltip-map)  
-Another experiment using CSS transitions and transforms to create a tooltip on map. 
+Another experiment using CSS transitions and transforms to create a tooltip on map.
 
 [13 - Pop-up tooltips in article](https://chinyi3005.github.io/100websites/13-tooltip-article)  
 A CSS3 based tooltip, hover at brown text to get extra information.  

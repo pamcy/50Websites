@@ -1,8 +1,8 @@
-# JS + CSS Clock
-This coding challange is from a online video course by [Wes Bos](https://javascript30.com/). 
+# A responsive fade effect slideshow
+It's an auto-playing slideshow created with CSS and jQuery.  
 
-With the help of CSS transform's `rotate()` property to exceed 360 degrees and Javascript's built in `Date` function, the functionality of the clock looks great, it has hour, minute and seconds hands move to display the current time.  
+The slideshow will automatically fade to the next slide with CSS `fade` transition, and jQuery code to calculates the next slide to display, you can also click the navigation buttons to any slides. Most importantly, it's full-width responsive.  
 
-[**View Demo**](https://chinyi3005.github.io/100websites/28-clock)
+[**View Demo**](https://chinyi3005.github.io/100websites/29-fade-slideshow)
 
-![JS + CSS Clock](./imgs/demo-clock.png)
+![JS + CSS Clock](./imgs/demo-fade-slideshow.png)
