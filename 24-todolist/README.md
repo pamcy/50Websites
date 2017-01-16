@@ -3,4 +3,4 @@ A responsive To-Do List App completed in plain javascript, with add, delete, mar
 
 [**View Demo**](https://chinyi3005.github.io/100websites/24-todolist)
 
-![Temperature Converter](./demo-todolist.png)
+![To-Do List App](./imgs/demo-todolist.png)

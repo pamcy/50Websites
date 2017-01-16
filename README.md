@@ -17,7 +17,7 @@ An animated accordion using CSS and jQuery. I make use of some DOM traversal met
 Tap your keyboard to play the drum! It's all made with vanilla JS. I learned about using keydown event handler and interacting with audio elements.
 
 [24 - To-Do List App](https://chinyi3005.github.io/100websites/24-todolist)  
-A responsive To-Do List App completed in plain javascript, with add, delete, mark completed and readded functions. (Check out another version of [jQuery](https://github.com/chinyi3005/100websites/blob/master/24-todolist/js/dojquery.js))
+A responsive To-Do List App completed in plain javascript, with add, delete, mark completed and re-added functions. (Check out another version of [jQuery](https://github.com/chinyi3005/100websites/blob/master/24-todolist/js/dojquery.js))
 
 [23 - Temperature Converter](https://chinyi3005.github.io/100websites/23-temparature-converter)  
 Simple table elements that handle Fahrenheit / Celsius calculator without submit button in jQuery.

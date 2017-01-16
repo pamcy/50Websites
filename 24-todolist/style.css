@@ -7,13 +7,13 @@
 
 html, body {
 	height: 100%;
-	width: 100%;	
+	width: 100%;
 }
 
 body {
 	background: #EDF0F1;
 	font-family: 'Roboto', sans-serif;
-	padding: 80px 0 0 0; 
+	padding: 80px 0 0 0;
 }
 
 ul, li {
@@ -38,7 +38,7 @@ button {
 }
 
 .todolist-header {
-	background: #25B99A;
+	background: #F25F5C;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
 	box-shadow: 0 2px 4px rgba(44, 62, 80, 0.15);
@@ -98,7 +98,7 @@ button {
 }
 
 .todolist-header button.todolist-addBtn svg path.todolist-svgAdd {
-	fill: #25B99A;
+	fill: #F25F5C;
 }
 
 /* ==================================
@@ -134,6 +134,13 @@ button {
 
 .todolist-taskArea ul.todolist-taskItem li:last-of-type {
 	margin: 0;
+}
+
+.todolist-taskArea ul#todolist-toDoTask:empty:after {
+	color: #C0CECB;
+	content: 'No more tasks today';
+	display: block;
+	text-align: center;
 }
 
 /* If the task is in the completed area, change the font color to lightgrey. */
@@ -215,22 +222,22 @@ button {
 }
 
 .todolist-statusBtns button.todolist-deleteBtn:hover svg path.todolist-svgDelete {
-	fill: #E85656;
+	fill: #545252;
 }
 
 /* Done Button */
 .todolist-statusBtns button.todolist-doneBtn svg {
 	border-radius: 50%;
-	border: 2px solid #25B99A;
+	border: 2px solid #F25F5C;
 	transition: background .3s ease;
 }
 
 .todolist-statusBtns button.todolist-doneBtn svg path.todolist-svgDone {
-	fill: #25B99A;
+	fill: #F25F5C;
 }
 
 li:not(#todolist-isDone) .todolist-statusBtns button.todolist-doneBtn:hover svg {
-	background: rgba(37, 185, 154, 0.75);
+	background: rgba(245, 95, 92, 0.75);
 }
 
 li:not(#todolist-isDone) .todolist-statusBtns button.todolist-doneBtn:hover svg path.todolist-svgDone {
@@ -254,11 +261,11 @@ ul#todolist-doneTask li .todolist-statusBtns button.todolist-doneBtn svg path.to
 	.todolist {
 		width: 100%;
 	}
-	
+
 	.todolist-header {
 		width: 100%;
 	}
-	
+
 	.todolist-header .todolist-input {
 		font-size: 1em;
 	}
