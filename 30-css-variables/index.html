@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../vendor/normalize/normalize.css">
+	<link rel="stylesheet" href="style.css">
+	<title></title>
+</head>
+<body>
+	<h1>Update <span class="panel-title">CSS</span> Variables with <span class="panel-title">Vanilla JS</span></h1>
+
+	<div class="panel-ctrl">
+		<label for="spacing">Spacing: </label>
+		<input id="spacing" type="range" name="spacing" min="10" max="200" value="10" data-sizing="px">
+
+		<label for="blur">Blur</label>
+		<input id="blur" type="range" name="blur" min="0" max="25" value="10" data-sizing="px">
+
+		<label for="basecolor">Base Color</label>
+		<input id="basecolor" type="color" name="basecolor" value="#FF8400">
+	</div>
+
+	<div class="panel-result">
+		<code>
+			img { padding: <span class="result-spacing"></span>px; filter: blur(<span class="result-blur"></span>px); background: <span class="result-basecolor"></span>; }
+		</code>
+	</div>
+
+	<img src="imgs/image-editor.JPG" alt="">
+
+	<script src="script.js"></script>
+</body>
+</html>
