@@ -1,0 +1,125 @@
+/* ---------------------------------
+Base Styles
+--------------------------------- */
+:root {
+	--basecolor: #FF8400;
+	--brightness: 100%;
+	--blur: 0px;
+	--contrast: 100%;
+	--gray: 0%;
+	--opacity: 100%;
+	--saturate: 100%;
+	--padding: 0px;
+}
+
+body {
+	background: #011627;
+	color: #fff;
+	font-family: 'Overpass Mono', monospace;
+	text-align: center;
+}
+
+h1 {
+	margin-bottom: 1.5em;
+}
+
+img {
+	background:var(--basecolor);
+	padding: var(--padding);
+	filter: blur(var(--blur))
+			brightness(var(--brightness))
+			contrast(var(--contrast))
+			grayscale(var(--gray))
+			opacity(var(--opacity))
+			saturate(var(--saturate));
+	width: 100%;
+}
+
+.container {
+	margin: 2em auto;
+}
+
+/* ---------------------------------
+Control Panel
+--------------------------------- */
+/* Change the input range's default style */
+input[type='range'],
+input[type='range'] + .thumb {
+	cursor: pointer;
+}
+
+input[type='range'] {
+	background: transparent;
+	border: none;
+	margin: 20px 0;
+	/*max-width: 250px;*/
+	outline: none;
+	padding: 0;
+	position: relative;
+	-webkit-appearance: none;
+	width: 100%;
+}
+
+input[type='range']:focus {
+	outline: none;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+	background: #c2c0c2;
+	border: none;
+	height: 4px;
+}
+
+input[type='range']:focus::-webkit-slider-runnable-track {
+	background: #ccc;
+}
+
+input[type='range']::-webkit-slider-thumb {
+	background-color: #26a69a;
+	border: none;
+	border-radius: 50%;
+	height: 20px;
+	margin: -8px 0 0 0;
+	transform-origin: 50% 50%;
+	transition: .3s;
+	-webkit-appearance: none;
+	-webkit-transform-origin: 50% 50%;
+	width: 20px;
+}
+
+.ctrlarea-title {
+	color: var(--basecolor);
+	font-size: 1.2em;
+	font-style: italic;
+	font-weight: 700;
+}
+
+.ctrlarea form .basecolor-wrapper {
+	margin: 0 0 1.2em;
+}
+
+/* ----------------------------------
+Image Area
+----------- ---------------------- */
+.ctrlarea-image img {
+	margin: 0 0 1em;
+}
+
+.ctrlarea-image code {
+	color: var(--basecolor);
+	font-size: 1em;
+}
+
+.ctrlarea-image .ctrlarea-footer {
+	font-size: .9em;
+	margin: 2em 0 0;
+}
+
+/* ----------------------------------
+Responsive Layout
+---------------------------------- */
+@media only screen and (max-width: 768px) {
+	.ctrlarea-image img {
+		margin: 2em 0;
+	}
+}

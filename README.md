@@ -1,6 +1,9 @@
 # 100websites
 🚀 Doing a website a day forces me to move on.
 
+[30 - Photo Editor with CSS Variables and JS](https://chinyi3005.github.io/100websites/30-photo-editor)
+What I enjoyed this challenge is that I learned how to define and override of CSS `variables`, `filter` properties and update function of javascript to control the image's style.
+
 [29 - A responsive fade effect slideshow](https://chinyi3005.github.io/100websites/29-fade-slideshow)  
 It's an auto-playing slideshow with navigation menu, including CSS `fade` transition and jQuery code to calculates the next slide to display.
 
