@@ -1,0 +1,48 @@
+/* ---------------------------------
+Base Styles
+--------------------------------- */
+
+h3 {
+    margin: 0 0 .5em 0;
+}
+
+p {
+    margin: 0;
+}
+
+img {
+    width: 100%;
+}
+
+/*.well {
+    height: 8em;
+}*/
+
+/*.col-sm-2,
+.col-sm-3,
+.col-sm-7 {
+    line-height: 8em;
+}*/
+
+/*.github-repos .github-repos-title ,
+.github-repos .github-repos-language,
+.github-repos .github-repos-info {
+    line-height: 8em;
+}*/
+
+.github-repos .github-repos-info li {
+    display: inline-block;
+}
+
+.github-repos .github-repos-info li:first-of-type {
+    margin-right: .5em;
+}
+
+/* ==================================
+   Responsive
+   ================================== */
+@media only screen and (max-width: 768px) {
+    .github-profiles .github-profiles-labels {
+        margin-top: 1.5em;
+    }
+}
