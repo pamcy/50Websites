@@ -1,28 +1,27 @@
 $(document).ready(function () {
     $('#inputSearch').on('keyup', function (e) {
-        let userName = e.target.value;
+        const userName = e.target.value
 
         // Make requests to Github
         $.ajax({
             url: `https://api.github.com/users/${userName}`,
             data: {
                 client_id: 'd6d4293aa9734c25f08d',
-                client_secret: '9cfc159a0959e30833bd15da856740150b35d5ee'
-            }
-        }).done(function(user) {
+                client_secret: '9cfc159a0959e30833bd15da856740150b35d5ee',
+            },
+        }).done(function (user) {
             $.ajax({
                 url: `https://api.github.com/users/${userName}/repos`,
                 data: {
                     client_id: 'd6d4293aa9734c25f08d',
                     client_secret: '9cfc159a0959e30833bd15da856740150b35d5ee',
-                    sort: 'updated: asc',
-                    per_page: 5
-                }
-            }).done(function(repos) {
-
-                // loop through array from github's repos and print out each object
-                $.each(repos, function(index, repo) {
-                    $('.github-repos').prepend(`
+                    sort: 'created: asc',
+                    per_page: 8,
+                },
+            }).done(function (repos) {
+                // loop through the array from github's repos and print out each object
+                $.each(repos, function (index, repo) {
+                    $('.github-repos').append(`
                         <div class="well">
                             <div class="row">
                                 <div class="col-sm-7">
@@ -42,12 +41,11 @@ $(document).ready(function () {
                                         </div>
                                     </ul>
                                 </div>
-
                             </div>
                         </div>
-                    `);
-                });
-            });
+                    `)
+                })
+            })
 
             $('.github-profiles').html(`
                 <div class="row">
@@ -64,9 +62,7 @@ $(document).ready(function () {
                         </div>
                         <ul class="list-unstyled">
                             <h2>${user.name}</h2>
-                            <blockquote>
-                                <p>${user.bio}</p>
-                            </blockquote>
+                            <blockquote><p>${user.bio}</p></blockquote>
                             <li>Location: ${user.location}</li>
                             <li>Company: ${user.company}</li>
                             <li>Website: ${user.blog}</li>
@@ -76,8 +72,8 @@ $(document).ready(function () {
                     </div>
                 </div>
                 <h2 class="page-header">Latest Repositories</h2>
-            `);
-        });
-
-    });
-});
+                <div class="github-repos"></div>
+            `)
+        })
+    })
+})

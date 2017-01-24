@@ -1,12 +1,11 @@
-/* ---------------------------------
-Base Styles
---------------------------------- */
-
-h3 {
-    margin: 0 0 .5em 0;
+/* ==================================
+   Base Styles
+   ================================== */
+body {
+    background: #dedede;
 }
 
-p {
+h1, h3, p {
     margin: 0;
 }
 
@@ -14,21 +13,17 @@ img {
     width: 100%;
 }
 
-/*.well {
-    height: 8em;
-}*/
+/* ==================================
+   Search Results
+   ================================== */
+.github-search h1 {
+    font-size: 3em;
+    margin: 0 0 .2em 0;
+}
 
-/*.col-sm-2,
-.col-sm-3,
-.col-sm-7 {
-    line-height: 8em;
-}*/
-
-/*.github-repos .github-repos-title ,
-.github-repos .github-repos-language,
-.github-repos .github-repos-info {
-    line-height: 8em;
-}*/
+.github-repos .github-repos-title h3 {
+    margin: 0 0 .5em 0;
+}
 
 .github-repos .github-repos-info li {
     display: inline-block;
@@ -38,11 +33,25 @@ img {
     margin-right: .5em;
 }
 
+.github-footer {
+    font-size: .9em;
+    text-align: center;
+}
+
 /* ==================================
    Responsive
    ================================== */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
     .github-profiles .github-profiles-labels {
         margin-top: 1.5em;
+    }
+
+    .github-repos .github-repos-title {
+        margin-bottom: .5em;
+        overflow-wrap: break-word;
+    }
+
+    .github-repos .col-sm-3 ul.list-inline {
+        margin: .5em 0 0 0;
     }
 }
