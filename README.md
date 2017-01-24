@@ -2,7 +2,7 @@
 🚀 Doing a website a day forces me to move on.
 
 
-[31 - Github User Finder JS](https://chinyi3005.github.io/100websites/31-github-user-finder)  
+[31 - Github User Finder](https://chinyi3005.github.io/100websites/31-github-user-finder)  
 This challenge is built with jQuery and Bootstrap framework. I use `AJAX` to get Github's user infos and repositories, `$.each()` function to loop through each results and display it on the page.
 
 [30 - Photo Editor with CSS Variables and JS](https://chinyi3005.github.io/100websites/30-photo-editor)  
