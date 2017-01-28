@@ -17,8 +17,8 @@
 	<form action="done.html" id="registration">
 		<fieldset>
 			<label for="name"><span class="star-required">*</span>Full Name</label>
-			<input type="text" name="name" id="name" placeholder="Chinyi Pan" minlength="3" required>
-			<ul class="errormsg" id="name-error">
+			<input type="text" name="name" id="name" placeholder="Chinyi Pan" minlength="5" required>
+			<ul class="errorMsg" id="errorMsg-name">
 				<li>At least 5 characters long</li>
 				<li>Letters and numbers only (No special characters)</li>
 			</ul>
@@ -27,12 +27,16 @@
 		<fieldset>
 			<label for="email"><span class="star-required">*</span>Email</label>
 			<input type="email" name="email" id="email" required>
+			<ul class="errorMsg" id="errorMsg-email">
+				<li></li>
+				<li></li>
+			</ul>
 		</fieldset>
 
 		<fieldset>
 			<label for="password"><span class="star-required">*</span>Password</label>
 			<input type="password" name="password" id="password" minlength="8" maxlength="14" required>
-			<ul class="password-error">
+			<ul class="errorMsg" id="errorMsg-password">
 				<li>At least 8 characters long</li>
 				<li>At least 1 number</li>
 				<li>At least 1 uppercase letter</li>
@@ -42,6 +46,9 @@
 		<fieldset>
 			<label for="confirm-password"><span class="star-required">*</span>Confirm Password</label>
 			<input type="password" name="confirm-password" id="confirm-password"  minlength="8" maxlength="14" required>
+			<ul class="errorMsg" id="errorMsg-confirm-password">
+				<li></li>
+			</ul>
 		</fieldset>
 
 		<fieldset>
@@ -62,6 +69,7 @@
 		<button type="submit">Submit</button>
 	</form>
 
+	<script src="../vendor/jquery/jquery-3.1.1.min.js" ></script>
 	<script src="script.js"></script>
 </body>
 </html>

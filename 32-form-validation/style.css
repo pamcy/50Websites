@@ -150,10 +150,10 @@ button:hover {
 	padding-left: 10px;
 }
 
-#name-error {
+#errorMsg-name {
 	display: none;
 }
 
-input[type='text']:focus + #name-error {
+input[type='text']:focus + #errorMsg-name {
 	display: block;
 }

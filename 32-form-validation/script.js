@@ -1,27 +1,56 @@
-var registerForm = document.getElementById('registration'),
-    inputs = document.querySelectorAll('input:not([type="checkbox"]):not([type="radio"])'),
-    userName = document.getElementById('name'),
-    nameError1 = document.querySelector('#name-error li:nth-child(1)'),
-    nameError2 = document.querySelector('#name-error li:nth-child(2)');
+$(document).ready(function() {
+    var nameError = false,
+        emailError = false,
+        passwordError = false,
+        rePasswordError = false,
+        nameErrorMsg = $('#errorMsg-name');
 
-function nameVerify() {
-    var userNameVal = userName.value;
+    function nameVerify() {
+        var nameLength = $('#name').val().length,
+            nameErrorMsg_1 = nameErrorMsg.find('li:eq(0)');
 
-    if (userNameVal.length < 5) {
-        nameError1.classList.add('isInvalid');
-        nameError1.classList.remove('isValid');
-    } else {
-        nameError1.classList.add('isValid');
-        nameError1.classList.remove('isInvalid');
+            console.log(nameErrorMsg_1);
+
+        if (nameLength < 5) {
+            nameErrorMsg_1.addClass('isInvalid');
+
+        } else {
+            nameErrorMsg_1.addClass('isValid');
+        }
     }
 
-    if (userNameVal.match(/[^a-zA-Z0-9]/g)) {
-        nameError2.classList.add('isInvalid');
-        nameError2.classList.remove('isValid');
-    } else {
-        nameError2.classList.add('isValid');
-        nameError2.classList.remove('isInvalid');
-    }
-}
+    $('#name').on('change', nameVerify);
+});
 
-inputs[0].addEventListener('input', nameVerify);
+
+// var registerForm = document.getElementById('registration'),
+//     inputs = document.querySelectorAll('input:not([type="checkbox"]):not([type="radio"])'),
+//     userName = document.getElementById('name'),
+//     nameError1 = document.querySelector('#name-error li:nth-child(1)'),
+//     nameError2 = document.querySelector('#name-error li:nth-child(2)');
+//
+// function nameVerify() {
+//     var userNameVal = userName.value;
+//
+//     if (userNameVal.length < 5) {
+//         nameError1.classList.add('isInvalid');
+//         nameError1.classList.remove('isValid');
+//     } else {
+//         nameError1.classList.add('isValid');
+//         nameError1.classList.remove('isInvalid');
+//     }
+//
+//     if (userNameVal.match(/[^a-zA-Z0-9]/g)) {
+//         nameError2.classList.add('isInvalid');
+//         nameError2.classList.remove('isValid');
+//     } else if (userNameVal == '') {
+//         nameError2.classList.add('isInvalid');
+//         nameError2.classList.remove('isValid');
+//     }
+//     else {
+//         nameError2.classList.add('isValid');
+//         nameError2.classList.remove('isInvalid');
+//     }
+// }
+//
+// inputs[0].addEventListener('input', nameVerify);
