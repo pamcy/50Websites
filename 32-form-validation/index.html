@@ -14,36 +14,34 @@
 	<title>Form Validation</title>
 </head>
 <body>
-	<form id="register-form">
+	<form action="done.html" id="registration">
 		<fieldset>
-			<label for="fullname">Full Name</label>
-			<input type="text" name="fullname" id="fullname" placeholder="Chinyi Pan">
+			<label for="name"><span class="star-required">*</span>Full Name</label>
+			<input type="text" name="name" id="name" placeholder="Chinyi Pan" minlength="3" required>
+			<ul class="errormsg" id="name-error">
+				<li>At least 5 characters long</li>
+				<li>Letters and numbers only (No special characters)</li>
+			</ul>
 		</fieldset>
 
 		<fieldset>
-			<label for="email">Email</label>
-			<input type="email" name="email" id="email">
+			<label for="email"><span class="star-required">*</span>Email</label>
+			<input type="email" name="email" id="email" required>
 		</fieldset>
 
 		<fieldset>
-			<label for="password">Password</label>
-			<input type="password" name="password" id="password">
+			<label for="password"><span class="star-required">*</span>Password</label>
+			<input type="password" name="password" id="password" minlength="8" maxlength="14" required>
+			<ul class="password-error">
+				<li>At least 8 characters long</li>
+				<li>At least 1 number</li>
+				<li>At least 1 uppercase letter</li>
+			</ul>
 		</fieldset>
 
 		<fieldset>
-			<label for="confirm-password">Confirm Password</label>
-			<input type="password" name="confirm-password" id="confirm-password">
-		</fieldset>
-
-        <fieldset>
-			<label for="select-star">Your favorite movie star</label>
-			<select id="select-star" name="select-star">
-				<option value="star-1">- - Select One - -</option>
-				<option value="star-2">Iron Man - Tony Stark</option>
-				<option value="star-3">Captain America - Steve Rogers</option>
-				<option value="star-4">Ethan Hunt - Mission Impossible</option>
-				<option value="star-5">James Bond - 007</option>
-			</select>
+			<label for="confirm-password"><span class="star-required">*</span>Confirm Password</label>
+			<input type="password" name="confirm-password" id="confirm-password"  minlength="8" maxlength="14" required>
 		</fieldset>
 
 		<fieldset>

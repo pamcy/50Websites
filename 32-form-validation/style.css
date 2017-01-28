@@ -24,7 +24,7 @@ body {
 /* ---------------------------------
 Register Form
 --------------------------------- */
-form#register-form {
+form#registration {
     left: 50%;
     margin: 2rem 0;
     position: absolute;
@@ -133,4 +133,27 @@ button:hover {
     cursor: pointer;
     transform: scale(1.1);
     transition: background .4s;
+}
+
+/* Error Messages */
+.errormsg li.isInvalid {
+	color: #e74c3c;
+}
+
+.errormsg li.isValid {
+	color: #2ecc71;
+}
+
+.errormsg li.isValid::after {
+	content: '\2713';
+	display: inline-block;
+	padding-left: 10px;
+}
+
+#name-error {
+	display: none;
+}
+
+input[type='text']:focus + #name-error {
+	display: block;
 }
