@@ -119,10 +119,6 @@ $(document).ready(function() {
     $('#registration').on('submit', submitVerify);
 });
 
-name, email, pwds 的驗證都差不多了，可是按 submit 之後怪怪的
-
-// Apfel_2406
-
 // http://stackoverflow.com/questions/15060292/a-simple-jquery-form-validation-script
 // https://formden.com/blog/validate-contact-form-jquery
 
