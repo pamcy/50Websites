@@ -33,6 +33,14 @@ $(document).ready(function() {
         } else {
             nameErrorMsg2.addClass('isValid').removeClass('isInvalid');
         }
+
+        // Red border when input has errors
+        if (nameErrorMsg.hasClass('isInvalid')) {
+            $this.addClass('input-isError');
+            submitIsInvalid = true;
+        } else {
+            $this.removeClass('input-isError');
+        }
     }
 
     // Email
@@ -44,8 +52,10 @@ $(document).ready(function() {
 
         if (isEmail) {
             emailErrorMsg1.addClass('isValid').removeClass('isInvalid');
+            $this.removeClass('input-isError');
         } else {
             emailErrorMsg1.addClass('isInvalid').removeClass('isValid');
+            $this.addClass('input-isError')
             submitIsInvalid = true;
         }
     }
@@ -61,7 +71,7 @@ $(document).ready(function() {
             passwordErrorMsg2 = passwordErrorMsg.eq(1),
             passwordErrorMsg3 = passwordErrorMsg.eq(2);
 
-        // Check passwors's length
+        // Check password's length
         if (passwordLength < 8) {
             passwordErrorMsg1.addClass('isInvalid').removeClass('isValid');
             submitIsInvalid = true;
@@ -84,6 +94,13 @@ $(document).ready(function() {
             passwordErrorMsg3.addClass('isInvalid').removeClass('isValid');
             submitIsInvalid = true;
         }
+
+        if (passwordErrorMsg.hasClass('isInvalid')) {
+            $this.addClass('input-isError');
+            submitIsInvalid = true;
+        } else {
+            $this.removeClass('input-isError');
+        }
     }
 
     // Confirm Password
@@ -95,19 +112,27 @@ $(document).ready(function() {
 
         if (re_passwordValue !== passwordValue) {
             re_passwordErrorMsg1.addClass('isInvalid').removeClass('isValid');
+            $this.addClass('input-isError');
             submitIsInvalid = true;
         } else {
             re_passwordErrorMsg1.addClass('isValid').removeClass('isInvalid');
+            $this.removeClass('input-isError');
         }
     }
 
     // After Form Submitted Validation
     function submitVerify() {
+        submitIsInvalid = false;
+
+        $('#name').trigger('input');
+        $('#email').trigger('input');
+        $('#password').trigger('input');
+        $('#confirm-password').trigger('input');
+
         if (submitIsInvalid) {
-            alert('you still need to fill sth!');
+            alert('Please complete this form');
             return false;
         }
-        console.log('hooray');
         return true;
     }
 

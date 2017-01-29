@@ -1,0 +1,13 @@
+body {
+    background: url('http://i.imgur.com/RXk5dpV.png') no-repeat center center fixed;
+    background-color: #21BEE9;
+}
+
+h1 {
+    font-weight: 700;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 61%;
+    transform: translateX(-50%);
+}

@@ -6,7 +6,7 @@
 
 	<!-- stylesheets -->
 	<link rel="stylesheet" href="../vendor/normalize/normalize.css">
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/main.css">
 
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
@@ -14,13 +14,13 @@
 	<title>Form Validation</title>
 </head>
 <body>
-	<form action="done.html" id="registration">
+	<form action="thank-you.html" id="registration">
 		<fieldset>
 			<label for="name"><span class="star-required">*</span>Full Name</label>
-			<input type="text" name="name" id="name" placeholder="Chinyi Pan" minlength="5" required>
+			<input type="text" name="name" id="name" minlength="5" required>
 			<ul class="errorMsg" id="errorMsg-name">
 				<li>At least 5 characters long</li>
-				<li>Must only contain letters and numbers only</li>
+				<li>Must only contain letters and numbers</li>
 			</ul>
 		</fieldset>
 
@@ -51,13 +51,13 @@
 		</fieldset>
 
 		<fieldset>
-			<legend>Radio Button</legend>
+			<legend>Your favorite Super Hero</legend>
 			<input type="radio" name="radiobtn" id="radiobtn-1" checked>
-			<label for="radiobtn-1">Radio Button 1</label><br>
+			<label for="radiobtn-1">Tony Stark</label><br>
 			<input type="radio" name="radiobtn" id="radiobtn-2" checked>
-			<label for="radiobtn-2">Radio Button 2</label><br>
+			<label for="radiobtn-2">Steve Rogers</label><br>
 			<input type="radio" name="radiobtn" id="radiobtn-3" checked>
-			<label for="radiobtn-3">Radio Button 3</label>
+			<label for="radiobtn-3">Dead Pool</label>
 		</fieldset>
 
 		<fieldset>

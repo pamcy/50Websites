@@ -4,21 +4,20 @@ Base Styles
 :root {
 	--mainColor: #A5BE00;
 	--focusColor: #889C00;
+	--successColor: #9BC53D;
+	--errorColor: #F25F5C;
+	--errorSize: .8em;
 }
 
 * {
 	box-sizing: border-box;
 }
 
-html {
-    /*height: 100%;*/
-}
-
 body {
     background: #f5f6f7;
 	font-family: 'Roboto', sans-serif;
     font-weight: 300;
-    /*height: 100%;*/
+    height: 100%;
 }
 
 /* ---------------------------------
@@ -31,13 +30,19 @@ form#registration {
     top: 0;
     transform: translateX(-50%);
     width: 350px;
-    /*z-index: 1;*/
+    z-index: 1;
 }
 
 fieldset {
 	border: none;
 	margin: 0 0 1rem 0;
 	padding: 0;
+}
+
+.star-required {
+	color: var(--errorColor);
+	font-size: var(--errorSize);
+	padding-right: .1em;
 }
 
 legend, label {
@@ -136,12 +141,22 @@ button:hover {
 }
 
 /* Error Messages */
+input[type='text'].input-isError,
+input[type='email'].input-isError,
+input[type='password'].input-isError {
+	border: 1px solid var(--errorColor);
+}
+
+.errorMsg li {
+	font-size: var(--errorSize);
+}
+
 .errorMsg li.isInvalid {
-	color: #e74c3c;
+	color: var(--errorColor);
 }
 
 .errorMsg li.isValid {
-	color: #2ecc71;
+	color: var(--successColor);
 }
 
 .errorMsg li.isValid::after {
