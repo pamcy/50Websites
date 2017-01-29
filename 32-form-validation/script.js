@@ -1,9 +1,5 @@
 $(document).ready(function() {
-    var nameError = false,
-        emailError = false,
-        passwordError = false,
-        rePasswordError = false,
-        namePattern = /(?:[^a-zA-Z0-9\s])+/,
+    var namePattern = /(?:[^a-zA-Z0-9\s])+/,
         emailPattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
         passwordNumPattern = /(?:\d)+/,
         passwordUpPattern = /(?:[A-Z])+/,
@@ -122,6 +118,8 @@ $(document).ready(function() {
 
     $('#registration').on('submit', submitVerify);
 });
+
+name, email, pwds 的驗證都差不多了，可是按 submit 之後怪怪的
 
 // Apfel_2406
 
