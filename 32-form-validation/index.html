@@ -20,7 +20,7 @@
 			<input type="text" name="name" id="name" placeholder="Chinyi Pan" minlength="5" required>
 			<ul class="errorMsg" id="errorMsg-name">
 				<li>At least 5 characters long</li>
-				<li>Letters and numbers only (No special characters)</li>
+				<li>Must only contain letters and numbers only</li>
 			</ul>
 		</fieldset>
 
@@ -28,8 +28,7 @@
 			<label for="email"><span class="star-required">*</span>Email</label>
 			<input type="email" name="email" id="email" required>
 			<ul class="errorMsg" id="errorMsg-email">
-				<li></li>
-				<li></li>
+				<li>Must contain a @ and no special charaters after @</li>
 			</ul>
 		</fieldset>
 
@@ -47,7 +46,7 @@
 			<label for="confirm-password"><span class="star-required">*</span>Confirm Password</label>
 			<input type="password" name="confirm-password" id="confirm-password"  minlength="8" maxlength="14" required>
 			<ul class="errorMsg" id="errorMsg-confirm-password">
-				<li></li>
+				<li>Both passwords must match</li>
 			</ul>
 		</fieldset>
 
