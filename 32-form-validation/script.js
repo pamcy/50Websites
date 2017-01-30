@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     var namePattern = /(?:[^a-zA-Z0-9\s])+/,
         emailPattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
         passwordNumPattern = /(?:\d)+/,
@@ -118,6 +118,13 @@ $(document).ready(function() {
             re_passwordErrorMsg1.addClass('isValid').removeClass('isInvalid');
             $this.removeClass('input-isError');
         }
+
+        if (re_passwordErrorMsg.hasClass('isInvalid')) {
+            $this.addClass('input-isError');
+            submitIsInvalid = true;
+        } else {
+            $this.removeClass('input-isError');
+        }
     }
 
     // After Form Submitted Validation
@@ -143,38 +150,3 @@ $(document).ready(function() {
 
     $('#registration').on('submit', submitVerify);
 });
-
-// http://stackoverflow.com/questions/15060292/a-simple-jquery-form-validation-script
-// https://formden.com/blog/validate-contact-form-jquery
-
-// var registerForm = document.getElementById('registration'),
-//     inputs = document.querySelectorAll('input:not([type="checkbox"]):not([type="radio"])'),
-//     userName = document.getElementById('name'),
-//     nameError1 = document.querySelector('#name-error li:nth-child(1)'),
-//     nameError2 = document.querySelector('#name-error li:nth-child(2)');
-//
-// function nameVerify() {
-//     var userNameVal = userName.value;
-//
-//     if (userNameVal.length < 5) {
-//         nameError1.classList.add('isInvalid');
-//         nameError1.classList.remove('isValid');
-//     } else {
-//         nameError1.classList.add('isValid');
-//         nameError1.classList.remove('isInvalid');
-//     }
-//
-//     if (userNameVal.match(/[^a-zA-Z0-9]/g)) {
-//         nameError2.classList.add('isInvalid');
-//         nameError2.classList.remove('isValid');
-//     } else if (userNameVal == '') {
-//         nameError2.classList.add('isInvalid');
-//         nameError2.classList.remove('isValid');
-//     }
-//     else {
-//         nameError2.classList.add('isValid');
-//         nameError2.classList.remove('isInvalid');
-//     }
-// }
-//
-// inputs[0].addEventListener('input', nameVerify);

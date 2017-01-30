@@ -14,7 +14,8 @@
 	<title>Form Validation</title>
 </head>
 <body>
-	<form action="thank-you.html" method="post" id="registration">
+	<form action="thank-you.html" id="registration">
+		<!-- Fullname -->
 		<fieldset>
 			<label for="name"><span class="star-required">*</span>Full Name</label>
 			<input type="text" name="name" id="name" minlength="5" required>
@@ -24,6 +25,7 @@
 			</ul>
 		</fieldset>
 
+		<!-- Email -->
 		<fieldset>
 			<label for="email"><span class="star-required">*</span>Email</label>
 			<input type="email" name="email" id="email" required>
@@ -32,6 +34,7 @@
 			</ul>
 		</fieldset>
 
+		<!-- Password -->
 		<fieldset>
 			<label for="password"><span class="star-required">*</span>Password</label>
 			<input type="password" name="password" id="password" minlength="8" maxlength="14" required>
@@ -42,6 +45,7 @@
 			</ul>
 		</fieldset>
 
+		<!-- Confirm Password -->
 		<fieldset>
 			<label for="confirm-password"><span class="star-required">*</span>Confirm Password</label>
 			<input type="password" name="confirm-password" id="confirm-password"  minlength="8" maxlength="14" required>
@@ -50,6 +54,7 @@
 			</ul>
 		</fieldset>
 
+		<!-- Select Option -->
 		<fieldset>
 			<legend>Your favorite Super Hero</legend>
 			<input type="radio" name="radiobtn" id="radiobtn-1" checked>
@@ -60,14 +65,17 @@
 			<label for="radiobtn-3">Dead Pool</label>
 		</fieldset>
 
+		<!-- Newsletter Checkbox -->
 		<fieldset>
 			<input type="checkbox" name="newsletter" id="newsletter" checked>
 			<label for="newsletter">Subscribe Newsletter</label>
 		</fieldset>
 
+		<!-- Submit Button -->
 		<button type="submit">Submit</button>
 	</form>
 
+	<!-- JS Scripts -->
 	<script src="../vendor/jquery/jquery-3.1.1.min.js" ></script>
 	<script src="script.js"></script>
 </body>

@@ -17,7 +17,6 @@ body {
     background: #f5f6f7;
 	font-family: 'Roboto', sans-serif;
     font-weight: 300;
-    height: 100%;
 }
 
 /* ---------------------------------
@@ -109,7 +108,6 @@ input[type='checkbox']:checked {
 
 input[type='checkbox']:checked::after {
 	content: '';
-	/*background-color: black;*/
 	border-bottom: 3px solid #fff;
 	border-left: 3px solid #fff;
 	display: block;
@@ -140,7 +138,9 @@ button:hover {
     transition: background .4s;
 }
 
-/* Error Messages */
+/* ---------------------------------
+Error Messages
+--------------------------------- */
 input[type='text'].input-isError,
 input[type='email'].input-isError,
 input[type='password'].input-isError {
@@ -169,18 +169,9 @@ input[type='password'].input-isError {
 	display: none;
 }
 
-input[type='text']:focus + #errorMsg-name {
-	display: block;
-}
-
-input[type='email']:focus + #errorMsg-email {
-	display: block;
-}
-
-input[type='password']:focus + #errorMsg-password {
-	display: block;
-}
-
+input[type='text']:focus + #errorMsg-name,
+input[type='email']:focus + #errorMsg-email,
+input[type='password']:focus + #errorMsg-password,
 input[type='password']:focus + #errorMsg-confirm-password {
 	display: block;
 }

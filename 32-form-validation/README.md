@@ -1,7 +1,10 @@
-# Photo Editor with CSS Variables and JS
+# HTML5 Form Validation with jQuery
 
-What I enjoyed this challenge is that I learned how to define and override of CSS `variables`, `filter` properties and update function of javascript to control the image's style. I executed the function to listen to updates on all input elements, then re-assign a CSS Variable on the document root with the same `name` as the `input`, and use the input's value as the CSS Variable's value.
+Instead of just using HTML5's built-in browser validation, I add additional custom rules to check the inputted value as well. For example I implement the real-time validation by listening to a `input` event,
+check if a text input contains special characters using `test()` method to test for a match in `RegExp`, the feedback is displayed when input is focused with CSS `:focus` selector without submitting the form. At last, I will double check that all the fields are valid when the submit button is pushed, if not, it will alert the error message.
 
-[**View Demo**](https://chinyi3005.github.io/100websites/30-photo-editor)
+PS. It's also fun to learn how to hide the default styles of radio buttons and checkboxes with CSS `appearance: none`, then using `:after` pseudo class to customize my own styles.
 
-![JS + CSS Clock](./imgs/demo.png)
+[**View Demo**](https://chinyi3005.github.io/100websites/32-form-validation)
+
+![HTML5 Form Validation with jQuery](./imgs/demo-form-validation.png)

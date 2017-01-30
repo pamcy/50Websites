@@ -1,6 +1,8 @@
 # 100websites
 🚀 Doing a website a day forces me to move on.
 
+[32 - HTML5 Form Validation with jQuery](https://chinyi3005.github.io/100websites/32-form-validation)  
+Instead of just using HTML5's built-in browser validation, I add additional custom rules to check the inputted value as well. It's a real-time validation using `test()` method to test for a match in `RegExp`, the feedback is displayed without submitting the form.
 
 [31 - Github User Finder](https://chinyi3005.github.io/100websites/31-github-user-finder)  
 This challenge is built with jQuery and Bootstrap framework. I use `AJAX` to get Github's user infos and repositories, `$.each()` function to loop through each results and display it on the page.
