@@ -1,23 +1,29 @@
 $(document).ready(function () {
+   var apiUrl = 'https://api.github.com/users';
+   var apiData = {
+       client_id: 'd6d4293aa9734c25f08d',
+       client_secret: '9cfc159a0959e30833bd15da856740150b35d5ee',
+       sort: 'created: asc',
+       per_page: 8,
+   };
+
     $('#inputSearch').on('keyup', function (e) {
         const userName = e.target.value
 
         // Make requests to Github
         $.ajax({
-            url: `https://api.github.com/users/${userName}`,
-            data: {
-                client_id: 'd6d4293aa9734c25f08d',
-                client_secret: '9cfc159a0959e30833bd15da856740150b35d5ee',
-            },
+            url: `${apiUrl}/${userName}`,
+            data: apiData,
         }).done(function (user) {
+
+            // set default for null value
+            Object.keys(user).map(function(objectKey) {
+                user[objectKey] = user[objectKey] || '';
+            });
+
             $.ajax({
-                url: `https://api.github.com/users/${userName}/repos`,
-                data: {
-                    client_id: 'd6d4293aa9734c25f08d',
-                    client_secret: '9cfc159a0959e30833bd15da856740150b35d5ee',
-                    sort: 'created: asc',
-                    per_page: 8,
-                },
+                url: `${apiUrl}/${userName}/repos`,
+                data: apiData,
             }).done(function (repos) {
                 // loop through the array from github's repos and print out each object
                 $.each(repos, function (index, repo) {
