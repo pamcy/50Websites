@@ -3,33 +3,33 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Funny Chat Messenger</title>
-	<link rel="stylesheet" href="../normalize.css">
+	<link rel="stylesheet" href="../vendor/normalize/normalize.css">
 	<link rel="stylesheet" href="style.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
 </head>
 <body>
 	<div class="container">
 		<div class="wrapper">
-			
+
 			<!-- header -->
 			<div class="chat-header">
 				<h2>FunnyChat <i id="icon" class="fa fa-commenting" aria-hidden="true"></i></h2>
 			</div>
-			
+
 			<!-- content -->
 			<div class="chat-content"></div>
-			
+
 			<!-- textarea & send -->
-			<!-- *Autocomplete allows the browser to predict the value. --> 
+			<!-- Autocomplete allows the browser to predict the value. -->
 			<form action="" id="messenger" method="get" name="messenger" autocomplete="off">
 				<input type="text" placeholder="Say something..." value="" name="textarea" class="textarea" id="message">
 				<span class="button-icon"><i class="fa fa-paper-plane" aria-hidden="true"></i></span>
 				<input type="submit" value="" class="button" id="btn" >
 			</form>
-			
+
 		</div> <!-- ^wrapper -->
 	</div> <!-- ^container -->
-	
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="script.js"></script>
 	<script src="https://use.fontawesome.com/e85a2b82fc.js"></script>

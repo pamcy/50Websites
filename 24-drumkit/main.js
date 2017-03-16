@@ -4,11 +4,11 @@ function playSound(e) {
 
 	if(!audio) return;
 	//	Stop the function
-	
+
 	key.classList.add('playing') ;
 	audio.currentTime = 0;
 	//	Rewind to the start, so it can play over and over again
-	audio.play();	
+	audio.play();
 }
 
 // When the transition is ending, remove the transition
@@ -16,7 +16,7 @@ function removeTransition(e) {
 	if (e.propertyName !== 'transform') return;
 	//	Skip it if it's not a tranform
 	
-	this.classList.remove('playing');	
+	this.classList.remove('playing');
 }
 
 // Listen for event 'transitionend' for every single key

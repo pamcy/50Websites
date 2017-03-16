@@ -1,4 +1,4 @@
-*, *:after, *:before {
+*, *::after, *::before {
 	box-sizing: border-box;
 }
 
@@ -85,7 +85,7 @@ h1 {
 	box-shadow: -5px -5px 15px rgba(48, 54, 61, 0.1);
 	bottom: 100%;
 	left: 50%;
-	margin: 0 0 18px -180px; 
+	margin: 0 0 18px -180px;
 	opacity: 0;
 	pointer-events: none;
 	position: absolute;

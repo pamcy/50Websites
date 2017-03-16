@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Creative Journal Generator</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<title>Creative Journal Generator - AJAX version</title>
+	<link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="style.css">
-	<script src="../jquery-3.1.1.min.js"></script>
+	<link rel="stylesheet" href="../vendor/fontawesome/css/font-awesome.min.css">
 </head>
-
 <body>
 	<div class="container">
 		<div class="row">
@@ -28,7 +27,7 @@
 						<a id="share" class="btn btn-default btn-lg btn-block" href="#" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> Share</a>
 					</div>
 				</div>
-				
+
 				<!--IDEA BOX-->
 				<div id="idea-box" class="animated">
 					<i id="idea-left" class="fa fa-quote-left" aria-hidden="true"></i>
@@ -36,7 +35,7 @@
 					<span id="title" class="main-color"></span>
 					<i id="idea-right" class="fa fa-quote-right" aria-hidden="true"></i>
 				</div>
-				
+
 				<!--FOLLOW ME-->
 				<div class="row">
 					<div class="col-xs-12">
@@ -53,8 +52,8 @@
 
 	<div id="hidden"></div>
 
+	<script src="../vendor/jquery/jquery-3.1.1.min.js"></script>
     <script src="script.js"></script>
-	<script src="https://use.fontawesome.com/e85a2b82fc.js"></script>
     <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>
 </html>

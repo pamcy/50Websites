@@ -12,10 +12,6 @@ body {
 	background: #FFE066;
 }
 
-blockquote.twitter-tweet {
-	max-width: 280px;
-}
-
 .boy {
 	height: 401px;
 	width: 271px;
@@ -26,12 +22,4 @@ blockquote.twitter-tweet {
 
 @keyframes play {
 	100% { background-position: -1084px; }
-}
-
-.message {
-	width: 300px;
-	margin: 0 10px 10px 0;
-	position: absolute;
-	right: 10px;
-	bottom: 10px;
 }

@@ -7,7 +7,7 @@ html, body {
 	display: flex;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 1em;
-	justify-content: center; 
+	justify-content: center;
 }
 
 h2 {
@@ -19,7 +19,7 @@ h2 {
 .wrapper {
 	background: #ffffff;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-	flex-direction: column;   same as text direction but top to bottom 
+	flex-direction: column;
 	display: block;
 }
 

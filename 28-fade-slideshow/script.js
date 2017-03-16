@@ -23,6 +23,6 @@ $(document).ready(function () {
 
 		nav.eq(navIndex).addClass('slideshow-nav-isActive').siblings().removeClass('slideshow-nav-isActive');
 		slides.eq(navIndex).addClass('slideshow-slides-isActive').siblings().removeClass('slideshow-slides-isActive');
-		clearInterval(timer);
+		nextSlide = (navIndex + 1) % slidesAll;
 	});
 });

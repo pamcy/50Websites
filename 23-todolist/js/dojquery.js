@@ -2,22 +2,6 @@ var svgDelete = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xli
 	svgDone = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22 22" style="enable-background:new 0 0 22 22;" xml:space="preserve"><g><path class="todolist-svgDone" d="M9.7,14.4L9.7,14.4c-0.2,0-0.4-0.1-0.5-0.2l-2.7-2.7c-0.3-0.3-0.3-0.8,0-1.1s0.8-0.3,1.1,0l2.1,2.1l4.8-4.8c0.3-0.3,0.8-0.3,1.1,0s0.3,0.8,0,1.1l-5.3,5.3C10.1,14.3,9.9,14.4,9.7,14.4z"/></g></svg>',
 	input = $('input[id="todolist-addTask"]');
 
-$(document).ready(function() {
-	$('#todolist-addTaskBtn').on('click', function() {
-		inputTask();
-	});	
-	
-	$('input[id="todolist-addTask"]').on('keyup', function(e) {
-		var key = e.which || e.keyCode;
-		if (key === 13) { 
-			inputTask();
-		}
-	});	
-	
-	deleteTask();
-	doneTask();
-});
-
 function addTaskToList(item) {
 	$('ul#todolist-toDoTask').prepend('<li>' + item + '<div class="todolist-statusBtns"><button class="todolist-deleteBtn">' + svgDelete + '</button><button class="todolist-doneBtn">' + svgDone + '</button></div></li>');
 }
@@ -35,15 +19,31 @@ function deleteTask() {
 
 function doneTask() {
 	$('.todolist-taskItem').on('click', '.todolist-doneBtn', function(){
-		
+
 		var parentID = $(this).parents('ul').attr('id'),
 			taskItem = $(this).parents('li');
 
 		if (parentID === 'todolist-toDoTask') {
-			taskItem.prependTo('#todolist-doneTask');	
+			taskItem.prependTo('#todolist-doneTask');
 		}
 		else {
 			taskItem.prependTo('#todolist-toDoTask');
 		}
 	});
 }
+
+$(document).ready(function() {
+	$('#todolist-addTaskBtn').on('click', function() {
+		inputTask();
+	});
+
+	$('input[id="todolist-addTask"]').on('keyup', function(e) {
+		var key = e.which || e.keyCode;
+		if (key === 13) {
+			inputTask();
+		}
+	});
+
+	deleteTask();
+	doneTask();
+});
