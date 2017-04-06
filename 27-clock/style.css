@@ -8,7 +8,7 @@ body {
 }
 
 .clock {
-	background: #fff url(imgs/bg-clock-number.svg);
+	background: #fff url(imgs/bg-clock-number.svg) no-repeat;
 	border: 10px solid #027074;
 	border-radius: 50%;
 	height: 30rem;
