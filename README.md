@@ -1,5 +1,6 @@
-# 50Websites
-🚀 Doing a website a day forces me to move on.
+# Code Challenges
+
+I knew that if I was going to succeed at learning to code, I would need to apply knowledge as much as possible. I devoted to build something from what I learned, below is a list of websites I made lately, some took a couple of days to complete. (Still Updating)
 
 [31 - HTML5 Form Validation with jQuery](https://pamcy.github.io/50Websites/31-form-validation)  
 Instead of just using HTML5's built-in browser validation, I add additional custom rules to check the inputted value as well. It's a real-time validation using `test()` method to test for a match in `RegExp`, the feedback is displayed without submitting the form.
