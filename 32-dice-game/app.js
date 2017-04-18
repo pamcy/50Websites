@@ -53,13 +53,17 @@ function holding() {
     document.getElementById(`score-${activePlayer}`).textContent = totalScore[activePlayer];
     console.log(totalScore);
 
-    // Change player
-    changePlayer();
-
     if (totalScore[activePlayer] >= 20) {
         document.getElementById(`name-${activePlayer}`).textContent = 'Winner!';
-        return false;
-    }
+        document.querySelector(`.player-${activePlayer}-panel`).classList.add('winner');
+        document.querySelector(`.player-${activePlayer}-panel`).classList.remove('active');
+        document.querySelector('.dice').style.display = 'none';
+        document.querySelector('.btn-roll').removeEventListener('click', rollingDice);
+        document.querySelector('.btn-hold').removeEventListener('click', holding);
+    } else {
+        // Change player
+        changePlayer();
+    } 
 }
 
 document.querySelector('.dice').style.display = 'none';
