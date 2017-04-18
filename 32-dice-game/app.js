@@ -9,43 +9,60 @@ GAME RULES:
 
 */
 
-var currentBoard = document.querySelector('.player-current-score'),
-    currentScore = 0;
+var totalScore = [0, 0],
+    currentScore = 0,
+    activePlayer = 0,
+    diceDOM = document.querySelector('.dice');
 
-function shuffle(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+function changePlayer() {
+    currentScore = 0;
+    activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
+
+    document.getElementById('current-0').textContent = '0';
+    document.getElementById('current-1').textContent = '0';
+
+    document.querySelector('.player-0-panel').classList.toggle('active');
+    document.querySelector('.player-1-panel').classList.toggle('active');
 }
 
 function rollingDice() {
-    var randomNumber = shuffle(1, 6),
-        image = document.createElement('img'),
-        container = document.querySelector('.wrapper');
+    // Shuffle numbers
+    var diceNumber = Math.floor(Math.random() * 6) + 1;
 
-    switch (randomNumber) {
-        case 1:
-            image.src = 'imgs/dice-1.png';
-            break;
-        case 2:
-            image.src = 'imgs/dice-2.png';
-            break;
-        case 3:
-            image.src = 'imgs/dice-3.png';
-            break;
-        case 4:
-            image.src = 'imgs/dice-4.png';
-            break;
-        case 5:
-            image.src = 'imgs/dice-5.png';
-            break;
-        case 6:
-            image.src = 'imgs/dice-6.png';
-            break;
+    console.log(diceNumber);
 
-        return image.src;
+    // Display dice images
+    diceDOM.style.display = 'block';
+    diceDOM.src = `imgs/dice-${diceNumber}.png`;
+
+    // Update current scores
+    if (diceNumber === 1) {
+
+        // Change player
+        changePlayer();
+
+    } else {
+        currentScore += diceNumber;
+        document.getElementById(`current-${activePlayer}`).textContent = currentScore;
     }
-
-    image.classList.add('dice');
-    container.appendChild(image);
 }
 
+function holding() {
+    // Update total scores
+    totalScore[activePlayer] += currentScore;
+    document.getElementById(`score-${activePlayer}`).textContent = totalScore[activePlayer];
+    console.log(totalScore);
+
+    // Change player
+    changePlayer();
+
+    if (totalScore[activePlayer] >= 20) {
+        document.getElementById(`name-${activePlayer}`).textContent = 'Winner!';
+        return false;
+    }
+}
+
+document.querySelector('.dice').style.display = 'none';
+
 document.querySelector('.btn-roll').addEventListener('click', rollingDice);
+document.querySelector('.btn-hold').addEventListener('click', holding);
