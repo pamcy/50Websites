@@ -46,7 +46,11 @@ function rollingDice() {
     if (gamePlaying) {
         // Display dice images
         diceDOM.style.display = 'block';
-        diceDOM.src = `imgs/dice-${diceNumber}.png`;
+        diceDOM.src = `imgs/dice-${diceNumber}.svg`;
+ 
+        diceDOM.classList.add('animated', 'bounceIn');setTimeout(function() {
+            diceDOM.classList.remove('animated', 'bounceIn');
+        }, 500);
 
         // Update current scores
         if (diceNumber === 1) {
