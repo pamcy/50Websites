@@ -1,0 +1,28 @@
+{
+  "name": "50websites",
+  "version": "1.0.1",
+  "description": "I'm learning to code by building a list of websites.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pamcy/50Websites.git"
+  },
+  "keywords": [
+    "practice",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Pamcy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pamcy/50Websites/issues"
+  },
+  "homepage": "https://github.com/pamcy/50Websites#readme",
+  "dependencies": {
+    "sweetalert2": "^6.6.0"
+  }
+}
