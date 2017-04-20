@@ -2,40 +2,47 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,600" rel="stylesheet" type="text/css">
         <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
         <link type="text/css" rel="stylesheet" href="style.css">
+        <link href="../node_modules/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet" type="text/css">
         
-        <title>Pig Game</title>
+        <title>Pig Dice Game</title>
     </head>
 
     <body>
+        <div class="info">
+            <img src="imgs/question.svg" alt="faq">
+        </div>
         <div class="wrapper clearfix">
             <div class="player-0-panel active">
                 <div class="player-name" id="name-0">Player 1</div>
                 <div class="player-score" id="score-0">0</div>
-                <div class="player-current-box">
+                <div class="player-current-box" id="current-box-0">
                     <div class="player-current-label">Current</div>
                     <div class="player-current-score" id="current-0">0</div>
                 </div>
+                <img src="imgs/celebrate.gif" alt="celebrate the winner" class="player-winner">
             </div>
             
             <div class="player-1-panel">
                 <div class="player-name" id="name-1">Player 2</div>
                 <div class="player-score" id="score-1">0</div>
-                <div class="player-current-box">
+                <div class="player-current-box" id="current-box-1">
                     <div class="player-current-label">Current</div>
                     <div class="player-current-score" id="current-1">0</div>
                 </div>
+                <img src="imgs/celebrate.gif" alt="celebrate the winner" class="player-winner">                
             </div>
             
             <button class="btn-new"><i class="ion-ios-plus-outline"></i>New game</button>
             <button class="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button>
             <button class="btn-hold"><i class="ion-ios-download-outline"></i>Hold</button>
             
-            <img src="imgs/dice-5.png" alt="Dice" class="dice">
+            <img src="" alt="Dice number" class="dice">
         </div>
         
         <script src="app.js"></script>
+        <script src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
     </body>
 </html>

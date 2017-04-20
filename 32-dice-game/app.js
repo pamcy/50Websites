@@ -18,9 +18,11 @@ function init() {
     gamePlaying = true;
 
     document.querySelector('.dice').style.display = 'none';
-
+    
     document.querySelector('.btn-roll').style.display = 'block';
     document.querySelector('.btn-hold').style.display = 'block';
+    document.getElementById('current-box-0').style.display = 'block';
+    document.getElementById('current-box-1').style.display = 'block';
 
     document.getElementById('current-0').textContent = '0';
     document.getElementById('current-1').textContent = '0'; 
@@ -31,8 +33,11 @@ function init() {
     document.getElementById('name-0').textContent = 'Player 1';
     document.getElementById('name-1').textContent = 'Player 2';
 
-    document.querySelector(`.player-0-panel`).classList.remove('winner');
-    document.querySelector(`.player-1-panel`).classList.remove('winner');
+    document.querySelector('.player-0-panel .player-winner').style.display = 'none';
+    document.querySelector('.player-1-panel .player-winner').style.display = 'none';
+
+    document.querySelector('.player-0-panel').classList.remove('winner');
+    document.querySelector('.player-1-panel').classList.remove('winner');
     
     document.querySelector('.player-1-panel').classList.remove('active');
     document.querySelector('.player-0-panel').classList.remove('active');
@@ -80,9 +85,15 @@ function holding() {
         if (totalScore[activePlayer] >= 20) {
             document.getElementById(`name-${activePlayer}`).textContent = 'Winner!';
             document.querySelector(`.player-${activePlayer}-panel`).classList.add('winner');
+
             document.querySelector('.dice').style.display = 'none';
             document.querySelector('.btn-roll').style.display = 'none';
             document.querySelector('.btn-hold').style.display = 'none';
+            document.getElementById(`current-box-${activePlayer}`).style.display = 'none';
+
+            // Display winner image
+            document.querySelector(`.player-${activePlayer}-panel .player-winner`).style.display = 'block';
+            
             gamePlaying = false;
         } else {
             changePlayer();
@@ -101,8 +112,28 @@ function changePlayer() {
     document.querySelector('.player-1-panel').classList.toggle('active');
 }
 
+function openInfo() {
+    swal({
+        title: 'Pig Dice Game',
+        type: 'info',
+        html:
+            `<b>Be the first player to reach 100 points</b><br><br>
+            <p style="text-align: left">
+                Rolls a 1:<br>
+                Scores nothing and change player.<br><br>
+                Hold:<br>
+                Stop rolling, record the total and change player.
+            </p>`,
+        padding: 60,
+        allowEnterKey: true,
+        confirmButtonText:
+            'OK'
+    })
+}
+
 init();
 
+document.querySelector('.info').addEventListener('click', openInfo);
 document.querySelector('.btn-roll').addEventListener('click', rollingDice);
 document.querySelector('.btn-hold').addEventListener('click', holding);
 document.querySelector('.btn-new').addEventListener('click', init);
