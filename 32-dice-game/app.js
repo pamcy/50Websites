@@ -19,6 +19,9 @@ function init() {
 
     document.querySelector('.dice').style.display = 'none';
 
+    document.querySelector('.btn-roll').style.display = 'block';
+    document.querySelector('.btn-hold').style.display = 'block';
+
     document.getElementById('current-0').textContent = '0';
     document.getElementById('current-1').textContent = '0'; 
 
@@ -48,13 +51,17 @@ function rollingDice() {
         diceDOM.style.display = 'block';
         diceDOM.src = `imgs/dice-${diceNumber}.svg`;
  
-        diceDOM.classList.add('animated', 'bounceIn');setTimeout(function() {
+        diceDOM.classList.add('animated', 'bounceIn');
+        setTimeout(function() {
             diceDOM.classList.remove('animated', 'bounceIn');
         }, 500);
 
         // Update current scores
         if (diceNumber === 1) {
-            changePlayer();
+            setTimeout(function() {
+                document.querySelector('.dice').style.display = 'none';
+                setTimeout(changePlayer, 100);
+            }, 500);
         } else {
             currentScore += diceNumber;
             document.getElementById(`current-${activePlayer}`).textContent = currentScore;
@@ -73,8 +80,9 @@ function holding() {
         if (totalScore[activePlayer] >= 20) {
             document.getElementById(`name-${activePlayer}`).textContent = 'Winner!';
             document.querySelector(`.player-${activePlayer}-panel`).classList.add('winner');
-            document.querySelector(`.player-${activePlayer}-panel`).classList.remove('active');
             document.querySelector('.dice').style.display = 'none';
+            document.querySelector('.btn-roll').style.display = 'none';
+            document.querySelector('.btn-hold').style.display = 'none';
             gamePlaying = false;
         } else {
             changePlayer();
