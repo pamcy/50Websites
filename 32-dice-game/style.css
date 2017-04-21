@@ -1,7 +1,6 @@
 /**********************************************
 *** GENERAL
 **********************************************/
-
 * {
     margin: 0;
     padding: 0;
@@ -9,15 +8,24 @@
 }
 
 body {
-    /*background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(imgs/back.jpg);
-    background-size: cover;
-    background-position: center;*/
     background: #3B1F2B;
     font-family: Lato;
     font-weight: 300;
     position: relative;
     height: 100vh;
     color: #555;
+}
+
+input {
+    appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    -webkit-appearance: none;
+    border: 0;
+    box-shadow: none;
+    outline: none;
+    padding: 0;
 }
 
 .clearfix::after {
@@ -32,24 +40,13 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
-    overflow: hidden;   
+    background-color: #FFF;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
 }
-
-.player-0-panel,
-.player-1-panel {
-    width: 50%;
-    float: left;
-    height: 600px;
-    padding: 100px;
-    opacity: 0.6;
-}
-
-
 
 /**********************************************
-*** PLAYERS
+*** Pop-up Info & Input
 **********************************************/
 .info {
     position: fixed;
@@ -57,6 +54,36 @@ body {
     top: 15px;
     right: 15px;
     cursor: pointer;
+}
+
+.setting-score {
+    text-align: center;
+    margin: 20px 0 0;
+    color: #E2FCEF;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.setting-score input {
+    width: 80px;
+    line-height: 30px;
+    vertical-align: middle;
+    font-size: 20px;
+    padding: 0 5px;
+    text-align: center;
+    color: #222;
+}
+
+/**********************************************
+*** PLAYERS
+**********************************************/
+.player-0-panel,
+.player-1-panel {
+    width: 50%;
+    float: left;
+    height: 600px;
+    padding: 100px;
+    opacity: 0.6;
 }
 
 .player-name {
@@ -83,10 +110,6 @@ body {
     opacity: 1;
 }
 
-/*.active .player-name {
-    font-weight: 600;
-}*/
-
 .active .player-name::after {
     content: "\2022";
     font-size: 47px;
@@ -94,12 +117,11 @@ body {
     color: #FFC61B;
     top: -7px;
     right: 10px;
-    
 }
 
 .player-current-box {
     background-color: #FFC61B;
-    color: #fff;
+    color: #FFF;
     width: 40%;
     margin: 0 auto;
     padding: 12px;
@@ -133,14 +155,19 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-button:hover { font-weight: 400; }
-button:hover i { margin-right: 20px; }
+.wrapper > button:hover {
+    font-weight: 400;
+}
 
-button:focus {
+.wrapper > button:hover i {
+    margin-right: 20px;
+}
+
+.wrapper > button:focus {
     outline: none;
 }
 
-i {
+.wrapper > button i {
     color: #4B8F8C;
     display: inline-block;
     margin-right: 15px;
@@ -151,33 +178,44 @@ i {
     transition: margin 0.3s;
 }
 
-.btn-new { top: 45px;}
-.btn-roll { top: 403px;}
-.btn-hold { top: 467px;}
+.btn-new {
+    top: 50px;
+}
+
+.btn-roll {
+    top: 480px;
+}
+
+.btn-hold {
+    top: 530px;
+}
 
 .dice {
     position: absolute;
     left: 45%;
     top: 178px;
-    /*transform: translateX(-50%);*/
     height: 100px;
-    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
+    box-shadow: 0 10px 60px rgba(0, 0, 0, 0.1);
 }
 
 .animated {
-  	animation-duration: 0.8s;
-  	/*animation-fill-mode: backwards;*/
-	animation-name: bounceIn;
+    animation-duration: 0.8s;
+    animation-name: bounceIn;
 }
 
 @keyframes bounceIn {
-    from, 20%, 40%, 60%, 80%, to {
-    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    from,
+    20%,
+    40%,
+    60%,
+    80%,
+    to {
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
     }
 
     0% {
         opacity: 0;
-        transform: scale3d(.3, .3, .3);
+        transform: scale3d(0.3, 0.3, 0.3);
     }
 
     20% {
@@ -185,7 +223,7 @@ i {
     }
 
     40% {
-        transform: scale3d(.9, .9, .9);
+        transform: scale3d(0.9, 0.9, 0.9);
     }
 
     60% {
@@ -194,7 +232,7 @@ i {
     }
 
     80% {
-        transform: scale3d(.97, .97, .97);
+        transform: scale3d(0.97, 0.97, 0.97);
     }
 
     to {
@@ -204,7 +242,6 @@ i {
 }
 
 .winner .player-name {
-    /*font-weight: 300;*/
     color: #EB4D4D;
 }
 

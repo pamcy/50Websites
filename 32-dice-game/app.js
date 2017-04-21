@@ -1,14 +1,3 @@
-/*
-GAME RULES:
-
-- The game has 2 players, playing in rounds
-- In each turn, a player rolls a dice as many times as he whishes. Each result get added to his ROUND score
-- BUT, if the player rolls a 1, all his ROUND score gets lost. After that, it's the next player's turn
-- The player can choose to 'Hold', which means that his ROUND score gets added to his GLBAL score. After that, it's the next player's turn
-- The first player to reach 100 points on GLOBAL score wins the game
-
-*/
-
 let totalScore;
 let currentScore;
 let activePlayer;
@@ -44,7 +33,7 @@ function rollingDice() {
         // Update current scores
         if (currentDiceNumber === 1) {
             setTimeout(function () {
-                document.querySelector('.dice').style.display = 'none';
+                diceDOM.style.display = 'none';
                 setTimeout(changePlayer, 100);
             }, 500);
         } else if (lastDiceNumber === 6 && currentDiceNumber === 6) {
@@ -52,7 +41,7 @@ function rollingDice() {
             document.getElementById(`score-${activePlayer}`).textContent = '0';
 
             setTimeout(function () {
-                document.querySelector('.dice').style.display = 'none';
+                diceDOM.style.display = 'none';
                 setTimeout(changePlayer, 100);
             }, 500);
         } else {
@@ -67,13 +56,20 @@ function rollingDice() {
 
 function holding() {
     if (gamePlaying) {
+        // Get input value score & Check input value is not empty
+        let inputValue = document.getElementById('setting-score').value;
+
+        if (!inputValue) {
+            inputValue = 21;
+        }
+
         // Update total scores
         totalScore[activePlayer] += currentScore;
         document.getElementById(`score-${activePlayer}`).textContent = totalScore[activePlayer];
         console.log(totalScore);
 
         // Winner rules
-        if (totalScore[activePlayer] >= 20) {
+        if (totalScore[activePlayer] >= inputValue) {
             document.getElementById(`name-${activePlayer}`).textContent = 'Winner!';
             document.querySelector(`.player-${activePlayer}-panel`).classList.add('winner');
 
@@ -136,7 +132,7 @@ function openInfo() {
             <p style="text-align: left">
                 Roll a 1:<br>
                 Score zero and next player turn.<br><br>
-                Roll two 6:<br>
+                Roll two 6 in a row:<br>
                 Lose ENTIRE score and next player turn.<br><br>
                 Hold:<br>
                 Stop rolling, record the total and next player turn.

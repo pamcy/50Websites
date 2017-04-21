@@ -13,7 +13,12 @@
     <body>
         <div class="info">
             <img src="imgs/question.svg" alt="faq">
+        </div> 
+
+        <div class="setting-score">
+            The first to score <input type="number" name="setScore" id="setting-score" min="20" max="300" value="100"> wins!
         </div>
+
         <div class="wrapper clearfix">
             <div class="player-0-panel active">
                 <div class="player-name" id="name-0">Player 1</div>
@@ -32,14 +37,14 @@
                     <div class="player-current-label">Current</div>
                     <div class="player-current-score" id="current-1">0</div>
                 </div>
-                <img src="imgs/celebrate.gif" alt="celebrate the winner" class="player-winner">                
+                <img src="imgs/celebrate.gif" alt="celebrate the winner" class="player-winner">    
             </div>
-            
+
             <button class="btn-new"><i class="ion-ios-plus-outline"></i>New game</button>
             <button class="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button>
             <button class="btn-hold"><i class="ion-ios-download-outline"></i>Hold</button>
             
-            <img src="" alt="Dice number" class="dice">
+            <img src="imgs/dice-1.svg" alt="Dice number" class="dice">
         </div>
         
         <script src="app.js"></script>
