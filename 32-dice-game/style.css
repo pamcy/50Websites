@@ -34,12 +34,15 @@ input {
     clear: both;
 }
 
-.wrapper {
-    width: 1000px;
+.container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.wrapper {
+    width: 1000px;
     background-color: #FFF;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
     overflow: hidden;
@@ -49,16 +52,16 @@ input {
 *** Pop-up Info & Input
 **********************************************/
 .info {
-    position: fixed;
+    position: absolute;
     width: 25px;
-    top: 15px;
-    right: 15px;
+    top: 7px;
+    right: 10px;
     cursor: pointer;
 }
 
 .setting-score {
     text-align: center;
-    margin: 20px 0 0;
+    margin: 0 0 20px;
     color: #E2FCEF;
     font-size: 30px;
     font-weight: 600;
@@ -70,6 +73,7 @@ input {
     vertical-align: middle;
     font-size: 20px;
     padding: 0 5px;
+    margin: 0 5px;
     text-align: center;
     color: #222;
 }
@@ -179,23 +183,30 @@ input {
 }
 
 .btn-new {
-    top: 50px;
+    top: 110px;
 }
 
 .btn-roll {
-    top: 480px;
+    top: 540px;
 }
 
 .btn-hold {
-    top: 530px;
+    top: 590px;
 }
 
 .dice {
     position: absolute;
     left: 45%;
-    top: 178px;
     height: 100px;
     box-shadow: 0 10px 60px rgba(0, 0, 0, 0.1);
+}
+
+.dice-1 {
+    top: 230px;
+}
+
+.dice-2 {
+    top: 350px;
 }
 
 .animated {

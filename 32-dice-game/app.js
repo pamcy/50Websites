@@ -60,7 +60,7 @@ function holding() {
         let inputValue = document.getElementById('setting-score').value;
 
         if (!inputValue) {
-            inputValue = 21;
+            inputValue = 100;
         }
 
         // Update total scores
