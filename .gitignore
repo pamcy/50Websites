@@ -2,3 +2,5 @@
 /garage-wanderlust-font/*
 /node_modules/*
 stylelint.config.js
+.eslintrc.json
+jsconfig.json
