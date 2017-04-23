@@ -2,6 +2,9 @@
 
 I knew that if I was going to succeed at learning to code, I would need to apply knowledge as much as possible. I devoted to build something from what I learned, below is a list of websites I made lately, some took a couple of days to complete. (Still Updating)
 
+[32 - Pig Dice Game](https://pamcy.github.io/50Websites/32-pig-dice-game/)  
+Pig is a basic dice game completed in pure JS, the first player to score 100 wins the game. I learn how the dice value changes to a new random number each time, with conditional statements to check if all of rules apply.
+
 [31 - HTML5 Form Validation with jQuery](https://pamcy.github.io/50Websites/31-form-validation)  
 Instead of just using HTML5's built-in browser validation, I add additional custom rules to check the inputted value as well. It's a real-time validation using `test()` method to test for a match in `RegExp`, the feedback is displayed without submitting the form.
 
