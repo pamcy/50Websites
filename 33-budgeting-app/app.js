@@ -1,11 +1,11 @@
 // BUDGET CONTROLLER
-let budgetController = (function() {
+const budgetController = (function() {
 
 })();
 
 
 // UI INTERFACE CONTROLLER
-let uiController = (function () {
+const uiController = (function () {
     const DOMstrings = {
         addType: '.add__type',
         addDescription: '.add__description',
@@ -29,12 +29,8 @@ let uiController = (function () {
 
 
 // GLOBAL APP CONTROLLER
-let appController = (function (budgetCtrl, uiCtrl) {
-
-    const DOM = uiCtrl.getDOMstrings();
-
+const appController = (function (budgetCtrl, uiCtrl) {
     let ctrlAddItem = function () {
-
         // 1. Get the input data
         let inputVal = uiCtrl.getInput();
         console.log(inputVal);
@@ -46,15 +42,28 @@ let appController = (function (budgetCtrl, uiCtrl) {
         // 5. Display the total budget on the UI
     };
 
-    document.querySelector(DOM.addBtn).addEventListener('click', ctrlAddItem);
+    // All EventListners
+    let setupEventListners = function () {
+        const DOM = uiCtrl.getDOMstrings();
 
-    document.addEventListener('keypress', function (e) {
-        // console.log(e);
-        // display the keypress properties
-        if (e.keyCode === 13 || e.which === 13) {
-            // e.which for older browsers if they have no keyCode property
+        document.querySelector(DOM.addBtn).addEventListener('click', ctrlAddItem);
 
-            ctrlAddItem();
-        }
-    });
+        document.addEventListener('keypress', function (e) {
+            // console.log(e);
+            // display the keypress properties
+            if (e.keyCode === 13 || e.which === 13) {
+                // e.which for older browsers if they have no keyCode property
+                ctrlAddItem();
+            }
+        });
+    }
+
+    return {
+        init: function () {
+            console.log('hoooooray');
+            setupEventListners();
+        },
+    }
 })(budgetController, uiController);
+
+appController.init();
