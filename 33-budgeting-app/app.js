@@ -1,7 +1,29 @@
 // BUDGET CONTROLLER
 const budgetController = (function() {
+    const Income = function (id, description, value) {
+        this.id = id;
+        this.description = description;
+        this.value = value;
+    };
 
+    const Expense = function (id, description, value) {
+        this.id = id;
+        this.description = description;
+        this.value = value;
+    };
+
+    const data = {
+        allItems: {
+            inc: [],
+            exp: [],
+        },
+        totals: {
+            inc: 0,
+            exp: 0,
+        },
+    };
 })();
+
 
 
 // UI INTERFACE CONTROLLER
@@ -32,9 +54,9 @@ const uiController = (function () {
 const appController = (function (budgetCtrl, uiCtrl) {
     let ctrlAddItem = function () {
         // 1. Get the input data
-        let inputVal = uiCtrl.getInput();
-        console.log(inputVal);
-        console.log(inputVal.description);
+        let inputData = uiCtrl.getInput();
+        console.log(inputData);
+        console.log(inputData.value);
 
         // 2. Add the item to the budget controller
         // 3. Add the item to the UI
