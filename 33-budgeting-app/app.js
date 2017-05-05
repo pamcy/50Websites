@@ -22,6 +22,45 @@ const budgetController = (function() {
             exp: 0,
         },
     };
+
+    return {
+        addItem: function (type, des, val) {
+            let newItem;
+            let ID;
+
+            // ID Logic
+            // [1, 2, 3, 4, 5] nextID = 6
+            // [1, 3, 5, 6, 9] nextID = 10
+            // ID = lastID + 1
+
+            // Create a new id
+            if (data.allItems[type].length > 0) {
+                ID = data.allItems[type][data.allItems[type].length - 1].id + 1;
+                // Select the last index + 1
+            } else {
+                ID = 0;
+            }
+
+            // Create a new item
+            if (type === 'inc') {
+                newItem = new Income(ID, des, val);
+                // data.allItems.inc.push(newItem);
+            } else if (type === 'exp') {
+                newItem = new Expense(ID, des, val);
+                // data.allItems.exp.push(newItem);
+            }
+
+            // Push all new items to array
+            data.allItems[type].push(newItem); // better way
+
+            // Other module or functions can access it
+            return newItem;
+        },
+
+        getData: function () {
+            return data;
+        },
+    };
 })();
 
 
@@ -53,12 +92,15 @@ const uiController = (function () {
 // GLOBAL APP CONTROLLER
 const appController = (function (budgetCtrl, uiCtrl) {
     let ctrlAddItem = function () {
+        let inputData;
+        let newItem;
+
         // 1. Get the input data
-        let inputData = uiCtrl.getInput();
-        console.log(inputData);
-        console.log(inputData.value);
+        inputData = uiCtrl.getInput();
 
         // 2. Add the item to the budget controller
+        newItem = budgetCtrl.addItem(inputData.type, inputData.description, inputData.value);
+
         // 3. Add the item to the UI
         // 4. Calculate the total budget
         // 5. Display the total budget on the UI
