@@ -35,9 +35,11 @@ const budgetController = (function() {
 
             // Create a new id
             if (data.allItems[type].length > 0) {
-                ID = data.allItems[type][data.allItems[type].length - 1].id + 1;
+                // When the array has some data
                 // Select the last index + 1
+                ID = data.allItems[type][data.allItems[type].length - 1].id + 1;
             } else {
+                // When the array is empty
                 ID = 0;
             }
 
@@ -53,7 +55,7 @@ const budgetController = (function() {
             // Push all new items to array
             data.allItems[type].push(newItem); // better way
 
-            // Other module or functions can access it
+            // Other module or functions can get the new item
             return newItem;
         },
 
@@ -64,7 +66,6 @@ const budgetController = (function() {
 })();
 
 
-
 // UI INTERFACE CONTROLLER
 const uiController = (function () {
     const DOMstrings = {
@@ -72,6 +73,8 @@ const uiController = (function () {
         addDescription: '.add__description',
         addValue: '.add__value',
         addBtn: '.add__btn',
+        incomeContainer: '.income__list',
+        expenseContainer: '.expenses__list',
     }
 
     return {
@@ -82,6 +85,41 @@ const uiController = (function () {
                 value: document.querySelector(DOMstrings.addValue).value,
             }
         },
+
+        addListItem: function (type, obj) {
+            let html;
+            let container;
+
+            if (type === 'inc') {
+                container = DOMstrings.incomeContainer;
+
+                html = `<div class="item clearfix" id="income-${obj.id}">
+                                <div class="item__description">${obj.description}</div>
+                                <div class="right clearfix">
+                                    <div class="item__value">${obj.value}</div>
+                                    <div class="item__delete">
+                                        <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
+                                    </div>
+                                </div>
+                            </div>`;
+            } else if (type === 'exp') {
+                container = DOMstrings.expenseContainer;
+
+                html = `<div class="item clearfix" id="expense-${obj.id}">
+                            <div class="item__description">${obj.description}</div>
+                            <div class="right clearfix">
+                                <div class="item__value">${obj.value}</div>
+                                <div class="item__percentage"></div>
+                                <div class="item__delete">
+                                    <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
+                                </div>
+                            </div>
+                        </div>`;
+            }
+
+            document.querySelector(container).insertAdjacentHTML('beforeend', html);
+        },
+
         getDOMstrings: function () {
             return DOMstrings;
         },
@@ -102,6 +140,8 @@ const appController = (function (budgetCtrl, uiCtrl) {
         newItem = budgetCtrl.addItem(inputData.type, inputData.description, inputData.value);
 
         // 3. Add the item to the UI
+        uiCtrl.addListItem(inputData.type, newItem);
+
         // 4. Calculate the total budget
         // 5. Display the total budget on the UI
     };
