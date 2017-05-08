@@ -28,10 +28,12 @@ const budgetController = (function() {
             let newItem;
             let ID;
 
-            // ID Logic
-            // [1, 2, 3, 4, 5] nextID = 6
-            // [1, 3, 5, 6, 9] nextID = 10
-            // ID = lastID + 1
+            /*
+            ID Logic
+            [1, 2, 3, 4, 5] nextID = 6
+            [1, 3, 5, 6, 9] nextID = 10
+            ID = lastID + 1
+            */
 
             // Create a new id
             if (data.allItems[type].length > 0) {
@@ -94,14 +96,14 @@ const uiController = (function () {
                 container = DOMstrings.incomeContainer;
 
                 html = `<div class="item clearfix" id="income-${obj.id}">
-                                <div class="item__description">${obj.description}</div>
-                                <div class="right clearfix">
-                                    <div class="item__value">${obj.value}</div>
-                                    <div class="item__delete">
-                                        <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
-                                    </div>
+                            <div class="item__description">${obj.description}</div>
+                            <div class="right clearfix">
+                                <div class="item__value">${obj.value}</div>
+                                <div class="item__delete">
+                                    <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
                                 </div>
-                            </div>`;
+                            </div>
+                        </div>`;
             } else if (type === 'exp') {
                 container = DOMstrings.expenseContainer;
 
@@ -118,6 +120,22 @@ const uiController = (function () {
             }
 
             document.querySelector(container).insertAdjacentHTML('beforeend', html);
+        },
+
+        clearInputFields: function () {
+            // Convert a nodelist to an array
+            // See solution
+            // https://hackernoon.com/htmlcollection-nodelist-and-array-of-objects-da42737181f9
+
+            const fields = [...document.querySelectorAll(`${DOMstrings.addDescription}, ${DOMstrings.addValue}`)];
+            // console.log(fields);
+
+            fields.forEach(function(field) {
+                field.value = '';
+            });
+
+            // Give focus to the first element
+            fields[0].focus();
         },
 
         getDOMstrings: function () {
@@ -142,12 +160,15 @@ const appController = (function (budgetCtrl, uiCtrl) {
         // 3. Add the item to the UI
         uiCtrl.addListItem(inputData.type, newItem);
 
-        // 4. Calculate the total budget
-        // 5. Display the total budget on the UI
+        // 4. Clear the input field
+        uiCtrl.clearInputFields();
+
+        // 5. Calculate the total budget
+        // 6. Display the total budget on the UI
     };
 
     // All EventListners
-    let setupEventListners = function () {
+    const setupEventListners = function () {
         const DOM = uiCtrl.getDOMstrings();
 
         document.querySelector(DOM.addBtn).addEventListener('click', ctrlAddItem);
