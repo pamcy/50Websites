@@ -118,6 +118,10 @@ const uiController = (function () {
         addBtn: '.add__btn',
         incomeContainer: '.income__list',
         expenseContainer: '.expenses__list',
+        titleBudget: '.budget__value',
+        titleIncome: '.budget__income--value',
+        titleExpense: '.budget__expenses--value',
+        titlePercentage: '.budget__expenses--percentage',
     }
 
     return {
@@ -172,12 +176,24 @@ const uiController = (function () {
             const fields = [...document.querySelectorAll(`${DOMstrings.addDescription}, ${DOMstrings.addValue}`)];
             // console.log(fields);
 
-            fields.forEach(function(field) {
+            fields.forEach(function (field) {
                 field.value = '';
             });
 
             // Give focus to the first element
             fields[0].focus();
+        },
+
+        displayBudget: function (obj) {
+            document.querySelector(DOMstrings.titleBudget).textContent = obj.totalBudget;
+            document.querySelector(DOMstrings.titleIncome).textContent = obj.totalIncome;
+            document.querySelector(DOMstrings.titleExpense).textContent = `- ${obj.totalExpense}`;
+
+            if (obj.percentage === -1) {
+                document.querySelector(DOMstrings.titlePercentage).textContent = '---';
+            } else {
+                document.querySelector(DOMstrings.titlePercentage).textContent = `${obj.percentage}%`;
+            }
         },
 
         getDOMstrings: function () {
@@ -198,6 +214,7 @@ const appController = (function (budgetCtrl, uiCtrl) {
         console.log(BudgetData);
 
         // 3. Display the total budget on the UI
+        uiCtrl.displayBudget(BudgetData);
     }
 
     const ctrlAddItem = function () {
@@ -240,7 +257,12 @@ const appController = (function (budgetCtrl, uiCtrl) {
 
     return {
         init: function () {
-            console.log('hoooooray');
+            uiCtrl.displayBudget({
+                totalBudget: 0,
+                totalIncome: 0,
+                totalExpense: 0,
+                percentage: -1,
+            });
             setupEventListners();
         },
     }
