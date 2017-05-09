@@ -21,6 +21,19 @@ const budgetController = (function() {
             inc: 0,
             exp: 0,
         },
+        budget: 0,
+        percentage: -1,
+    };
+
+    const calculateTotal = function (type) {
+        let sum = 0;
+
+        data.allItems[type].forEach(function (current) {
+            sum += current.value;
+        })
+
+        data.totals[type] = sum;
+        // console.log(sum);
     };
 
     return {
@@ -61,12 +74,40 @@ const budgetController = (function() {
             return newItem;
         },
 
-        getData: function () {
+        calculateBudget: function () {
+            // 1. Calculate total income and expenses
+            calculateTotal('inc');
+            calculateTotal('exp');
+
+            // 2. Calaulate Total budget = Income - Expense
+            data.budget = data.totals.inc - data.totals.exp;
+            console.log(`Total budget: ${data.budget}`);
+
+            // 3. Calculate percentage
+            // divide anything by zero, not allowed in math
+            // Calculate only when it has income
+            if (data.totals.inc > 0) {
+                data.percentage = Math.round((data.totals.exp / data.totals.inc) * 100);
+            } else {
+                data.percentage = -1; // none existence
+            }
+            console.log(`percentage: ${data.percentage}`);
+        },
+
+        getBudget: function () {
+            return {
+                totalBudget: data.budget,
+                totalIncome: data.totals.inc,
+                totalExpense: data.totals.exp,
+                percentage: data.percentage,
+            }
+        },
+
+        forTesting: function () {
             return data;
         },
     };
 })();
-
 
 // UI INTERFACE CONTROLLER
 const uiController = (function () {
@@ -84,7 +125,8 @@ const uiController = (function () {
             return {
                 type: document.querySelector(DOMstrings.addType).value,
                 description: document.querySelector(DOMstrings.addDescription).value,
-                value: parseFloat(document.querySelector(DOMstrings.addValue).value), // turn a string into floating point number
+                value: parseFloat(document.querySelector(DOMstrings.addValue).value),
+                // turn a string into floating point number
             }
         },
 
@@ -147,6 +189,17 @@ const uiController = (function () {
 
 // GLOBAL APP CONTROLLER
 const appController = (function (budgetCtrl, uiCtrl) {
+    const updateBudget = function () {
+        // 1. Calculate the total budget
+        budgetCtrl.calculateBudget();
+
+        // 2. Return the budget
+        const BudgetData = budgetCtrl.getBudget();
+        console.log(BudgetData);
+
+        // 3. Display the total budget on the UI
+    }
+
     const ctrlAddItem = function () {
         let inputData;
         let newItem;
@@ -166,14 +219,8 @@ const appController = (function (budgetCtrl, uiCtrl) {
 
             // 5. Calculate and update budget
             updateBudget();
-        } 
+        }
     };
-
-    const updateBudget = function () {
-        // 1. Calculate the total budget
-        // 2. Return the budget
-        // 3. Display the total budget on the UI
-    }
 
     // All EventListners
     const setupEventListners = function () {
