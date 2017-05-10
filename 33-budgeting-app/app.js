@@ -74,6 +74,25 @@ const budgetController = (function() {
             return newItem;
         },
 
+        deleteItem: function (type, id) {
+            // ID Example
+            // id = 6
+            // ids = [1, 2, 4, 6, 8]
+            // index = 3
+
+            const ids = data.allItems[type].map((current) => {
+                return current.id; // use map to return sth in a new array
+            });
+
+            const index = ids.indexOf(id);
+
+            // Remove only if index exists
+            // -1: did not find the element
+            if (index !== -1) {
+                data.allItems[type].splice(index, 1);
+            }
+        },
+
         calculateBudget: function () {
             // 1. Calculate total income and expenses
             calculateTotal('inc');
@@ -101,12 +120,6 @@ const budgetController = (function() {
                 totalExpense: data.totals.exp,
                 percentage: data.percentage,
             }
-        },
-
-        deleteItem: function (type, id) {
-            data.allItems[type].forEach((current, index) => {
-                console.log(`current: ${current}.id; id: ${index}`);
-            });
         },
 
         forTesting: function () {
@@ -244,23 +257,22 @@ const appController = (function (budgetCtrl, uiCtrl) {
             // 5. Calculate and update budget
             updateBudget();
         }
-    }; 
+    };
 
     const ctrlDeleteItem = function (e) {
-        let itemID;
         let splitID;
         let type;
         let ID;
 
         console.log(e.target);
 
-        itemID = e.target.parentNode.parentNode.parentNode.parentNode.id;
+        const itemID = e.target.parentNode.parentNode.parentNode.parentNode.id;
         // target: delete icon; parentNode.id = inc-1
 
         if (itemID) {
             splitID = itemID.split('-');  // array ['inc', '1']
             type = splitID[0];
-            ID = splitID[1];
+            ID = parseInt(splitID[1]);  // string to num
         }
 
         // 1. Delete item from the data constructor
