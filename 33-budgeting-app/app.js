@@ -103,6 +103,12 @@ const budgetController = (function() {
             }
         },
 
+        deleteItem: function (type, id) {
+            data.allItems[type].forEach((current, index) => {
+                console.log(`current: ${current}.id; id: ${index}`);
+            });
+        },
+
         forTesting: function () {
             return data;
         },
@@ -122,6 +128,7 @@ const uiController = (function () {
         titleIncome: '.budget__income--value',
         titleExpense: '.budget__expenses--value',
         titlePercentage: '.budget__expenses--percentage',
+        container: '.container',
     }
 
     return {
@@ -141,7 +148,7 @@ const uiController = (function () {
             if (type === 'inc') {
                 container = DOMstrings.incomeContainer;
 
-                html = `<div class="item clearfix" id="income-${obj.id}">
+                html = `<div class="item clearfix" id="inc-${obj.id}">
                             <div class="item__description">${obj.description}</div>
                             <div class="right clearfix">
                                 <div class="item__value">${obj.value}</div>
@@ -153,7 +160,7 @@ const uiController = (function () {
             } else if (type === 'exp') {
                 container = DOMstrings.expenseContainer;
 
-                html = `<div class="item clearfix" id="expense-${obj.id}">
+                html = `<div class="item clearfix" id="exp-${obj.id}">
                             <div class="item__description">${obj.description}</div>
                             <div class="right clearfix">
                                 <div class="item__value">${obj.value}</div>
@@ -237,6 +244,31 @@ const appController = (function (budgetCtrl, uiCtrl) {
             // 5. Calculate and update budget
             updateBudget();
         }
+    }; 
+
+    const ctrlDeleteItem = function (e) {
+        let itemID;
+        let splitID;
+        let type;
+        let ID;
+
+        console.log(e.target);
+
+        itemID = e.target.parentNode.parentNode.parentNode.parentNode.id;
+        // target: delete icon; parentNode.id = inc-1
+
+        if (itemID) {
+            splitID = itemID.split('-');  // array ['inc', '1']
+            type = splitID[0];
+            ID = splitID[1];
+        }
+
+        // 1. Delete item from the data constructor
+        budgetCtrl.deleteItem(type, ID);
+
+
+        // 2. Delete item from the UI
+        // 3. Re-calculate and update the budget
     };
 
     // All EventListners
@@ -253,6 +285,8 @@ const appController = (function (budgetCtrl, uiCtrl) {
                 ctrlAddItem();
             }
         });
+
+        document.querySelector(DOM.container).addEventListener('click', ctrlDeleteItem);
     }
 
     return {
