@@ -86,7 +86,7 @@ const budgetController = (function() {
 
             const index = ids.indexOf(id);
 
-            // Remove only if index exists
+            // Remove item only if index exists
             // -1: did not find the element
             if (index !== -1) {
                 data.allItems[type].splice(index, 1);
@@ -188,6 +188,11 @@ const uiController = (function () {
             document.querySelector(container).insertAdjacentHTML('beforeend', html);
         },
 
+        deleteListItem: function (selectorID) {
+            const el = document.getElementById(selectorID);
+            el.parentNode.removeChild(el);
+        },
+
         clearInputFields: function () {
             // Convert a nodelist to an array
             // See solution
@@ -263,11 +268,10 @@ const appController = (function (budgetCtrl, uiCtrl) {
         let splitID;
         let type;
         let ID;
-
-        console.log(e.target);
-
         const itemID = e.target.parentNode.parentNode.parentNode.parentNode.id;
         // target: delete icon; parentNode.id = inc-1
+
+        console.log(e.target);
 
         if (itemID) {
             splitID = itemID.split('-');  // array ['inc', '1']
@@ -278,9 +282,11 @@ const appController = (function (budgetCtrl, uiCtrl) {
         // 1. Delete item from the data constructor
         budgetCtrl.deleteItem(type, ID);
 
-
         // 2. Delete item from the UI
+        uiCtrl.deleteListItem(itemID);
+
         // 3. Re-calculate and update the budget
+        updateBudget();
     };
 
     // All EventListners
