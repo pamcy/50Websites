@@ -10,6 +10,16 @@ const budgetController = (function() {
         this.id = id;
         this.description = description;
         this.value = value;
+        this.percentage = -1;
+    };
+
+    Expense.prototype.calcPercentage = function (totalIncome) {
+        if (totalIncome > 0) {
+            this.percentage = Math.round((this.value / totalIncome) * 100); 
+        } else {
+            this.percentage = -1;
+        }
+        return this.percentage;
     };
 
     const data = {
@@ -28,7 +38,7 @@ const budgetController = (function() {
     const calculateTotal = function (type) {
         let sum = 0;
 
-        data.allItems[type].forEach(function (current) {
+        data.allItems[type].forEach((current) => {
             sum += current.value;
         })
 
@@ -100,7 +110,6 @@ const budgetController = (function() {
 
             // 2. Calaulate Total budget = Income - Expense
             data.budget = data.totals.inc - data.totals.exp;
-            console.log(`Total budget: ${data.budget}`);
 
             // 3. Calculate percentage
             // divide anything by zero, not allowed in math
@@ -110,7 +119,6 @@ const budgetController = (function() {
             } else {
                 data.percentage = -1; // none existence
             }
-            console.log(`percentage: ${data.percentage}`);
         },
 
         getBudget: function () {
@@ -121,6 +129,20 @@ const budgetController = (function() {
                 percentage: data.percentage,
             }
         },
+
+        calculatePercentages: function () {
+            const allPercentage = data.allItems.exp.map((current) => {
+                return current.calcPercentage(data.totals.inc);
+            });
+            return allPercentage;
+        },
+
+        // getPercentages: function () {
+        //     const allPercentage = data.allItems.exp.map((current) => {
+        //         return current.getPercentage();
+        //     });
+        //     return allPercentage;
+        // },
 
         forTesting: function () {
             return data;
@@ -236,19 +258,17 @@ const appController = (function (budgetCtrl, uiCtrl) {
 
         // 2. Return the budget
         const BudgetData = budgetCtrl.getBudget();
-        console.log(BudgetData);
 
         // 3. Display the total budget on the UI
         uiCtrl.displayBudget(BudgetData);
     }
 
     const updatePercentage = function () {
-        // 1. Calculate percentage
+        // 1. Calculate and return percentage
+        const percentage = budgetCtrl.calculatePercentages();
 
-
-
-        // 2. Return percentage
-        // 3. Display percentage on the UI
+        // 2. Display percentage on the UI
+        console.log(percentage);
     }
 
     const ctrlAddItem = function () {
@@ -282,8 +302,7 @@ const appController = (function (budgetCtrl, uiCtrl) {
         let ID;
         const itemID = e.target.parentNode.parentNode.parentNode.parentNode.id;
         // target: delete icon; parentNode.id = inc-1
-
-        console.log(e.target);
+        // console.log(e.target);
 
         if (itemID) {
             splitID = itemID.split('-');  // array ['inc', '1']
