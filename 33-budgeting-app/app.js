@@ -242,6 +242,15 @@ const appController = (function (budgetCtrl, uiCtrl) {
         uiCtrl.displayBudget(BudgetData);
     }
 
+    const updatePercentage = function () {
+        // 1. Calculate percentage
+
+
+
+        // 2. Return percentage
+        // 3. Display percentage on the UI
+    }
+
     const ctrlAddItem = function () {
         let inputData;
         let newItem;
@@ -261,6 +270,9 @@ const appController = (function (budgetCtrl, uiCtrl) {
 
             // 5. Calculate and update budget
             updateBudget();
+
+            // 6. Calculate and update percentage
+            updatePercentage();
         }
     };
 
@@ -287,6 +299,9 @@ const appController = (function (budgetCtrl, uiCtrl) {
 
         // 3. Re-calculate and update the budget
         updateBudget();
+
+        // 4. Calculate and update percentage
+        updatePercentage();
     };
 
     // All EventListners
