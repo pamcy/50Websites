@@ -137,13 +137,6 @@ const budgetController = (function() {
             return allPercentage;
         },
 
-        // getPercentages: function () {
-        //     const allPercentage = data.allItems.exp.map((current) => {
-        //         return current.getPercentage();
-        //     });
-        //     return allPercentage;
-        // },
-
         forTesting: function () {
             return data;
         },
@@ -165,7 +158,26 @@ const uiController = (function () {
         titlePercentage: '.budget__expenses--percentage',
         titleExpensePercentage: '.item__percentage',
         container: '.container',
-    }
+    };
+
+    const formatNumber = function (num, type) {
+        // Return the absolute number   -2000 => 2000
+        num = Math.abs(num);
+        // Convert a number into string, keep two decimals   2000 => 2000.00
+        num = num.toFixed(2);
+
+        const splitNum = num.split('.');
+        const decimal = splitNum[1];
+        let integer = splitNum[0];
+
+        // Comma seperate the thousands   176835 => 176,835
+        // Substring: extract characters from a string and return new string
+        if (integer.length > 3) {
+            integer = `${integer.substr(0, integer.length - 3)},${integer.substr(integer.length - 3, 3)}`;
+        }
+
+        return (type === 'exp' ? '-' : '+') + ' ' + integer + '.' + decimal;
+    };
 
     return {
         getInput: function () {
@@ -187,7 +199,7 @@ const uiController = (function () {
                 html = `<div class="item clearfix" id="inc-${obj.id}">
                             <div class="item__description">${obj.description}</div>
                             <div class="right clearfix">
-                                <div class="item__value">${obj.value}</div>
+                                <div class="item__value">${formatNumber(obj.value, 'inc')}</div>
                                 <div class="item__delete">
                                     <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
                                 </div>
@@ -199,7 +211,7 @@ const uiController = (function () {
                 html = `<div class="item clearfix" id="exp-${obj.id}">
                             <div class="item__description">${obj.description}</div>
                             <div class="right clearfix">
-                                <div class="item__value">${obj.value}</div>
+                                <div class="item__value">${formatNumber(obj.value, 'exp')}</div>
                                 <div class="item__percentage"></div>
                                 <div class="item__delete">
                                     <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
@@ -233,9 +245,13 @@ const uiController = (function () {
         },
 
         displayBudget: function (obj) {
-            document.querySelector(DOMstrings.titleBudget).textContent = obj.totalBudget;
-            document.querySelector(DOMstrings.titleIncome).textContent = obj.totalIncome;
-            document.querySelector(DOMstrings.titleExpense).textContent = `- ${obj.totalExpense}`;
+            let type;
+
+            obj.totalBudget > 0 ? type = 'inc' : type = 'exp';
+
+            document.querySelector(DOMstrings.titleBudget).textContent = formatNumber(obj.totalBudget, type);
+            document.querySelector(DOMstrings.titleIncome).textContent = formatNumber(obj.totalIncome, 'inc');
+            document.querySelector(DOMstrings.titleExpense).textContent = formatNumber(obj.totalExpense, 'exp');
 
             if (obj.percentage === -1) {
                 document.querySelector(DOMstrings.titlePercentage).textContent = '---';
