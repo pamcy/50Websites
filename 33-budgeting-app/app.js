@@ -91,7 +91,7 @@ const budgetController = (function() {
             // index = 3
 
             const ids = data.allItems[type].map((current) => {
-                return current.id; // use map to return sth in a new array
+                return current.id; // use map to return sth and store in a new array
             });
 
             const index = ids.indexOf(id);
@@ -163,6 +163,7 @@ const uiController = (function () {
         titleIncome: '.budget__income--value',
         titleExpense: '.budget__expenses--value',
         titlePercentage: '.budget__expenses--percentage',
+        titleExpensePercentage: '.item__percentage',
         container: '.container',
     }
 
@@ -243,6 +244,18 @@ const uiController = (function () {
             }
         },
 
+        displayPercentage: function (per) {
+            const expPercentage = [...document.querySelectorAll(DOMstrings.titleExpensePercentage)];
+
+            expPercentage.forEach((current, index) => {
+                if (per[index] !== -1) {
+                    current.textContent = `${per[index]}%`;
+                } else {
+                    current.textContent = '---';
+                }
+            });
+        },
+
         getDOMstrings: function () {
             return DOMstrings;
         },
@@ -268,7 +281,7 @@ const appController = (function (budgetCtrl, uiCtrl) {
         const percentage = budgetCtrl.calculatePercentages();
 
         // 2. Display percentage on the UI
-        console.log(percentage);
+        uiCtrl.displayPercentage(percentage);
     }
 
     const ctrlAddItem = function () {
