@@ -152,6 +152,7 @@ const uiController = (function () {
         addBtn: '.add__btn',
         incomeContainer: '.income__list',
         expenseContainer: '.expenses__list',
+        titleMonth: '.budget__title--month',
         titleBudget: '.budget__value',
         titleIncome: '.budget__income--value',
         titleExpense: '.budget__expenses--value',
@@ -272,6 +273,15 @@ const uiController = (function () {
             });
         },
 
+        displayMonth: function () {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = now.getMonth();
+            const monthText = ['January', 'Feburary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+            document.querySelector(DOMstrings.titleMonth).textContent = `${monthText[month]} ${year}`;
+        },
+
         getDOMstrings: function () {
             return DOMstrings;
         },
@@ -372,6 +382,7 @@ const appController = (function (budgetCtrl, uiCtrl) {
 
     return {
         init: function () {
+            uiCtrl.displayMonth();
             uiCtrl.displayBudget({
                 totalBudget: 0,
                 totalIncome: 0,
