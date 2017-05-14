@@ -159,6 +159,7 @@ const uiController = (function () {
         titlePercentage: '.budget__expenses--percentage',
         titleExpensePercentage: '.item__percentage',
         container: '.container',
+        addConatiner: '.add__container',
     };
 
     const formatNumber = function (num, type) {
@@ -282,6 +283,16 @@ const uiController = (function () {
             document.querySelector(DOMstrings.titleMonth).textContent = `${monthText[month]} ${year}`;
         },
 
+        changeType: function() {
+            const inputFields = [...document.querySelectorAll(`${DOMstrings.addType}, ${DOMstrings.addDescription}, ${DOMstrings.addValue}`)];
+
+            inputFields.forEach((current) => {
+                current.classList.toggle('red-focus');
+            });
+
+            document.querySelector(DOMstrings.addBtn).classList.toggle('red');
+        },
+
         getDOMstrings: function () {
             return DOMstrings;
         },
@@ -378,6 +389,8 @@ const appController = (function (budgetCtrl, uiCtrl) {
         });
 
         document.querySelector(DOM.container).addEventListener('click', ctrlDeleteItem);
+
+        document.querySelector(DOM.addType).addEventListener('change', uiCtrl.changeType);
     }
 
     return {
