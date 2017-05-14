@@ -159,7 +159,6 @@ const uiController = (function () {
         titlePercentage: '.budget__expenses--percentage',
         titleExpensePercentage: '.item__percentage',
         container: '.container',
-        addConatiner: '.add__container',
     };
 
     const formatNumber = function (num, type) {
@@ -347,10 +346,10 @@ const appController = (function (budgetCtrl, uiCtrl) {
     };
 
     const ctrlDeleteItem = function (e) {
+        const itemID = e.target.parentNode.parentNode.parentNode.parentNode.id;
         let splitID;
         let type;
         let ID;
-        const itemID = e.target.parentNode.parentNode.parentNode.parentNode.id;
         // target: delete icon; parentNode.id = inc-1
         // console.log(e.target);
 
@@ -358,19 +357,19 @@ const appController = (function (budgetCtrl, uiCtrl) {
             splitID = itemID.split('-');  // array ['inc', '1']
             type = splitID[0];
             ID = parseInt(splitID[1]);  // string to num
+
+            // 1. Delete item from the data constructor
+            budgetCtrl.deleteItem(type, ID);
+
+            // 2. Delete item from the UI
+            uiCtrl.deleteListItem(itemID);
+
+            // 3. Re-calculate and update the budget
+            updateBudget();
+
+            // 4. Calculate and update percentage
+            updatePercentage();
         }
-
-        // 1. Delete item from the data constructor
-        budgetCtrl.deleteItem(type, ID);
-
-        // 2. Delete item from the UI
-        uiCtrl.deleteListItem(itemID);
-
-        // 3. Re-calculate and update the budget
-        updateBudget();
-
-        // 4. Calculate and update percentage
-        updatePercentage();
     };
 
     // All EventListners
