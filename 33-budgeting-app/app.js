@@ -15,7 +15,7 @@ const budgetController = (function() {
 
     Expense.prototype.calcPercentage = function (totalIncome) {
         if (totalIncome > 0) {
-            this.percentage = Math.round((this.value / totalIncome) * 100); 
+            this.percentage = Math.round((this.value / totalIncome) * 100);
         } else {
             this.percentage = -1;
         }
@@ -169,15 +169,28 @@ const uiController = (function () {
 
         const splitNum = num.split('.');
         const decimal = splitNum[1];
-        let integer = splitNum[0];
+        const integer = splitNum[0];
+        const rest = integer.length % 3;
+        const thousands = integer.substr(rest).match(/\d{3}/gi);
+        let result = integer.substr(0, rest);
+        let seperator;
 
+        // Split every 3 digits
+        // Reference: http://webdevzoom.com/javascript-format-number/
+        if (thousands) {
+            seperator = rest ? ',' : '';
+            result += seperator + thousands.join(',');
+        }
+
+        return (type === 'exp' ? '-' : '+') + ' ' + result + '.' + decimal;
+
+        /* Original Version
         // Comma seperate the thousands   176835 => 176,835
         // Substring: extract characters from a string and return new string
         if (integer.length > 3) {
             integer = `${integer.substr(0, integer.length - 3)},${integer.substr(integer.length - 3, 3)}`;
         }
-
-        return (type === 'exp' ? '-' : '+') + ' ' + integer + '.' + decimal;
+        */
     };
 
     return {
@@ -321,11 +334,10 @@ const appController = (function (budgetCtrl, uiCtrl) {
     }
 
     const ctrlAddItem = function () {
-        let inputData;
         let newItem;
 
         // 1. Get the input data
-        inputData = uiCtrl.getInput();
+        const inputData = uiCtrl.getInput();
 
         if (inputData.description && inputData.value && inputData.value > 0) {
             // 2. Add the item to the budget controller
