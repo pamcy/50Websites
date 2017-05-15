@@ -1,5 +1,5 @@
 // BUDGET CONTROLLER
-const budgetController = (function() {
+const budgetController = (function () {
     const Income = function (id, description, value) {
         this.id = id;
         this.description = description;
@@ -215,7 +215,7 @@ const uiController = (function () {
                             <div class="right clearfix">
                                 <div class="item__value">${formatNumber(obj.value, 'inc')}</div>
                                 <div class="item__delete">
-                                    <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
+                                    <button class="item__delete--btn"><i class="fa fa-minus-circle"></i></button>
                                 </div>
                             </div>
                         </div>`;
@@ -228,7 +228,7 @@ const uiController = (function () {
                                 <div class="item__value">${formatNumber(obj.value, 'exp')}</div>
                                 <div class="item__percentage"></div>
                                 <div class="item__delete">
-                                    <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
+                                    <button class="item__delete--btn"><i class="fa fa-minus-circle"></i></button>
                                 </div>
                             </div>
                         </div>`;
@@ -295,7 +295,7 @@ const uiController = (function () {
             document.querySelector(DOMstrings.titleMonth).textContent = `${monthText[month]} ${year}`;
         },
 
-        changeType: function() {
+        changeType: function () {
             const inputFields = [...document.querySelectorAll(`${DOMstrings.addType}, ${DOMstrings.addDescription}, ${DOMstrings.addValue}`)];
 
             inputFields.forEach((current) => {

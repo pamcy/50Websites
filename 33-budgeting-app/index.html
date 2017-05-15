@@ -2,10 +2,12 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet" type="text/css">
-        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+        <!--Stylesheets-->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link rel="stylesheet" href="../vendor/fontawesome/css/font-awesome.min.css">
         <link type="text/css" rel="stylesheet" href="style.css">
-        <title>Budgety</title>
+
+        <title>The Budget App</title>
 
         <!--Google Analytics-->
         <script>
@@ -54,16 +56,14 @@
                     </select>
                     <input type="text" class="add__description" placeholder="Add description" required>
                     <input type="number" class="add__value" placeholder="Value" required>
-                    <button class="add__btn"><i class="ion-ios-checkmark-outline"></i></button>
+                    <button class="add__btn"><i class="fa fa-arrow-circle-right"></i></button>
                 </div>
             </div> 
             
             <div class="container clearfix">
                 <div class="income">
                     <h2 class="icome__title">Income</h2>
-                    
-                    <div class="income__list">
-                       
+                    <div class="income__list">                
                         <!--
                         <div class="item clearfix" id="inc-0">
                             <div class="item__description">Salary</div>
@@ -76,28 +76,13 @@
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="item clearfix" id="inc-1">
-                            <div class="item__description">Sold car</div>
-                            <div class="right clearfix">
-                                <div class="item__value">+ 1,500.00</div>
-                                <div class="item__delete">
-                                    <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                        -->
-                        
+                        -->                   
                     </div>
-                </div>
-                
-                
+                </div>  
                 
                 <div class="expenses">
-                    <h2 class="expenses__title">Expenses</h2>
-                    
-                    <div class="expenses__list">
-                       
+                    <h2 class="expenses__title">Expenses</h2>              
+                    <div class="expenses__list">             
                         <!--
                         <div class="item clearfix" id="exp-0">
                             <div class="item__description">Apartment rent</div>
@@ -109,26 +94,12 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="item clearfix" id="exp-1">
-                            <div class="item__description">Grocery shopping</div>
-                            <div class="right clearfix">
-                                <div class="item__value">- 435.28</div>
-                                <div class="item__percentage">10%</div>
-                                <div class="item__delete">
-                                    <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                        -->
-                        
+                        -->        
                     </div>
                 </div>
             </div>
-            
-            
         </div> <!--^bottom-->
-        
+  
         <script src="app.js"></script>
     </body>
 </html>

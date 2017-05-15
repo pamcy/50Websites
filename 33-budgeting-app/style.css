@@ -1,7 +1,6 @@
 /**********************************************
 *** GENERAL
 **********************************************/
-
 * {
     margin: 0;
     padding: 0;
@@ -16,26 +15,31 @@
 
 body {
     color: #555;
-    font-family: Open Sans;
+    font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     position: relative;
     height: 100vh;
     font-weight: 400;
 }
 
-.right { float: right; }
-.red { color: #FF5049 !important; }
-.red-focus:focus { border: 1px solid #FF5049 !important; }
+.right {
+    float: right;
+}
+
+.red {
+    color: #FF5049 !important;
+}
+
+.red-focus:focus {
+    border: 1px solid #FF5049 !important;
+}
 
 /**********************************************
 *** TOP PART
 **********************************************/
-
 .top {
     height: 40vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(back.png);
-    background-size: cover;
-    background-position: center;
+    background: #13293D;
     position: relative;
 }
 
@@ -45,7 +49,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #fff;
+    color: #FFF;
 }
 
 .budget__title {
@@ -107,7 +111,6 @@ body {
     border-radius: 3px;
 }
 
-
 /**********************************************
 *** BOTTOM PART
 **********************************************/
@@ -115,8 +118,8 @@ body {
 /***** FORM *****/
 .add {
     padding: 14px;
-    border-bottom: 1px solid #e7e7e7;
-    background-color: #f7f7f7;
+    border-bottom: 1px solid #E7E7E7;
+    background-color: #F1FAEE;
 }
 
 .add__container {
@@ -126,11 +129,11 @@ body {
 
 .add__type {
     width: 55px;
-    border: 1px solid #e7e7e7;
+    border: 1px solid #E7E7E7;
     height: 44px;
     font-size: 18px;
     color: inherit;
-    background-color: #fff;
+    background-color: #FFF;
     margin-right: 10px;
     font-weight: 300;
     transition: border 0.3s;
@@ -138,8 +141,8 @@ body {
 
 .add__description,
 .add__value {
-    border: 1px solid #e7e7e7;
-    background-color: #fff;
+    border: 1px solid #E7E7E7;
+    background-color: #FFF;
     color: inherit;
     font-family: inherit;
     font-size: 14px;
@@ -149,8 +152,13 @@ body {
     transition: border 0.3s;
 }
 
-.add__description { width: 400px;}
-.add__value { width: 100px;}
+.add__description {
+    width: 400px;
+}
+
+.add__value {
+    width: 100px;
+}
 
 .add__btn {
     font-size: 35px;
@@ -164,7 +172,9 @@ body {
     margin-left: 10px;
 }
 
-.add__btn:active { transform: translateY(2px); }
+.add__btn:active {
+    transform: translateY(2px);
+}
 
 .add__type:focus,
 .add__description:focus,
@@ -173,7 +183,9 @@ body {
     border: 1px solid #28B9B5;
 }
 
-.add__btn:focus { outline: none; }
+.add__btn:focus {
+    outline: none;
+}
 
 /***** LISTS *****/
 .container {
@@ -199,16 +211,26 @@ h2 {
     margin-bottom: 15px;
 }
 
-.icome__title { color: #28B9B5; }
-.expenses__title { color: #FF5049; }
+.icome__title {
+    color: #28B9B5;
+}
+
+.expenses__title {
+    color: #FF5049;
+}
 
 .item {
     padding: 13px;
-    border-bottom: 1px solid #e7e7e7;
+    border-bottom: 1px solid #E7E7E7;
 }
 
-.item:first-child { border-top: 1px solid #e7e7e7; }
-.item:nth-child(even) { background-color: #f7f7f7; }
+.item:first-child {
+    border-top: 1px solid #E7E7E7;
+}
+
+.item:nth-child(even) {
+    background-color: #F7F7F7;
+}
 
 .item__description {
     float: left;
@@ -242,7 +264,6 @@ h2 {
     color: #FF5049;
 }
 
-
 .item__delete {
     float: left;
 }
@@ -252,27 +273,42 @@ h2 {
     background: none;
     border: none;
     cursor: pointer;
-    display: inline-block;
     vertical-align: middle;
     line-height: 1;
     display: none;
 }
 
-.item__delete--btn:focus { outline: none; }
-.item__delete--btn:active { transform: translateY(2px); }
+.item__delete--btn:focus {
+    outline: none;
+}
 
-.item:hover .item__delete--btn { display: block; }
-.item:hover .item__value { transform: translateX(-20px); }
-.item:hover .item__percentage { transform: translateX(-20px); }
+.item__delete--btn:active {
+    transform: translateY(2px);
+}
 
+.item:hover .item__delete--btn {
+    display: block;
+}
+
+.item:hover .item__value {
+    transform: translateX(-20px);
+}
+
+.item:hover .item__percentage {
+    transform: translateX(-20px);
+}
 
 .unpaid {
     background-color: #FFDAD9 !important;
     cursor: pointer;
     color: #FF5049;
-
 }
 
-.unpaid .item__percentage { box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1); }
-.unpaid:hover .item__description { font-weight: 900; }
+.unpaid .item__percentage {
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+.unpaid:hover .item__description {
+    font-weight: 900;
+}
 
