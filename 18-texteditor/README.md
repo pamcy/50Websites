@@ -1,5 +1,6 @@
 # Autosave Text Editor
-A Mac sytle text editor that autosaves and is responsive. I use *document.getElementById().innerHTML* and set it to *localStorage*, with *setInterval* function to save the written text every second in user's browser. If you refresh the page, the text still there. 
+
+A Mac style text editor that saves automatically in localStorage and is responsive, if you refresh the page or leave and visit next time, the written text still there.  
 
 [**View Demo**](https://chinyi3005.github.io/100websites/19-texteditor)
 

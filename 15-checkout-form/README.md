@@ -1,5 +1,7 @@
 # Shopping Checkout Form
-A responsive checkout form using HTML, CSS, Bootstrap, a little bit of flexbox and jQuery to validate the input fields.  
+
+I learn how to create a basic form structure and design, add JS validation to check if one of the inputs is empty, if so then add the warning colored-border.  
+
 [View Demo](https://chinyi3005.github.io/100websites/16-checkout-form)
 
 ![Shopping Checkout Form](./demo-checkout.png)

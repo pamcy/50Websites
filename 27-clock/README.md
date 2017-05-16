@@ -1,5 +1,6 @@
 # JS + CSS Clock
-This coding challange is from a online video course by [Wes Bos](https://javascript30.com/). 
+
+This coding challenge is from a online video course by [Wes Bos](https://javascript30.com/). 
 
 With the help of CSS transform's `rotate()` property to exceed 360 degrees and Javascript's built in `Date` function, the functionality of the clock looks great, it has hour, minute and seconds hands move to display the current time.  
 
