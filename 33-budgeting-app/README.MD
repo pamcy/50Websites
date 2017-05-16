@@ -4,4 +4,4 @@ This challenge is what I learned from The Complete JavaScript Course on [Udemy](
 
 [**View Demo**](https://pamcy.github.io/50Websites/33-budgeting-app/)
 
-![The budget App](./imgs/demo-budgeting-app.png)
+![The budget App](./demo-budgeting-app.png)
