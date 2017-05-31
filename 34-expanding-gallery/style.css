@@ -57,14 +57,14 @@ Gallery: before hover
 
 .panel p {
     color: #FFF;
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: 400;
     transition: font-size 0.5s ease-in,
                 transform 0.5s;
 }
 
 .panel p:nth-child(2) {
-    font-size: 2.2em;
+    font-size: 2em;
     font-weight: 500;
     font-style: italic;
     padding: 0.2em 0.25em;
@@ -88,14 +88,14 @@ Gallery: before hover
 }
 
 /* ---------------------------------
-Gallery: afterhover
+Gallery: after hover
 --------------------------------- */
 .panel.active {
     flex: 2;
 }
 
 .panel.active p:nth-child(2) {
-    font-size: 3em;
+    font-size: 2.8em;
 }
 
 .panel.active p:nth-child(1) {
