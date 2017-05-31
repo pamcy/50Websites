@@ -12,11 +12,12 @@ body {
 }
 
 /* ---------------------------------
-Gallery styles
+Gallery: before hover
 --------------------------------- */
 .container {
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
+    overflow: hidden;
 }
 
 .panel {
@@ -29,21 +30,9 @@ Gallery styles
     background-position: center;
     background-repeat: no-repeat;
     border: 1px solid #FFF;
-}
-
-.panel p {
-    color: #FFF;
-    font-size: 1.5em;
-    font-weight: 400;
-}
-
-.panel p:nth-child(2) {
-    font-size: 2.2em;
-    font-weight: 500;
-    font-style: italic;
-    padding: 0.2em 0.25em;
-    background: rgba(5, 1, 0, 0.8);
-    border: 1px solid black;
+    cursor: pointer;
+    transition: flex 0.7s ease-in-out,
+                background-size 0.7s ease-in-out;
 }
 
 .panel1 {
@@ -66,9 +55,53 @@ Gallery styles
     background-image: url('img/food-05_shrink.jpg');
 }
 
+.panel p {
+    color: #FFF;
+    font-size: 1.5em;
+    font-weight: 400;
+    transition: font-size 0.5s ease-in,
+                transform 0.5s;
+}
+
+.panel p:nth-child(2) {
+    font-size: 2.2em;
+    font-weight: 500;
+    font-style: italic;
+    padding: 0.2em 0.25em;
+    background: rgba(5, 1, 0, 0.8);
+    border: 1px solid black;
+}
+
+.panel p:nth-child(1) {
+    transform: translateY(-300px);
+}
+
+.panel p:nth-child(3) {
+    transform: translateY(300px);
+}
+
 .panel1 p:nth-child(1),
 .panel1 p:nth-child(3),
 .panel2 p:nth-child(1),
 .panel2 p:nth-child(3) {
     color: #050100;
+}
+
+/* ---------------------------------
+Gallery: afterhover
+--------------------------------- */
+.panel.active {
+    flex: 2;
+}
+
+.panel.active p:nth-child(2) {
+    font-size: 3em;
+}
+
+.panel.active p:nth-child(1) {
+    transform: translateY(0);
+}
+
+.panel.active p:nth-child(3) {
+    transform: translateY(0);
 }
