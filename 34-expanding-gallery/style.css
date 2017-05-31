@@ -1,0 +1,41 @@
+/* ---------------------------------
+Base Styles
+--------------------------------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.panel {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid #FFF;
+}
+
+.panel1 {
+    background-image: url('img/food-02_shrink.jpg');
+}
+
+.panel2 {
+    background-image: url('img/food-04_shrink.jpg');
+}
+
+.panel3 {
+    background-image: url('img/food-01_shrink.jpg');
+}
+
+.panel4 {
+    background-image: url('img/food-03_shrink.jpg');
+}
+
+.panel5 {
+    background-image: url('img/food-05_shrink.jpg');
+}
