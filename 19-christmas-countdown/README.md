@@ -2,6 +2,6 @@
 
 I hope you enjoy this simple countdown for Christmas I made with snow falling effects in Javascript. 
 
-[**View Demo**](https://chinyi3005.github.io/100websites/20-christmas-countdown)
+[**View Demo**](https://pamcy.github.io/50Websites/19-christmas-countdown)
 
 ![Christmas Countdown](./img/demo-countdown.png)

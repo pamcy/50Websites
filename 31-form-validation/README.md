@@ -5,6 +5,6 @@ check if a text input contains special characters using `test()` method to test 
 
 PS. It's also fun to learn how to hide the default styles of radio buttons and checkboxes with CSS `appearance: none`, then using `:after` pseudo class to customize my own styles.
 
-[**View Demo**](https://chinyi3005.github.io/100websites/32-form-validation)
+[**View Demo**](https://pamcy.github.io/50Websites/31-form-validation)
 
 ![HTML5 Form Validation with jQuery](./imgs/demo-form-validation.png)
