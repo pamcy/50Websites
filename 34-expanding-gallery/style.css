@@ -31,8 +31,7 @@ Gallery: before hover
     background-repeat: no-repeat;
     border: 1px solid #FFF;
     cursor: pointer;
-    transition: flex 0.7s ease-in-out,
-                background-size 0.7s ease-in-out;
+    transition: flex 0.7s ease-in-out, background-size 0.7s ease-in-out;
 }
 
 .panel1 {
@@ -59,8 +58,7 @@ Gallery: before hover
     color: #FFF;
     font-size: 1.3em;
     font-weight: 400;
-    transition: font-size 0.5s ease-in,
-                transform 0.5s;
+    transition: font-size 0.5s ease-in, transform 0.5s;
 }
 
 .panel p:nth-child(2) {
