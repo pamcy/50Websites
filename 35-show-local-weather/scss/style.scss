@@ -1,3 +1,19 @@
+// font sizes
+$font-summary: 1.25em;
+$font-temp: 3.5em;
+$font-general: 1em;
+$font-small: 0.8em;
+
+$radius: 10px;
+$gutter: 1.25em;
+
+@mixin current-textstyle {
+    p {
+        color: #FFF;
+        margin: 0;
+    }
+}
+
 /* ---------------------------------
 Base Styles
 --------------------------------- */
@@ -9,10 +25,115 @@ Base Styles
 
 body {
     font-family: 'Roboto', sans-serif;
+    background: #DDE8ED;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .wrapper {
-    width: 500px;
+    width: 360px;
+    height: 600px;
+    margin: $gutter;
+    border-radius: $radius;
     border: 1px solid blue;
+    // overflow: hidden;
+}
 
+/* ---------------------------------
+Current Temprature
+--------------------------------- */
+.current {
+    position: relative;
+    height: 300px;
+    background: url('./../imgs/current/rainy.jpg') no-repeat;
+    background-size: cover;
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+}
+
+.current input[type='checkbox'] {
+    // Hide checkbox
+    -moz-appearance: none;
+    -ms-progress-appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    top: 5%;
+    left: 80%;
+    width: 50px;
+    height: 27px;
+    border-radius: 60px;
+    background: #DDD;
+    transition: background 0.4s ease-in-out;
+
+    // White round switch
+    &::before {
+        content: '';
+        text-align: center;
+        vertical-align: middle;
+        position: absolute;
+        top: 2px;
+        left: 3px;
+        width: 22px;
+        height: 22px;
+        background: #FFF;
+        border-radius: 50%;
+        transition: left 0.4s ease-in-out;
+    }
+
+    // Units
+    &::after {
+        content: 'F°';
+        position: absolute;
+        top: 7px;
+        right: 7px;
+        font-size: $font-small;
+        color: #FFF;
+    }
+
+    &:checked {
+        background: red;
+
+        &::before {
+            left: 25px;
+        }
+
+        &::after {
+            content: 'C°';
+            left: 7px;
+        }
+    }
+}
+
+.current__forecast {
+    @include current-textstyle;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    padding: 0 $gutter;
+
+    .current__summary {
+        font-size: $font-summary;
+        padding: 0 0 10px;
+    }
+
+    .current__location {
+        font-size: $font-general;
+    }
+
+    .current__temp {
+        font-size: $font-temp;
+        padding: 10px 0 0;
+    }
 }
