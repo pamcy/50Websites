@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<!--Stylesheets-->
-		<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,500i" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
 		<link rel="stylesheet" href="css/style.css">
 
@@ -28,32 +28,46 @@
 					<div class="current__forecast">
 						<p class="current__summary">Light rain throughout the day</p>
 						<p class="current__location">Taipei</p>
-						<p class="current__temp">23°</p>
+						<p class="current__temp">23</p>
 					</div>
 				</div>
 				<div class="next">
 					<ul>
-						<li class="next__forecst">
+						<li class="next__forecast">
 							<span class="next__weekday">Monday</span>
-							<span class="next__weatherIcon"></span>
+							<span class="next__weatherIcon">
+								<img src="imgs/icons/thunderstorm.svg" alt="">
+							</span>
 							<span class="next__maxTemp">32°</span>
-							<span class="minTemp">29°</span>
+							<span class="next__minTemp">29°</span>
 						</li>
-						<li class="next__forecst">
+						<li class="next__forecast">
 							<span class="next__weekday">Tuesday</span>
-							<span class="next__weatherIcon"></span>
+							<span class="next__weatherIcon">
+								<img src="imgs/icons/clear-day.svg" alt="">
+							</span>
 							<span class="next__maxTemp">34°</span>
-							<span class="minTemp">30°</span>
+							<span class="next__minTemp">30°</span>
+						</li>
+						<li class="next__forecast">
+							<span class="next__weekday">Tuesday</span>
+							<span class="next__weatherIcon">
+								<img src="imgs/icons/cloudy.svg" alt="">
+							</span>
+							<span class="next__maxTemp">34°</span>
+							<span class="next__minTemp">30°</span>
 						</li>
 					</ul>
 				</div>
-				<footer>
-					<p class="footer__copyright">
-						Playing with <a href="https://dribbble.com/shots/2220362-Weather-UI-Concept" target="_blank">Dribble</a> and <a href="https://darksky.net/poweredby/" target="_blank">DarkSky</a> by Pamcy.
-					</p>
-				</footer>
-			</div>
-		</div>
+			</div> <!--^.wrapper-->
+
+			<footer>
+				<p class="footer__copyright">
+					Playing with <a href="https://dribbble.com/shots/2220362-Weather-UI-Concept" target="_blank">Dribble</a> and <a href="https://darksky.net/poweredby/" target="_blank">DarkSky</a> by Pamcy.
+				</p>
+			</footer>
+
+		</div> <!--^.container-->
 		
 
 		<!--Scripts-->

@@ -1,17 +1,35 @@
 // font sizes
-$font-summary: 1.25em;
-$font-temp: 3.5em;
-$font-general: 1em;
-$font-small: 0.8em;
+$font-size-summary: 1.25em;
+$font-size-temp: 3.8em;
+$font-size-general: 1em;
+$font-size-small: 0.8em;
 
-$radius: 10px;
-$gutter: 1.25em;
+// font weights
+$font-weight-summary: 700;
+$font-weight-general: 400;
+$font-weight-temp: 900;
 
+// colors
+$next-color-primary: #6C7C8A;
+$next-color-maxtemp: #ED6A5A;
+$next-color-mintemp: #5CA4A9;
+$switch-color: #FF6B35;
+$link-color: #6A687A;
+
+// other styles
+$wrapper-radius: 10px;
+
+// mixins
 @mixin current-textstyle {
     p {
         color: #FFF;
         margin: 0;
     }
+}
+
+@mixin link-style($color: $link-color) {
+    color: $color;
+    text-decoration: none;
 }
 
 /* ---------------------------------
@@ -24,24 +42,31 @@ Base Styles
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Lato', sans-serif;
     background: #DDE8ED;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 }
 
 .container {
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 .wrapper {
-    width: 360px;
-    height: 600px;
-    margin: $gutter;
-    border-radius: $radius;
-    border: 1px solid blue;
-    // overflow: hidden;
+    width: 370px;
+    margin: 1.25em;
+    border-radius: $wrapper-radius;
+    box-shadow: 0 3px 10px #CAD5DA;
+    overflow: hidden;
 }
 
 /* ---------------------------------
@@ -49,11 +74,11 @@ Current Temprature
 --------------------------------- */
 .current {
     position: relative;
-    height: 300px;
-    background: url('./../imgs/current/rainy.jpg') no-repeat;
+    height: 340px;
+    background: url('./../imgs/current/cloudy.jpg') no-repeat;
     background-size: cover;
-    border-top-left-radius: $radius;
-    border-top-right-radius: $radius;
+    border-top-left-radius: $wrapper-radius;
+    border-top-right-radius: $wrapper-radius;
 }
 
 .current input[type='checkbox'] {
@@ -65,7 +90,7 @@ Current Temprature
     cursor: pointer;
     position: relative;
     display: inline-block;
-    top: 5%;
+    top: 8%;
     left: 80%;
     width: 50px;
     height: 27px;
@@ -94,12 +119,12 @@ Current Temprature
         position: absolute;
         top: 7px;
         right: 7px;
-        font-size: $font-small;
+        font-size: $font-size-small;
         color: #FFF;
     }
 
     &:checked {
-        background: red;
+        background: $switch-color;
 
         &::before {
             left: 25px;
@@ -113,27 +138,94 @@ Current Temprature
 }
 
 .current__forecast {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    width: 60%;
+    background: rgba(0, 0, 0, 0.06);
+    border-radius: 3px;
+    text-align: center;
+    padding: 15px;
+
     @include current-textstyle;
 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    text-align: center;
-    padding: 0 $gutter;
-
     .current__summary {
-        font-size: $font-summary;
+        font-size: $font-size-summary;
+        font-weight: $font-weight-summary;
         padding: 0 0 10px;
     }
 
     .current__location {
-        font-size: $font-general;
+        font-size: $font-size-general;
+        font-weight: $font-weight-general;
     }
 
     .current__temp {
-        font-size: $font-temp;
-        padding: 10px 0 0;
+        font-size: $font-size-temp;
+        font-weight: $font-weight-temp;
+        padding: 15px 0 0;
+
+        &::after {
+            content: '°';
+            padding: 0 0 0 8px;
+        }
+    }
+}
+
+/* ---------------------------------
+Next Temprature
+--------------------------------- */
+.next {
+    background: #FFF;
+    color: $next-color-primary;
+
+    ul {
+        padding: 30px;
+    }
+}
+
+.next__forecast {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+        padding: 0 0 25px;
+    }
+
+    .next__weekday {
+        flex: 4;
+    }
+
+    .next__weatherIcon {
+        flex: 2;
+
+        img {
+            fill: red;
+            width: 25px;
+            height: 25px;
+        }
+    }
+
+    .next__maxTemp {
+        flex: 1;
+        color: $next-color-maxtemp;
+    }
+
+    .next__minTemp {
+        flex: 1;
+        color: $next-color-mintemp;
+    }
+}
+
+/* ---------------------------------
+Footer Temprature
+--------------------------------- */
+.footer__copyright {
+    color: $next-color-primary;
+    font-size: $font-size-small;
+
+    a {
+        @include link-style;
     }
 }

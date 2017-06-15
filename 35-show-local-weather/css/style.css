@@ -1,67 +1,63 @@
 @charset "UTF-8";
-
 /* ---------------------------------
 Base Styles
 --------------------------------- */
-
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background: #DDE8ED;
-}
+  font-family: 'Lato', sans-serif;
+  background: #DDE8ED; }
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
 
 .container {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
 
 .wrapper {
-    width: 360px;
-    height: 600px;
-    margin: 1.25em;
-    border-radius: 10px;
-    border: 1px solid blue;
-}
-
+  width: 370px;
+  margin: 1.25em;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px #CAD5DA;
+  overflow: hidden; }
 
 /* ---------------------------------
 Current Temprature
 --------------------------------- */
-
 .current {
-    position: relative;
-    height: 300px;
-    background: url("./../imgs/current/rainy.jpg") no-repeat;
-    background-size: cover;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
+  position: relative;
+  height: 340px;
+  background: url("./../imgs/current/cloudy.jpg") no-repeat;
+  background-size: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px; }
 
 .current input[type='checkbox'] {
-    -moz-appearance: none;
-    -ms-progress-appearance: none;
-    -webkit-appearance: none;
-    outline: none;
-    cursor: pointer;
-    position: relative;
-    display: inline-block;
-    top: 5%;
-    left: 80%;
-    width: 50px;
-    height: 27px;
-    border-radius: 60px;
-    background: #DDD;
-    transition: background 0.4s ease-in-out;
-}
-
-.current input[type='checkbox']::before {
+  -moz-appearance: none;
+  -ms-progress-appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  top: 8%;
+  left: 80%;
+  width: 50px;
+  height: 27px;
+  border-radius: 60px;
+  background: #DDD;
+  transition: background 0.4s ease-in-out; }
+  .current input[type='checkbox']::before {
     content: '';
     text-align: center;
     vertical-align: middle;
@@ -72,56 +68,85 @@ Current Temprature
     height: 22px;
     background: #FFF;
     border-radius: 50%;
-    transition: left 0.4s ease-in-out;
-}
-
-.current input[type='checkbox']::after {
+    transition: left 0.4s ease-in-out; }
+  .current input[type='checkbox']::after {
     content: 'F°';
     position: absolute;
     top: 7px;
     right: 7px;
     font-size: 0.8em;
-    color: #FFF;
-}
-
-.current input[type='checkbox']:checked {
-    background: red;
-}
-
-.current input[type='checkbox']:checked::before {
-    left: 25px;
-}
-
-.current input[type='checkbox']:checked::after {
-    content: 'C°';
-    left: 7px;
-}
+    color: #FFF; }
+  .current input[type='checkbox']:checked {
+    background: #FF6B35; }
+    .current input[type='checkbox']:checked::before {
+      left: 25px; }
+    .current input[type='checkbox']:checked::after {
+      content: 'C°';
+      left: 7px; }
 
 .current__forecast {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    text-align: center;
-    padding: 0 1.25em;
-}
-
-.current__forecast p {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  width: 60%;
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: 3px;
+  text-align: center;
+  padding: 15px; }
+  .current__forecast p {
     color: #FFF;
-    margin: 0;
-}
-
-.current__forecast .current__summary {
+    margin: 0; }
+  .current__forecast .current__summary {
     font-size: 1.25em;
-    padding: 0 0 10px;
-}
-
-.current__forecast .current__location {
+    font-weight: 700;
+    padding: 0 0 10px; }
+  .current__forecast .current__location {
     font-size: 1em;
-}
+    font-weight: 400; }
+  .current__forecast .current__temp {
+    font-size: 3.8em;
+    font-weight: 900;
+    padding: 15px 0 0; }
+    .current__forecast .current__temp::after {
+      content: '°';
+      padding: 0 0 0 8px; }
 
-.current__forecast .current__temp {
-    font-size: 3.5em;
-    padding: 10px 0 0;
-}
+/* ---------------------------------
+Next Temprature
+--------------------------------- */
+.next {
+  background: #FFF;
+  color: #6C7C8A; }
+  .next ul {
+    padding: 30px; }
+
+.next__forecast {
+  display: flex;
+  align-items: center; }
+  .next__forecast:not(:last-child) {
+    padding: 0 0 25px; }
+  .next__forecast .next__weekday {
+    flex: 4; }
+  .next__forecast .next__weatherIcon {
+    flex: 2; }
+    .next__forecast .next__weatherIcon img {
+      fill: red;
+      width: 25px;
+      height: 25px; }
+  .next__forecast .next__maxTemp {
+    flex: 1;
+    color: #ED6A5A; }
+  .next__forecast .next__minTemp {
+    flex: 1;
+    color: #5CA4A9; }
+
+/* ---------------------------------
+Footer Temprature
+--------------------------------- */
+.footer__copyright {
+  color: #6C7C8A;
+  font-size: 0.8em; }
+  .footer__copyright a {
+    color: #6A687A;
+    text-decoration: none; }
