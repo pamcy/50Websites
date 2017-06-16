@@ -11,7 +11,7 @@ function showCurrentWeather(report, location) {
     DOM.$currentSummary.text(`${report.currently.summary}`);
     DOM.$currentLocation.text(`${location.city}`);
     DOM.$currentTemp.text(`${report.currently.temperature.toFixed()}`);
-    DOM.$currentImage.css('background-image', `url(./../imgs/current/${report.currently.icon}.jpg)`);
+    DOM.$currentImage.css('background-image', `url(/imgs/current/${report.currently.icon}.jpg)`);
 }
 
 // Display weather forecast for the following days
