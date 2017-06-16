@@ -4,4 +4,4 @@ This is one of the intermediate projects from [FreeCodeCamp](https://www.freecod
 
 [**View Demo**](https://pamcy.github.io/50Websites/35-show-local-weather)
 
-![Expanding image gallery with Flexbox](./img/demo-local-weather.png)
+![Expanding image gallery with Flexbox](./imgs/demo-local-weather.png)
