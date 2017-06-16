@@ -2,6 +2,8 @@
 
 I knew that if I was going to succeed at learning to code, I would need to apply knowledge as much as possible. I devoted to build something from what I learned, below is a list of websites I made lately, some took a couple of days to complete. (Still Updating)
 
+- [x] [35 - Show the local weather](https://pamcy.github.io/50Websites/35-show-local-weather)
+
 - [x] [34 - Expanding image gallery with Flexbox](https://pamcy.github.io/50Websites/34-expanding-gallery)
 
 - [x] [33 - The Budget App](https://pamcy.github.io/50Websites/33-budgeting-app)
