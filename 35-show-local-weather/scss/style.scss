@@ -32,6 +32,10 @@ $wrapper-radius: 10px;
     text-decoration: none;
 }
 
+@mixin flex-basis($basis) {
+    flex: $basis;
+}
+
 /* ---------------------------------
 Base Styles
 --------------------------------- */
@@ -194,11 +198,11 @@ Next Temprature
     }
 
     .next__weekday {
-        flex: 4;
+        @include flex-basis(4);
     }
 
     .next__weatherIcon {
-        flex: 2;
+        @include flex-basis(2);
 
         img {
             width: 25px;
@@ -207,12 +211,14 @@ Next Temprature
     }
 
     .next__maxTemp {
-        flex: 1;
+        @include flex-basis(1);
+
         color: $next-color-maxtemp;
     }
 
     .next__minTemp {
-        flex: 1;
+        @include flex-basis(1);
+
         color: $next-color-mintemp;
     }
 }
