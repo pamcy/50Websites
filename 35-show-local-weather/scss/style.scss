@@ -75,7 +75,7 @@ Current Temprature
 .current {
     position: relative;
     height: 340px;
-    background: url('') no-repeat;
+    background-repeat: no-repeat;
     background-size: cover;
     border-top-left-radius: $wrapper-radius;
     border-top-right-radius: $wrapper-radius;
