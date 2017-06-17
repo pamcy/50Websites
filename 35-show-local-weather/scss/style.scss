@@ -36,6 +36,18 @@ $wrapper-radius: 10px;
     flex: $basis;
 }
 
+@mixin small-screen() {
+    @media only screen and (max-width: 479px) {
+        @content;
+    }
+}
+
+@mixin medium-screen() {
+    @media only screen and (max-width: 768px) and (min-width: 480px) {
+        @content;
+    }
+}
+
 /* ---------------------------------
 Base Styles
 --------------------------------- */
@@ -72,12 +84,11 @@ li {
     box-shadow: 0 3px 10px #CAD5DA;
     overflow: hidden;
 
-    @media only screen and (max-width: 479px) {
+    @include small-screen {
         width: 90%;
-        // margin: 0.6em;
     }
 
-    @media only screen and (max-width: 768px) and (min-width: 480px) {
+    @include medium-screen {
         width: 70%;
     }
 }
@@ -209,7 +220,7 @@ Next Temprature
     .next__weekday {
         @include flex-basis(4);
 
-        @media only screen and (max-width: 481px) {
+        @include small-screen {
             @include flex-basis(3);
         }
     }
