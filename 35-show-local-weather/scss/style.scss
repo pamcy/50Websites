@@ -71,6 +71,10 @@ li {
     border-radius: $wrapper-radius;
     box-shadow: 0 3px 10px #CAD5DA;
     overflow: hidden;
+
+    @media only screen and (max-width: 768px) {
+        width: 80%;
+    }
 }
 
 /* ---------------------------------
