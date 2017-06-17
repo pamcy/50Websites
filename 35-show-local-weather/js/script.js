@@ -67,9 +67,7 @@ function init() {
     $.getJSON(urlIP, (location) => {
         weatherController(location);
     });
-
-    $(window).on('load', init);
-    DOM.$switchButton.on('change', init);
 }
 
-init();
+$(window).on('load', init);
+DOM.$switchButton.on('change', init);
