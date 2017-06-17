@@ -49,7 +49,7 @@ function weatherController(location) {
     const loc = location.loc.split(',');
     const latitude = loc[0];
     const longitude = loc[1];
-    const urlWeather = `https://api.darksky.net/forecast/693ff09c194f926ca1eb19e280cc566d/${latitude},${longitude}?units=${unit}&callback=?`;
+    const urlWeather = `https://api.darksky.net/forecast/769f2102173a460dd11ce3ad1038d85f/${latitude},${longitude}?units=${unit}&callback=?`;
 
     // Get weather data from Dark Sky
     $.getJSON(urlWeather, (report) => {
