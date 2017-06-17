@@ -30,9 +30,12 @@ li {
   border-radius: 10px;
   box-shadow: 0 3px 10px #CAD5DA;
   overflow: hidden; }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 481px) {
     .wrapper {
-      width: 80%; } }
+      width: 90%; } }
+  @media only screen and (max-width: 768px) and (min-width: 480px) {
+    .wrapper {
+      width: 70%; } }
 
 /* ---------------------------------
 Current Temprature
@@ -131,6 +134,9 @@ Next Temprature
     padding: 0 0 25px; }
   .next__forecast .next__weekday {
     flex: 4; }
+    @media only screen and (max-width: 481px) {
+      .next__forecast .next__weekday {
+        flex: 3; } }
   .next__forecast .next__weatherIcon {
     flex: 2; }
     .next__forecast .next__weatherIcon img {
