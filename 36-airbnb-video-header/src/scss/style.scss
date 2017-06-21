@@ -1,3 +1,4 @@
+// Colors
 $main-color: #FFF;
 $transparent-color: rgba(0, 0, 0, 0.25);
 $button-color: #FF575A;
@@ -157,8 +158,6 @@ Header styles
 }
 
 .searchbar__where {
-    border-radius: 0;
-
     @extend %searchbar-style;
 
     @include breakpoint(medium) {
@@ -184,13 +183,13 @@ Header styles
 }
 
 .search__button {
-    @extend %searchbar-style;
-
     border: none;
     background-color: $button-color;
     color: $main-color;
-    cursor: pointer;
     transition: background-color 0.3s ease-in;
+    cursor: pointer;
+
+    @extend %searchbar-style;
 
     &:hover {
         background-color: lighten($button-color, 5%);
@@ -200,10 +199,3 @@ Header styles
         flex: 1;
     }
 }
-
-
-
-
-// @mixin resize-searchbar($search-font-size, $) {
-
-// }
