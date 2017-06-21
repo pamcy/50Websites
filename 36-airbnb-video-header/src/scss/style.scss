@@ -75,6 +75,7 @@ select {
     -webkit-appearance: none;
     outline: none;
     background: $main-color;
+    border-radius: 0;
     border: 0;
     padding: 0;
     box-shadow: none;
@@ -82,10 +83,6 @@ select {
     &::placeholder {
         color: $placeholder-color;
     }
-}
-
-select {
-    border-radius: 0;
 }
 
 video {

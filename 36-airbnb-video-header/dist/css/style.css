@@ -37,6 +37,7 @@ select {
   -webkit-appearance: none;
   outline: none;
   background: #FFF;
+  border-radius: 0;
   border: 0;
   padding: 0;
   box-shadow: none;
@@ -45,10 +46,6 @@ select {
 input::placeholder,
 select::placeholder {
   color: #BBB;
-}
-
-select {
-  border-radius: 0;
 }
 
 video {
