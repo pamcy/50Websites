@@ -131,6 +131,10 @@ Header styles
   }
 }
 
+.searchbar__where {
+  border-radius: 0;
+}
+
 @media (min-width: 768px) {
   .searchbar__where {
     flex: 2;

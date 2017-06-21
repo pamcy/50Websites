@@ -157,6 +157,8 @@ Header styles
 }
 
 .searchbar__where {
+    border-radius: 0;
+
     @extend %searchbar-style;
 
     @include breakpoint(medium) {
