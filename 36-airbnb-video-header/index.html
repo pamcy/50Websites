@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<!--Stylesheets-->
-		<link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
 		<link rel="stylesheet" href="dist/css/style.css">
 
@@ -22,20 +22,28 @@
 	</head>
 	<body>
 		<video autoplay playsinline muted loop poster="">
-			<source src="dist/media/street-painting.mp4" type="video/mp4">
+			<source src="dist/media/hiking-at-nature-park.mp4" type="video/mp4">
 		</video>
-		<form action="" class="search">
-			<input type="search" name="where" placeholder="Where do you want to go?">
-			<input type="date" name="check-in" placeholder="Check In" >
-			<input type="date" name="check-out" placeholder="Check out" >
-			<select name="guest">
-				<option value="1">1 Guest</option>
-				<option value="2">2 Guest</option>
-				<option value="3">3 Guest</option>
-				<option value="4">4 Guest</option>
-				<option value="5">5 Guest</option>
-			</select>
-		</form>
+		<header class="bgheader">
+			<section class="welcome">
+				<h1 class="welcome__title">Welcome Home</h1>
+				<p class="welcome__subtitle">Rent unique places to stay from local hosts in 190+ countries.</p>
+			</section>
+			<form action="" class="searchbar">
+				<input class="searchbar__where" type="search" name="where" placeholder="Where do you want to go?">
+				<input class="searchbar__date" type="text" name="check-in" placeholder="Check In" onfocus="(this.type='date')" onblur="(this.type='text')">
+				<input class="searchbar__date" type="text" name="check-out" placeholder="Check out" onfocus="(this.type='date')" onblur="(this.type='text')">
+				<select class="searchbar__select" name="guest">
+					<option value="1">1 Guest</option>
+					<option value="2">2 Guest</option>
+					<option value="3">3 Guest</option>
+					<option value="4">4 Guest</option>
+					<option value="5">5 Guest</option>
+				</select>
+				<input class="search__button" type="submit" name="search-btn" value="Search">
+			</form>
+		</header>
+		
 
 		<!--Scripts-->
 		<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
