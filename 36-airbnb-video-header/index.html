@@ -9,16 +9,17 @@
 		<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
 		<link rel="stylesheet" href="dist/css/style.css">
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
 		<!--Google Analytics-->
-        <!--<script>
+        <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
         ga('create', 'UA-96360862-1', 'auto');
         ga('send', 'pageview');
-        </script>-->
+        </script>
 	</head>
 	<body>
 		<video autoplay playsinline muted loop poster="">
@@ -31,8 +32,8 @@
 			</section>
 			<form action="" class="searchbar">
 				<input class="searchbar__where" type="search" name="where" placeholder="Where do you want to go?">
-				<input class="searchbar__date" type="text" name="check-in" placeholder="Check In" onfocus="(this.type='date')" onblur="(this.type='text')">
-				<input class="searchbar__date" type="text" name="check-out" placeholder="Check out" onfocus="(this.type='date')" onblur="(this.type='text')">
+				<input class="searchbar__date jq-datepicker" type="text" placeholder="Check In">
+				<input class="searchbar__date jq-datepicker" type="text" placeholder="Check Out">
 				<select class="searchbar__select" name="guest">
 					<option value="1">1 Guest</option>
 					<option value="2">2 Guest</option>
@@ -43,10 +44,10 @@
 				<input class="search__button" type="submit" name="search-btn" value="Search">
 			</form>
 		</header>
-		
 
 		<!--Scripts-->
-		<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="dist/js/script.js"></script>-->
+		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		<script src="dist/js/script.js"></script>
 	</body>
 </html>
