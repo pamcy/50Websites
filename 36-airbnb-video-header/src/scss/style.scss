@@ -1,5 +1,5 @@
 $main-color: #FFF;
-$transparent-color: rgba(0, 0, 0, 0.4);
+$transparent-color: rgba(0, 0, 0, 0.25);
 $button-color: #FF575A;
 $placeholder-color: #BBB;
 
@@ -18,15 +18,8 @@ $search-font-size: 1.125em;
 }
 
 // Mixins
-
 @mixin breakpoint($point) {
-    @if $point == x-large {
-        @media (min-width: 1200px) {
-            @content;
-        }
-    }
-
-    @else if $point == large {
+    @if $point == large {
         @media (min-width: 992px) {
             @content;
         }
@@ -116,8 +109,8 @@ Header styles
     align-items: center;
     padding: 1.25em;
 
-    @include breakpoint(medium) {
-        // padding: 2em;
+    @include breakpoint(large) {
+        margin: 0 10%;
     }
 }
 
@@ -126,11 +119,20 @@ Header styles
     color: $main-color;
 
     .welcome__title {
-        margin-bottom: 0.3em;
+        margin-bottom: 0.25em;
+        text-transform: uppercase;
+
+        @include breakpoint(large) {
+            font-size: $title-font-size * 1.5;
+        }
     }
 
     .welcome__subtitle {
         margin-top: 0;
+
+        @include breakpoint(large) {
+            font-size: $subtitle-font-size * 1.1;
+        }
     }
 }
 
@@ -153,7 +155,6 @@ Header styles
         justify-content: center;
         width: 100%;
         background-color: $transparent-color;
-        // border: 5px solid red;
         padding: 1.25em;
     }
 }
@@ -178,7 +179,7 @@ Header styles
 .searchbar__select {
     @extend %searchbar-style;
 
-    @include breakpoint(medium) { 
+    @include breakpoint(medium) {
         flex: 1;
     }
 }

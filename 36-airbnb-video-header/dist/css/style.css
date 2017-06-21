@@ -73,17 +73,36 @@ Header styles
   padding: 1.25em;
 }
 
+@media (min-width: 992px) {
+  .bgheader {
+    margin: 0 10%;
+  }
+}
+
 .welcome {
   text-align: center;
   color: #FFF;
 }
 
 .welcome .welcome__title {
-  margin-bottom: 0.3em;
+  margin-bottom: 0.25em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 992px) {
+  .welcome .welcome__title {
+    font-size: 3em;
+  }
 }
 
 .welcome .welcome__subtitle {
   margin-top: 0;
+}
+
+@media (min-width: 992px) {
+  .welcome .welcome__subtitle {
+    font-size: 1.1em;
+  }
 }
 
 .searchbar {
@@ -110,7 +129,7 @@ Header styles
     flex-direction: row;
     justify-content: center;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.25);
     padding: 1.25em;
   }
 }
