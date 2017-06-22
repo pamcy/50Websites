@@ -45,6 +45,12 @@ $search-font-size: 1.125em;
     }
 }
 
+@mixin image-background {
+    @media (max-width: 767px) {
+        @content;
+    }
+}
+
 /* ---------------------------------
 Base styles
 --------------------------------- */
@@ -61,6 +67,10 @@ body {
 
 body {
     font-family: 'Roboto', sans-serif;
+
+    @include image-background {
+        background: url(./../../dist/media/poster-video-background.png) #000 no-repeat left top;
+    }
 }
 
 h1 {
@@ -94,6 +104,10 @@ video {
     top: 0;
     left: 0;
     z-index: -1;
+
+    @include image-background {
+        display: none;
+    }
 }
 
 /* ---------------------------------
@@ -158,6 +172,7 @@ Header styles
 }
 
 .searchbar__where {
+    // border-radius: 0;
     @extend %searchbar-style;
 
     @include breakpoint(medium) {
@@ -166,18 +181,24 @@ Header styles
 }
 
 .searchbar__date {
+    display: none;
+
     @extend %searchbar-style;
 
     @include breakpoint(medium) {
+        display: block;
         flex: 1;
         width: 20%;
     }
 }
 
 .searchbar__select {
+    display: none;
+
     @extend %searchbar-style;
 
     @include breakpoint(medium) {
+        display: block;
         flex: 1;
     }
 }

@@ -27,6 +27,12 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+@media (max-width: 767px) {
+    body {
+        background: url(./../../dist/media/poster-video-background.png) #000 no-repeat left top;
+    }
+}
+
 h1 {
     font-size: 2em;
     line-height: 1.2;
@@ -59,6 +65,12 @@ video {
     top: 0;
     left: 0;
     z-index: -1;
+}
+
+@media (max-width: 767px) {
+    video {
+        display: none;
+    }
 }
 
 /* ---------------------------------
@@ -140,15 +152,25 @@ Header styles
     }
 }
 
+.searchbar__date {
+    display: none;
+}
+
 @media (min-width: 768px) {
     .searchbar__date {
+        display: block;
         flex: 1;
         width: 20%;
     }
 }
 
+.searchbar__select {
+    display: none;
+}
+
 @media (min-width: 768px) {
     .searchbar__select {
+        display: block;
         flex: 1;
     }
 }
