@@ -1,13 +1,7 @@
-# Show the local weather
+# Airbnb style video header
 
-This is one of the intermediate projects from [FreeCodeCamp](https://www.freecodecamp.com/challenges/show-the-local-weather). I learn how to detect the location based on IP address, then generate weather reports and images for the next 3 days. I also make a pure CSS switch button to convert between Celsius and Fahrenheit.
+I really like the video that playing on header at old Airbnb's website, so I try to make a video background as Airbnb, with layout `Flexbox` and CSS property `object-fit` to get a full page video, nice!
 
-###### 2 APIs I used on this practice
+[**View Demo**](pamcy.github.io/50Websites/36-airbnb-video-header)
 
-- [ipinfo.io](https://ipinfo.io/) to get user's location.
-
-- [Dark Sky API](https://darksky.net/dev/) to get free weather forecasts. 
-
-[**View Demo**](https://pamcy.github.io/50Websites/35-show-local-weather)
-
-![Expanding image gallery with Flexbox](./imgs/demo-local-weather.png)
+![Airbnb style video header](./dist/media/demo-airbnb-video-header.png)
