@@ -1,196 +1,191 @@
-.searchbar__where,
-.searchbar__date,
-.searchbar__select,
-.search__button {
-    height: 2.5em;
-    line-height: 1.5;
-    font-size: 1.02273em;
-    padding: 0.5em;
-    border: 1px solid #E4E4E4;
+.searchbar__where, .searchbar__date, .searchbar__select, .search__button {
+  height: 2.5em;
+  line-height: 1.5;
+  font-size: 1.02273em;
+  padding: 0.5em;
+  border: 1px solid #E4E4E4;
 }
 
 /* ---------------------------------
 Base styles
 --------------------------------- */
-
 *,
 ::after,
 ::before {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
 body {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 @media (max-width: 767px) {
-    body {
-        background: url(./../../dist/media/poster-video-background.png) #000 no-repeat left top;
-    }
+  body {
+    background: url(./../../dist/media/poster-video-background.png) #000 no-repeat left top;
+  }
 }
 
 h1 {
-    font-size: 2em;
-    line-height: 1.2;
+  font-size: 2em;
+  line-height: 1.2;
 }
 
 input,
 select {
-    -moz-appearance: none;
-    -ms-appearance: none;
-    -o-appearance: none;
-    -webkit-appearance: none;
-    outline: none;
-    background: #FFF;
-    border-radius: 0;
-    border: 0;
-    padding: 0;
-    box-shadow: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  background: #FFF;
+  border-radius: 0;
+  border: 0;
+  padding: 0;
+  box-shadow: none;
 }
 
 input::placeholder,
 select::placeholder {
-    color: #BBB;
+  color: #BBB;
 }
 
 video {
-    object-fit: cover;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 @media (max-width: 767px) {
-    video {
-        display: none;
-    }
+  video {
+    display: none;
+  }
 }
 
 /* ---------------------------------
 Header styles
 --------------------------------- */
-
 .bgheader {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1.25em;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25em;
 }
 
 @media (min-width: 992px) {
-    .bgheader {
-        margin: 0 10%;
-    }
+  .bgheader {
+    margin: 0 10%;
+  }
 }
 
 .welcome {
-    text-align: center;
-    color: #FFF;
+  text-align: center;
+  color: #FFF;
 }
 
 .welcome .welcome__title {
-    margin-bottom: 0.25em;
-    text-transform: uppercase;
+  margin-bottom: 0.25em;
+  text-transform: uppercase;
 }
 
 @media (min-width: 992px) {
-    .welcome .welcome__title {
-        font-size: 3em;
-    }
+  .welcome .welcome__title {
+    font-size: 3em;
+  }
 }
 
 .welcome .welcome__subtitle {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 @media (min-width: 992px) {
-    .welcome .welcome__subtitle {
-        font-size: 1.1em;
-    }
+  .welcome .welcome__subtitle {
+    font-size: 1.1em;
+  }
 }
 
 .searchbar {
-    display: flex;
+  display: flex;
 }
 
 @media (min-width: 320px) {
-    .searchbar {
-        flex-direction: column;
-        font-size: 1em;
-        margin-top: 1.5em;
-        width: 75%;
-    }
+  .searchbar {
+    flex-direction: column;
+    font-size: 1em;
+    margin-top: 1.5em;
+    width: 75%;
+  }
 }
 
 @media (min-width: 480px) {
-    .searchbar {
-        width: 55%;
-    }
+  .searchbar {
+    width: 55%;
+  }
 }
 
 @media (min-width: 768px) {
-    .searchbar {
-        flex-direction: row;
-        justify-content: center;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.25);
-        padding: 1.25em;
-    }
+  .searchbar {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.25);
+    padding: 1.25em;
+  }
 }
 
 @media (min-width: 768px) {
-    .searchbar__where {
-        flex: 2;
-    }
+  .searchbar__where {
+    flex: 2;
+  }
 }
 
 .searchbar__date {
-    display: none;
+  display: none;
 }
 
 @media (min-width: 768px) {
-    .searchbar__date {
-        display: block;
-        flex: 1;
-        width: 20%;
-    }
+  .searchbar__date {
+    display: block;
+    flex: 1;
+    width: 20%;
+  }
 }
 
 .searchbar__select {
-    display: none;
+  display: none;
 }
 
 @media (min-width: 768px) {
-    .searchbar__select {
-        display: block;
-        flex: 1;
-    }
+  .searchbar__select {
+    display: block;
+    flex: 1;
+  }
 }
 
 .search__button {
-    border: none;
-    background-color: #FF575A;
-    color: #FFF;
-    transition: background-color 0.3s ease-in;
-    cursor: pointer;
+  border: none;
+  background-color: #FF575A;
+  color: #FFF;
+  transition: background-color 0.3s ease-in;
+  cursor: pointer;
 }
 
 .search__button:hover {
-    background-color: #FF7173;
+  background-color: #ff7173;
 }
 
 @media (min-width: 768px) {
-    .search__button {
-        flex: 1;
-    }
+  .search__button {
+    flex: 1;
+  }
 }
