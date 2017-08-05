@@ -3,5 +3,5 @@
 stylelint.config.js
 .eslintrc.json
 jsconfig.json
-.DS_Store
 .gitignore
+.DS_Store
