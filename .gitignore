@@ -1,5 +1,7 @@
-/36-airbnb-searchbox/*
+/40-parallex/*
 /node_modules/*
 stylelint.config.js
 .eslintrc.json
 jsconfig.json
+.DS_Store
+.gitignore
