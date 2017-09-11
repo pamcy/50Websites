@@ -1,0 +1,10 @@
+// Grid system
+@mixin grid($num, $gutter) {
+    box-sizing: border-box;
+    width: ($wrapper-width - $gutter * ($num - 1)) / $num;
+    margin-right: $gutter;
+
+    &:nth-child(#{$num}n) {
+        margin-right: 0;
+    }
+}

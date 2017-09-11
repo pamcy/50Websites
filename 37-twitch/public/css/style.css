@@ -78,13 +78,17 @@ input[type="submit"] {
  *  Color
  * ------------------------------------ */
 /* ------------------------------------
+ *  Width and Height
+ * ------------------------------------ */
+/* ------------------------------------
  *  Font
  * ------------------------------------ */
 body {
   font-family: 'Lato', sans-serif; }
 
 img {
-  display: block; }
+  display: block;
+  width: 100%; }
 
 .full-width-bg {
   height: 100vh;
@@ -96,12 +100,8 @@ img {
   padding: 60px 0; }
 
 .wrapper {
-  display: block;
-  max-width: 940px;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 15px; }
+  max-width: 960px;
+  margin: 0 auto; }
 
 .channel-card-section {
   display: -webkit-box;
@@ -109,6 +109,14 @@ img {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
+
+.channel-card {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 306.66667px;
+  margin-right: 20px; }
+  .channel-card:nth-child(3n) {
+    margin-right: 0; }
 
 .channel-card__avatar {
   width: 50px;
@@ -123,10 +131,13 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 15px; }
+  padding: 10px; }
 
 .channel-card__container {
   color: #FFF;
   margin-left: 10px; }
+
+.channel-card__heading {
+  margin-bottom: 5px; }
 
 /*# sourceMappingURL=maps/style.css.map */

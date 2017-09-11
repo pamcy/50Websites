@@ -1,5 +1,6 @@
 @import 'reset';
 @import 'variables';
+@import 'mixins';
 
 body {
     font-family: 'Lato', sans-serif;
@@ -7,6 +8,7 @@ body {
 
 img {
     display: block;
+    width: 100%;
 }
 
 .full-width-bg {
@@ -21,17 +23,17 @@ img {
 }
 
 .wrapper {
-    display: block;
-    max-width: 940px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 15px;
+    max-width: $wrapper-width;
+    margin: 0 auto;
 }
 
 .channel-card-section {
     display: flex;
     flex-wrap: wrap;
+}
+
+.channel-card {
+    @include grid(3, 20px);
 }
 
 .channel-card__avatar {
@@ -44,10 +46,14 @@ img {
     background-color: rgba(0, 0, 0, 0.3);
     display: flex;
     align-items: center;
-    padding: 15px;
+    padding: 10px;
 }
 
 .channel-card__container {
     color: $white;
     margin-left: 10px;
+}
+
+.channel-card__heading {
+    margin-bottom: 5px;
 }
