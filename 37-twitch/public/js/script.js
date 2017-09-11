@@ -1,0 +1,1 @@
+"use strict";var haha=function(){console.log("ok"),console.log("good"),console.log("one moew")};haha();

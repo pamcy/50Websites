@@ -1,0 +1,132 @@
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, main {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+a:focus {
+  outline: none; }
+
+/*form reset*/
+input,
+label,
+select,
+button,
+textarea {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+  background: none;
+  line-height: 1;
+  text-align: left;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+button,
+textarea,
+input,
+select {
+  outline: 0; }
+
+select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none; }
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #fff inset; }
+
+button,
+input[type="reset"],
+input[type="button"],
+input[type="submit"] {
+  cursor: pointer; }
+
+/* ------------------------------------
+ *  Color
+ * ------------------------------------ */
+/* ------------------------------------
+ *  Font
+ * ------------------------------------ */
+body {
+  font-family: 'Lato', sans-serif; }
+
+img {
+  display: block; }
+
+.full-width-bg {
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed; }
+
+.main-section {
+  padding: 60px 0; }
+
+.wrapper {
+  display: block;
+  max-width: 940px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 15px; }
+
+.channel-card-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+
+.channel-card__avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%; }
+
+.channel-card__content {
+  background-color: rgba(0, 0, 0, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px; }
+
+.channel-card__container {
+  color: #FFF;
+  margin-left: 10px; }
+
+/*# sourceMappingURL=maps/style.css.map */

@@ -1,13 +1,53 @@
 @import 'reset';
+@import 'variables';
 
-.test {
-    color: red;
-    font-size: 28px;
-    text-decoration: underline;
+body {
+    font-family: 'Lato', sans-serif;
 }
 
-.test2 {
-    color: green;
-    margin-top: 20px;
-    font-size: 15px;
+img {
+    display: block;
+}
+
+.full-width-bg {
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.main-section {
+    padding: 60px 0;
+}
+
+.wrapper {
+    display: block;
+    max-width: 940px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px;
+}
+
+.channel-card-section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.channel-card__avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+.channel-card__content {
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.channel-card__container {
+    color: $white;
+    margin-left: 10px;
 }
