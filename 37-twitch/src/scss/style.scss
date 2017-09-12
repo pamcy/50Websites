@@ -2,23 +2,34 @@
 @import 'variables';
 @import 'mixins';
 @import 'functions';
+@import 'helpers';
 
-body {
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    font-size: 16px;
     font-family: 'Lato', sans-serif;
+    font-weight: $weight-400;
+    color: $black;
 }
 
 img {
+    @extend %full-width;
+
     display: block;
-    max-width: 100%;
 }
 
 .full-width-bg {
-    // position: relative;
-    background-position: center;
-    background-size: cover;
+    @extend %background-cover;
+    @extend %full-width;
+    @extend %full-height;
+
     background-attachment: fixed;
-    width: 100%;
-    height: 100%;
 
     // &::before {
     //     content: '';
@@ -38,8 +49,9 @@ img {
 }
 
 .wrapper {
+    @extend %align-center;
+
     max-width: $wrapper-width;
-    margin: 0 auto;
 }
 
 .channel-card-section {
@@ -81,7 +93,7 @@ img {
 }
 
 .channel-card__heading {
-    font-weight: $weight-b;
+    font-weight: $weight-700;
     margin-bottom: 5px;
     text-overflow: ellipsis;
     overflow: hidden;
