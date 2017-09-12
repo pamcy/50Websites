@@ -3,8 +3,13 @@
     box-sizing: border-box;
     width: ($wrapper-width - $gutter * ($num - 1)) / $num;
     margin-right: $gutter;
+    margin-bottom: $gutter;
 
     &:nth-child(#{$num}n) {
         margin-right: 0;
+    }
+
+    &:nth-last-child(-n+#{$num}) {
+        margin-bottom: 0;
     }
 }

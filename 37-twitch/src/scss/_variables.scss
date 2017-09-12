@@ -2,12 +2,13 @@
  *  Color
  * ------------------------------------ */
 $white: #FFF;
+$black: #3C3C3C;
 
 
 /* ------------------------------------
  *  Width and Height
  * ------------------------------------ */
- $wrapper-width: 960px;
+$wrapper-width: 960px;
 
 
 /* ------------------------------------
@@ -15,3 +16,7 @@ $white: #FFF;
  * ------------------------------------ */
 $base-font: 'Lato', PingFangTC-Thin, Helvetica, Arial, "微軟正黑體", "Microsoft JhengHei", sans-serif;
 $chinese-font: "微軟正黑體", "Microsoft JhengHei", sans-serif;
+
+$weight-l: 300;
+$weight-r: 400;
+$weight-b: 900;
