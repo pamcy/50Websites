@@ -98,7 +98,6 @@ img {
   height: 100%; }
 
 .main-section {
-  position: relative;
   padding: 60px 0; }
 
 .wrapper {
@@ -117,16 +116,20 @@ img {
           box-sizing: border-box;
   width: 306.66667px;
   margin-right: 20px;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s; }
   .channel-card:nth-child(3n) {
     margin-right: 0; }
   .channel-card:nth-last-child(-n+3) {
     margin-bottom: 0; }
-
-.channel-card__avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 100%; }
+  @media (min-width: 1025px) {
+    .channel-card:hover {
+      -webkit-filter: brightness(1.3);
+              filter: brightness(1.3);
+      -webkit-box-shadow: 3px 0 5px rgba(0, 0, 0, 0.3), -3px 0 5px rgba(0, 0, 0, 0.3);
+              box-shadow: 3px 0 5px rgba(0, 0, 0, 0.3), -3px 0 5px rgba(0, 0, 0, 0.3); } }
 
 .channel-card__content {
   background-color: rgba(0, 0, 0, 0.3);
@@ -138,15 +141,19 @@ img {
           align-items: center;
   padding: 10px; }
 
+.channel-card__avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%; }
+
 .channel-card__container {
-  width: 100%;
   color: #FFF;
-  margin-left: 10px; }
+  margin-left: 10px;
+  width: 80%; }
 
 .channel-card__heading {
   font-weight: 900;
   margin-bottom: 5px;
-  width: 80%;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap; }
