@@ -1,4 +1,4 @@
-const urlApi = 'https://www.googleapis.com/youtube/v3/search?part=snippet&eventType=live&maxResults=25&type=video&order=viewCount&key= AIzaSyBIZ1kKJvH6NIJzefMXGiOd18tr-Bic9Z0';
+const urlApi = 'https://www.googleapis.com/youtube/v3/search?part=snippet&eventType=live&maxResults=20&type=video&order=viewCount&key= AIzaSyBIZ1kKJvH6NIJzefMXGiOd18tr-Bic9Z0';
 const urlVideo = 'https://www.youtube.com/watch?v=';
 const DOM = {
     $section: $('.channel-card'),
