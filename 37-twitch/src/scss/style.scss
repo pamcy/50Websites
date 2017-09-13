@@ -59,7 +59,7 @@ img {
     flex-wrap: wrap;
 }
 
-.channel-card {
+.channel-card__item {
     @include grid(3, 20px);
 
     cursor: pointer;
