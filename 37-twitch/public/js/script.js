@@ -3,7 +3,8 @@
 var api = 'https://www.googleapis.com/youtube/v3/search?part=snippet&eventType=live&maxResults=20&type=video&order=viewCount&key= AIzaSyBIZ1kKJvH6NIJzefMXGiOd18tr-Bic9Z0&pageToken=';
 var urlVideo = 'https://www.youtube.com/watch?v=';
 var DOM = {
-    $section: $('.channel-card')
+    $section: $('.channel-card'),
+    $loadingIcon: $('.channel-card__loader')
 };
 var url = '';
 var tokenID = '';
@@ -17,6 +18,8 @@ function displayVideo(data) {
 
     DOM.$section.append(loadContent + '<hr>');
     $('body').css('overflow', 'auto'); // Show scroll
+    DOM.$loadingIcon.hide();
+    // console.log('hide');
 }
 
 function getVideo() {
@@ -25,13 +28,13 @@ function getVideo() {
     $.getJSON(url, function (data) {
         tokenID = data.nextPageToken;
 
-        console.log(data.items.length);
+        // console.log(data.items.length);
         if (data.items.length !== 0) {
             displayVideo(data);
         }
 
-        console.log('url:' + url);
-        console.log('tokenID:' + tokenID);
+        // console.log(`url:${url}`);
+        // console.log(`tokenID:${tokenID}`);
     });
 }
 
@@ -42,6 +45,8 @@ function loadMore() {
 
     if ($(window).height() + $(window).scrollTop() > $(document).height() - 100) {
         $('body').css('overflow', 'hidden'); // Hide scroll 避免一直觸發呼叫function
+        // console.log('show');
+        DOM.$loadingIcon.show();
         getVideo();
     }
 }
