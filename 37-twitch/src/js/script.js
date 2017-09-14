@@ -1,14 +1,16 @@
-const urlApi = 'https://www.googleapis.com/youtube/v3/search?part=snippet&eventType=live&maxResults=20&type=video&order=viewCount&key= AIzaSyBIZ1kKJvH6NIJzefMXGiOd18tr-Bic9Z0';
+const api = 'https://www.googleapis.com/youtube/v3/search?part=snippet&eventType=live&maxResults=20&type=video&order=viewCount&key= AIzaSyBIZ1kKJvH6NIJzefMXGiOd18tr-Bic9Z0&pageToken=';
 const urlVideo = 'https://www.youtube.com/watch?v=';
 const DOM = {
     $section: $('.channel-card'),
 };
+let url = '';
+let tokenID = '';
 
-$.getJSON(urlApi, (data) => {
-    let loadingContent = '';
+function displayVideo(data) {
+    let loadContent = '';
 
     for (let i = 0; i < data.items.length; i += 1) {
-        loadingContent += `
+        loadContent += `
             <a href="${urlVideo}${data.items[i].id.videoId}"class="channel-card__link" target="_blank">
                 <div class="channel-card__item">
                     <img src="${data.items[i].snippet.thumbnails.high.url}" class="channel-card__img">
@@ -23,6 +25,39 @@ $.getJSON(urlApi, (data) => {
             </a>`;
     }
 
-    DOM.$section.html(loadingContent);
+    DOM.$section.append(loadContent + '<hr>');
+    $('body').css('overflow', 'auto'); // Show scroll
+}
+
+function getVideo() {
+    url = api + tokenID;
+
+    $.getJSON(url, (data) => {
+        tokenID = data.nextPageToken;
+
+        console.log(data.items.length);
+        if (data.items.length !== 0) {
+            displayVideo(data);
+        }
+
+        console.log(`url:${url}`);
+        console.log(`tokenID:${tokenID}`);
+    });
+}
+
+function loadMore() {
+    // console.log('scrollTop : ' + $(window).scrollTop());
+    // console.log($(window).height());
+    // console.log('document height : ' + $(document).height());
+
+    if ($(window).height() + $(window).scrollTop() > $(document).height() - 100) {
+        $('body').css('overflow', 'hidden'); // Hide scroll 避免一直觸發呼叫function
+        getVideo();
+    }
+}
+
+$(document).ready(() => {
+    getVideo();
+    $(window).on('scroll', loadMore);
 });
 
