@@ -68,12 +68,12 @@
 //     $(window).on('scroll', loadMore);
 // });
 
-const api = 'https://www.googleapis.com/youtube/v3/search?part=snippet&eventType=live&maxResults=20&type=video&order=viewCount&key= AIzaSyBIZ1kKJvH6NIJzefMXGiOd18tr-Bic9Z0&pageToken=';
-const urlVideo = 'https://www.youtube.com/watch?v=';
 const DOM = {
     $section: $('.channel-card'),
     $loadingIcon: $('.channel-card__loader'),
 };
+const api = 'https://www.googleapis.com/youtube/v3/search?part=snippet&eventType=live&maxResults=21&type=video&order=viewCount&key= AIzaSyBIZ1kKJvH6NIJzefMXGiOd18tr-Bic9Z0&pageToken=';
+const urlVideo = 'https://www.youtube.com/watch?v=';
 let url = '';
 let tokenID = '';
 let isLoading = false;
@@ -97,10 +97,11 @@ function displayVideo(data) {
             </a>`;
     }
 
-    DOM.$section.append(loadContent + '<hr>');
+    DOM.$section.append(loadContent);
     isLoading = false;
     DOM.$loadingIcon.hide();
-    console.log('hide');
+
+    console.log('display');
 }
 
 function getVideo() {
@@ -110,9 +111,10 @@ function getVideo() {
     $.getJSON(url, (data) => {
         tokenID = data.nextPageToken;
 
-        // console.log(data.items.length);
-        if (data.items.length !== 0) {
+        if (data.items.length > 0) {
             displayVideo(data);
+        } else {
+            DOM.$loadingIcon.hide();
         }
 
         // console.log(`url:${url}`);
@@ -127,10 +129,9 @@ function loadMore() {
 
     if ($(window).height() + $(window).scrollTop() > $(document).height() - 100) {
         if (!isLoading) {
-            console.log(`isLoading:${!isLoading}`);
-            console.log('show');
             DOM.$loadingIcon.show();
             getVideo();
+            console.log('Get api');
         }
     }
 }
@@ -139,4 +140,3 @@ $(document).ready(() => {
     getVideo();
     $(window).on('scroll', loadMore);
 });
-
