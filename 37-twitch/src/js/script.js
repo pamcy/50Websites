@@ -17,7 +17,7 @@ function displayVideo(data) {
             <a href="${urlVideo}${data.items[i].id.videoId}"class="channel-card__link" target="_blank">
                 <div class="channel-card__item">
                     <div class="channel-card__img-wrapper">
-                        <img src="${data.items[i].snippet.thumbnails.high.url}" class="channel-card__img" onload="$(this).css('opacity', '1');">
+                        <img src="${data.items[i].snippet.thumbnails.high.url}" class="channel-card__img">
                     </div>
                     <div class="channel-card__content">
                         <img src="imgs/avatar.png" alt="" class="channel-card__avatar">
