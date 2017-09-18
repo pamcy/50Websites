@@ -3,11 +3,12 @@ const DOM = {
     $loadingIcon: $('.channel-card__loader'),
     $imgWrapper: $('.channel-card__img-wrapper'),
 };
-const api = 'https://www.googleapis.com/youtube/v3/search?part=snippet&eventType=live&maxResults=21&type=video&order=viewCount&key= AIzaSyBIZ1kKJvH6NIJzefMXGiOd18tr-Bic9Z0&pageToken=';
+const keyID = 'AIzaSyBIZ1kKJvH6NIJzefMXGiOd18tr-Bic9Z0'
+const api = `https://www.googleapis.com/youtube/v3/search?part=snippet&eventType=live&maxResults=21&type=video&order=viewCount&key=${keyID}&pageToken=`;
 const urlVideo = 'https://www.youtube.com/watch?v=';
 let url = '';
 let tokenID = '';
-let isLoading = false;
+let isLoading = false; // 避免重複發多次 request
 
 function displayVideo(data) {
     let loadContent = '';
@@ -31,10 +32,6 @@ function displayVideo(data) {
     }
 
     DOM.$section.append(loadContent);
-    isLoading = false;
-    DOM.$loadingIcon.hide();
-
-    console.log('display');
 }
 
 function getVideo() {
@@ -46,6 +43,9 @@ function getVideo() {
 
         if (data.items.length > 0) {
             displayVideo(data);
+            isLoading = false;
+            DOM.$loadingIcon.hide();
+            console.log('display');
         } else {
             DOM.$loadingIcon.hide();
         }
