@@ -51,6 +51,11 @@ img {
     padding: 60px 0;
 }
 
+.main-section__title {
+    font-size: $size-24;
+    margin-bottom: 10px;
+}
+
 .wrapper {
     @extend %align-center;
 
