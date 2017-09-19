@@ -1,5 +1,6 @@
 const DOM = {
     $section: $('.channel-card'),
+    $sectionTitle: $('.main-section__title'),
     $loadingIcon: $('.channel-card__loader'),
     $imgWrapper: $('.channel-card__img-wrapper'),
 };
@@ -55,6 +56,15 @@ function getVideo() {
     });
 }
 
+function getTitle(e) {
+    const $language = $(this).attr('data-lang');
+    const $content = window.i18N[`${$language}`].title;
+
+    e.preventDefault();
+
+    DOM.$sectionTitle.text($content);
+}
+
 function loadMore() {
     // console.log('scrollTop : ' + $(window).scrollTop());
     // console.log($(window).height());
@@ -72,4 +82,5 @@ function loadMore() {
 $(document).ready(() => {
     getVideo();
     $(window).on('scroll', loadMore);
+    $('.menu-lang__link').on('click', getTitle);
 });
