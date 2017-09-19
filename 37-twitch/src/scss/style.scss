@@ -4,6 +4,9 @@
 @import 'functions';
 @import 'helpers';
 
+/* ---------------------------------
+Base Styles
+--------------------------------- */
 *,
 ::after,
 ::before {
@@ -54,6 +57,32 @@ img {
     max-width: $wrapper-width;
 }
 
+
+/* ---------------------------------
+Nav menu
+--------------------------------- */
+.nav-menu {
+    margin-bottom: 30px;
+}
+
+.menu-lang {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu-lang__item {
+    &:not(:last-of-type) {
+        margin-right: 10px;
+    }
+}
+
+.menu-lang__text {
+    color: $white;
+}
+
+/* ---------------------------------
+Channel card
+--------------------------------- */
 .channel-card-section {
     display: flex;
     flex-wrap: wrap;
@@ -73,30 +102,6 @@ img {
         }
     }
 }
-
-// .channel-card__img-wrapper {
-//     position: relative;
-//     height: 230px;
-
-//     &::before {
-//         content: '';
-//         position: absolute;
-//         top: 0;
-//         left: 0;
-//         width: 100%;
-//         height: 100%;
-//         background: url('/imgs/placeholder_video.png');
-//         background-position: center;
-//         background-size: cover;
-//         background-repeat: no-repeat;
-//     }
-// }
-
-// .channel-card__img {
-//     position: relative;
-//     z-index: 1;
-//     opacity: 0;
-// }
 
 .channel-card__img-wrapper {
     width: 100%;
