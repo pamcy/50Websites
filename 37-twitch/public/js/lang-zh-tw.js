@@ -1,1 +1,1 @@
-"use strict";window.i18N||(window.i18N={}),window.i18N["zh-TW"]={title:"推薦直播頻道"};
+"use strict";window.i18N||(window.i18N={}),window.i18N["zh-TW"]={title:"最受歡迎影片"};
