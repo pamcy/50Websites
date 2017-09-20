@@ -4,14 +4,16 @@ const DOM = {
     $loadingIcon: $('.channel-card__loader'),
     $imgWrapper: $('.channel-card__img-wrapper'),
 };
-const keyID = 'AIzaSyBIZ1kKJvH6NIJzefMXGiOd18tr-Bic9Z0'
-const api = `https://www.googleapis.com/youtube/v3/search?part=snippet&eventType=live&maxResults=21&type=video&order=viewCount&key=${keyID}&pageToken=`;
-const urlVideo = 'https://www.youtube.com/watch?v=';
-let url = '';
 let tokenID = '';
 let isLoading = false; // 避免重複發多次 request
+// const keyID = 'AIzaSyBIZ1kKJvH6NIJzefMXGiOd18tr-Bic9Z0';
+// const api = `https://www.googleapis.com/youtube/v3/search?part=snippet&eventType=live&maxResults=21&type=video&order=viewCount&key=${keyID}&pageToken=`;
+// let url = '';
+
+
 
 function displayVideo(data) {
+    const urlVideo = 'https://www.youtube.com/watch?v=';
     let loadContent = '';
 
     for (let i = 0; i < data.items.length; i += 1) {
@@ -35,34 +37,78 @@ function displayVideo(data) {
     DOM.$section.append(loadContent);
 }
 
-function getVideo() {
-    url = api + tokenID;
+// function getVideo() {
+//     url = api + tokenID;
+//     isLoading = true;
+
+//     $.getJSON(url, (data) => {
+//         tokenID = data.nextPageToken;
+
+//         if (data.items.length > 0) {
+//             displayVideo(data);
+//             isLoading = false;
+//             DOM.$loadingIcon.hide();
+//             console.log('display');
+//         } else {
+//             DOM.$loadingIcon.hide();
+//         }
+
+//         // console.log(`url:${url}`);
+//         // console.log(`tokenID:${tokenID}`);
+//     });
+// }
+
+function getVideo(lang, region) {
     isLoading = true;
 
-    $.getJSON(url, (data) => {
-        tokenID = data.nextPageToken;
+    if (!lang) {
+        lang = 'zh-TW';
+        region = 'tw';
+    }
 
-        if (data.items.length > 0) {
-            displayVideo(data);
-            isLoading = false;
-            DOM.$loadingIcon.hide();
-            console.log('display');
-        } else {
-            DOM.$loadingIcon.hide();
-        }
+    $.ajax({
+        url: 'https://www.googleapis.com/youtube/v3/videos',
+        data: {
+            key: 'AIzaSyBIZ1kKJvH6NIJzefMXGiOd18tr-Bic9Z0',
+            part: 'snippet,statistics,topicDetails',
+            chart: 'mostPopular',
+            hl: lang,
+            regionCode: region,
+            maxResults: 21,
+            pageToken: tokenID,
+        },
+    })
+        .done((data) => {
+            // console.log(data);
 
-        // console.log(`url:${url}`);
-        // console.log(`tokenID:${tokenID}`);
-    });
+            tokenID = data.nextPageToken;
+
+            if (data.items.length > 0) {
+                displayVideo(data);
+                isLoading = false;
+                DOM.$loadingIcon.hide();
+                console.log('display');
+            } else {
+                DOM.$loadingIcon.hide();
+            }
+        });
 }
 
-function getTitle(e) {
-    const $language = $(this).attr('data-lang');
+function changeLanguage(e) {
+    const currentLink = $(this);
+    const $language = currentLink.data('lang');
+    const $region = currentLink.data('region');
     const $content = window.i18N[`${$language}`].title;
 
     e.preventDefault();
 
+    // $('.menu-lang__link').removeClass('is-selected');
+    // currentLink.addClass('is-selected');
+    // console.log(currentLink);
+
     DOM.$sectionTitle.text($content);
+    DOM.$section.empty();
+    getVideo($language, $region);
 }
 
 function loadMore() {
@@ -82,5 +128,5 @@ function loadMore() {
 $(document).ready(() => {
     getVideo();
     $(window).on('scroll', loadMore);
-    $('.menu-lang__link').on('click', getTitle);
+    $('.menu-lang__link').on('click', changeLanguage);
 });
