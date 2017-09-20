@@ -4,14 +4,14 @@ const DOM = {
     $loadingIcon: $('.channel-card__loader'),
     $imgWrapper: $('.channel-card__img-wrapper'),
 };
+
+let language = 'zh-TW';
+let region = 'tw';
+let h2Title = window.i18N['zh-TW'].title;
 let tokenID = '';
 let isLoading = false; // 避免重複發多次 request
-// const keyID = 'AIzaSyBIZ1kKJvH6NIJzefMXGiOd18tr-Bic9Z0';
-// const api = `https://www.googleapis.com/youtube/v3/search?part=snippet&eventType=live&maxResults=21&type=video&order=viewCount&key=${keyID}&pageToken=`;
-// let url = '';
 
-
-
+console.log(h2Title);
 function displayVideo(data) {
     const urlVideo = 'https://www.youtube.com/watch?v=';
     let loadContent = '';
@@ -37,34 +37,8 @@ function displayVideo(data) {
     DOM.$section.append(loadContent);
 }
 
-// function getVideo() {
-//     url = api + tokenID;
-//     isLoading = true;
-
-//     $.getJSON(url, (data) => {
-//         tokenID = data.nextPageToken;
-
-//         if (data.items.length > 0) {
-//             displayVideo(data);
-//             isLoading = false;
-//             DOM.$loadingIcon.hide();
-//             console.log('display');
-//         } else {
-//             DOM.$loadingIcon.hide();
-//         }
-
-//         // console.log(`url:${url}`);
-//         // console.log(`tokenID:${tokenID}`);
-//     });
-// }
-
-function getVideo(lang, region) {
+function getVideo() {
     isLoading = true;
-
-    if (!lang) {
-        lang = 'zh-TW';
-        region = 'tw';
-    }
 
     $.ajax({
         url: 'https://www.googleapis.com/youtube/v3/videos',
@@ -72,57 +46,44 @@ function getVideo(lang, region) {
             key: 'AIzaSyBIZ1kKJvH6NIJzefMXGiOd18tr-Bic9Z0',
             part: 'snippet,statistics,topicDetails',
             chart: 'mostPopular',
-            hl: lang,
+            hl: language,
             regionCode: region,
             maxResults: 21,
             pageToken: tokenID,
         },
     })
         .done((data) => {
-            // console.log(data);
-
             tokenID = data.nextPageToken;
 
             if (data.items.length > 0) {
                 displayVideo(data);
                 isLoading = false;
                 DOM.$loadingIcon.hide();
-                console.log('display');
             } else {
                 DOM.$loadingIcon.hide();
             }
         });
 }
 
-function changeLanguage(e) {
-    const currentLink = $(this);
-    const $language = currentLink.data('lang');
-    const $region = currentLink.data('region');
-    const $content = window.i18N[`${$language}`].title;
-
-    e.preventDefault();
-
-    // $('.menu-lang__link').removeClass('is-selected');
-    // currentLink.addClass('is-selected');
-    // console.log(currentLink);
-
-    DOM.$sectionTitle.text($content);
-    DOM.$section.empty();
-    getVideo($language, $region);
-}
-
 function loadMore() {
-    // console.log('scrollTop : ' + $(window).scrollTop());
-    // console.log($(window).height());
-    // console.log('document height : ' + $(document).height());
-
     if ($(window).height() + $(window).scrollTop() > $(document).height() - 100) {
         if (!isLoading) {
             DOM.$loadingIcon.show();
             getVideo();
-            console.log('Get api');
         }
     }
+}
+
+function changeLanguage(e) {
+    e.preventDefault();
+
+    language = $(this).data('lang');
+    region = $(this).data('region');
+    h2Title = window.i18N[`${language}`].title;
+
+    DOM.$sectionTitle.text(h2Title);
+    DOM.$section.empty();
+    getVideo();
 }
 
 $(document).ready(() => {
