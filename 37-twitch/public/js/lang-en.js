@@ -1,1 +1,1 @@
-"use strict";window.i18N||(window.i18N={}),window.i18N.en={title:"Live recommendations"};
+"use strict";window.i18N||(window.i18N={}),window.i18N.en={title:"Popular Videos"};
