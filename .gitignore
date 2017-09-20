@@ -4,4 +4,4 @@ stylelint.config.js
 .eslintrc.json
 jsconfig.json
 .gitignore
-.DS_Store
+/.DS_Store
