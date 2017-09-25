@@ -131,11 +131,6 @@ $(document).ready(function () {
     function submitVerify() {
         submitIsInvalid = false;
 
-        $('#name').trigger('input');
-        $('#email').trigger('input');
-        $('#password').trigger('input');
-        $('#confirm-password').trigger('input');
-
         if (submitIsInvalid) {
             alert('Please complete this form');
             return false;
