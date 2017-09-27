@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
     entry: './src/js/main.js',
@@ -7,12 +8,6 @@ module.exports = {
         path: path.resolve(__dirname, 'public/js'),
         filename: 'bundle.js',
     },
-    plugins: [
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery',
-        }),
-    ],
     module: {
         rules: [{
             test: /\.js$/,
@@ -25,4 +20,11 @@ module.exports = {
             },
         }],
     },
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+        }),
+        new UglifyJSPlugin(),
+    ],
 };
