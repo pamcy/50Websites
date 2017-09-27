@@ -1,17 +1,19 @@
+const i18N = {
+    en: require('./i18n/en.js'),
+    'zh-TW': require('./i18n/zh-TW.js'),
+};
 const DOM = {
     $section: $('.channel-card'),
     $sectionTitle: $('.main-section__title'),
     $loadingIcon: $('.channel-card__loader'),
     $imgWrapper: $('.channel-card__img-wrapper'),
 };
-
 let language = 'zh-TW';
 let region = 'tw';
-let h2Title = window.i18N['zh-TW'].title;
+let h2Title = i18N['zh-TW'].title;
 let tokenID = '';
 let isLoading = false; // 避免重複發多次 request
 
-console.log(h2Title);
 function displayVideo(data) {
     const urlVideo = 'https://www.youtube.com/watch?v=';
     let loadContent = '';
@@ -79,7 +81,7 @@ function changeLanguage(e) {
 
     language = $(this).data('lang');
     region = $(this).data('region');
-    h2Title = window.i18N[`${language}`].title;
+    h2Title = i18N[`${language}`].title;
 
     DOM.$sectionTitle.text(h2Title);
     DOM.$section.empty();

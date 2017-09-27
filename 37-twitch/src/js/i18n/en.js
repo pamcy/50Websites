@@ -1,8 +1,3 @@
-if (!window.i18N) {
-    window.i18N = {};
-}
-
-window.i18N['en'] = {
+module.exports = {
     title: 'Popular Videos',
 };
-
