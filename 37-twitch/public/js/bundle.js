@@ -67,52 +67,43 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+
+
 // const i18n = require.context('./i18n', true, /\.js$/);
 // i18n.keys().forEach(i18n);
 
-const loadMore = __webpack_require__(1);
-
+var loadMore = __webpack_require__(1);
 
 /***/ }),
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function($) {const i18N = {
+"use strict";
+/* WEBPACK VAR INJECTION */(function($) {
+
+var i18N = {
     en: __webpack_require__(3),
-    'zh-TW': __webpack_require__(4),
+    'zh-TW': __webpack_require__(4)
 };
-const DOM = {
+var DOM = {
     $section: $('.channel-card'),
     $sectionTitle: $('.main-section__title'),
     $loadingIcon: $('.channel-card__loader'),
-    $imgWrapper: $('.channel-card__img-wrapper'),
+    $imgWrapper: $('.channel-card__img-wrapper')
 };
-let language = 'zh-TW';
-let region = 'tw';
-let h2Title = i18N['zh-TW'].title;
-let tokenID = '';
-let isLoading = false; // 避免重複發多次 request
+var language = 'zh-TW';
+var region = 'tw';
+var h2Title = i18N['zh-TW'].title;
+var tokenID = '';
+var isLoading = false; // 避免重複發多次 request
 
 function displayVideo(data) {
-    const urlVideo = 'https://www.youtube.com/watch?v=';
-    let loadContent = '';
+    var urlVideo = 'https://www.youtube.com/watch?v=';
+    var loadContent = '';
 
-    for (let i = 0; i < data.items.length; i += 1) {
-        loadContent += `
-            <a href="${urlVideo}${data.items[i].id.videoId}"class="channel-card__link" target="_blank">
-                <div class="channel-card__item">
-                    <div class="channel-card__img-wrapper">
-                        <img src="${data.items[i].snippet.thumbnails.high.url}" class="channel-card__img">
-                    </div>
-                    <div class="channel-card__content">
-                        <img src="imgs/avatar.png" alt="" class="channel-card__avatar">
-                        <div class="channel-card__container">
-                            <h2 class="channel-card__heading">${data.items[i].snippet.title}</h2>
-                            <h3 class="channel-card__subheading">${data.items[i].snippet.channelTitle}</h3>
-                        </div>
-                    </div>
-                </div>
-            </a>`;
+    for (var i = 0; i < data.items.length; i += 1) {
+        loadContent += '\n            <a href="' + urlVideo + data.items[i].id.videoId + '"class="channel-card__link" target="_blank">\n                <div class="channel-card__item">\n                    <div class="channel-card__img-wrapper">\n                        <img src="' + data.items[i].snippet.thumbnails.high.url + '" class="channel-card__img">\n                    </div>\n                    <div class="channel-card__content">\n                        <img src="imgs/avatar.png" alt="" class="channel-card__avatar">\n                        <div class="channel-card__container">\n                            <h2 class="channel-card__heading">' + data.items[i].snippet.title + '</h2>\n                            <h3 class="channel-card__subheading">' + data.items[i].snippet.channelTitle + '</h3>\n                        </div>\n                    </div>\n                </div>\n            </a>';
     }
 
     DOM.$section.append(loadContent);
@@ -130,20 +121,19 @@ function getVideo() {
             hl: language,
             regionCode: region,
             maxResults: 21,
-            pageToken: tokenID,
-        },
-    })
-        .done((data) => {
-            tokenID = data.nextPageToken;
+            pageToken: tokenID
+        }
+    }).done(function (data) {
+        tokenID = data.nextPageToken;
 
-            if (data.items.length > 0) {
-                displayVideo(data);
-                isLoading = false;
-                DOM.$loadingIcon.hide();
-            } else {
-                DOM.$loadingIcon.hide();
-            }
-        });
+        if (data.items.length > 0) {
+            displayVideo(data);
+            isLoading = false;
+            DOM.$loadingIcon.hide();
+        } else {
+            DOM.$loadingIcon.hide();
+        }
+    });
 }
 
 function loadMore() {
@@ -160,19 +150,18 @@ function changeLanguage(e) {
 
     language = $(this).data('lang');
     region = $(this).data('region');
-    h2Title = i18N[`${language}`].title;
+    h2Title = i18N['' + language].title;
 
     DOM.$sectionTitle.text(h2Title);
     DOM.$section.empty();
     getVideo();
 }
 
-$(document).ready(() => {
+$(document).ready(function () {
     getVideo();
     $(window).on('scroll', loadMore);
     $('.menu-lang__link').on('click', changeLanguage);
 });
-
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
@@ -10437,21 +10426,25 @@ return jQuery;
 
 /***/ }),
 /* 3 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 
 module.exports = {
-    title: 'Popular Videos',
+    title: 'Popular Videos'
 };
-
 
 /***/ }),
 /* 4 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 
 module.exports = {
-    title: '最受歡迎影片',
+    title: '最受歡迎影片'
 };
-
 
 /***/ })
 /******/ ]);
