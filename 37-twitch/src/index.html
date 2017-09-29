@@ -7,7 +7,7 @@
 
         <!--Stylesheets-->
         <link rel="stylesheet" href="css/style.css">
-        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
 
         <!--Google Analytics-->
         <script>
@@ -20,49 +20,40 @@
         </script>
     </head>
     <body>
-        <div class="full-width-bg" style="background-image: url('imgs/bg.jpg');">
-            <section class="main-section">
-                <div class="wrapper">
-                    <div class="nav-menu">
-                        <ul class="menu-lang">
-                            <li class="menu-lang__item">
-                                <a href="" class="menu-lang__link" data-lang="en" data-region="us">
-                                    <span class="menu-lang__text">ENGLISH</span>
-                                </a>
-                            </li>
-                            <li class="menu-lang__item">
-                                <a href="" class="menu-lang__link" data-lang="zh-TW" data-region="tw">
-                                    <span class="menu-lang__text">繁體中文</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <h2 class="main-section__title">最受歡迎影片</h2>
-                    <div class="channel-card-section channel-card">
-                        <!-- <a href="" class="channel-card__link">
-                            <div class="channel-card__item">
-                                <div class="channel-card__img-wrapper">
-                                    <img src="imgs/preview.jpg" class="channel-card__img">
-                                </div>
-                                <div class="channel-card__content">
-                                    <img src="imgs/avatar.png" alt="" class="channel-card__avatar">
-                                    <div class="channel-card__container">
-                                        <h2 class="channel-card__heading">頻道名稱</h2>
-                                        <h3 class="channel-card__subheading">實況主名字</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </a> -->
-                    </div>
-                    <div class="channel-card__loader" style="display: none;">
-                        <img src="imgs/spinner.svg" class="channel-card__loading-icon">
-                    </div>
-                </div> <!-- ^.wrapper -->
-            </section> <!-- ^.main-section -->
-        </div> <!-- ^.full-width-bg -->
+        <section class="main-section">
+            <div class="wrapper">
+                <div class="header">
+                    <img src="imgs/youtube.png" class="header__logo">
+                    <h1 class="header__heading">What's Happening Around The World Today?</h1>
+                </div>
+            </div>
+        </section>
+        <section class="main-section">
+            <div class="wrapper">
+                <div class="nav-menu">
+                    <ul class="menu-lang">
+                        <li class="menu-lang__item">
+                            <a href="" class="menu-lang__link" data-lang="en" data-region="us">
+                                <span class="menu-lang__text">ENGLISH</span>
+                            </a>
+                        </li>
+                        <li class="menu-lang__item">
+                            <a href="" class="menu-lang__link" data-lang="zh-TW" data-region="tw">
+                                <span class="menu-lang__text">繁體中文</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <h2 class="main-section__$title">最受歡迎影片</h2>
+                <div class="channel-card-section channel-card"></div>
+                <div class="channel-card__loader" style="display: none;">
+                    <img src="imgs/spinner.svg" class="channel-card__loading-icon">
+                </div>
+            </div> <!-- ^.wrapper -->
+        </section> <!-- ^.main-section -->
 
         <!--Scripts-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
         <!-- <script src="js/i18n/en.js"></script>
         <script src="js/i18n/zh-TW.js"></script>
         <script src="js/script.js"></script> -->
