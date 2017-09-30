@@ -30,7 +30,7 @@
         </section>
         <section class="main-section">
             <div class="wrapper">
-                <div class="nav-menu">
+                <!-- <div class="nav-menu">
                     <ul class="menu-lang">
                         <li class="menu-lang__item">
                             <a href="" class="menu-lang__link" data-lang="en" data-region="us">
@@ -43,8 +43,21 @@
                             </a>
                         </li>
                     </ul>
+                </div> -->
+                <div class="main-section__panel">
+                    <h2 class="main-section__title">最受歡迎影片</h2>
+                    <div class="dropdown">
+                        <div class="dropdown__current js-dropdown">
+                            <span class="dropdown__text">Select Country</span>
+                            <span class="dropdown__arrow"></span>
+                        </div>
+                        <ul class="dropdown__list">
+                            <li class="dropdown__item" data-lang="zh-TW" data-region="tw">Taiwan</li>
+                            <li class="dropdown__item" data-lang="en" data-region="us">United States</li>
+                            <li class="dropdown__item" data-lang="en" data-region="us">Germany</li>
+                        </ul>
+                    </div>
                 </div>
-                <h2 class="main-section__$title">最受歡迎影片</h2>
                 <div class="channel-card-section channel-card"></div>
                 <div class="channel-card__loader" style="display: none;">
                     <img src="imgs/spinner.svg" class="channel-card__loading-icon">
