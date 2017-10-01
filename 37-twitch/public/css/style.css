@@ -172,6 +172,8 @@ Dropdown
 .dropdown__item {
   cursor: pointer;
   padding: 15px; }
+  .dropdown__item.is-selected {
+    background: #AF0608; }
   @media (min-width: 1025px) {
     .dropdown__item:hover {
       background: #AF0608; } }
