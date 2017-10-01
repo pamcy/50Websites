@@ -141,16 +141,17 @@ Dropdown
   text-align: center;
   color: #FFF;
   min-width: 180px;
-  width: auto; }
+  width: auto;
+  z-index: 999; }
 
 .dropdown__current {
   cursor: pointer;
   border-radius: 3px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background: #D41D1D;
-  padding: 15px;
+  padding: 15px 20px;
   border-radius: 3px; }
 
 .dropdown__arrow {
@@ -158,8 +159,7 @@ Dropdown
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 5px solid #FFF;
-  margin-left: 10px; }
+  border-top: 5px solid #FFF; }
 
 .dropdown__list {
   display: none;
