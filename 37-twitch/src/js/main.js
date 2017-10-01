@@ -1,4 +1,6 @@
-// const i18n = require.context('./i18n', true, /\.js$/);
-// i18n.keys().forEach(i18n);
+import loadMore from './loadmore';
+import dropDown from './dropdown';
 
-const loadMore = require('./loadmore');
+$(document).ready(() => {
+    $('.dropdown__item').on('click', loadMore.changeLanguage);
+});

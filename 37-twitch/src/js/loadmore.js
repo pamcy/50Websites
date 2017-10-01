@@ -1,7 +1,11 @@
+import usa from './i18n/en';
+import taiwan from './i18n/zh-TW';
+
 const i18N = {
-    en: require('./i18n/en.js'),
-    'zh-TW': require('./i18n/zh-TW.js'),
+    en: usa,
+    'zh-TW': taiwan,
 };
+
 const DOM = {
     $section: $('.channel-card'),
     $sectionTitle: $('.main-section__title'),
@@ -76,9 +80,7 @@ function loadMore() {
     }
 }
 
-function changeLanguage(e) {
-    e.preventDefault();
-
+function changeLanguage() {
     language = $(this).data('lang');
     region = $(this).data('region');
     h2Title = i18N[`${language}`].title;
@@ -91,5 +93,8 @@ function changeLanguage(e) {
 $(document).ready(() => {
     getVideo();
     $(window).on('scroll', loadMore);
-    $('.menu-lang__link').on('click', changeLanguage);
 });
+
+export default {
+    changeLanguage: changeLanguage,
+};
