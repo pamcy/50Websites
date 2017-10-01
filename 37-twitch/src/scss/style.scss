@@ -111,6 +111,10 @@ Dropdown
     cursor: pointer;
     padding: 15px;
 
+    &.is-selected {
+        background: $red-hover;
+    }
+
     @include media('above-desktop') {
         &:hover {
             background: $red-hover;
