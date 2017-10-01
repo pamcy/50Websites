@@ -103,8 +103,16 @@ html {
   padding: 60px 0; }
 
 .main-section__title {
-  font-size: 1.5em;
-  margin-bottom: 10px; }
+  display: inline-block;
+  align-self: flex-end;
+  color: #FFF;
+  font-size: 1.5em; }
+
+.main-section__panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; }
 
 .wrapper {
   max-width: 960px; }
@@ -123,6 +131,50 @@ Header
   color: #FFF;
   font-size: 2em;
   font-weight: 700; }
+
+/* ---------------------------------
+Dropdown
+--------------------------------- */
+.dropdown {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  color: #FFF;
+  min-width: 180px;
+  width: auto; }
+
+.dropdown__current {
+  cursor: pointer;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #D41D1D;
+  padding: 15px;
+  border-radius: 3px; }
+
+.dropdown__arrow {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #FFF;
+  margin-left: 10px; }
+
+.dropdown__list {
+  display: none;
+  position: absolute;
+  width: 100%;
+  background: #D41D1D;
+  margin-top: 15px;
+  border-radius: 3px; }
+
+.dropdown__item {
+  cursor: pointer;
+  padding: 15px; }
+  @media (min-width: 1025px) {
+    .dropdown__item:hover {
+      background: #AF0608; } }
 
 /* ---------------------------------
 Nav menu
