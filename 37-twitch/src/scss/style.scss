@@ -17,6 +17,12 @@ html {
     color: $black;
 }
 
+body {
+    &.modal-isOpen {
+        overflow: hidden;
+    }
+}
+
 img {
     @extend %full-width;
 }
@@ -150,7 +156,7 @@ Channel card
     margin-bottom: 30px;
 }
 
-.channel-card__link {
+.channel-card__item {
     @include grid(3, 20px);
 
     cursor: pointer;
