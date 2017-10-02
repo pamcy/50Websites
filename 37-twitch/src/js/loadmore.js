@@ -7,7 +7,7 @@ const i18N = {
 };
 
 const DOM = {
-    $section: $('.channel-card'),
+    $section: $('.js-channel-card'),
     $sectionTitle: $('.main-section__title'),
     $loadingIcon: $('.channel-card__loader'),
     $imgWrapper: $('.channel-card__img-wrapper'),
@@ -24,7 +24,7 @@ function displayVideo(data) {
 
     for (let i = 0; i < data.items.length; i += 1) {
         loadContent += `
-            <a href="${urlVideo}${data.items[i].id.videoId}"class="channel-card__link" target="_blank">
+            <a href="${urlVideo}${data.items[i].id}"class="channel-card__link" target="_blank">
                 <div class="channel-card__item">
                     <div class="channel-card__img-wrapper">
                         <img src="${data.items[i].snippet.thumbnails.high.url}" class="channel-card__img">
