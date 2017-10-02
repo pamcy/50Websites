@@ -19,25 +19,22 @@ let tokenID = '';
 let isLoading = false; // 避免重複發多次 request
 
 function displayVideo(data) {
-    const urlVideo = 'https://www.youtube.com/watch?v=';
     let loadContent = '';
 
     for (let i = 0; i < data.items.length; i += 1) {
         loadContent += `
-            <a href="${urlVideo}${data.items[i].id}"class="channel-card__link" target="_blank">
-                <div class="channel-card__item">
-                    <div class="channel-card__img-wrapper">
-                        <img src="${data.items[i].snippet.thumbnails.high.url}" class="channel-card__img">
-                    </div>
-                    <div class="channel-card__content">
-                        <img src="imgs/avatar.png" alt="" class="channel-card__avatar">
-                        <div class="channel-card__container">
-                            <h2 class="channel-card__heading">${data.items[i].snippet.title}</h2>
-                            <h3 class="channel-card__subheading">${data.items[i].snippet.channelTitle}</h3>
-                        </div>
+            <div class="channel-card__item" data-video-id="${data.items[i].id}">
+                <div class="channel-card__img-wrapper">
+                    <img src="${data.items[i].snippet.thumbnails.high.url}" class="channel-card__img">
+                </div>
+                <div class="channel-card__content">
+                    <img src="imgs/avatar.png" alt="" class="channel-card__avatar">
+                    <div class="channel-card__container">
+                        <h2 class="channel-card__heading">${data.items[i].snippet.title}</h2>
+                        <h3 class="channel-card__subheading">${data.items[i].snippet.channelTitle}</h3>
                     </div>
                 </div>
-            </a>`;
+            </div>`;
     }
 
     DOM.$section.append(loadContent);
@@ -63,6 +60,7 @@ function getVideo() {
 
             if (data.items.length > 0) {
                 displayVideo(data);
+                // displayModalVideo(data);
                 isLoading = false;
                 DOM.$loadingIcon.hide();
             } else {

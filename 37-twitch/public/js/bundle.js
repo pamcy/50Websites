@@ -10338,6 +10338,10 @@ var _dropdown = __webpack_require__(5);
 
 var _dropdown2 = _interopRequireDefault(_dropdown);
 
+var _modal = __webpack_require__(6);
+
+var _modal2 = _interopRequireDefault(_modal);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 $(document).ready(function () {
@@ -10372,7 +10376,7 @@ var i18N = {
 };
 
 var DOM = {
-    $section: $('.channel-card'),
+    $section: $('.js-channel-card'),
     $sectionTitle: $('.main-section__title'),
     $loadingIcon: $('.channel-card__loader'),
     $imgWrapper: $('.channel-card__img-wrapper')
@@ -10384,11 +10388,10 @@ var tokenID = '';
 var isLoading = false; // 避免重複發多次 request
 
 function displayVideo(data) {
-    var urlVideo = 'https://www.youtube.com/watch?v=';
     var loadContent = '';
 
     for (var i = 0; i < data.items.length; i += 1) {
-        loadContent += '\n            <a href="' + urlVideo + data.items[i].id.videoId + '"class="channel-card__link" target="_blank">\n                <div class="channel-card__item">\n                    <div class="channel-card__img-wrapper">\n                        <img src="' + data.items[i].snippet.thumbnails.high.url + '" class="channel-card__img">\n                    </div>\n                    <div class="channel-card__content">\n                        <img src="imgs/avatar.png" alt="" class="channel-card__avatar">\n                        <div class="channel-card__container">\n                            <h2 class="channel-card__heading">' + data.items[i].snippet.title + '</h2>\n                            <h3 class="channel-card__subheading">' + data.items[i].snippet.channelTitle + '</h3>\n                        </div>\n                    </div>\n                </div>\n            </a>';
+        loadContent += '\n            <div class="channel-card__item" data-video-id="' + data.items[i].id + '">\n                <div class="channel-card__img-wrapper">\n                    <img src="' + data.items[i].snippet.thumbnails.high.url + '" class="channel-card__img">\n                </div>\n                <div class="channel-card__content">\n                    <img src="imgs/avatar.png" alt="" class="channel-card__avatar">\n                    <div class="channel-card__container">\n                        <h2 class="channel-card__heading">' + data.items[i].snippet.title + '</h2>\n                        <h3 class="channel-card__subheading">' + data.items[i].snippet.channelTitle + '</h3>\n                    </div>\n                </div>\n            </div>';
     }
 
     DOM.$section.append(loadContent);
@@ -10413,6 +10416,7 @@ function getVideo() {
 
         if (data.items.length > 0) {
             displayVideo(data);
+            // displayModalVideo(data);
             isLoading = false;
             DOM.$loadingIcon.hide();
         } else {
@@ -10503,6 +10507,42 @@ function closeMenu(e) {
 $('.js-dropdown').on('click', toggleMenu);
 $('.dropdown__item').on('click', selectCountry);
 $('body').on('click', closeMenu);
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function($) {
+
+var $modalOverlay = $('.overlay');
+var $iframe = $('.modal__iframe');
+
+function openModal() {
+    var videoPrefix = 'https://www.youtube.com/embed/';
+    var videoID = $(this).data('video-id');
+    var iframeURL = '' + videoPrefix + videoID;
+
+    $modalOverlay.show();
+    $iframe.attr('src', iframeURL);
+}
+
+function closeModal() {
+    $modalOverlay.hide();
+}
+
+function clickOutside(e) {
+    if (this === e.target) {
+        closeModal();
+    }
+}
+
+$(document).ready(function () {
+    $('.js-channel-card').on('click', '.channel-card__item', openModal);
+    $('.js-close-btn').on('click', closeModal);
+    $('.overlay').on('click', clickOutside);
+});
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ })
