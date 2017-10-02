@@ -8,6 +8,7 @@
         <!--Stylesheets-->
         <link rel="stylesheet" href="css/style.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <!--Google Analytics-->
         <script>
@@ -58,7 +59,17 @@
                         </ul>
                     </div>
                 </div>
-                <div class="channel-card-section channel-card"></div>
+                <div class="channel-card-section js-channel-card"></div>
+                <div class="overlay">
+                    <div class="modal">
+                        <div class="modal__close-btn js-close-btn">
+                            <img src="imgs/close.svg" class="modal__close-icon">
+                        </div>
+                        <div class="modal__content">
+                            <iframe class="modal__iframe" width="854" height="480" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
                 <div class="channel-card__loader" style="display: none;">
                     <img src="imgs/spinner.svg" class="channel-card__loading-icon">
                 </div>

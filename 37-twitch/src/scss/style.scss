@@ -74,7 +74,6 @@ Dropdown
     color: $white;
     min-width: 180px;
     width: auto;
-    z-index: 999;
 }
 
 .dropdown__current {
@@ -208,4 +207,41 @@ Channel card
     height: 100px;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+/* ---------------------------------
+Modal
+--------------------------------- */
+.overlay {
+    @extend %full-width;
+    @extend %full-height;
+
+    display: none;
+    position: fixed;
+    left: 0;
+    top:0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    overflow: hidden;
+    background: transparentize($black, 0.2);
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal__close-btn {
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    cursor: pointer;
+}
+
+.modal__close-icon {
+    width: 32px;
+    height: 32px;
 }
