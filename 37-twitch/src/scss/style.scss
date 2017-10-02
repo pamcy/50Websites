@@ -251,3 +251,32 @@ Modal
     width: 32px;
     height: 32px;
 }
+
+/* ---------------------------------
+To top button
+--------------------------------- */
+.to-top__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: lighten($black, 5%);
+}
+
+.to-top__icon {
+    background: $white;
+    width: 12px;
+    height: 3px;
+    transition: all 0.3s;
+
+    &:first-of-type {
+        transform: rotate(-45deg) translate(2px, 1px);
+    }
+    &:last-of-type {
+        transform: rotate(45deg) translate(-2px, 1px) ;
+    }
+}
