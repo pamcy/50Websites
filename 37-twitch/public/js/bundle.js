@@ -10526,10 +10526,13 @@ function openModal() {
 
     $modalOverlay.show();
     $iframe.attr('src', iframeURL);
+    $('body').addClass('modal-isOpen');
 }
 
 function closeModal() {
     $modalOverlay.hide();
+    $('body').removeClass('modal-isOpen'); // Remove scrollbar
+    $iframe.attr('src', ''); // Stop playing video
 }
 
 function clickOutside(e) {
