@@ -3,9 +3,10 @@ const sass         = require('gulp-sass');
 const sourcemaps   = require('gulp-sourcemaps');
 const postcss      = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
+const lost         = require('lost');
 const cssnano      = require('cssnano');
 const browserSync  = require('browser-sync').create();
-// const uglify       = require('gulp-uglify');
+// const uglify    = require('gulp-uglify');
 // const babel     = require('gulp-babel')
 
 
@@ -14,22 +15,22 @@ const browserSync  = require('browser-sync').create();
  */
 
 gulp.task('make:css', () => {
+    const plugins = [
+        lost,
+        autoprefixer({ browsers: ['last 2 versions'] }),
+    ];
     return gulp.src('src/scss/**/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
+        .pipe(postcss(plugins))
         .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest('public/css'))
         .pipe(browserSync.stream());
 });
 
 gulp.task('process:css', ['make:css'], () => {
-    const plugins = [
-        autoprefixer({ browsers: ['last 2 versions'] }),
-        cssnano(),
-    ];
-
     return gulp.src('public/css/**/*.css')
-        .pipe(postcss(plugins))
+        .pipe(postcss(cssnano()))
         .pipe(gulp.dest('public/css'));
 });
 
@@ -65,6 +66,6 @@ gulp.task('build', ['copy:html', 'process:css']);
 
 // Array of tasks to complete before watch
 gulp.task('default', ['browserSync', 'make:css', 'copy:html'], () => {
-    gulp.watch('src/*.html', ['copy:html']);
     gulp.watch('src/scss/**/*.scss', ['make:css']);
+    gulp.watch('src/*.html', ['copy:html']);
 });
