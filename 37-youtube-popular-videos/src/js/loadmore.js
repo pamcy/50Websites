@@ -1,9 +1,23 @@
 import usa from './i18n/en';
 import taiwan from './i18n/zh-TW';
+import japan from './i18n/ja';
+import korea from './i18n/ko';
+import germany from './i18n/de';
+import spain from './i18n/es';
+import france from './i18n/fr';
+import italy from './i18n/it';
+import russia from './i18n/ru';
 
 const i18N = {
-    en: usa,
     'zh-TW': taiwan,
+    en: usa,
+    ja: japan,
+    ko: korea,
+    de: germany,
+    es: spain,
+    fr: france,
+    it: italy,
+    ru: russia,
 };
 
 const DOM = {

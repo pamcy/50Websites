@@ -10372,11 +10372,46 @@ var _zhTW = __webpack_require__(4);
 
 var _zhTW2 = _interopRequireDefault(_zhTW);
 
+var _ja = __webpack_require__(8);
+
+var _ja2 = _interopRequireDefault(_ja);
+
+var _ko = __webpack_require__(9);
+
+var _ko2 = _interopRequireDefault(_ko);
+
+var _de = __webpack_require__(10);
+
+var _de2 = _interopRequireDefault(_de);
+
+var _es = __webpack_require__(11);
+
+var _es2 = _interopRequireDefault(_es);
+
+var _fr = __webpack_require__(12);
+
+var _fr2 = _interopRequireDefault(_fr);
+
+var _it = __webpack_require__(13);
+
+var _it2 = _interopRequireDefault(_it);
+
+var _ru = __webpack_require__(15);
+
+var _ru2 = _interopRequireDefault(_ru);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var i18N = {
+    'zh-TW': _zhTW2.default,
     en: _en2.default,
-    'zh-TW': _zhTW2.default
+    ja: _ja2.default,
+    ko: _ko2.default,
+    de: _de2.default,
+    es: _es2.default,
+    fr: _fr2.default,
+    it: _it2.default,
+    ru: _ru2.default
 };
 
 var DOM = {
@@ -10589,6 +10624,84 @@ $(document).ready(function () {
     $(window).on('scroll', displayBtn);
 });
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = {
+    title: '日本の人々が見ている...'
+};
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = {
+    title: '한국의 사람들이보고있다....'
+};
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = {
+    title: 'Die Leute in Deutschland schauen zu...'
+};
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = {
+    title: 'La gente en españa está viendo...'
+};
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = {
+    title: 'Les gens en France regardent...'
+};
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = {
+    title: 'Persone in Italia stanno guardando...'
+};
+
+/***/ }),
+/* 14 */,
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = {
+    title: 'Люди в россии смотрят...'
+};
 
 /***/ })
 /******/ ]);

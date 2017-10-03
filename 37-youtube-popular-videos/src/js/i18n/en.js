@@ -1,3 +1,3 @@
 module.exports = {
-    title: 'Popular Videos',
+    title: 'People in USA are watching...',
 };
