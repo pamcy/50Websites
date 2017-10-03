@@ -446,12 +446,12 @@ To top button
       height: 50px; } }
   @media (max-width: 1024px) {
     .to-top__btn {
-      width: 40px;
-      height: 40px; } }
+      width: 45px;
+      height: 45px; } }
   @media (max-width: 550px) {
     .to-top__btn {
-      width: 30px;
-      height: 30px; } }
+      width: 40px;
+      height: 40px; } }
 
 .to-top__icon {
   background: #FFF;

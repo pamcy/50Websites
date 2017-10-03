@@ -360,13 +360,13 @@ To top button
     }
 
     @include media('below-desktop') {
-        width: 40px;
-        height: 40px;
+        width: 45px;
+        height: 45px;
     }
 
     @include media('below-mobile') {
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
     }
 }
 
