@@ -10513,7 +10513,7 @@ module.exports = {
 
 
 module.exports = {
-    title: '最受歡迎影片'
+    title: '台灣人都在瘋這些影片...'
 };
 
 /***/ }),
