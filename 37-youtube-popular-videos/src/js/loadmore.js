@@ -69,8 +69,6 @@ function getVideo() {
         .done((data) => {
             tokenID = data.nextPageToken;
 
-            console.log(data);
-
             if (data.items.length > 0) {
                 displayVideo(data);
                 isLoading = false;
