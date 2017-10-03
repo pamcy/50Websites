@@ -52,7 +52,7 @@ gulp.task('copy:html', () => {
 gulp.task('browserSync', () => {
     browserSync.init({
         server: {
-            baseDir: 'public',
+            baseDir: './',
         },
     });
 });
