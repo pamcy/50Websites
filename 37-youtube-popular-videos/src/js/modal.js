@@ -26,5 +26,5 @@ function clickOutside(e) {
 $(document).ready(() => {
     $('.js-channel-card').on('click', '.channel-card__item', openModal);
     $('.js-close-btn').on('click', closeModal);
-    $('.overlay').on('click', clickOutside);
+    $('.overlay, .modal__content').on('click', clickOutside);
 });
