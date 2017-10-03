@@ -45,7 +45,7 @@ gulp.task('process:css', ['make:css'], () => {
 
 gulp.task('copy:html', () => {
     return gulp.src('src/**/*.html')
-        .pipe(gulp.dest('public'))
+        .pipe(gulp.dest('./'))
         .pipe(browserSync.stream());
 });
 
