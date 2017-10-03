@@ -10342,6 +10342,10 @@ var _modal = __webpack_require__(6);
 
 var _modal2 = _interopRequireDefault(_modal);
 
+var _scroll = __webpack_require__(7);
+
+var _scroll2 = _interopRequireDefault(_scroll);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 $(document).ready(function () {
@@ -10545,6 +10549,43 @@ $(document).ready(function () {
     $('.js-channel-card').on('click', '.channel-card__item', openModal);
     $('.js-close-btn').on('click', closeModal);
     $('.overlay').on('click', clickOutside);
+});
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function($) {
+
+var topBtn = $('.to-top__btn');
+var offset = 300;
+var offsetOpacity = 1500;
+var scrollSpeed = 800;
+
+function scrollToTop(e) {
+    e.preventDefault();
+    $('body, html').animate({ scrollTop: 0 }, scrollSpeed, 'swing');
+}
+
+function displayBtn() {
+    var $this = $(this);
+
+    if ($this.scrollTop() > offset) {
+        topBtn.addClass('is-visible');
+    } else {
+        topBtn.removeClass('is-visible is-fadeout');
+    }
+
+    if ($this.scrollTop() > offsetOpacity) {
+        topBtn.addClass('is-fadeout');
+    }
+}
+
+$(document).ready(function () {
+    $('.to-top__btn').on('click', scrollToTop);
+    $(window).on('scroll', displayBtn);
 });
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
