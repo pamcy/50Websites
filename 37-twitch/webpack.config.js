@@ -1,9 +1,9 @@
 const webpack = require('webpack');
 const path = require('path');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+// const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
-    entry: './src/js/main.js',
+    entry: './src/js/entry.js',
     output: {
         path: path.resolve(__dirname, 'public/js'),
         filename: 'bundle.js',
@@ -25,6 +25,6 @@ module.exports = {
             $: 'jquery',
             jQuery: 'jquery',
         }),
-        new UglifyJSPlugin(),
+        // new UglifyJSPlugin(),
     ],
 };
