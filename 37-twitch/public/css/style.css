@@ -302,13 +302,19 @@ To top button
   right: 30px;
   width: 50px;
   height: 50px;
-  background: #494949; }
+  background: #494949;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s;
+  visibility: hidden; }
+  .to-top__btn.is-visible {
+    visibility: visible; }
+  .to-top__btn.is-fadeout {
+    opacity: 0.6; }
 
 .to-top__icon {
   background: #FFF;
   width: 12px;
-  height: 3px;
-  transition: all 0.3s; }
+  height: 3px; }
   .to-top__icon:first-of-type {
     transform: rotate(-45deg) translate(2px, 1px); }
   .to-top__icon:last-of-type {
