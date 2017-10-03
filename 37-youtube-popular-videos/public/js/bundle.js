@@ -10395,7 +10395,7 @@ function displayVideo(data) {
     var loadContent = '';
 
     for (var i = 0; i < data.items.length; i += 1) {
-        loadContent += '\n            <div class="channel-card__item" data-video-id="' + data.items[i].id + '">\n                <div class="channel-card__img-wrapper">\n                    <img src="' + data.items[i].snippet.thumbnails.high.url + '" class="channel-card__img">\n                </div>\n                <div class="channel-card__content">\n                    <img src="imgs/avatar.png" alt="" class="channel-card__avatar">\n                    <div class="channel-card__container">\n                        <h2 class="channel-card__heading">' + data.items[i].snippet.title + '</h2>\n                        <h3 class="channel-card__subheading">' + data.items[i].snippet.channelTitle + '</h3>\n                    </div>\n                </div>\n            </div>';
+        loadContent += '\n            <div class="channel-card__item" data-video-id="' + data.items[i].id + '">\n                <div class="channel-card__img-wrapper">\n                    <img src="' + data.items[i].snippet.thumbnails.high.url + '" class="channel-card__img">\n                </div>\n                <div class="channel-card__content">\n                    <h2 class="channel-card__heading">' + data.items[i].snippet.title.substr(0, 35) + '</h2>\n                    <h3 class="channel-card__subheading">' + data.items[i].snippet.channelTitle + '</h3>\n                </div>\n            </div>';
     }
 
     DOM.$section.append(loadContent);
@@ -10418,9 +10418,10 @@ function getVideo() {
     }).done(function (data) {
         tokenID = data.nextPageToken;
 
+        console.log(data);
+
         if (data.items.length > 0) {
             displayVideo(data);
-            // displayModalVideo(data);
             isLoading = false;
             DOM.$loadingIcon.hide();
         } else {
@@ -10466,7 +10467,7 @@ exports.default = {
 
 
 module.exports = {
-    title: 'Popular Videos'
+    title: 'People in USA are watching...'
 };
 
 /***/ }),
@@ -10548,7 +10549,7 @@ function clickOutside(e) {
 $(document).ready(function () {
     $('.js-channel-card').on('click', '.channel-card__item', openModal);
     $('.js-close-btn').on('click', closeModal);
-    $('.overlay').on('click', clickOutside);
+    $('.overlay, .modal__content').on('click', clickOutside);
 });
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 

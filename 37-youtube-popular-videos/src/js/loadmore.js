@@ -28,11 +28,8 @@ function displayVideo(data) {
                     <img src="${data.items[i].snippet.thumbnails.high.url}" class="channel-card__img">
                 </div>
                 <div class="channel-card__content">
-                    <img src="imgs/avatar.png" alt="" class="channel-card__avatar">
-                    <div class="channel-card__container">
-                        <h2 class="channel-card__heading">${data.items[i].snippet.title}</h2>
-                        <h3 class="channel-card__subheading">${data.items[i].snippet.channelTitle}</h3>
-                    </div>
+                    <h2 class="channel-card__heading">${data.items[i].snippet.title.substr(0, 35)}</h2>
+                    <h3 class="channel-card__subheading">${data.items[i].snippet.channelTitle}</h3>
                 </div>
             </div>`;
     }
@@ -58,9 +55,10 @@ function getVideo() {
         .done((data) => {
             tokenID = data.nextPageToken;
 
+            console.log(data);
+
             if (data.items.length > 0) {
                 displayVideo(data);
-                // displayModalVideo(data);
                 isLoading = false;
                 DOM.$loadingIcon.hide();
             } else {
