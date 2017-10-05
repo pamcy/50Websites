@@ -30,7 +30,7 @@ gulp.task('make:css', () => {
 
 gulp.task('process:css', ['make:css'], () => {
     return gulp.src('public/css/**/*.css')
-        .pipe(postcss(cssnano()))
+        .pipe(postcss(cssnano))
         .pipe(gulp.dest('public/css'));
 });
 
