@@ -1,6 +1,10 @@
 # What's Happening Around The World Today?
 
-Catch the latest popular videos on Youtube from around the world, look over the source code above if you'd like.
+Catch the latest popular videos on Youtube from around the world, look over the source code above if you'd like.  
+
+[**View Demo**](https://pamcy.github.io/50Websites/37-youtube-popular-videos)
+
+![Expanding image gallery with Flexbox](./public/imgs/demo-youtube.png)
 
 
 ## What did I learn from this project?
@@ -23,9 +27,4 @@ Select the desired content region from the dropdown list.
 - To Top Button  
 Allow users to smoothly scroll back to the top of the page.
 
-- File & Directory Structure  
-
-
-[**View Demo**](https://pamcy.github.io/50Websites/37-youtube-popular-videos)
-
-![Expanding image gallery with Flexbox](./public/imgs/demo-youtube.png)
+- File & Directory Structure
