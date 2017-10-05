@@ -19,7 +19,6 @@ const i18N = {
     it: italy,
     ru: russia,
 };
-
 const DOM = {
     $section: $('.js-channel-card'),
     $sectionTitle: $('.main-section__title'),
@@ -42,7 +41,7 @@ function displayVideo(data) {
                     <img src="${data.items[i].snippet.thumbnails.high.url}" class="channel-card__img">
                 </div>
                 <div class="channel-card__content">
-                    <h2 class="channel-card__heading">${data.items[i].snippet.title.substr(0, 35)}</h2>
+                    <h2 class="channel-card__heading">${data.items[i].snippet.title}</h2>
                     <h3 class="channel-card__subheading">${data.items[i].snippet.channelTitle}</h3>
                 </div>
             </div>`;

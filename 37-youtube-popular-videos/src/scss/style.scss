@@ -72,12 +72,12 @@ video {
     max-width: $wrapper-width;
 
     @include media('above-tablet') {
-		padding: 0 25px;
+        padding: 0 25px;
     }
 
-	@include media('below-tablet') {
-		padding: 0 15px;
-	}
+    @include media('below-tablet') {
+        padding: 0 15px;
+    }
 }
 
 /* ---------------------------------
@@ -127,8 +127,8 @@ Dropdown
     }
 
     @include media('below-mobile') {
-		padding: 15px;
-	}
+        padding: 15px;
+    }
 }
 
 .dropdown__arrow {
@@ -247,12 +247,11 @@ Channel card
 
 .channel-card__content {
     background-color: rgba(0, 0, 0, 0.3);
+    color: $white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 15px;
-    color: $white;
-    height: 100px;
 }
 
 .channel-card__heading {
@@ -260,6 +259,9 @@ Channel card
     font-weight: $weight-700;
     margin-bottom: 10px;
     line-height: 1.2;
+    height: 42px;
+    overflow: hidden;
+    white-space: pre-wrap;
 }
 
 .channel-card__subheading {
