@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>What's Happening Around The World Today? - Youtube popular videos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--Stylesheets-->
+        <link rel="stylesheet" href="public/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!--Google Analytics-->
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-96360862-1', 'auto');
+        ga('send', 'pageview');
+        </script>
+    </head>
+    <body>
+        <section class="main-section">
+            <div class="wrapper">
+                <div class="header">
+                    <img src="public/imgs/youtube.png" class="header__logo">
+                    <h1 class="header__heading">What's Happening Around The World Today?</h1>
+                </div>
+            </div>
+        </section>
+        <section class="main-section">
+            <div class="wrapper">
+                <div class="main-section__panel">
+                    <h2 class="main-section__title">台灣人都在瘋這些影片...</h2>
+                    <div class="dropdown">
+                        <div class="dropdown__current js-dropdown">
+                            <span class="dropdown__text">Select Country</span>
+                            <span class="dropdown__arrow"></span>
+                        </div>
+                        <ul class="dropdown__list">
+                            <li class="dropdown__item" data-lang="en" data-region="US">United States</li>
+                            <li class="dropdown__item is-selected" data-lang="zh-TW" data-region="TW">Taiwan</li>
+                            <li class="dropdown__item" data-lang="ja" data-region="JP">Japan</li>
+                            <li class="dropdown__item" data-lang="ko" data-region="KR">Korea</li>
+                            <li class="dropdown__item" data-lang="de" data-region="DE">Germany</li>
+                            <li class="dropdown__item" data-lang="fr" data-region="FR">France</li>
+                            <li class="dropdown__item" data-lang="es" data-region="ES">Spain</li>
+                            <li class="dropdown__item" data-lang="it" data-region="IT">Italy</li>
+                            <li class="dropdown__item" data-lang="ru" data-region="RU">Russia</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="channel-card-section js-channel-card"></div>
+                <div class="overlay">
+                    <div class="modal">
+                        <div class="modal__content">
+                            <div class="modal__close-btn js-close-btn">
+                                <img src="public/imgs/close.svg" class="modal__close-icon">
+                            </div>
+                            <iframe class="modal__iframe" width="854" height="480" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="channel-card__loader" style="display: none;">
+                    <img src="public/imgs/spinner.svg" class="channel-card__loading-icon">
+                </div>
+            </div> <!-- ^.wrapper -->
+        </section> <!-- ^.main-section -->
+
+        <a href="#" class="to-top__btn">
+            <span class="to-top__icon"></span>
+            <span class="to-top__icon"></span>
+        </a>
+
+        <!--Scripts-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="public/js/bundle.js"></script>
+    </body>
+</html>

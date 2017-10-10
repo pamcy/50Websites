@@ -1,0 +1,391 @@
+@import 'reset';
+@import 'variables';
+@import 'mixins';
+@import 'functions';
+@import 'helpers';
+
+/* ---------------------------------
+Base Styles
+--------------------------------- */
+body,
+html {
+    min-height: 100vh;
+    background: #282828;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: $weight-400;
+    color: $black;
+}
+
+body {
+    &.modal-isOpen {
+        overflow: hidden;
+    }
+}
+
+img {
+    @extend %full-width;
+}
+
+video {
+    width: 100%    !important;
+    height: auto   !important;
+}
+
+.main-section {
+    padding: 0 0 70px;
+
+    &:first-of-type {
+        padding-top: 70px;
+    }
+
+    &:last-of-type {
+        padding-bottom: 0;
+    }
+}
+
+.main-section__title {
+    align-self: flex-end;
+    color: $white;
+    font-size: $size-24;
+
+    @include media('above-mobile') {
+        display: inline-block;
+        font-size: $size-24;
+    }
+
+    @include media('below-mobile') {
+        display: block;
+        font-size: $size-20;
+        margin-bottom: 10px;
+    }
+}
+
+.main-section__panel {
+    margin-bottom: 20px;
+
+    @include media('above-mobile') {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.wrapper {
+    @extend %align-center;
+
+    max-width: $wrapper-width;
+
+    @include media('above-tablet') {
+        padding: 0 25px;
+    }
+
+    @include media('below-tablet') {
+        padding: 0 15px;
+    }
+}
+
+/* ---------------------------------
+Header
+--------------------------------- */
+.header {
+    text-align: center;
+}
+
+.header__logo {
+    width: 120px;
+    margin-bottom: 10px;
+}
+
+.header__heading {
+    color: $white;
+    font-size: $size-32;
+    font-weight: $weight-700;
+    line-height: 1.2;    
+}
+
+/* ---------------------------------
+Dropdown
+--------------------------------- */
+.dropdown {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    color: $white;
+    min-width: 180px;    
+    width: auto;
+    z-index: 2;
+}
+
+.dropdown__current {
+    cursor: pointer;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $red;
+    
+    border-radius: 3px;
+
+    @include media('above-mobile') {
+        padding: 15px 20px;
+    }
+
+    @include media('below-mobile') {
+        padding: 15px;
+    }
+}
+
+.dropdown__arrow {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid $white;
+}
+
+.dropdown__list {
+    display: none;
+    position: absolute;
+    width: 100%;
+    background: $red;
+    margin-top: 15px;
+    border-radius: 3px;
+}
+
+.dropdown__item {
+    cursor: pointer;
+    padding: 15px;
+
+    &.is-selected {
+        background: $red-hover;
+    }
+
+    @include media('above-desktop') {
+        &:hover {
+            background: $red-hover;
+        }
+    }
+}
+
+/* ---------------------------------
+Nav menu
+--------------------------------- */
+.nav-menu {
+    margin-bottom: 30px;
+}
+
+.menu-lang {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu-lang__item {
+    &:not(:last-of-type) {
+        margin-right: 10px;
+    }
+}
+
+.menu-lang__text {
+    color: $white;
+}
+
+/* ---------------------------------
+Channel card
+--------------------------------- */
+.channel-card-section {
+    @extend %lost-clearfix;
+
+    margin-bottom: 30px;
+}
+
+.channel-card__item {
+    margin-bottom: 25px;
+    transition: all 0.3s;
+    cursor: pointer;
+
+    @include media('above-desktop') {
+        lost-column: 1/3;
+
+        &:hover {
+            filter: brightness(1.3);
+            box-shadow: 3px 0 5px rgba(0, 0, 0, 0.3), -3px 0 5px rgba(0, 0, 0, 0.3);
+        }
+    }
+
+    @include media('below-desktop') {
+        lost-column: 1/2;
+    }
+
+    @include media('below-mobile') {
+        lost-column: 1;
+    }
+}
+
+.channel-card__img-wrapper {
+    @extend %full-width;
+
+    position: relative;
+    background: url('../imgs/placeholder_video.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include media('above-desktop') {
+        height: 230px;
+    }
+
+    @include media('below-desktop') {
+        height: 300px;
+    }
+
+    @include media('below-mobile') {
+        height: 250px;
+    }
+}
+
+.channel-card__img {
+    @extend %full-height;
+
+    position: absolute;
+}
+
+.channel-card__content {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px;
+}
+
+.channel-card__heading {
+    font-size: $size-18;
+    font-weight: $weight-700;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    height: 42px;
+    overflow: hidden;
+    white-space: pre-wrap;
+}
+
+.channel-card__subheading {
+    font-size: $size-14;
+    color: $gray;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.channel-card__loader {
+    @extend %align-center;
+
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* ---------------------------------
+Modal
+--------------------------------- */
+.overlay {
+    @extend %full-width;
+    @extend %full-height;
+
+    display: none;
+    position: fixed;
+    left: 0;
+    top:0;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+    overflow: hidden;
+    background: transparentize($black, 0.2);
+}
+
+.modal {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal__content {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+.modal__close-btn {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.modal__close-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.modal__iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	width: 70%;
+	height: 70%;
+}
+
+/* ---------------------------------
+To top button
+--------------------------------- */
+.to-top__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: lighten($black, 5%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s;
+    visibility: hidden;
+
+    &.is-visible {
+        visibility: visible;
+    }
+
+    &.is-fadeout {
+        opacity: 0.6;
+    }
+
+    @include media('above-desktop') {
+        width: 50px;
+        height: 50px;
+    }
+
+    @include media('below-desktop') {
+        width: 45px;
+        height: 45px;
+    }
+
+    @include media('below-mobile') {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.to-top__icon {
+    background: $white;
+    width: 12px;
+    height: 3px;
+
+    &:first-of-type {
+        transform: rotate(-45deg) translate(2px, 1px);
+    }
+    &:last-of-type {
+        transform: rotate(45deg) translate(-2px, 1px) ;
+    }
+}
