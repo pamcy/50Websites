@@ -1,7 +1,7 @@
 {
-  "name": "37-twitch",
+  "name": "37-youtube-popular-videos",
   "version": "1.0.0",
-  "description": "test",
+  "description": "Catch the latest popular videos on Youtube from around the world.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/pamcy/temp.git"
+    "url": "https://github.com/pamcy/50Websites.git"
   },
   "author": "Pamcy",
   "license": "ISC",
