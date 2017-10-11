@@ -1,18 +1,18 @@
 /* ------------------------------------
  *  Color
  * ------------------------------------ */
-$white: #FFF;
-$black: #3C3C3C;
-$gray: #999999;
-$red: #D41D1D;
-$red-hover: #AF0608;
+$white: #fff;
+$black: #3c3c3c;
 
+$light-gray: #f4f4f4;
+$gray: #787878;
 
 /* ------------------------------------
  *  Width and Height
  * ------------------------------------ */
-$wrapper-width: 1160px;
-
+$inner-wrapper-l: 1170px;
+$inner-wrapper-m: 970px;
+$inner-wrapper-s: 750px;
 
 /* ------------------------------------
  *  Font
@@ -20,11 +20,11 @@ $wrapper-width: 1160px;
 $base-font: 'Lato', PingFangTC-Thin, Helvetica, Arial, "微軟正黑體", "Microsoft JhengHei", sans-serif;
 $chinese-font: "微軟正黑體", "Microsoft JhengHei", sans-serif;
 
-$size-32: 2em;
-$size-24: 1.5em;
-$size-20: 1.25em;
-$size-18: 1.125em;
-$size-14: 0.875em;
+// $size-32: 2em;
+// $size-24: 1.5em;
+// $size-20: 1.25em;
+// $size-18: 1.125em;
+// $size-14: 0.875em;
 
 $weight-400: 400;
 $weight-500: 500;
