@@ -165,6 +165,10 @@ input {
   font-weight: 700;
   letter-spacing: 1.3pt; }
 
+.nav__item {
+  font-size: 0.9375em;
+  line-height: 1.2; }
+
 .footer-nav__item,
 .footer-nav__copyright {
   font-size: 0.875em;
@@ -187,6 +191,58 @@ input {
 
 .wrapper-s {
   max-width: 750px; }
+
+.header__container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.header__logo {
+  display: inline-block;
+  width: 105px; }
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .nav.open .nav__bar--top {
+    -webkit-transform: rotate(45deg) translate(6px, 5px);
+            transform: rotate(45deg) translate(6px, 5px); }
+  .nav.open .nav__bar--middle {
+    opacity: 0; }
+  .nav.open .nav__bar--bottom {
+    -webkit-transform: rotate(-45deg) translate(5px, -4px);
+            transform: rotate(-45deg) translate(5px, -4px); }
+
+.nav__bars {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  cursor: pointer; }
+
+.nav__bar {
+  width: 20px;
+  height: 2px;
+  background: #fff;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s; }
+  .nav__bar:not(:last-of-type) {
+    margin-bottom: 5px; }
+
+.nav__item {
+  display: inline-block; }
+  .nav__item:not(:last-of-type) {
+    margin-right: 30px; }
 
 .footer {
   background: #f4f4f4; }
