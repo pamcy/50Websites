@@ -1,0 +1,15 @@
+.column {
+    @extend %lost-clearfix;
+}
+
+.column--3 {
+    .column__item {
+        @include media('above-tablet') {
+            lost-column: 1/3;
+        }
+
+        @include media('below-tablet') {
+            lost-column: 1/1;
+        }
+    }
+}

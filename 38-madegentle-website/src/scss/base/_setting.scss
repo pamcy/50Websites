@@ -1,0 +1,27 @@
+body,
+html {
+    background: $white;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: $weight-400;
+    color: $black;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.5);
+    overflow-x: hidden;
+}
+
+img {
+    @extend %full-width;
+
+    display: block;
+}
+
+a {
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+}
+
+input {
+    border-radius: 0;
+    -webkit-appearance: none;
+}
