@@ -2,10 +2,6 @@
     padding: 10px 0;
 }
 
-.menu {
-    display: none;
-}
-
 .header__visible {
     display: flex;
     justify-content: space-between;
@@ -45,7 +41,6 @@
     width: 25px;
     height: 2px;
     background: $black;
-    // transition: all 0.1s ease;
 
     &::before,
     &::after {
@@ -67,70 +62,76 @@
     }
 }
 
-// .header__container {
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-// }
+.menu {
+    @extend %background-cover;
 
-// .header__logo {
-//     display: inline-block;
-//     width: 105px;
-// }
+    position: fixed;
+    width: 35%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    z-index: 999;
+    background: #111;
+    transform: translateX(100%);  //Hide menu
+    transition: transform 0.4s;
 
-// .menu {
-//     position: relative;
-//     display: flex;
-//     align-items: center;
-//     height: 100%;
+    .menu-is-active & {
+        transform: translateX(0);
+    }
+}
 
-//     &.open {
-//         .menu__bar--top {
-//             transform: rotate(45deg) translate(6px, 5px);
-//         }
+.menu__container {
+    padding-top: 30%;
 
-//         .menu__bar--middle {
-//             opacity: 0;
-//         }
+    &::before {
+        opacity: 0;
+    }
+}
 
-//         .menu__bar--bottom {
-//             transform: rotate(-45deg) translate(5px, -4px);
-//         }
-//     }
-// }
+.menu__panel {
+    display: block;
+    position: absolute;
+    top: 30px;
+    padding: 0 30px;
+}
 
-// .menu__bars {
-//     position: absolute;
-//     top: 0;
-//     right: -100px;
-//     background: rgba(0, 0, 0, 0.6);
-//     padding: 10px;
-//     cursor: pointer;
-// }
+.menu__close-icon {
+    cursor: pointer;
+    color: $white;
+    font-size: 70px;
+    transition: color 0.3s;
 
-// .menu__bar {
-//     width: 20px;
-//     height: 2px;
-//     background: $white;
-//     transition: all 0.6s;
+    @include media(above-desktop) {
+        &:hover {
+            color: $blue;
+        }
+    }
+}
 
-//     &:not(:last-of-type) {
-//         margin-bottom: 5px;
-//     }
-// }
+.nav {
+    padding: 0 35px;
+}
 
-// .menu__item {
-//     @extend %heading--15;
+.nav__list {
+    padding-left: 35px;
+}
 
-//     display: inline-block;
+.nav__item {
+    &:not(:last-of-type) {
+        padding-bottom: 20px;
+    }
+}
 
-//     @include media(above-mobile) {
-//         &:not(:last-of-type) {
-//             margin-right: 30px;
-//         }
-//     }
+.nav__link {
+    @extend %heading--30;
 
-//     @include media(below-mobile) {
-//         margin-right: 0;
-//     }
-// }
+    color: $white;
+    text-transform: uppercase;
+    transition: color 0.3s;
+
+    @include media(above-desktop) {
+        &:hover {
+            color: $blue;
+        }
+    }
+}
