@@ -22,8 +22,7 @@
 }
 
 .footer-nav__heading {
-    @extend %heading--36;
-
+    font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 20px;
 }
