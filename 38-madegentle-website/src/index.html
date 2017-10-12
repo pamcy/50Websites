@@ -8,7 +8,8 @@
         <!--Stylesheets-->
         <link rel="stylesheet" href="public/css/style.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="public/css/pe-icon-7-stroke.css">
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
         <!--Google Analytics-->
         <script>
@@ -24,26 +25,40 @@
         <header class="header">
             <div class="wrapper-l">
                 <div class="header__container">
-                    <img src="public/imgs/logo.png" class="header__logo">
-                    <ul class="nav">
-                        <li class="nav__bars" id="js-hamburger">
-                            <div class="nav__bar nav__bar--top"></div>
-                            <div class="nav__bar nav__bar--middle"></div>
-                            <div class="nav__bar nav__bar--bottom"></div>
-                        </li>
-                        <li class="nav__item">
-                            <a href="" class="nav__link">About</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="" class="nav__link">Portfolio</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="" class="nav__link">Blog</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="" class="nav__link">Contact</a>
-                        </li>
-                    </ul>
+                    <div class="header__visible">
+                        <div class="header__logo">
+                            <a href="#" class="header__logo-link">
+                                <img src="public/imgs/logo.png" class="header__logo-img">
+                            </a>
+                        </div>
+
+                        <button class="hamburger-btn" id="js-hamburger">
+                            <span class="hamburger-btn__line"></span>
+                        </button>
+                    </div>
+                    <div class="menu" style="background-image: url(public/imgs/menu-bg.jpg)">
+                        <div class="menu__content">
+                            <span class="pe-7s-close menu__close-icon"></span>
+                            <div class="menu__searchbar"></div>
+                        </div>
+                        
+                        <nav class="nav">
+                            <ul class="nav__list">
+                                <li class="nav__item">
+                                    <a href="" class="nav__link">About</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="" class="nav__link">Portfolio</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="" class="nav__link">Blog</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="" class="nav__link">Contact</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
             </div>
         </header>

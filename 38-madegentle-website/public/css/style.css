@@ -165,10 +165,6 @@ input {
   font-weight: 700;
   letter-spacing: 1.3pt; }
 
-.nav__item {
-  font-size: 0.9375em;
-  line-height: 1.2; }
-
 .footer-nav__item,
 .footer-nav__copyright {
   font-size: 0.875em;
@@ -192,8 +188,13 @@ input {
 .wrapper-s {
   max-width: 750px; }
 
-.header__container {
-  position: relative;
+.header {
+  padding: 10px 0; }
+
+.menu {
+  display: none; }
+
+.header__visible {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -204,45 +205,39 @@ input {
       -ms-flex-align: center;
           align-items: center; }
 
-.header__logo {
-  display: inline-block;
-  width: 105px; }
-
-.nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center; }
-  .nav.open .nav__bar--top {
-    -webkit-transform: rotate(45deg) translate(6px, 5px);
-            transform: rotate(45deg) translate(6px, 5px); }
-  .nav.open .nav__bar--middle {
-    opacity: 0; }
-  .nav.open .nav__bar--bottom {
-    -webkit-transform: rotate(-45deg) translate(5px, -4px);
-            transform: rotate(-45deg) translate(5px, -4px); }
-
-.nav__bars {
-  position: absolute;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 10px;
+.hamburger-btn {
+  position: relative;
+  display: block;
+  width: 25px;
+  height: 62px;
+  background: transparent;
   cursor: pointer; }
+  @media (min-width: 1025px) {
+    .hamburger-btn:hover .hamburger-btn__line::before {
+      top: -7px; }
+    .hamburger-btn:hover .hamburger-btn__line::after {
+      top: 7px; } }
 
-.nav__bar {
-  width: 20px;
+.hamburger-btn__line {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 25px;
   height: 2px;
-  background: #fff;
-  -webkit-transition: all 0.6s;
-  transition: all 0.6s; }
-  .nav__bar:not(:last-of-type) {
-    margin-bottom: 5px; }
-
-.nav__item {
-  display: inline-block; }
-  .nav__item:not(:last-of-type) {
-    margin-right: 30px; }
+  background: #3c3c3c; }
+  .hamburger-btn__line::before, .hamburger-btn__line::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 25px;
+    height: 2px;
+    background: #3c3c3c;
+    -webkit-transition: top 0.1s ease;
+    transition: top 0.1s ease; }
+  .hamburger-btn__line::before {
+    top: -5px; }
+  .hamburger-btn__line::after {
+    top: 5px; }
 
 .footer {
   background: #f4f4f4; }
