@@ -2,10 +2,12 @@
  *  Color
  * ------------------------------------ */
 $white: #fff;
-$black: #3c3c3c;
+$black: #111;
 
 $light-gray: #f4f4f4;
 $gray: #787878;
+
+$blue: #1095d7;
 
 /* ------------------------------------
  *  Width and Height
@@ -20,12 +22,6 @@ $inner-wrapper-s: 750px;
 $base-font: 'Lato', PingFangTC-Thin, Helvetica, Arial, "微軟正黑體", "Microsoft JhengHei", sans-serif;
 $chinese-font: "微軟正黑體", "Microsoft JhengHei", sans-serif;
 
-// $size-32: 2em;
-// $size-24: 1.5em;
-// $size-20: 1.25em;
-// $size-18: 1.125em;
-// $size-14: 0.875em;
-
+$weight-300: 300;
 $weight-400: 400;
-$weight-500: 500;
 $weight-700: 700;
