@@ -142,7 +142,7 @@ body,
 html {
   background: #fff;
   font-size: 16px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", Helvetica, Arial, sans-serif;
   font-weight: 300;
   color: #111;
   letter-spacing: 0.4px;
@@ -174,7 +174,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Lekton', sans-serif;
+  font-family: "Lekton", Helvetica, Arial, sans-serif;
   letter-spacing: 1.3px;
   padding-bottom: 5px; }
 
@@ -192,7 +192,8 @@ input {
 
 .nav__link {
   font-size: 0.9375em;
-  line-height: 1.2; }
+  line-height: 1.2;
+  letter-spacing: 2px; }
 
 .footer-nav__item,
 .footer-nav__copyright {
@@ -231,27 +232,77 @@ input {
       -ms-flex-align: center;
           align-items: center; }
 
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.menu-is-open .nav__container {
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 100px 35px 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 1; }
+
+@media (max-width: 767px) {
+  .nav__list {
+    -webkit-transform: translateX(-200%);
+            transform: translateX(-200%); } }
+
+.menu-is-open .nav__list {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s; }
+
 .nav__item {
-  padding: 0 20px;
-  display: inline-block; }
+  display: inline-block;
+  padding: 0 20px; }
+  .menu-is-open .nav__item {
+    display: block;
+    padding-bottom: 15px; }
 
 .nav__link {
   color: #383838;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 2px;
   -webkit-transition: color 0.3s;
   transition: color 0.3s; }
-  @media (min-width: 1025px) {
-    .nav__link:hover {
-      color: #1095d7; } }
+  .nav__link:hover {
+    color: #1095d7; }
+  .menu-is-open .nav__link {
+    font-size: 1.875em;
+    color: #fff; }
+    .menu-is-open .nav__link:hover {
+      color: #1095d7; }
 
 .hamburger-btn {
   position: relative;
-  display: block;
   width: 25px;
   height: 62px;
-  background: green;
+  z-index: 1;
   cursor: pointer; }
+  .menu-is-open .hamburger-btn:hover .hamburger-btn__line::before,
+  .menu-is-open .hamburger-btn:hover .hamburger-btn__line::after {
+    background: #1095d7; }
+  @media (min-width: 768px) {
+    .hamburger-btn {
+      display: none; } }
+  @media (max-width: 767px) {
+    .hamburger-btn {
+      display: block; } }
 
 .hamburger-btn__line {
   display: block;
@@ -275,20 +326,23 @@ input {
     top: -5px; }
   .hamburger-btn__line::after {
     top: 5px; }
-  .btn-is-active .hamburger-btn__line {
+  .menu-is-open .hamburger-btn__line {
     background: transparent; }
-    .btn-is-active .hamburger-btn__line::before {
+    .menu-is-open .hamburger-btn__line::before, .menu-is-open .hamburger-btn__line::after {
       top: 0;
+      -webkit-transform-origin: center center;
+              transform-origin: center center;
+      background: #fff;
+      -webkit-transition: background 0.3s, -webkit-transform 0.3s;
+      transition: background 0.3s, -webkit-transform 0.3s;
+      transition: background 0.3s, transform 0.3s;
+      transition: background 0.3s, transform 0.3s, -webkit-transform 0.3s; }
+    .menu-is-open .hamburger-btn__line::before {
       -webkit-transform: rotate(45deg);
-              transform: rotate(45deg);
-      -webkit-transform-origin: center center;
-              transform-origin: center center; }
-    .btn-is-active .hamburger-btn__line::after {
-      top: 0;
+              transform: rotate(45deg); }
+    .menu-is-open .hamburger-btn__line::after {
       -webkit-transform: rotate(-45deg);
-              transform: rotate(-45deg);
-      -webkit-transform-origin: center center;
-              transform-origin: center center; }
+              transform: rotate(-45deg); }
 
 .footer {
   background: #f4f4f4; }

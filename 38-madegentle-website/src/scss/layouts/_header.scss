@@ -8,21 +8,63 @@
     align-items: center;
 }
 
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__container {
+    .menu-is-open & {
+        display: block;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        padding: 100px 35px 0;
+        background: rgba(0, 0, 0, 0.85);
+        z-index: 1;
+    }
+}
+
+.nav__list {
+    @include media(below-tablet) {
+        transform: translateX(-200%);
+    }
+
+    .menu-is-open & {
+        transform: translateX(0);
+        transition: transform 0.4s;
+    }
+}
+
 .nav__item {
-    padding: 0 20px;
     display: inline-block;
+    padding: 0 20px;
+
+    .menu-is-open & {
+        display: block;
+        padding-bottom: 15px;
+    }
 }
 
 .nav__link {
     @extend %heading--15;
 
     color: $dark-gray;
-    // font-weight: $weight-400;
+    font-weight: $weight-400;
     text-transform: uppercase;
-    letter-spacing: 2px;
     transition: color 0.3s;
 
-    @include media(above-desktop) {
+    &:hover {
+        color: $blue;
+    }
+
+    .menu-is-open & {
+        font-size: 1.875em;
+        color: $white;
+
         &:hover {
             color: $blue;
         }
@@ -31,24 +73,27 @@
 
 .hamburger-btn {
     position: relative;
-    display: block;
     width: 25px;
     height: 62px;
-    background: green;
-    // margin: 17px 0;
+    z-index: 1;
     cursor: pointer;
 
-    // @include media(above-desktop) {
-    //     &:hover {
-    //         .hamburger-btn__line::before {
-    //             top: -7px;
-    //         }
+    .menu-is-open & {
+        &:hover {
+            .hamburger-btn__line::before,
+            .hamburger-btn__line::after {
+                background: $blue;
+            }
+        }
+    }
 
-    //         .hamburger-btn__line::after {
-    //             top: 7px;
-    //         }
-    //     }
-    // }
+    @include media(above-tablet) {
+        display: none;
+    }
+
+    @include media(below-tablet) {
+        display: block;
+    }
 }
 
 .hamburger-btn__line {
@@ -78,19 +123,23 @@
         top: 5px;
     }
 
-    .btn-is-active & {
-        background: transparent; // Middle line 
+    .menu-is-open & {
+        background: transparent; // Middle line
+
+        &::before,
+        &::after {
+            top: 0;
+            transform-origin: center center;
+            background: $white;
+            transition: background 0.3s, transform 0.3s;
+        }
 
         &::before {
-            top: 0;
             transform: rotate(45deg);
-            transform-origin: center center;
         }
 
         &::after {
-            top: 0;
             transform: rotate(-45deg);
-            transform-origin: center center;
         }
     }
 }

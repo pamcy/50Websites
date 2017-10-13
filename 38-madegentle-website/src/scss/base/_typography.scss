@@ -1,12 +1,14 @@
 %heading--30 {
-    font-family: 'Lekton', sans-serif;
+    font-family: $heading-font;
     font-size: 1.875em;
+    line-height: 1.2;
     letter-spacing: 2.5px;
 }
 
 %heading--15 {
     font-size: 0.9375em;
     line-height: 1.2;
+    letter-spacing: 2px;
 }
 
 %paragraph--14 {

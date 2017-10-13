@@ -12,7 +12,7 @@ body,
 html {
     background: $white;
     font-size: 16px;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: $base-font;
     font-weight: $weight-300;
     color: $black;
     letter-spacing: 0.4px;
@@ -51,7 +51,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Lekton', sans-serif;
+    font-family: $heading-font;
     letter-spacing: 1.3px;
     padding-bottom: 5px;
 }
