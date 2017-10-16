@@ -14,3 +14,13 @@
     }
 }
 
+.column--12 {
+    .column__item--7 {
+        lost-column: 7/12 12 35px;
+    }
+
+    .column__item--5 {
+        lost-column: 5/12 12 35px;
+    }
+}
+

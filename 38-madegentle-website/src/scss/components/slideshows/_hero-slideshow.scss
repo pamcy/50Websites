@@ -1,0 +1,35 @@
+.hero-slideshow__container {
+    position: relative;
+    max-width: 1170px;
+    // border: 3px solid yellow;
+}
+
+.hero-slideshow__text {
+    position: absolute;
+    top: 45%;
+    margin-left: 5%;
+    z-index: 999;
+    color: $white;
+}
+
+.hero-slideshow__slides {
+    @extend %full-width;
+
+    position: relative;
+    display: block;
+    height: auto;
+    padding-top: 52%;
+}
+
+.hero-slideshow__slide {
+    @extend %background-cover;
+
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    max-width: 100%;
+    max-height: 100%;
+}

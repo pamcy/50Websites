@@ -1,0 +1,20 @@
+.single-carousel {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    padding-top: 106%;
+}
+
+.single-carousel__item {
+    @extend %background-cover;
+
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
