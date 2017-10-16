@@ -1,0 +1,14 @@
+.info-block__icon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 24px;
+}
+
+.info-block__heading {
+    text-transform: uppercase;
+    margin: 10px 0;
+}
+
+.info-block__description {
+    @extend %paragraph--16;
+}

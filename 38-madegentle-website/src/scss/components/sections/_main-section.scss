@@ -8,6 +8,10 @@
     }
 }
 
+.main-section__header {
+    margin-bottom: 50px;
+}
+
 .main-section__heading {
     text-transform: uppercase;
 }
@@ -18,6 +22,10 @@
     margin: 0 0 20px;
     border: 0;
     background: $black;
+}
+
+.main-section__subheading {
+    @extend %heading--14;
 }
 
 .main-section__quote {
