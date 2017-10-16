@@ -74,6 +74,10 @@ var _menu = __webpack_require__(1);
 
 var _menu2 = _interopRequireDefault(_menu);
 
+var _form = __webpack_require__(2);
+
+var _form2 = _interopRequireDefault(_form);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
@@ -91,6 +95,32 @@ function toggleMenu() {
 }
 
 $openBtn.on('click', toggleMenu);
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var $input = $('.contact-form__input');
+
+function moveUp() {
+    // if ($(this).val() !== 0) {
+    //     moveUp();
+    // }
+
+    $(this).siblings().addClass('input-is-focus');
+}
+
+function moveDown() {
+    if ($(this).val() === '') {
+        $(this).siblings().removeClass('input-is-focus');
+    }
+}
+
+$input.on('focus', moveUp);
+$input.on('blur', moveDown);
 
 /***/ })
 /******/ ]);

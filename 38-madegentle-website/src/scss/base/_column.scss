@@ -2,6 +2,18 @@
     @extend %lost-clearfix;
 }
 
+.column--2 {
+    .column__item {
+        @include media('above-tablet') {
+            lost-column: 1/2;
+        }
+
+        @include media('below-tablet') {
+            lost-column: 1/1;
+        }
+    }
+}
+
 .column--3 {
     .column__item {
         @include media('above-tablet') {

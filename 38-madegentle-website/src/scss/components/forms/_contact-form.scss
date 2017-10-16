@@ -1,0 +1,32 @@
+.contact-form__group {
+    position: relative;
+}
+
+.contact-form__label {
+    @extend %paragraph--16;
+
+    position: absolute;
+    display: block;
+    height: 30px;
+    margin: 0 0 5px 15px;
+    transform: translateY(60%);
+    transition: font-size 0.3s, transform 0.3s;
+    color: $gray;
+    pointer-events: none;
+
+    &.input-is-focus {
+        @extend %paragraph--14;
+
+        transform: translateY(0);
+    }
+}
+
+.contact-form__input {
+    display: block;
+    width: 100%;
+    height: 60px;
+    padding: 15px;
+    border: 1px solid $light-gray;
+    color: $black;
+}
+

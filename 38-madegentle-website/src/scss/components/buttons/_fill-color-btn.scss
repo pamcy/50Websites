@@ -1,0 +1,13 @@
+.fill-color-btn {
+    @extend %paragraph--18;
+
+    display: block;
+    max-width: 175px;
+    width: 100%;
+    margin: auto;
+    padding: 10px 20px;
+    text-align: center;
+    background: $base-color;
+    color: $white;
+    letter-spacing: 1.5px;
+}
