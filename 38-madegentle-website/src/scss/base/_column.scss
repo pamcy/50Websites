@@ -12,6 +12,18 @@
             lost-column: 1/1;
         }
     }
+
+    &.column--no-gap {
+        .column__item {
+            @include media('above-tablet') {
+                lost-column: 1/2 0 0;
+            }
+
+            @include media('below-tablet') {
+                lost-column: 1/1;
+            }
+        }
+    }
 }
 
 .column--3 {
