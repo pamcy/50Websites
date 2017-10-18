@@ -40,11 +40,23 @@
 
 .column--12 {
     .column__item--5 {
-        lost-column: 5/12 12 35px;
+        lost-column: 5/12 12 50px;
     }
 
     .column__item--7 {
-        lost-column: 7/12 12 35px;
+        lost-column: 7/12 12 50px;
     }
 }
+
+// .flex-column {
+//     display: flex;
+// }
+
+// .flex-column__item--4 {
+//     flex: 4;
+// }
+
+// .flex-column__item--3 {
+//     flex: 3;
+// }
 
