@@ -8,12 +8,17 @@
     }
 }
 
+.main-section__wrapper {
+    margin-top: 60px;
+}
+
 .main-section__header {
     margin-bottom: 50px;
 }
 
 .main-section__heading {
     text-transform: uppercase;
+    font-weight: bold;
 }
 
 .main-section__line {
@@ -25,7 +30,7 @@
 }
 
 .main-section__subheading {
-    @extend %heading--14;
+    @extend %heading--15;
 }
 
 .main-section__quote {

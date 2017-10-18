@@ -6,37 +6,32 @@
 }
 
 %heading--15 {
-    font-family: $base-font;
     font-size: 0.9375em;
+    font-weight: $weight-500;
     line-height: 1.2;
     letter-spacing: 2px;
 }
 
 %heading--14 {
-    font-family: $base-font;
-    font-weight: 500;
+    font-weight: $weight-500;
     font-size: 0.875em;
     letter-spacing: 1.3px;
 }
 
 %paragraph--18 {
-    font-family: $base-font;
     font-size: 1.125em;
     line-height: 1.3;
     letter-spacing: 1.3px;
 }
 
 %paragraph--16 {
-    font-family: $base-font;
     font-size: 1em;
     line-height: 1.5;
     letter-spacing: 0.6px;
 }
 
 %paragraph--14 {
-    font-family: $base-font;
     font-size: 0.875em;
     line-height: 1.5;
     letter-spacing: 0.4px;
 }
-

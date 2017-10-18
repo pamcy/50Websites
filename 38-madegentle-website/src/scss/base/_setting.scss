@@ -21,27 +21,28 @@ html {
 }
 
 h1 {
-    font-size: 1.75em;
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
 h2 {
-    font-size: 1.5em;
-}
-
-h3 {
     font-size: 1.375em;
 }
 
-h4 {
+h3 {
     font-size: 1.25em;
 }
 
-h5 {
+h4 {
     font-size: 1.125em;
 }
 
-h6 {
+h5 {
     font-size: 1em;
+}
+
+h6 {
+    font-size: 0.875em;
 }
 
 h1,
@@ -51,7 +52,6 @@ h4,
 h5,
 h6 {
     font-family: $heading-font;
-    font-weight: bold;
     letter-spacing: 1.3px;
     padding-bottom: 5px;
 }

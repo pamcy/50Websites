@@ -23,8 +23,8 @@
         top: 0;
         left: 0;
         padding: 100px 35px 0;
-        background: rgba(0, 0, 0, 0.85);
-        z-index: 1;
+        background: rgba(0, 0, 0, 0.9);
+        z-index: 2;
     }
 }
 
@@ -53,12 +53,11 @@
     @extend %heading--15;
 
     color: $dark-gray;
-    font-weight: $weight-400;
     text-transform: uppercase;
     transition: color 0.3s;
 
     &:hover {
-        color: $blue;
+        color: $hover-light-color;
     }
 
     .menu-is-open & {
@@ -66,7 +65,7 @@
         color: $white;
 
         &:hover {
-            color: $blue;
+            color: $hover-light-color;
         }
     }
 }
@@ -75,14 +74,14 @@
     position: relative;
     width: 25px;
     height: 62px;
-    z-index: 1;
+    z-index: 2;
     cursor: pointer;
 
     .menu-is-open & {
         &:hover {
             .hamburger-btn__line::before,
             .hamburger-btn__line::after {
-                background: $blue;
+                background: $hover-light-color;
             }
         }
     }

@@ -10,4 +10,11 @@
     background: $base-color;
     color: $white;
     letter-spacing: 1.5px;
+    transition: background 0.3s;
+
+    @include media(above-desktop) {
+        &:hover {
+            background: $hover-color;
+        }
+    }
 }
