@@ -15,13 +15,13 @@
     height: 30px;
     margin: 0 0 5px 15px;
     transform: translateY(60%);
-    transition: font-size 0.3s, transform 0.3s;
-    color: $gray;
+    transition: all 0.3s;
+    color: lighten($gray, 30%);
     pointer-events: none;
 
     &.input-is-focus {
-        @extend %paragraph--14;
-
+        font-size: 0.75em;
+        line-height: 2.5;
         transform: translateY(0);
     }
 }
@@ -30,7 +30,7 @@
     display: block;
     width: 100%;
     height: 60px;
-    padding: 15px;
+    padding: 15px 15px 0;
     border: 1px solid $light-gray;
     color: $black;
 }
