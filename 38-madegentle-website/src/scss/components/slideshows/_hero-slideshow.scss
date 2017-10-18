@@ -5,9 +5,9 @@
 
 .hero-slideshow__text {
     position: absolute;
-    top: 45%;
+    top: 50%;
     margin-left: 5%;
-    z-index: 2;
+    z-index: 1;
     color: $white;
 }
 
@@ -16,13 +16,24 @@
     font-weight: $weight-700;
     letter-spacing: 8px;
     text-transform: uppercase;
+    margin: 20px 0 10px;
 }
 
 .hero-slideshow__heading-bg {
     padding: 10px 20px;
-    background: $base-color;
+    background: $hover-light-color;
     font-family: $base-font;
     font-weight: $weight-300;
+}
+
+.hero-slideshow__subheadings {
+    margin-top: 50px;
+}
+
+.hero-slideshow__subheading {
+    @extend %heading--30;
+
+    text-transform: uppercase;
 }
 
 .hero-slideshow__slides {

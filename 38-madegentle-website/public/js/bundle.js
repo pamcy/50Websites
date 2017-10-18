@@ -82,6 +82,10 @@ var _carousel = __webpack_require__(3);
 
 var _carousel2 = _interopRequireDefault(_carousel);
 
+var _typing = __webpack_require__(4);
+
+var _typing2 = _interopRequireDefault(_typing);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
@@ -138,6 +142,25 @@ $(function () {
         infinite: true,
         speed: 500,
         autoplay: true
+    });
+});
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+$(function () {
+    $('#js-typeit').typeIt({
+        strings: ['Modern Combination', 'Creative Solutions'],
+        speed: 100,
+        breakDelay: 750,
+        breakLines: false,
+        autoStart: true,
+        startDelay: 250,
+        loop: true
     });
 });
 
