@@ -1,0 +1,189 @@
+.overlap-card__item {
+    @extend %full-height;
+
+    position: relative;
+    overflow: hidden;
+
+    @include media(above-desktop) {
+        &:hover {
+            .overlap-card__image {
+                transform: scale(1.1);
+            }
+
+            .overlap-card__like {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.overlap-card__image {
+    height: auto;
+    transform: scale(1);
+    transition: transform 0.35s;
+}
+
+.overlap-card__thumb {
+    @extend %full-width;
+    @extend %full-height;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    border: none;
+
+    @include media(above-desktop) {
+        &:hover {
+            background-color: rgba($hover-light-color, 0.85);
+
+            .overlap-card__heading,
+            .overlap-card__subheading {
+                top: 0;
+                opacity: 1;
+            }
+
+            .overlap-card__boder-top,
+            .overlap-card__boder-bottom {
+                width: 100%;
+                height: 100%;
+                transition: width 0.5s ease, height 0.5s ease 0.5s;
+            }
+
+            .overlap-card__boder-top {
+                border-width: 3px 3px 0 0;
+            }
+
+            .overlap-card__boder-bottom {
+                border-width: 0 0 3px 3px;
+            }
+        }
+    }
+}
+
+.overlap-card__like {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2; // Must higher than custom cursor
+    opacity: 0;
+    transition: opacity 0.5s;
+    padding: 20px 0 0 20px;
+    cursor: pointer;
+
+    &.is-liked {
+        animation: bounce 0.3s;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        padding-top: 20px;
+    }
+
+    50% {
+        padding-top: 30px;
+    }
+
+    100% {
+        padding-top: 20px;
+    }
+}
+
+.overlap-card__like-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.overlap-card__like-text {
+    visibility: hidden;
+    font-size: 0.125em;
+    color: transparent;
+    transition: all 0.6s;
+
+    .is-liked & {
+        font-size: 0.875em;
+        visibility: visible;
+        animation: fadeout 1s;
+    }
+}
+
+@keyframes fadeout {
+    0% {
+        color: transparent;
+    }
+
+    50% {
+        color: $dark-gray;
+    }
+
+    100% {
+        color: transparent;
+    }
+}
+
+.overlap-card__like-number {
+    @extend %paragraph--14;
+
+    display: block;
+}
+
+.overlap-card__content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+}
+
+.overlap-card__heading,
+.overlap-card__subheading {
+    position: relative;
+    display: block;
+    top: 100px;
+    opacity: 0;
+    text-transform: uppercase;
+}
+
+.overlap-card__heading {
+    @extend %heading--18;
+
+    transition: top 0.3s 0.15s, opacity 0.3s;
+}
+
+.overlap-card__subheading {
+    @extend %heading--14;
+
+    font-weight: $weight-400;
+    letter-spacing: 1.5px;
+    margin-top: 5px;
+    transition: top 0.3s 0.25s, opacity 0.3s;
+}
+
+.overlap-card__border {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 0 solid $black;
+}
+
+.overlap-card__boder-top {
+    top: 0;
+    left: 0;
+}
+
+.overlap-card__boder-bottom {
+    bottom: 0;
+    right: 0;
+}
+
+.overlap-card__cursor {
+    @extend %full-width;
+    @extend %full-height;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 45px;
+    cursor: url('../imgs/cursor.png'), auto;
+}
