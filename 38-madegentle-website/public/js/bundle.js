@@ -178,7 +178,7 @@ $(function () {
 var $likeBtn = $('.overlap-card__like');
 var isLiked = false;
 
-function addLike(e) {
+function toggleLike(e) {
     e.preventDefault();
 
     var $target = $(this);
@@ -200,7 +200,7 @@ function addLike(e) {
     }
 }
 
-$likeBtn.on('click', addLike);
+$likeBtn.on('click', toggleLike);
 
 /***/ })
 /******/ ]);

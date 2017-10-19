@@ -1,7 +1,7 @@
 const $likeBtn = $('.overlap-card__like');
 let isLiked = false;
 
-function addLike(e) {
+function toggleLike(e) {
     e.preventDefault();
 
     const $target = $(this);
@@ -23,4 +23,4 @@ function addLike(e) {
     }
 }
 
-$likeBtn.on('click', addLike);
+$likeBtn.on('click', toggleLike);
