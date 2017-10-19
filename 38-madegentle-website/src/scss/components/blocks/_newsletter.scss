@@ -23,8 +23,14 @@
 }
 
 .newsletter__heading {
+    font-size: 1.875em;
     color: $white;
+    line-height: 1.3;
     text-transform: uppercase;
+}
+
+.newsletter__heading--bold {
+    font-weight: $weight-700;
 }
 
 .newsletter__inner-form {
