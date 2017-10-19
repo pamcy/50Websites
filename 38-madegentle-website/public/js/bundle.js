@@ -86,6 +86,10 @@ var _typing = __webpack_require__(4);
 
 var _typing2 = _interopRequireDefault(_typing);
 
+var _likeBtn = __webpack_require__(5);
+
+var _likeBtn2 = _interopRequireDefault(_likeBtn);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
@@ -163,6 +167,40 @@ $(function () {
         loop: true
     });
 });
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var $likeBtn = $('.overlap-card__like');
+var isLiked = false;
+
+function addLike(e) {
+    e.preventDefault();
+
+    var $target = $(this);
+    var $likeIcon = $target.find('.overlap-card__like-icon');
+    var $numberField = $target.find('.overlap-card__like-number');
+    var $numberValue = $numberField.text();
+    var $totalNumber = parseInt($numberValue, 10);
+
+    isLiked = !isLiked;
+
+    if (isLiked) {
+        $likeIcon.removeClass('icon-favorite_border').addClass('icon-favorite');
+        $target.addClass('is-liked');
+        $numberField.text($totalNumber += 1);
+    } else {
+        $likeIcon.removeClass('icon-favorite').addClass('icon-favorite_border');
+        $target.removeClass('is-liked');
+        $numberField.text($totalNumber -= 1);
+    }
+}
+
+$likeBtn.on('click', addLike);
 
 /***/ })
 /******/ ]);
