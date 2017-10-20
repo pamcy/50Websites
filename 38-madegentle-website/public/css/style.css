@@ -1109,6 +1109,29 @@ input {
   border: 1px solid #e6e6e6;
   color: #111; }
 
+.loadmore__link:hover .loadmore__icon {
+  fill: #c8963e; }
+
+.loadmore__svg.icon-is-loading {
+  -webkit-animation: loading 2s infinite linear;
+          animation: loading 2s infinite linear; }
+
+@-webkit-keyframes loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(-359deg);
+            transform: rotate(-359deg); } }
+
+@keyframes loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(-359deg);
+            transform: rotate(-359deg); } }
+
 @media (min-width: 768px) {
   .main-section {
     padding-bottom: 100px; } }
@@ -1141,15 +1164,6 @@ input {
 .main-section__loadmore {
   margin: 30px 0;
   text-align: center; }
-
-.main-section__loadmore-link:hover .main-section__loadmore-icon {
-  color: #c8963e; }
-
-.main-section__loadmore-icon {
-  color: inherit;
-  font-size: 50px;
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s; }
 
 .hero-slideshow__container {
   position: relative;

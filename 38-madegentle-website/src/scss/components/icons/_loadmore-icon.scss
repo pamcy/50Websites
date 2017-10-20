@@ -1,0 +1,23 @@
+.loadmore__link {
+    &:hover {
+        .loadmore__icon {
+            fill: $hover-color;
+        }
+    }
+}
+
+.loadmore__svg {
+    &.icon-is-loading {
+        animation: loading 2s infinite linear;
+    }
+}
+
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-359deg);
+    }
+}

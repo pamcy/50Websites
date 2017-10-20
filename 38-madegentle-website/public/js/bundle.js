@@ -60,105 +60,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _mainMenu = __webpack_require__(6);
-
-var _mainMenu2 = _interopRequireDefault(_mainMenu);
-
-var _form = __webpack_require__(2);
-
-var _form2 = _interopRequireDefault(_form);
-
-var _carousel = __webpack_require__(3);
-
-var _carousel2 = _interopRequireDefault(_carousel);
-
-var _typing = __webpack_require__(4);
-
-var _typing2 = _interopRequireDefault(_typing);
-
-var _likeBtn = __webpack_require__(5);
-
-var _likeBtn2 = _interopRequireDefault(_likeBtn);
-
-var _filterMenu = __webpack_require__(7);
-
-var _filterMenu2 = _interopRequireDefault(_filterMenu);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/***/ }),
-/* 1 */,
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var $input = $('.contact-form__input');
-
-function moveUp() {
-    $(this).siblings().addClass('input-is-focus');
-}
-
-function moveDown() {
-    var $this = $(this);
-
-    if ($this.val() === '') {
-        $this.siblings().removeClass('input-is-focus');
-    }
-}
-
-$input.on('focus', moveUp);
-$input.on('blur', moveDown);
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-$(function () {
-    $('#js-single-slick').slick({
-        slidesToShow: 1,
-        arrows: false,
-        infinite: true,
-        speed: 500,
-        autoplay: true
-    });
-});
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-$(function () {
-    $('#js-typeit').typeIt({
-        strings: ['Modern Combination', 'Creative Solutions'],
-        speed: 100,
-        breakDelay: 750,
-        breakLines: false,
-        autoStart: true,
-        startDelay: 250,
-        loop: true
-    });
-});
-
-/***/ }),
-/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -192,7 +98,44 @@ function toggleLike(e) {
 $likeBtn.on('click', toggleLike);
 
 /***/ }),
-/* 6 */
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _mainMenu = __webpack_require__(2);
+
+var _mainMenu2 = _interopRequireDefault(_mainMenu);
+
+var _form = __webpack_require__(3);
+
+var _form2 = _interopRequireDefault(_form);
+
+var _carousel = __webpack_require__(4);
+
+var _carousel2 = _interopRequireDefault(_carousel);
+
+var _typing = __webpack_require__(5);
+
+var _typing2 = _interopRequireDefault(_typing);
+
+var _likeBtn = __webpack_require__(0);
+
+var _likeBtn2 = _interopRequireDefault(_likeBtn);
+
+var _filterMenu = __webpack_require__(6);
+
+var _filterMenu2 = _interopRequireDefault(_filterMenu);
+
+var _loadmore = __webpack_require__(7);
+
+var _loadmore2 = _interopRequireDefault(_loadmore);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -208,7 +151,67 @@ function toggleMenu() {
 $openBtn.on('click', toggleMenu);
 
 /***/ }),
-/* 7 */
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var $input = $('.contact-form__input');
+
+function moveUp() {
+    $(this).siblings().addClass('input-is-focus');
+}
+
+function moveDown() {
+    var $this = $(this);
+
+    if ($this.val() === '') {
+        $this.siblings().removeClass('input-is-focus');
+    }
+}
+
+$input.on('focus', moveUp);
+$input.on('blur', moveDown);
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+$(function () {
+    $('#js-single-slick').slick({
+        slidesToShow: 1,
+        arrows: false,
+        infinite: true,
+        speed: 500,
+        autoplay: true
+    });
+});
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+$(function () {
+    $('#js-typeit').typeIt({
+        strings: ['Modern Combination', 'Creative Solutions'],
+        speed: 100,
+        breakDelay: 750,
+        breakLines: false,
+        autoStart: true,
+        startDelay: 250,
+        loop: true
+    });
+});
+
+/***/ }),
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -219,6 +222,41 @@ function toggleFilterMenu() {
 }
 
 $('.filter-hamburger-btn').on('click', toggleFilterMenu);
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _likeBtn = __webpack_require__(0);
+
+var _likeBtn2 = _interopRequireDefault(_likeBtn);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var loadBtn = $('.loadmore__link');
+var loadIcon = $('.loadmore__svg');
+var contentSection = $('.overlap-card');
+
+function loadContent(e) {
+    e.preventDefault();
+
+    loadIcon.addClass('icon-is-loading');
+
+    $.ajax({
+        url: 'public/ajax-3-column.html'
+    }).done(function (data) {
+        contentSection.append(data);
+        loadIcon.removeClass('icon-is-loading');
+        // likeBtn.toggleLike();
+    });
+}
+
+$(function () {
+    loadBtn.on('click', loadContent);
+});
 
 /***/ })
 /******/ ]);
