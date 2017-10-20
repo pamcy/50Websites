@@ -43,3 +43,22 @@
 .main-section__description {
     @extend %paragraph--16;
 }
+
+.main-section__loadmore {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.main-section__loadmore-link {
+    &:hover {
+        .main-section__loadmore-icon {
+            color: $hover-color;
+        }
+    }
+}
+
+.main-section__loadmore-icon {
+    color: inherit;
+    font-size: 50px;
+    transition: color 0.3s;
+}
