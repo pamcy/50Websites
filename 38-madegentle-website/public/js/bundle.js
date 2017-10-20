@@ -70,9 +70,9 @@
 "use strict";
 
 
-var _menu = __webpack_require__(1);
+var _mainMenu = __webpack_require__(6);
 
-var _menu2 = _interopRequireDefault(_menu);
+var _mainMenu2 = _interopRequireDefault(_mainMenu);
 
 var _form = __webpack_require__(2);
 
@@ -90,25 +90,14 @@ var _likeBtn = __webpack_require__(5);
 
 var _likeBtn2 = _interopRequireDefault(_likeBtn);
 
+var _filterMenu = __webpack_require__(7);
+
+var _filterMenu2 = _interopRequireDefault(_filterMenu);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var $openBtn = $('#js-hamburger');
-var $header = $('.header');
-
-function toggleMenu() {
-    $header.toggleClass('menu-is-open');
-}
-
-$openBtn.on('click', toggleMenu);
-
-/***/ }),
+/* 1 */,
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -201,6 +190,35 @@ function toggleLike(e) {
 }
 
 $likeBtn.on('click', toggleLike);
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var $openBtn = $('#js-hamburger');
+var $header = $('.header');
+
+function toggleMenu() {
+    $header.toggleClass('menu-is-open');
+}
+
+$openBtn.on('click', toggleMenu);
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function toggleFilterMenu() {
+    $(this).parent().toggleClass('menu-is-open');
+}
+
+$('.filter-hamburger-btn').on('click', toggleFilterMenu);
 
 /***/ })
 /******/ ]);
