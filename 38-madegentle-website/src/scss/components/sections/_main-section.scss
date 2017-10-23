@@ -9,7 +9,14 @@
 }
 
 .main-section__wrapper {
-    margin-top: 60px;
+    @include media('above-small') {
+        margin-top: 60px;
+    }
+
+    @include media('below-small') {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
 }
 
 .main-section__header {
@@ -45,6 +52,6 @@
 }
 
 .main-section__loadmore {
-    margin: 30px 0;
+    margin-top: 30px;
     text-align: center;
 }

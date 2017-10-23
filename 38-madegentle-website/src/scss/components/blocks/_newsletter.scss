@@ -4,6 +4,7 @@
 
     position: relative;
     height: 325px;
+    margin-bottom: 0;
 }
 
 .newsletter__left {
@@ -33,11 +34,29 @@
     font-weight: $weight-700;
 }
 
+.newsletter__right-container {
+}
+
 .newsletter__inner-form {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%;
-    height: 75%;
+    background: $white;
+
+    @include media('above-small') {
+        width: 80%;
+        height: 75%;
+    }
+
+    @include media('below-small') {
+        width: 85%;
+        height: 75%;
+    }
+
+    @include media('below-tablet') {
+        width: 95%;
+        height: 90%;
+        background: rgba($white, 0.92);
+    }
 }

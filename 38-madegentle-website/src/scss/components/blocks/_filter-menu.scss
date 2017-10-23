@@ -104,11 +104,12 @@
 
 .filter-menu__nav {
     display: inline-block;
+    line-height: 45px;
 }
 
 .filter-menu__nav-item {
-    @extend %paragraph--18;
-
+    line-height: 1.3;
+    letter-spacing: 1.3px;
     padding: 0 10px;
     opacity: 0;
     transform: translateX(-200px);
@@ -137,5 +138,13 @@
         &:nth-of-type(4) {
             transition-delay: 0s;
         }
+    }
+
+    @include media('above-mobile') {
+        font-size: 1.125em;
+    }
+
+    @include media('below-mobile') {
+        font-size: 1em;
     }
 }
