@@ -161,16 +161,16 @@
                             <span class="filter-hamburger-btn__line"></span>
                         </div>
                     </button>
-                    <div class="filter-menu__nav">
-                        <a href="" class="filter-menu__nav-item menu-is-select">All</a>
-                        <a href="" class="filter-menu__nav-item">Brand</a>
-                        <a href="" class="filter-menu__nav-item">Bicycle</a>
-                        <a href="" class="filter-menu__nav-item">Music</a>
+                    <div class="filter-menu__nav js-filter-btn">
+                        <a href="" class="filter-menu__nav-item menu-is-select" data-filter="*">All</a>
+                        <a href="" class="filter-menu__nav-item" data-filter=".brand">Brand</a>
+                        <a href="" class="filter-menu__nav-item" data-filter=".bicycle">Bicycle</a>
+                        <a href="" class="filter-menu__nav-item" data-filter=".music">Music</a>
                     </div>
                 </div>
 
-                <div class="overlap-card column column--3">
-                    <div class="overlap-card__item column__item">
+                <div class="overlap-card column column--3 js-filter-grid">
+                    <div class="overlap-card__item column__item music">
                         <img src="https://placeimg.com/370/400/people" alt="" class="overlap-card__image">
                         <div class="overlap-card__thumb">
                             <a href="#" class="overlap-card__like">
@@ -187,7 +187,7 @@
                             <a href="" class="overlap-card__cursor"></a>
                         </div>
                     </div>
-                    <div class="overlap-card__item column__item">
+                    <div class="overlap-card__item column__item bicycle">
                         <img src="https://placeimg.com/370/400/tech" alt="" class="overlap-card__image">
                         <div class="overlap-card__thumb">
                             <a href="#" class="overlap-card__like">
@@ -204,7 +204,7 @@
                             <a href="" class="overlap-card__cursor"></a>
                         </div>
                     </div>
-                    <div class="overlap-card__item column__item">
+                    <div class="overlap-card__item column__item bicycle">
                         <img src="https://placeimg.com/370/400/nature" alt="" class="overlap-card__image">
                         <div class="overlap-card__thumb">
                             <a href="#" class="overlap-card__like">
@@ -221,7 +221,7 @@
                             <a href="" class="overlap-card__cursor"></a>
                         </div>
                     </div>
-                    <div class="overlap-card__item column__item">
+                    <div class="overlap-card__item column__item brand">
                         <img src="https://placeimg.com/370/400/arch" alt="" class="overlap-card__image">
                         <div class="overlap-card__thumb">
                             <a href="#" class="overlap-card__like">
@@ -238,7 +238,7 @@
                             <a href="" class="overlap-card__cursor"></a>
                         </div>
                     </div>
-                    <div class="overlap-card__item column__item">
+                    <div class="overlap-card__item column__item music">
                         <img src="https://placeimg.com/370/400/any/grayscale" alt="" class="overlap-card__image">
                         <div class="overlap-card__thumb">
                             <a href="#" class="overlap-card__like">
@@ -255,7 +255,7 @@
                             <a href="" class="overlap-card__cursor"></a>
                         </div>
                     </div>
-                    <div class="overlap-card__item column__item">
+                    <div class="overlap-card__item column__item bicycle">
                         <img src="https://placeimg.com/370/400/any" alt="" class="overlap-card__image">
                         <div class="overlap-card__thumb">
                             <a href="#" class="overlap-card__like">
@@ -373,6 +373,7 @@
         <script src="https://cdn.jsdelivr.net/jquery.typeit/4.4.0/typeit.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
         <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+        <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
         <script src="public/js/bundle.js"></script>
     </body>
 </html>

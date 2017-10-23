@@ -1,6 +1,4 @@
 .overlap-card__item {
-    @extend %full-height;
-
     position: relative;
     overflow: hidden;
 
@@ -16,7 +14,6 @@
 }
 
 .overlap-card__image {
-    height: auto;
     transform: scale(1);
     transition: transform 0.35s;
 }

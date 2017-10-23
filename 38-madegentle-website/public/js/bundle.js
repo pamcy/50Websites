@@ -70,7 +70,6 @@
 "use strict";
 
 
-var $likeBtn = $('.overlap-card__like');
 var isLiked = false;
 
 function toggleLike(e) {
@@ -95,7 +94,7 @@ function toggleLike(e) {
     }
 }
 
-$likeBtn.on('click', toggleLike);
+$('.js-filter-grid').on('click', '.overlap-card__like', toggleLike);
 
 /***/ }),
 /* 1 */
@@ -124,9 +123,9 @@ var _likeBtn = __webpack_require__(0);
 
 var _likeBtn2 = _interopRequireDefault(_likeBtn);
 
-var _filterMenu = __webpack_require__(6);
+var _filter = __webpack_require__(6);
 
-var _filterMenu2 = _interopRequireDefault(_filterMenu);
+var _filter2 = _interopRequireDefault(_filter);
 
 var _loadmore = __webpack_require__(7);
 
@@ -217,11 +216,40 @@ $(function () {
 "use strict";
 
 
+var $grid = $('.js-filter-grid');
+var $hamBtn = $('.filter-hamburger-btn');
+var $menuItem = $('.filter-menu__nav-item');
+
 function toggleFilterMenu() {
     $(this).parent().toggleClass('menu-is-open');
 }
 
-$('.filter-hamburger-btn').on('click', toggleFilterMenu);
+function filterMenu(e) {
+    e.preventDefault();
+
+    var $value = $(this).attr('data-filter');
+
+    $grid.isotope({
+        filter: '' + $value
+    });
+
+    $menuItem.removeClass('menu-is-select');
+    $(this).addClass('menu-is-select');
+}
+
+$(window).on('load', function () {
+    // init Isotope
+    if ($grid.length > 0) {
+        $grid.isotope({
+            layoutMode: 'masonry',
+            itemSelector: '.overlap-card__item',
+            transitionDuration: '0.7s'
+        });
+    }
+
+    $hamBtn.on('click', toggleFilterMenu);
+    $menuItem.on('click', filterMenu);
+});
 
 /***/ }),
 /* 7 */
@@ -230,32 +258,29 @@ $('.filter-hamburger-btn').on('click', toggleFilterMenu);
 "use strict";
 
 
-var _likeBtn = __webpack_require__(0);
-
-var _likeBtn2 = _interopRequireDefault(_likeBtn);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var loadBtn = $('.loadmore__link');
-var loadIcon = $('.loadmore__svg');
-var contentSection = $('.overlap-card');
+var $loadBtn = $('.loadmore__link');
+var $loadIcon = $('.loadmore__svg');
+var $contentSection = $('.overlap-card');
 
 function loadContent(e) {
     e.preventDefault();
 
-    loadIcon.addClass('icon-is-loading');
+    $loadIcon.addClass('icon-is-loading');
 
     $.ajax({
         url: 'public/ajax-3-column.html'
     }).done(function (data) {
-        contentSection.append(data);
-        loadIcon.removeClass('icon-is-loading');
-        // likeBtn.toggleLike();
+        // $contentSection.isotope('insert', $(data));
+        // layout Isotope after each image loads
+        $contentSection.isotope('insert', $(data)).imagesLoaded().progress(function () {
+            $contentSection.isotope('layout');
+            $loadIcon.removeClass('icon-is-loading');
+        });
     });
 }
 
-$(function () {
-    loadBtn.on('click', loadContent);
+$(window).on('load', function () {
+    $loadBtn.on('click', loadContent);
 });
 
 /***/ })

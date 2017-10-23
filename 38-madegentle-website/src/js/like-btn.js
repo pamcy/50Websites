@@ -1,4 +1,3 @@
-const $likeBtn = $('.overlap-card__like');
 let isLiked = false;
 
 function toggleLike(e) {
@@ -23,4 +22,4 @@ function toggleLike(e) {
     }
 }
 
-$likeBtn.on('click', toggleLike);
+$('.js-filter-grid').on('click', '.overlap-card__like', toggleLike);

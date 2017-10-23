@@ -1,5 +1,9 @@
+// .column {
+//     @extend %lost-clearfix;
+// }
+
 .column {
-    @extend %lost-clearfix;
+    lost-masonry-wrap: no-flex;
 }
 
 .column__item {
@@ -30,14 +34,26 @@
     }
 }
 
+// .column--3 {
+//     .column__item {
+//         @include media('above-tablet') {
+//             lost-column: 1/3;
+//         }
+
+//         @include media('below-tablet') {
+//             lost-column: 1/1;
+//         }
+//     }
+// }
+
 .column--3 {
     .column__item {
         @include media('above-tablet') {
-            lost-column: 1/3;
+            lost-masonry-column: 1/3;
         }
 
         @include media('below-tablet') {
-            lost-column: 1/1;
+            lost-masonry-column: 1/1;
         }
     }
 }

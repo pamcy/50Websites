@@ -1,17 +1,9 @@
 @charset "UTF-8";
-.column:before {
-  content: '';
-  display: table; }
-.column:after {
-  content: '';
-  display: table;
-  clear: both; }
-
 img, .wrapper-l, .wrapper-m, .wrapper-s, .newsletter__left,
 .newsletter__right, .filter-hamburger-btn__container, .overlap-card__thumb, .overlap-card__cursor, .single-carousel, .hero-slideshow__slides {
   width: 100%; }
 
-.overlap-card__item, .overlap-card__thumb, .overlap-card__cursor {
+.overlap-card__thumb, .overlap-card__cursor {
   height: 100%; }
 
 .newsletter__right, .single-carousel__item, .hero-slideshow__slide {
@@ -36,6 +28,17 @@ img, .wrapper-l, .wrapper-m, .wrapper-s, .newsletter__left,
 /* ------------------------------------
  *  Icon
  * ------------------------------------ */
+.column {
+  margin-left: -15px;
+  margin-right: -15px; }
+.column:before {
+  content: '';
+  display: table; }
+.column:after {
+  content: '';
+  display: table;
+  clear: both; }
+
 .column__item {
   margin-bottom: 30px; }
 
@@ -98,33 +101,17 @@ img, .wrapper-l, .wrapper-m, .wrapper-s, .newsletter__left,
 
 @media (min-width: 768px) {
   .column--3 .column__item {
-    width: calc(99.9% * 1/3 - (30px - 30px * 1/3)); }
-  .column--3 .column__item:nth-child(1n) {
     float: left;
-    margin-right: 30px;
-    clear: none; }
-  .column--3 .column__item:last-child {
-    margin-right: 0; }
-  .column--3 .column__item:nth-child(3n) {
-    margin-right: 0;
-    float: right; }
-  .column--3 .column__item:nth-child(3n + 1) {
-    clear: both; } }
+    width: calc(99.9% * 1/3 - 30px);
+    margin-left: 15px;
+    margin-right: 15px; } }
 
 @media (max-width: 767px) {
   .column--3 .column__item {
-    width: calc(99.9% * 1/1 - (30px - 30px * 1/1)); }
-  .column--3 .column__item:nth-child(1n) {
     float: left;
-    margin-right: 30px;
-    clear: none; }
-  .column--3 .column__item:last-child {
-    margin-right: 0; }
-  .column--3 .column__item:nth-child(1n) {
-    margin-right: 0;
-    float: right; }
-  .column--3 .column__item:nth-child(1n + 1) {
-    clear: both; } }
+    width: calc(99.9% * 1/1 - 30px);
+    margin-left: 15px;
+    margin-right: 15px; } }
 
 .column--12 .column__item--5 {
   width: calc(99.9% * 5/12 - (50px - 50px * 5/12)); }
@@ -927,7 +914,6 @@ input {
     opacity: 1; }
 
 .overlap-card__image {
-  height: auto;
   -webkit-transform: scale(1);
           transform: scale(1);
   -webkit-transition: -webkit-transform 0.35s;
