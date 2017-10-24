@@ -8,13 +8,13 @@
   clear: both; }
 
 img, .wrapper-l, .wrapper-m, .wrapper-s, .newsletter__left,
-.newsletter__right, .filter-hamburger-btn__container, .overlap-card__thumb, .overlap-card__cursor, .single-carousel, .hero-slideshow__slides {
+.newsletter__right, .filter-hamburger-btn__container, .overlap-card__thumb, .overlap-card__cursor, .single-carousel, .hero-parallax, .hero-slideshow__slides {
   width: 100%; }
 
-.overlap-card__thumb, .overlap-card__cursor {
+.overlap-card__thumb, .overlap-card__cursor, .hero-parallax__container, .hero-parallax__inner-container {
   height: 100%; }
 
-.newsletter__right, .single-carousel__item, .hero-slideshow__slide {
+.newsletter__right, .single-carousel__item, .hero-parallax, .hero-slideshow__slide {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat; }
@@ -23,6 +23,17 @@ img, .wrapper-l, .wrapper-m, .wrapper-s, .newsletter__left,
   display: block;
   margin-left: auto;
   margin-right: auto; }
+
+.hero-parallax__inner-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
 
 /* ------------------------------------
  *  Color
@@ -367,7 +378,7 @@ input {
   line-height: 1.2;
   letter-spacing: 1.3px; }
 
-.fill-color-btn, .main-section__quote {
+.fill-color-btn, .hero-parallax__subheading, .main-section__quote {
   font-size: 1.125em;
   line-height: 1.3;
   letter-spacing: 1.3px; }
@@ -1204,6 +1215,44 @@ input {
   100% {
     -webkit-transform: rotate(-359deg);
             transform: rotate(-359deg); } }
+
+.hero-parallax {
+  background-attachment: fixed; }
+  .hero-parallax .main-section__line {
+    margin-top: 15px; }
+  @media (min-width: 768px) {
+    .hero-parallax {
+      height: 50vh; } }
+  @media (max-width: 767px) {
+    .hero-parallax {
+      height: 300px; } }
+
+.hero-parallax__container {
+  padding: 25px; }
+  @media (min-width: 851px) {
+    .hero-parallax__container {
+      width: 50%;
+      margin-left: 50%; } }
+  @media (max-width: 850px) {
+    .hero-parallax__container {
+      width: 100%; } }
+
+.hero-parallax__inner-container {
+  padding: 25px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: rgba(255, 255, 255, 0.8); }
+
+.hero-parallax__heading {
+  font-family: "Halant", serif; }
+  @media (min-width: 768px) {
+    .hero-parallax__heading {
+      font-size: 3.125em; } }
+  @media (max-width: 767px) {
+    .hero-parallax__heading {
+      font-size: 2em; } }
 
 @media (min-width: 768px) {
   .main-section {

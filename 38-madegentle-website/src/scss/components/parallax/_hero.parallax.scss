@@ -1,0 +1,58 @@
+.hero-parallax {
+    @extend %full-width;
+    @extend %background-cover;
+
+    background-attachment: fixed;
+
+    .main-section__line {
+        margin-top: 15px;
+    }
+
+    @include media('above-tablet') {
+        height: 50vh;
+    }
+
+    @include media('below-tablet') {
+        height: 300px;
+    }
+}
+
+.hero-parallax__container {
+    @extend %full-height;
+
+    padding: 25px;
+
+    @include media('above-small') {
+        width: 50%;
+        margin-left: 50%;
+    }
+
+    @include media('below-small') {
+        width: 100%;
+    }
+}
+
+.hero-parallax__inner-container {
+    @extend %full-height;
+    @extend %flex-center;
+
+    padding: 25px;
+    flex-direction: column;
+    background: rgba($white, 0.8);
+}
+
+.hero-parallax__heading {
+    font-family: $unique-font;
+
+    @include media('above-tablet') {
+        font-size: 3.125em;
+    }
+
+    @include media('below-tablet') {
+        font-size: 2em;
+    }
+}
+
+.hero-parallax__subheading {
+    @extend %paragraph--18;
+}
