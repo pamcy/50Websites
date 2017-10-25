@@ -1,0 +1,45 @@
+.hero-carousel {
+    @extend %full-width;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-carousel__item {
+    @extend %background-cover;
+
+    display: inline-block;
+}
+
+.hero-carousel__arrow-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    border: 1px solid $white;
+    background: transparent;
+    transition: border 0.3s, background 0.3s;
+
+    &:hover {
+        background: $hover-color;
+        border-color: $hover-color;
+
+        .hero-carousel__arrow-icon {
+            color: $white;
+        }
+    }
+}
+
+.hero-carousel__left-arrow-btn {
+    left: 50px;
+}
+
+.hero-carousel__right-arrow-btn {
+    right: 50px;
+}
+
+.hero-carousel__arrow-icon {
+    font-size: 30px;
+    color: $black;
+    transition: color 0.5s;
+}
