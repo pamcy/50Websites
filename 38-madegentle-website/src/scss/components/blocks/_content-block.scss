@@ -1,0 +1,10 @@
+.content-block__right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.content-block__description {
+    @extend %paragraph--16;
+
+    line-height: 1.8;
+}

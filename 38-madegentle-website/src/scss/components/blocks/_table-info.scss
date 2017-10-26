@@ -1,0 +1,8 @@
+.table-info__content {
+    @extend %paragraph--16;
+
+    height: 2em;
+    vertical-align: middle;
+    padding: 8px;
+    font-weight: $weight-300;
+}

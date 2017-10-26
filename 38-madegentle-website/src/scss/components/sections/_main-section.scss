@@ -19,7 +19,7 @@
     }
 }
 
-.main-section__header {
+.main-section__container {
     margin-bottom: 50px;
 }
 
@@ -38,6 +38,14 @@
 
 .main-section__subheading {
     @extend %heading--15;
+}
+
+.main-section__subheading--light {
+    @extend %paragraph--14;
+
+    display: block;
+    margin: 10px 0 25px;
+    text-transform: uppercase;
 }
 
 .main-section__quote {
