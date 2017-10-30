@@ -13,8 +13,8 @@
 
 .hero-carousel__arrow-btn {
     position: absolute;
-    top: 25%;
-    transform: translateY(-25%);
+    top: 50%;
+    transform: translateY(-50%);
     padding: 10px;
     border: 1px solid $white;
     background: transparent;
@@ -31,11 +31,23 @@
 }
 
 .hero-carousel__left-arrow-btn {
-    left: 50px;
+    @include media('above-tablet') {
+        left: 50px;
+    }
+
+    @include media('below-tablet') {
+        left: 30px;
+    }
 }
 
 .hero-carousel__right-arrow-btn {
-    right: 50px;
+    @include media('above-tablet') {
+        right: 50px;
+    }
+
+    @include media('below-tablet') {
+        right: 30px;
+    }
 }
 
 .hero-carousel__arrow-icon {

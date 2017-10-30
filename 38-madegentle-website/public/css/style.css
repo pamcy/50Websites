@@ -226,16 +226,42 @@ img, .wrapper-l, .wrapper-m, .wrapper-s, .newsletter__left,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
+  @media (min-width: 851px) {
+    .flex-column {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row; } }
+  @media (max-width: 850px) {
+    .flex-column {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
 
-.flex-column__item--5 {
-  -webkit-box-flex: 5;
-      -ms-flex: 5;
-          flex: 5; }
+@media (min-width: 851px) {
+  .flex-column__item--5 {
+    -webkit-box-flex: 5;
+        -ms-flex: 5;
+            flex: 5; } }
 
-.flex-column__item--2 {
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2; }
+@media (max-width: 850px) {
+  .flex-column__item--5 {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1; } }
+
+@media (min-width: 851px) {
+  .flex-column__item--2 {
+    -webkit-box-flex: 2;
+        -ms-flex: 2;
+            flex: 2; } }
+
+@media (max-width: 850px) {
+  .flex-column__item--2 {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1; } }
 
 /* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -992,13 +1018,28 @@ input {
     .filter-menu__nav-item {
       font-size: 1em; } }
 
+.content-block {
+  margin-bottom: 30px; }
+
+@media (max-width: 850px) {
+  .content-block__left {
+    margin-bottom: 20px; } }
+
 .content-block__right {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end; }
+  display: flex; }
+  @media (min-width: 851px) {
+    .content-block__right {
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: flex-end; } }
+  @media (max-width: 850px) {
+    .content-block__right {
+      -webkit-box-orient: initial;
+      -webkit-box-direction: initial;
+          -ms-flex-direction: initial;
+              flex-direction: initial; } }
 
 .content-block__description {
   line-height: 1.8; }
@@ -1008,6 +1049,14 @@ input {
   vertical-align: middle;
   padding: 8px;
   font-weight: 300; }
+
+.navbar-btn-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
 
 .fill-color-btn {
   display: block;
@@ -1024,6 +1073,46 @@ input {
   @media (min-width: 1025px) {
     .fill-color-btn:hover {
       background: #c8963e; } }
+
+.border-btn {
+  cursor: pointer;
+  position: relative;
+  width: 100px;
+  height: 45px;
+  vertical-align: middle;
+  background: transparent;
+  border: 1px solid #e6e6e6;
+  text-align: center;
+  overflow: hidden; }
+  .border-btn::before {
+    content: attr(data-hover);
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    margin: auto;
+    text-transform: uppercase;
+    background: #d7b272;
+    font-size: 0.625em;
+    font-weight: 400;
+    color: #111;
+    letter-spacing: 3px;
+    line-height: 45px;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    opacity: 0; }
+  .border-btn:hover::before {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1; }
+  .border-btn:hover .border-btn__icon {
+    color: #c8963e; }
+
+.border-btn__icon {
+  font-size: 20px;
+  line-height: 45px; }
 
 .overlap-card__item {
   position: relative;
@@ -1202,9 +1291,9 @@ input {
 
 .hero-carousel__arrow-btn {
   position: absolute;
-  top: 25%;
-  -webkit-transform: translateY(-25%);
-          transform: translateY(-25%);
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   padding: 10px;
   border: 1px solid #fff;
   background: transparent;
@@ -1216,11 +1305,21 @@ input {
     .hero-carousel__arrow-btn:hover .hero-carousel__arrow-icon {
       color: #fff; }
 
-.hero-carousel__left-arrow-btn {
-  left: 50px; }
+@media (min-width: 768px) {
+  .hero-carousel__left-arrow-btn {
+    left: 50px; } }
 
-.hero-carousel__right-arrow-btn {
-  right: 50px; }
+@media (max-width: 767px) {
+  .hero-carousel__left-arrow-btn {
+    left: 30px; } }
+
+@media (min-width: 768px) {
+  .hero-carousel__right-arrow-btn {
+    right: 50px; } }
+
+@media (max-width: 767px) {
+  .hero-carousel__right-arrow-btn {
+    right: 30px; } }
 
 .hero-carousel__arrow-icon {
   font-size: 30px;
@@ -1328,6 +1427,14 @@ input {
 @media (max-width: 767px) {
   .main-section {
     padding-bottom: 60px; } }
+
+@media (min-width: 768px) {
+  .main-section--narrow {
+    padding-bottom: 50px; } }
+
+@media (max-width: 767px) {
+  .main-section--narrow {
+    padding-bottom: 45px; } }
 
 @media (min-width: 851px) {
   .main-section__wrapper {

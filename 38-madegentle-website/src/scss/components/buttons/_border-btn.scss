@@ -1,0 +1,46 @@
+.border-btn {
+    cursor: pointer;
+    position: relative;
+    width: 100px;
+    height: 45px;
+    vertical-align: middle;
+    background: transparent;
+    border: 1px solid $lighter-gray;
+    text-align: center;
+    overflow: hidden;
+
+    &::before {
+        content: attr(data-hover);
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 100%;
+        margin: auto;
+        text-transform: uppercase;
+        background: $hover-light-color;
+        font-size: 0.625em;
+        font-weight: $weight-400;
+        color: $black;
+        letter-spacing: 3px;
+        line-height: 45px;
+        transform: translateX(100%);
+        transition: all 0.3s ease-in-out;
+        opacity: 0;
+    }
+
+    &:hover {
+        &::before {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .border-btn__icon {
+            color: $hover-color;
+        }
+    }
+}
+
+.border-btn__icon {
+    font-size: 20px;
+    line-height: 45px;
+}

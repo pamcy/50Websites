@@ -82,13 +82,33 @@
 
 .flex-column {
     display: flex;
+
+    @include media('above-small') {
+        flex-direction: row;
+    }
+
+    @include media('below-small') {
+        flex-direction: column;
+    }
 }
 
 .flex-column__item--5 {
-    flex: 5;
+    @include media('above-small') {
+        flex: 5;
+    }
+
+    @include media('below-small') {
+        flex: 1;
+    }
 }
 
 .flex-column__item--2 {
-    flex: 2;
+    @include media('above-small') {
+        flex: 2;
+    }
+
+    @include media('below-small') {
+        flex: 1;
+    }
 }
 

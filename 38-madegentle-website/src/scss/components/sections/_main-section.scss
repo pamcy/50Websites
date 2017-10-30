@@ -8,6 +8,16 @@
     }
 }
 
+.main-section--narrow {
+    @include media(above-tablet) {
+        padding-bottom: 50px;
+    }
+
+    @include media(below-tablet) {
+        padding-bottom: 45px;
+    }
+}
+
 .main-section__wrapper {
     @include media('above-small') {
         margin-top: 60px;

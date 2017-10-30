@@ -1,6 +1,23 @@
+.content-block {
+    margin-bottom: 30px;
+}
+
+.content-block__left {
+    @include media('below-small') {
+        margin-bottom: 20px;
+    }
+}
+
 .content-block__right {
     display: flex;
-    justify-content: flex-end;
+
+    @include media('above-small') {
+        justify-content: flex-end;
+    }
+
+    @include media('below-small') {
+        flex-direction: initial;
+    }
 }
 
 .content-block__description {
