@@ -98,6 +98,10 @@ var _loadmore = __webpack_require__(7);
 
 var _loadmore2 = _interopRequireDefault(_loadmore);
 
+var _scroll = __webpack_require__(8);
+
+var _scroll2 = _interopRequireDefault(_scroll);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
@@ -289,6 +293,44 @@ function loadContent(e) {
 
 $(window).on('load', function () {
     $loadBtn.on('click', loadContent);
+});
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var topBtn = $('.to-top-btn');
+
+function toggleBtn() {
+    var $this = $(this);
+    var topHeight = 300;
+    var opacityHeight = 1200;
+
+    if ($this.scrollTop() > topHeight) {
+        topBtn.addClass('is-visible');
+    } else {
+        topBtn.removeClass('is-visible is-fadeout');
+    }
+
+    if ($this.scrollTop() > opacityHeight) {
+        topBtn.addClass('is-fadeout');
+    }
+}
+
+function toTop(e) {
+    var $body = $('body, html');
+    var scrollSpeed = 800;
+
+    e.preventDefault();
+    $body.stop().animate({ scrollTop: 0 }, scrollSpeed, 'swing');
+}
+
+$(document).ready(function () {
+    $(window).on('scroll', toggleBtn);
+    topBtn.on('click', toTop);
 });
 
 /***/ })
