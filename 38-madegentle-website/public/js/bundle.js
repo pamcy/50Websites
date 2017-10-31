@@ -104,6 +104,9 @@ var _scroll2 = _interopRequireDefault(_scroll);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// WOW Plugin
+new WOW().init();
+
 /***/ }),
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
