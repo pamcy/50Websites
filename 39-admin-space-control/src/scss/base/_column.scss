@@ -1,0 +1,114 @@
+.column {
+    @extend %lost-clearfix;
+
+    .masonry-only & {
+        lost-masonry-wrap: no-flex;
+    }
+}
+
+.column__item {
+    margin-bottom: 30px;
+}
+
+.column--2 {
+    .column__item {
+        @include media('above-tablet') {
+            lost-column: 1/2;
+        }
+
+        @include media('below-tablet') {
+            lost-column: 1/1;
+        }
+    }
+
+    &.column--no-gap {
+        .column__item {
+            @include media('above-small') {
+                lost-column: 1/2 0 0;
+            }
+
+            @include media('below-small') {
+                lost-column: 1/1;
+            }
+        }
+    }
+}
+
+.column--3 {
+    .column__item {
+        @include media('above-tablet') {
+            lost-column: 1/3;
+        }
+
+        @include media('below-tablet') {
+            lost-column: 1/1;
+        }
+    }
+
+    .column__item {
+        .masonry-only & {
+            @include media('above-tablet') {
+                lost-masonry-column: 1/3;
+            }
+
+            @include media('below-tablet') {
+                lost-masonry-column: 1/1;
+            }
+        }
+    }
+}
+
+.column--12 {
+    .column__item--5 {
+        @include media('above-small') {
+            lost-column: 5/12 12 50px;
+        }
+
+        @include media('below-small') {
+            lost-column: 1/1;
+        }
+    }
+
+    .column__item--7 {
+        @include media('above-small') {
+            lost-column: 7/12 12 50px;
+        }
+
+        @include media('below-small') {
+            lost-column: 1/1;
+        }
+    }
+}
+
+.flex-column {
+    display: flex;
+
+    @include media('above-small') {
+        flex-direction: row;
+    }
+
+    @include media('below-small') {
+        flex-direction: column;
+    }
+}
+
+.flex-column__item--5 {
+    @include media('above-small') {
+        flex: 5;
+    }
+
+    @include media('below-small') {
+        flex: 1;
+    }
+}
+
+.flex-column__item--2 {
+    @include media('above-small') {
+        flex: 2;
+    }
+
+    @include media('below-small') {
+        flex: 1;
+    }
+}
+

@@ -1,0 +1,32 @@
+%wrapper-style {
+    @extend %full-width;
+    @extend %align-center;
+
+    position: relative;
+
+    @include media('above-tablet') {
+        padding: 0 25px;
+    }
+
+    @include media('below-tablet') {
+        padding: 0 15px;
+    }
+}
+
+.wrapper-l {
+    @extend %wrapper-style;
+
+    max-width: $inner-wrapper-l;
+}
+
+.wrapper-m {
+    @extend %wrapper-style;
+
+    max-width: $inner-wrapper-m;
+}
+
+.wrapper-s {
+    @extend %wrapper-style;
+
+    max-width: $inner-wrapper-s;
+}

@@ -1,0 +1,144 @@
+.header {
+    padding: 10px 0;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__container {
+    .menu-is-open & {
+        display: block;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        padding: 100px 35px 0;
+        background: rgba(0, 0, 0, 0.9);
+        z-index: 2;
+    }
+}
+
+.nav__list {
+    @include media(below-tablet) {
+        transform: translateX(-200%);
+    }
+
+    .menu-is-open & {
+        transform: translateX(0);
+        transition: transform 0.4s;
+    }
+}
+
+.nav__item {
+    display: inline-block;
+    padding: 0 20px;
+
+    .menu-is-open & {
+        display: block;
+        padding-bottom: 15px;
+    }
+}
+
+.nav__link {
+    @extend %heading--15;
+
+    color: $dark-gray;
+    text-transform: uppercase;
+    transition: color 0.3s;
+
+    &:hover {
+        color: $hover-light-color;
+    }
+
+    .menu-is-open & {
+        font-size: 1.875em;
+        color: $white;
+
+        &:hover {
+            color: $hover-light-color;
+        }
+    }
+}
+
+.hamburger-btn {
+    position: relative;
+    width: 25px;
+    height: 62px;
+    z-index: 2;
+    cursor: pointer;
+
+    .menu-is-open & {
+        &:hover {
+            .hamburger-btn__line::before,
+            .hamburger-btn__line::after {
+                background: $hover-light-color;
+            }
+        }
+    }
+
+    @include media(above-tablet) {
+        display: none;
+    }
+
+    @include media(below-tablet) {
+        display: block;
+    }
+}
+
+.hamburger-btn__line {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 25px;
+    height: 2px;
+    background: $black;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 25px;
+        height: 2px;
+        background: $black;
+        transition: transform 0.2s ease;
+    }
+
+    &::before {
+        top: -5px;
+    }
+
+    &::after {
+        top: 5px;
+    }
+
+    .menu-is-open & {
+        background: transparent; // Middle line
+
+        &::before,
+        &::after {
+            top: 0;
+            transform-origin: center center;
+            background: $white;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        &::before {
+            transform: rotate(45deg);
+        }
+
+        &::after {
+            transform: rotate(-45deg);
+        }
+    }
+}
