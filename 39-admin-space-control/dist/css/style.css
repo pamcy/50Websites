@@ -114,13 +114,17 @@ body {
   font-size: 1em;
   font-weight: 700;
   color: #fff;
-  margin-left: 40px; }
+  margin-left: 45px; }
 
 .nav {
   position: absolute;
   top: 0;
   left: -250px;
-  width: 250px; }
+  width: 250px;
+  -webkit-transition: left 0.3s;
+  transition: left 0.3s; }
+  .nav.nav-is-active {
+    left: 0; }
 
 .nav__btn {
   position: absolute;
@@ -131,10 +135,13 @@ body {
 
 .nav__btn-icon {
   display: block;
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   margin: 5px;
-  background: url("/dist/img/nav-icon.svg") top left/cover no-repeat;
+  background: url("/dist/img/nav-icon.svg");
+  background-size: cover;
+  background-position: top left;
+  background-repeat: no-repeat;
   overflow: hidden; }
   .nav-is-active .nav__btn-icon {
     background-position: bottom left; }
