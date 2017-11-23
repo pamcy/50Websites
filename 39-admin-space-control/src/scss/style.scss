@@ -1,5 +1,96 @@
-@import 'utilities';
-@import 'base';
-@import 'layouts';
-@import 'components';
+@import 'reset';
+@import 'variables';
 
+body {
+    font-family: Ubuntu, sans-serif;
+    background: $background-color;
+}
+
+/***** Header *****/
+.header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $secondary-color;
+    height: 40px;
+}
+
+.header__left {
+    display: flex;
+}
+
+.header__title {
+    font-size: 1em;
+    font-weight: $weight-700;
+    color: $primary-color;
+    margin-left: 40px;
+}
+
+.nav {
+    position: absolute;
+    top: 0;
+    left: -250px;
+    width: 250px;
+}
+
+.nav__btn {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 40px;
+    height: 40px;
+}
+
+.nav__btn-icon {
+    display: block;
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+    background: url('/dist/img/nav-icon.svg') top left / cover no-repeat;
+    overflow: hidden;
+
+    .nav-is-active & {
+        background-position: bottom left;
+    }
+}
+
+.nav__list {
+    height: 100vh;
+    background: darken($background-color, 10%);
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.nav__second-list {
+    margin-left: 10px;
+}
+
+.nav__label {
+    position: absolute;
+    top: -10px;
+    padding-right: 5px;
+    background: darken($background-color, 10%);
+    color: $primary-color;
+    font-size: 1.25em;
+}
+
+.nav__label-line {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: $secondary-color;
+    vertical-align: middle;
+    margin: 20px 0 15px;
+}
+
+.nav__item {
+    color: $primary-color;
+    text-decoration: underline;
+    cursor: pointer;
+
+    &:not(:last-of-type) {
+        padding-bottom: 5px;
+    }
+}
