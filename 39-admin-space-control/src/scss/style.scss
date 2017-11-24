@@ -147,3 +147,35 @@ body {
     display: block;
     font-size: 0.875em;
 }
+
+// Probe details
+.border-table {
+    width: 100%;
+}
+
+.border-table__caption {
+    margin: 10px 0 25px;
+    font-style: italic;
+}
+
+.border-table__header {
+    background: $secondary-color;
+}
+
+.border-table__title,
+.border-table__cell {
+    padding: 10px;
+    text-align: left;
+}
+
+.border-table__title {
+    font-weight: $weight-500;
+}
+
+.border-table__row {
+    &:not(:last-of-type) {
+        border-bottom: 1px solid $secondary-color;
+    }
+}
+
+// Probe destination

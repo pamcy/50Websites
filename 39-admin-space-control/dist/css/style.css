@@ -216,4 +216,25 @@ body {
   display: block;
   font-size: 0.875em; }
 
+.border-table {
+  width: 100%; }
+
+.border-table__caption {
+  margin: 10px 0 25px;
+  font-style: italic; }
+
+.border-table__header {
+  background: #233e75; }
+
+.border-table__title,
+.border-table__cell {
+  padding: 10px;
+  text-align: left; }
+
+.border-table__title {
+  font-weight: 500; }
+
+.border-table__row:not(:last-of-type) {
+  border-bottom: 1px solid #233e75; }
+
 /*# sourceMappingURL=maps/style.css.map */
