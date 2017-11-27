@@ -7,6 +7,13 @@ body {
     color: $white;
 }
 
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: $white;
+}
+
 // Header
 .header {
     position: relative;
@@ -113,19 +120,18 @@ body {
     padding: 25px;
 }
 
+.panel__container {
+    margin-top: 25px;
+}
+
 .panel__title-line {
-    position: relative;
     display: block;
-    width: 100%;
-    height: 2px;
-    background: lighten($secondary-color, 20%);
-    margin-bottom: 20px;
+    background-image: linear-gradient(to bottom, transparent 0%, transparent 50%, lighten($secondary-color, 20%) 50%, lighten($secondary-color, 20%) 60%, transparent 60%, transparent 100%);
 }
 
 .panel__title {
-    position: absolute;
-    top: -10px;
-    padding-right: 5px;
+    padding-right: 10px;
+    display: inline-block;
     background: $background-color;
     font-size: 1.25em;
 }
@@ -179,3 +185,43 @@ body {
 }
 
 // Probe destination
+.tabs {
+    margin-bottom: 20px;
+}
+
+.tab {
+    display: inline-block;
+    border-bottom: 1px solid $secondary-color;
+
+    &:not(:first-of-type) {
+        margin-left: -4px;
+    }
+}
+
+.tab__link {
+    display: block;
+    padding: 15px 20px;
+}
+
+.tab__is-active {
+    border: 1px solid $secondary-color;
+    border-bottom-color: transparent;
+}
+
+.tab-panel__image {
+    width: 100%;
+}
+
+.tab__details {
+    display: inline-block;
+    margin-top: 30px;
+}
+
+.tab__details-title {
+    font-weight: $weight-700;
+    padding-bottom: 8px;
+}
+
+.tab__details-description {
+    padding-bottom: 8px;
+}

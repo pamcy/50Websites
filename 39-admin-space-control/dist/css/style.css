@@ -88,6 +88,12 @@ body {
   background: #18294f;
   color: #fff; }
 
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #fff; }
+
 .header {
   position: relative;
   display: -webkit-box;
@@ -187,18 +193,17 @@ body {
           flex: 1 1 50%;
   padding: 25px; }
 
+.panel__container {
+  margin-top: 25px; }
+
 .panel__title-line {
-  position: relative;
   display: block;
-  width: 100%;
-  height: 2px;
-  background: #3a68c4;
-  margin-bottom: 20px; }
+  background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), color-stop(50%, #3a68c4), color-stop(60%, #3a68c4), color-stop(60%, transparent), to(transparent));
+  background-image: linear-gradient(to bottom, transparent 0%, transparent 50%, #3a68c4 50%, #3a68c4 60%, transparent 60%, transparent 100%); }
 
 .panel__title {
-  position: absolute;
-  top: -10px;
-  padding-right: 5px;
+  padding-right: 10px;
+  display: inline-block;
   background: #18294f;
   font-size: 1.25em; }
 
@@ -236,5 +241,36 @@ body {
 
 .border-table__row:not(:last-of-type) {
   border-bottom: 1px solid #233e75; }
+
+.tabs {
+  margin-bottom: 20px; }
+
+.tab {
+  display: inline-block;
+  border-bottom: 1px solid #233e75; }
+  .tab:not(:first-of-type) {
+    margin-left: -4px; }
+
+.tab__link {
+  display: block;
+  padding: 15px 20px; }
+
+.tab__is-active {
+  border: 1px solid #233e75;
+  border-bottom-color: transparent; }
+
+.tab-panel__image {
+  width: 100%; }
+
+.tab__details {
+  display: inline-block;
+  margin-top: 30px; }
+
+.tab__details-title {
+  font-weight: 700;
+  padding-bottom: 8px; }
+
+.tab__details-description {
+  padding-bottom: 8px; }
 
 /*# sourceMappingURL=maps/style.css.map */
