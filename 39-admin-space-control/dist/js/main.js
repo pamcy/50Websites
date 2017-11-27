@@ -1,7 +1,7 @@
 'use strict';
 
 function toggleMenu() {
-    $(this).parent().toggleClass('nav-is-active');
+    $(this).parent().toggleClass('nav-is-open');
 }
 
 $(document).ready(function () {

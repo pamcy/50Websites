@@ -167,7 +167,8 @@ a:active {
   width: 250px;
   -webkit-transition: left 0.3s;
   transition: left 0.3s; }
-  .nav.nav-is-active {
+  .nav.nav-is-open {
+    position: fixed;
     left: 0; }
 
 .nav__btn {
@@ -176,7 +177,7 @@ a:active {
   left: 100%;
   width: 40px;
   height: 40px; }
-  .nav-is-active .nav__btn {
+  .nav-is-open .nav__btn {
     background-color: #0c1528; }
 
 .nav__btn-icon {
@@ -189,7 +190,7 @@ a:active {
   background-position: top left;
   background-repeat: no-repeat;
   overflow: hidden; }
-  .nav-is-active .nav__btn-icon {
+  .nav-is-open .nav__btn-icon {
     background-position: bottom left; }
 
 .nav__list {
@@ -239,11 +240,24 @@ a:active {
   display: block;
   font-size: 2.5em;
   font-weight: 700;
-  line-height: 1.3; }
+  line-height: 1.5; }
+  @media (min-width: 551px) {
+    .farthest__number {
+      font-size: 3.5em; } }
+  @media (min-width: 768px) {
+    .farthest__number {
+      font-size: 2.5em; } }
+  @media (min-width: 1025px) {
+    .farthest__number {
+      font-size: 3.5em; } }
 
 .farthest__name {
   display: block;
-  font-size: 0.875em; }
+  font-size: 0.875em;
+  line-height: 1.2; }
+  @media (min-width: 551px) {
+    .farthest__name {
+      font-size: 1em; } }
 
 .bar-chart {
   display: block;
