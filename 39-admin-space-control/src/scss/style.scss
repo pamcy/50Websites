@@ -25,7 +25,6 @@ a:active {
     align-items: center;
     background: $secondary-color;
     height: 40px;
-    border: 1px solid red;
 }
 
 .header__left {
@@ -111,7 +110,6 @@ a:active {
 .main-board {
     display: block;
     margin-top: 20px;
-    border: 1px solid red;
 }
 
 .breakline {
@@ -236,13 +234,30 @@ a:active {
     border-bottom-color: transparent;
 }
 
+.tab-panel {
+    @include media('above-mobile') {
+        display: flex;
+    }
+}
+
 .tab-panel__image {
+    display: block;
     width: 100%;
+
+    @include media('above-mobile') {
+        flex: 3;
+    }
 }
 
 .tab__details {
     display: inline-block;
     margin-top: 30px;
+
+    @include media('above-mobile') {
+        flex: 2;
+        margin-top: 0;
+        margin-left: 20px;
+    }
 }
 
 .tab__details-title {
