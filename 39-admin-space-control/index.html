@@ -1,111 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Admin Space Control</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!--Stylesheets-->
-        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Lekton:400,700" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700" rel="stylesheet">
-        <link rel="stylesheet" href="dist/css/style.css">
-        
-        <!--Google Analytics-->
-        <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+<head>
+    <title>Admin Space Control</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Stylesheets-->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lekton:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="dist/css/style.css">
+
+    <!--Google Analytics-->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)        
+}, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
         ga('create', 'UA-96360862-1', 'auto');
         ga('send', 'pageview');
-        </script>
-    </head>
-    <body>
-        <!-- Header -->
-        <header class="header">
-            <div class="header__left">
-                <nav class="nav">
-                    <button class="nav__btn">
-                        <i class="nav__btn-icon"></i>
-                    </button>
-                    <ul class="nav__list">
-                        <span class="nav__label-line">
-                            <span class="nav__label">Spacecraft</span>
-                        </span>
-                        <ol class="nav__second-list">
-                            <li class="nav__item">GSLV</li>
-                            <li class="nav__item">Saturn V</li>
-                            <li class="nav__item">Shenzhou</li>
-                            <li class="nav__item">Space Shuttle</li>
-                            <li class="nav__item">Soyuz</li>
-                        </ol>
-                        <span class="nav__label-line">
-                            <span class="nav__label">Stations</span>
-                        </span>
-                        <ol class="nav__second-list">
-                            <li class="nav__item">ISS</li>
-                            <li class="nav__item">Mir</li>
-                            <li class="nav__item">Skylab</li>
-                        </ol>
-                        <span class="nav__label-line">
-                            <span class="nav__label">Satellites</span>
-                        </span>
-                        <ol class="nav__second-list">
-                            <li class="nav__item">Skylab</li>
-                            <li class="nav__item">Gaia</li>
-                            <li class="nav__item">Hubble</li>
-                            <li class="nav__item">Kepler</li>
-                        </ol>
-                        <span class="nav__label-line">
-                            <span class="nav__label">Rovers</span>
-                        </span>
-                        <ol class="nav__second-list">
-                            <li class="nav__item">Curiosity</li>
-                            <li class="nav__item">Pathfinder</li>
-                            <li class="nav__item">Sojourner</li>
-                        </ol>
-                        <span class="nav__label-line">
-                            <span class="nav__label">Probes</span>
-                        </span>
-                        <ol class="nav__second-list">
-                            <li class="nav__item">Dawn</li>
-                            <li class="nav__item">Hayabusa</li>
-                            <li class="nav__item">New Horizons</li>
-                            <li class="nav__item">Rosetta</li>
-                            <li class="nav__item">Voyageur 1</li>
-                        </ol>
-                    </ul>
-                </nav>
-                <h1 class="header__title">Admin</h1>
-            </div>
-            <div class="header__right">
-                <img src="dist/img/logo.svg" alt="Space control logo" class="header__logo">
-            </div>
-        </header>
+    </script>
+</head>
 
-        <main class="main-board">
-            <section class="panel farthest">
-                <span class="panel__title-line">
-                    <h2 class="panel__title">Farthest distance</h2>
-                </span>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header__left">
+            <nav class="nav">
+                <button class="nav__btn">
+                    <i class="nav__btn-icon"></i>
+                </button>
+                <ul class="nav__list">
+                    <span class="nav__label-line">
+                        <span class="nav__label">Spacecraft</span>
+                    </span>
+                    <ol class="nav__second-list">
+                        <li class="nav__item">GSLV</li>
+                        <li class="nav__item">Saturn V</li>
+                        <li class="nav__item">Shenzhou</li>
+                        <li class="nav__item">Space Shuttle</li>
+                        <li class="nav__item">Soyuz</li>
+                    </ol>
+                    <span class="nav__label-line">
+                        <span class="nav__label">Stations</span>
+                    </span>
+                    <ol class="nav__second-list">
+                        <li class="nav__item">ISS</li>
+                        <li class="nav__item">Mir</li>
+                        <li class="nav__item">Skylab</li>
+                    </ol>
+                    <span class="nav__label-line">
+                        <span class="nav__label">Satellites</span>
+                    </span>
+                    <ol class="nav__second-list">
+                        <li class="nav__item">Skylab</li>
+                        <li class="nav__item">Gaia</li>
+                        <li class="nav__item">Hubble</li>
+                        <li class="nav__item">Kepler</li>
+                    </ol>
+                    <span class="nav__label-line">
+                        <span class="nav__label">Rovers</span>
+                    </span>
+                    <ol class="nav__second-list">
+                        <li class="nav__item">Curiosity</li>
+                        <li class="nav__item">Pathfinder</li>
+                        <li class="nav__item">Sojourner</li>
+                    </ol>
+                    <span class="nav__label-line">
+                        <span class="nav__label">Probes</span>
+                    </span>
+                    <ol class="nav__second-list">
+                        <li class="nav__item">Dawn</li>
+                        <li class="nav__item">Hayabusa</li>
+                        <li class="nav__item">New Horizons</li>
+                        <li class="nav__item">Rosetta</li>
+                        <li class="nav__item">Voyageur 1</li>
+                    </ol>
+                </ul>
+            </nav>
+            <h1 class="header__title">Admin</h1>
+        </div>
+        <div class="header__right">
+            <img src="dist/img/logo.svg" alt="Space control logo" class="header__logo">
+        </div>
+    </header>
+
+    <main class="main-board">
+        <section class="panel farthest">
+            <span class="panel__title-line">
+                <h2 class="panel__title">Farthest distance</h2>
+            </span>
+            <div class="panel__container">
                 <div class="farthest__content">
                     <span class="farthest__number">19,692,258,000 km</span>
                     <span class="farthest__name">Voyageur 1</span>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section class="panel">
-                <span class="panel__title-line">
-                    <h2 class="panel__title">Probe distances</h2>
-                </span>
-            </section>
+        <section class="panel">
+            <span class="panel__title-line">
+                <h2 class="panel__title">Probe distances</h2>
+            </span>
+            <div class="panel__container">
+                <svg class="bar-chart" viewBox="0 0 1000 821.8">
+                    <title>Distances of farthest probes from Earth.</title>
+                    <style>.st0 {fill: #6c8fe0;}.st1 {
+                            fill: #6c8fe0;}.st2 {
+                            fill: #6c8fe0;}.st3 {
+                            fill: #6c8fe0;}.st4 {
+                            fill: #fff;font-family: Ubuntu
+                        }.st5 {font-size: 52.7692px;}.st6 {font-size: 37.6923px;}.st7 {font-size: 40.2051px;}.st8 {fill: none;stroke: #233e75;stroke-width: 5;}
+                    </style>
+                    <g class="bar-wrap">
+                        <path id="bar-voy-1" d="M765.6 422.2h199v30.6h-199z" class="bar st0" />
+                    </g>
+                    <g class="bar-wrap">
+                        <path id="bar-voy-2" d="M546.7 347.8h199v105h-199z" class="bar st1" />
+                    </g>
+                    <g class="bar-wrap">
+                        <path id="bar-nh" d="M327.7 94h199v358.7h-199z" class="bar st2" />
+                    </g>
+                    <g class="bar-wrap">
+                        <path id="bar-cas" d="M108.8 22.5h199v430.2h-199z" class="bar st3" />
+                    </g>
+                    <text transform="matrix(0 -1 1 0 204.475 739.456)">
+                        <tspan x="0" y="0" class="st4 st5">Voyageur 1</tspan>
+                        <tspan x="84" y="45.2" class="st4 st6">19.86 B km</tspan>
+                    </text>
+                    <text transform="matrix(0 -1 1 0 427.26 739.456)">
+                        <tspan x="0" y="0" class="st4 st5">Voyageur 2</tspan>
+                        <tspan x="84" y="45.2" class="st4 st6">16.41 B km</tspan>
+                    </text>
+                    <text transform="matrix(0 -1 1 0 646.202 800.298)">
+                        <tspan x="0" y="0" class="st4 st5">New Horizons</tspan>
+                        <tspan x="187.4" y="45.2" class="st4 st6">4.8 B km</tspan>
+                    </text>
+                    <text transform="matrix(0 -1 1 0 865.145 631.651)">
+                        <tspan x="0" y="0" class="st4 st5">Cassini</tspan>
+                        <tspan x="-2.5" y="45.2" class="st4 st6">1.43 B km</tspan>
+                    </text>
+                    <text transform="translate(32.675 467.33)" class="st4 st7" aria-hidden="true">0</text>
+                    <text transform="translate(10 248.72)" class="st4 st7" aria-hidden="true">10</text>
+                    <path d="M83.5 452.8H990" class="st8" />
+                    <path d="M83.5 452.8V22.5" class="st8" />
+                    <path d="M83.5 452.8H65" class="st8" />
+                    <path d="M83.5 234.2H65" class="st8" />
+                </svg>
+            </div>
+        </section>
 
-            <section class="panel">
-                <span class="panel__title-line">
-                    <h2 class="panel__title">Probe details</h2>
-                </span>
-                <div class="panel__container">
+        <section class="panel">
+            <span class="panel__title-line">
+                <h2 class="panel__title">Probe details</h2>
+            </span>
+            <div class="panel__container">
+                <div class="table-wrapper">
                     <table class="border-table">
                         <caption class="border-table__caption">Probe details including launch date & destination.</caption>
                         <thead class="border-table__header">
@@ -155,59 +208,67 @@
                         </tbody>
                     </table>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section class="panel">
-                <span class="panel__title-line">
-                    <h2 class="panel__title">Probe destination</h2>
-                </span>
-                <div class="panel__container">
-                    <ul class="tabs">
-                        <li class="tab tab__is-active"><a href="#" class="tab__link">Pluto</a></li>
-                        <li class="tab"><a href="#" class="tab__link">67P/C-G</a></li>
-                        <li class="tab"><a href="#" class="tab__link">Jupiter</a></li>
-                    </ul>
-                    <div class="tab-panels">
-                        <div class="tab-panel">
-                            <img src="/dist/img/pluto.jpg" alt="" class="tab-panel__image">
-                            <dl class="tab__details">
-                                <dt class="tab__details-title">Name</dt>
-                                <dd class="tab__details-description">Pluto</dd>
-                                <dt class="tab__details-title">Discovery Year</dt>
-                                <dd class="tab__details-description">1930</dd>
-                                <dt class="tab__details-title">Discovered By</dt>
-                                <dd class="tab__details-description">Clyde W. Tombaugh</dd>
-                            </dl>
-                        </div>
-                        <div class="tab-panel">
-                            <img src="/dist/img/cg.jpg" alt="" class="tab-panel__image">
-                            <dl class="tab__details">
-                                <dt class="tab__details-title">Name</dt>
-                                <dd class="tab__details-description">67P/C-G</dd>
-                                <dt class="tab__details-title">Discovery Year</dt>
-                                <dd class="tab__details-description">1969</dd>
-                                <dt class="tab__details-title">Discovered By</dt>
-                                <dd class="tab__details-description">Klim Ivanovych Churyumov, Svetlana Ivanovna Gerasimenko</dd>
-                            </dl>
-                        </div>
-                        <div class="tab-panel">
-                            <img src="/dist/img/jupiter.jpg" alt="" class="tab-panel__image">
-                            <dl class="tab__details">
-                                <dt class="tab__details-title">Name</dt>
-                                <dd class="tab__details-description">Jupiter</dd>
-                                <dt class="tab__details-title">Discovery Year</dt>
-                                <dd class="tab__details-description">1959</dd>
-                                <dt class="tab__details-title">Discovered By</dt>
-                                <dd class="tab__details-description">Babylonian astronomers</dd>
-                            </dl>
-                        </div>
+        <section class="panel">
+            <span class="panel__title-line">
+                <h2 class="panel__title">Probe destination</h2>
+            </span>
+            <div class="panel__container">
+                <ul class="tabs">
+                    <li class="tab tab__is-active">
+                        <a href="#" class="tab__link">Pluto</a>
+                    </li>
+                    <li class="tab">
+                        <a href="#" class="tab__link">67P/C-G</a>
+                    </li>
+                    <li class="tab">
+                        <a href="#" class="tab__link">Jupiter</a>
+                    </li>
+                </ul>
+                <div class="tab-panels">
+                    <div class="tab-panel">
+                        <img src="/dist/img/pluto.jpg" alt="" class="tab-panel__image">
+                        <dl class="tab__details">
+                            <dt class="tab__details-title">Name</dt>
+                            <dd class="tab__details-description">Pluto</dd>
+                            <dt class="tab__details-title">Discovery Year</dt>
+                            <dd class="tab__details-description">1930</dd>
+                            <dt class="tab__details-title">Discovered By</dt>
+                            <dd class="tab__details-description">Clyde W. Tombaugh</dd>
+                        </dl>
+                    </div>
+                    <div class="tab-panel">
+                        <img src="/dist/img/cg.jpg" alt="" class="tab-panel__image">
+                        <dl class="tab__details">
+                            <dt class="tab__details-title">Name</dt>
+                            <dd class="tab__details-description">67P/C-G</dd>
+                            <dt class="tab__details-title">Discovery Year</dt>
+                            <dd class="tab__details-description">1969</dd>
+                            <dt class="tab__details-title">Discovered By</dt>
+                            <dd class="tab__details-description">Klim Ivanovych Churyumov, Svetlana Ivanovna Gerasimenko</dd>
+                        </dl>
+                    </div>
+                    <div class="tab-panel">
+                        <img src="/dist/img/jupiter.jpg" alt="" class="tab-panel__image">
+                        <dl class="tab__details">
+                            <dt class="tab__details-title">Name</dt>
+                            <dd class="tab__details-description">Jupiter</dd>
+                            <dt class="tab__details-title">Discovery Year</dt>
+                            <dd class="tab__details-description">1959</dd>
+                            <dt class="tab__details-title">Discovered By</dt>
+                            <dd class="tab__details-description">Babylonian astronomers</dd>
+                        </dl>
                     </div>
                 </div>
-            </section>
-        </main>
+            </div>
+        </section>
+    </main>
 
-        <!--Scripts-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="dist/js/main.js"></script>
-    </body>
+    <!--Scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="dist/js/main.js"></script>
+</body>
+
 </html>
