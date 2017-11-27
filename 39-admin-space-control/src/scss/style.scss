@@ -1,6 +1,9 @@
 @import 'reset';
 @import 'variables';
+@import 'mixins';
+@import 'column';
 
+// Base style
 body {
     font-family: 'Ubuntu', sans-serif;
     background: $background-color;
@@ -31,7 +34,6 @@ a:active {
 
 .header__logo {
     width: 100%;
-    // height: 40px;
 }
 
 .header__title {
@@ -58,6 +60,10 @@ a:active {
     left: 100%;
     width: 40px;
     height: 40px;
+
+    .nav-is-active & {
+        background-color: darken($background-color, 10%);
+    }
 }
 
 .nav__btn-icon {
@@ -81,28 +87,14 @@ a:active {
     background: darken($background-color, 10%);
     padding: 20px;
     overflow-y: auto;
+
+    .breakline__title {
+        background: darken($background-color, 10%);
+    }
 }
 
 .nav__second-list {
     margin-left: 10px;
-}
-
-.nav__label {
-    position: absolute;
-    top: -10px;
-    padding-right: 5px;
-    background: darken($background-color, 10%);
-    font-size: 1.25em;
-}
-
-.nav__label-line {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 1px;
-    background: $secondary-color;
-    vertical-align: middle;
-    margin: 20px 0 15px;
 }
 
 .nav__item {
@@ -116,34 +108,30 @@ a:active {
 
 // Main & Panel
 .main-board {
-    // display: flex;
-    // flex-wrap: wrap;
     display: block;
     margin-top: 20px;
     border: 1px solid red;
 }
 
+.breakline {
+    display: block;
+    background-image: linear-gradient(to bottom, transparent 0%, transparent 50%, lighten($secondary-color, 20%) 50%, lighten($secondary-color, 20%) 55%, transparent 55%, transparent 100%);
+}
+
+.breakline__title {
+    padding: 10px 10px 10px 0;
+    display: inline-block;
+    background: $background-color;
+    font-size: 1.25em;
+}
+
 .panel {
-    // flex: 1 1 100%;
-    width: 100%;
-    padding: 20px;
+    padding: 10px;
     border: 1px solid green;
 }
 
 .panel__container {
     margin-top: 25px;
-}
-
-.panel__title-line {
-    display: block;
-    background-image: linear-gradient(to bottom, transparent 0%, transparent 50%, lighten($secondary-color, 20%) 50%, lighten($secondary-color, 20%) 60%, transparent 60%, transparent 100%);
-}
-
-.panel__title {
-    padding-right: 10px;
-    display: inline-block;
-    background: $background-color;
-    font-size: 1.25em;
 }
 
 // Fahrest distance

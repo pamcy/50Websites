@@ -1,0 +1,19 @@
+.column {
+    lost-utility: clearfix;
+}
+
+.column__item {
+    margin-bottom: 30px;
+}
+
+.column--2 {
+    .column__item {
+        @include media('above-tablet') {
+            lost-column: 1/2;
+        }
+
+        @include media('below-tablet') {
+            lost-column: 1/1;
+        }
+    }
+}
