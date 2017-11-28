@@ -263,6 +263,28 @@ a:active {
   max-width: 24em;
   margin: 0 auto; }
 
+.bar {
+  -webkit-animation: slideup 1.5s ease-out;
+          animation: slideup 1.5s ease-out;
+  -webkit-transform-origin: 0 450px;
+          transform-origin: 0 450px; }
+
+@-webkit-keyframes slideup {
+  0% {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0); }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1); } }
+
+@keyframes slideup {
+  0% {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0); }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1); } }
+
 .table-wrapper {
   overflow-x: auto; }
 

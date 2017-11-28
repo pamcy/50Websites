@@ -175,6 +175,21 @@ a:active {
     margin: 0 auto;
 }
 
+.bar {
+    animation: slideup 1.5s ease-out;
+    transform-origin: 0 450px; // See definition: http://bit.ly/2jqqf2v
+}
+
+@keyframes slideup {
+    0% {
+        transform: scaleY(0);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
+}
+
 // Probe details
 .table-wrapper {
     overflow-x: auto;
