@@ -3,9 +3,10 @@ const max_number = number_field.data('max-number');
 let current_number = 0;
 
 // Menu navigation
-const toggleMenu = () => {
+function toggleMenu() {
+    console.log('ok');
     $(this).parent().toggleClass('nav-is-open');
-};
+}
 
 // Animate the farthest distance
 const showNumber = () => {

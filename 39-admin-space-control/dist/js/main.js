@@ -5,9 +5,10 @@ var max_number = number_field.data('max-number');
 var current_number = 0;
 
 // Menu navigation
-var toggleMenu = function toggleMenu() {
-    $(undefined).parent().toggleClass('nav-is-open');
-};
+function toggleMenu() {
+    console.log('ok');
+    $(this).parent().toggleClass('nav-is-open');
+}
 
 // Animate the farthest distance
 var showNumber = function showNumber() {
