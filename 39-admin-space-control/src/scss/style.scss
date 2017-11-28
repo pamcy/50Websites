@@ -24,6 +24,7 @@ a:active {
     justify-content: space-between;
     align-items: center;
     background: $secondary-color;
+    padding: 3px;
     height: 40px;
 }
 
@@ -33,6 +34,22 @@ a:active {
 
 .header__logo {
     width: 100%;
+}
+
+.header__logo-small {
+    display: block;
+
+    @include media('above-mobile') {
+        display: none;
+    }
+}
+
+.header__logo-large {
+    display: none;
+
+    @include media('above-mobile') {
+        display: block;
+    }
 }
 
 .header__title {

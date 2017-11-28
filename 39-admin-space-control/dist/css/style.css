@@ -144,6 +144,7 @@ a:active {
       -ms-flex-align: center;
           align-items: center;
   background: #233e75;
+  padding: 3px;
   height: 40px; }
 
 .header__left {
@@ -153,6 +154,18 @@ a:active {
 
 .header__logo {
   width: 100%; }
+
+.header__logo-small {
+  display: block; }
+  @media (min-width: 551px) {
+    .header__logo-small {
+      display: none; } }
+
+.header__logo-large {
+  display: none; }
+  @media (min-width: 551px) {
+    .header__logo-large {
+      display: block; } }
 
 .header__title {
   font-size: 1em;
