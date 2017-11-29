@@ -63,7 +63,7 @@ a:active {
     top: 0;
     left: -250px;
     width: 250px;
-    transition: left 0.3s;
+    transition: left 0.3s ease-out;
 
     &.nav-is-open {
         position: fixed;
@@ -267,19 +267,20 @@ a:active {
 }
 
 .tab-panel {
-    @include media('above-mobile') {
-        display: flex;
-    }
+    display: none;
+    lost-utility: clearfix;
+}
+
+.tab-panel[aria-hidden='false'] {
+    display: block;
 }
 
 .tab-panel__image {
-    display: block;
     width: 100%;
     height: 100%;
 
     @include media('above-mobile') {
-        flex: 3;
-        width: 50%;
+        lost-column: 2/3;
     }
 }
 
@@ -288,9 +289,8 @@ a:active {
     margin-top: 30px;
 
     @include media('above-mobile') {
-        flex: 2;
+        lost-column: 1/3;
         margin-top: 0;
-        margin-left: 20px;
     }
 }
 

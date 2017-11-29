@@ -208,19 +208,19 @@
                 <h2 class="breakline__title">Probe destination</h2>
             </span>
             <div class="panel__container">
-                <ul class="tabs">
+                <ul class="tabs" role="tablist">
                     <li class="tab tab__is-active">
-                        <a href="#" class="tab__link">Pluto</a>
+                        <a href="#pluto" class="tab__link" role="tab" aria-controls="pluto" aria-selected="true">Pluto</a>
                     </li>
                     <li class="tab">
-                        <a href="#" class="tab__link">67P/C-G</a>
+                        <a href="#67pcg" class="tab__link" role="tab" aria-controls="67pcg">67P/C-G</a>
                     </li>
                     <li class="tab">
-                        <a href="#" class="tab__link">Jupiter</a>
+                        <a href="#jupiter" class="tab__link" role="tab" aria-controls="jupiter">Jupiter</a>
                     </li>
                 </ul>
                 <div class="tab-panels">
-                    <div class="tab-panel">
+                    <div class="tab-panel" id="pluto" role="tabpanel" aria-hidden="false">
                         <img src="/dist/img/pluto.jpg" alt="" class="tab-panel__image">
                         <dl class="tab__details">
                             <dt class="tab__details-title">Name</dt>
@@ -231,7 +231,7 @@
                             <dd class="tab__details-description">Clyde W. Tombaugh</dd>
                         </dl>
                     </div>
-                    <div class="tab-panel">
+                    <div class="tab-panel" id="67pcg" role="tabpanel" aria-hidden="true">
                         <img src="/dist/img/cg.jpg" alt="" class="tab-panel__image">
                         <dl class="tab__details">
                             <dt class="tab__details-title">Name</dt>
@@ -242,7 +242,7 @@
                             <dd class="tab__details-description">Klim Ivanovych Churyumov, Svetlana Ivanovna Gerasimenko</dd>
                         </dl>
                     </div>
-                    <div class="tab-panel">
+                    <div class="tab-panel" id="jupiter" role="tabpanel" aria-hidden="true">
                         <img src="/dist/img/jupiter.jpg" alt="" class="tab-panel__image">
                         <dl class="tab__details">
                             <dt class="tab__details-title">Name</dt>
