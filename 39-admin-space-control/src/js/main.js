@@ -23,7 +23,22 @@ const animateNumber = () => {
     }
 };
 
+// Tab section
+function changeTab(e) {
+    e.preventDefault();
+
+    const $this = $(this);
+    const tab = $this.attr('href');
+
+    $('.tab__link').attr('aria-selected', false);
+    $('.tab-panel').attr('aria-hidden', true);
+
+    $this.attr('aria-selected', true);
+    $(`${tab}`).attr('aria-hidden', false);
+}
+
 $(document).ready(() => {
     $('.nav__btn').on('click', toggleMenu);
+    $('.tab__link').on('click', changeTab);
     showNumber();
 });

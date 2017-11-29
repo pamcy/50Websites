@@ -336,9 +336,10 @@ a:active {
   display: block;
   padding: 15px 20px; }
 
-.tab__is-active {
-  border: 1px solid #233e75;
-  border-bottom-color: transparent; }
+.tab__link[aria-selected="true"] {
+  border-left: 1px solid #233e75;
+  border-top: 1px solid #233e75;
+  border-right: 1px solid #233e75; }
 
 .tab-panel {
   display: none; }

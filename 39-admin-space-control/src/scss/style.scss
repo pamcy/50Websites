@@ -261,9 +261,10 @@ a:active {
     padding: 15px 20px;
 }
 
-.tab__is-active {
-    border: 1px solid $secondary-color;
-    border-bottom-color: transparent;
+.tab__link[aria-selected="true"] {
+    border-left: 1px solid $secondary-color;
+    border-top: 1px solid $secondary-color;
+    border-right: 1px solid $secondary-color;
 }
 
 .tab-panel {
