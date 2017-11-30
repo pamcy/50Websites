@@ -2,13 +2,12 @@
 <html lang="en">
 
 <head>
-    <title>Admin Space Control</title>
+    <title>Responsive Animated Space Control</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--Stylesheets-->
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700" rel="stylesheet">
-
     <link rel="stylesheet" href="dist/css/style.css">
 
     <!--Google Analytics-->
@@ -29,10 +28,10 @@
     <header class="header">
         <div class="header__left">
             <nav class="nav">
-                <button class="nav__btn">
+                <button class="nav__btn" aria-controls="sidemenu" aria-expanded="false">
                     <i class="nav__btn-icon"></i>
                 </button>
-                <ul class="nav__list">
+                <ul class="nav__list" id="sidemenu" aria-hidden="true">
                     <span class="breakline">
                         <span class="breakline__title">Spacecraft</span>
                     </span>
@@ -155,42 +154,42 @@
                         <caption class="border-table__caption">Probe details including launch date & destination.</caption>
                         <thead class="border-table__header">
                             <tr class="border-table__row">
-                                <th class="border-table__title">Probe</th>
-                                <th class="border-table__title">Launch Date</th>
-                                <th class="border-table__title">Destination</th>
+                                <th scope="col" class="border-table__title">Probe</th>
+                                <th scope="col" class="border-table__title">Launch Date</th>
+                                <th scope="col" class="border-table__title">Destination</th>
                             </tr>
                         </thead>
                         <tbody class="border-table__body">
                             <tr class="border-table__row">
-                                <th class="border-table__title">Juno</th>
+                                <th scope="row" class="border-table__title">Juno</th>
                                 <td class="border-table__cell">
                                     <time class="border-table__time">Aug. 5, 2011</time>
                                 </td>
                                 <td class="border-table__cell">Jupiter</td>
                             </tr>
                             <tr class="border-table__row">
-                                <th class="border-table__title">Rosetta</th>
+                                <th scope="row" class="border-table__title">Rosetta</th>
                                 <td class="border-table__cell">
                                     <time class="border-table__time">Mar. 2, 2004</time>
                                 </td>
                                 <td class="border-table__cell">Comet 67P/Churyumov-Gerasimenko</td>
                             </tr>
                             <tr class="border-table__row">
-                                <th class="border-table__title">Okras</th>
+                                <th scope="row" class="border-table__title">Okras</th>
                                 <td class="border-table__cell">
                                     <time class="border-table__time">May 20, 2010</time>
                                 </td>
                                 <td class="border-table__cell">Venus</td>
                             </tr>
                             <tr class="border-table__row">
-                                <th class="border-table__title">Shin’en 2</th>
+                                <th scope="row" class="border-table__title">Shin’en 2</th>
                                 <td class="border-table__cell">
                                     <time class="border-table__time">Dec. 3, 2014</time>
                                 </td>
                                 <td class="border-table__cell">Heliocentric orbit</td>
                             </tr>
                             <tr class="border-table__row">
-                                <th class="border-table__title">Gaia</th>
+                                <th scope="row" class="border-table__title">Gaia</th>
                                 <td class="border-table__cell">
                                     <time class="border-table__time">Dec. 19, 2013</time>
                                 </td>

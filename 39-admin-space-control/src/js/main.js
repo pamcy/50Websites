@@ -1,11 +1,23 @@
 const number_field = $('.farthest__number');
 const max_number = number_field.data('max-number');
+let nav_is_open = false;
 let current_number = 0;
 
 // Menu navigation
 function toggleMenu() {
-    console.log('ok');
+    const nav_btn = $('.nav__btn');
+    const nav_list = $('.nav__list');
+
+    nav_is_open = !nav_is_open;
     $(this).parent().toggleClass('nav-is-open');
+
+    if (nav_is_open) {
+        nav_btn.attr('aria-expanded', true);
+        nav_list.attr('aria-hidden', false);
+    } else {
+        nav_btn.attr('aria-expanded', false);
+        nav_list.attr('aria-hidden', true);
+    }
 }
 
 // Animate the farthest distance
