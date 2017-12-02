@@ -17,6 +17,11 @@ a:active {
     color: $white;
 }
 
+a:focus,
+button:focus {
+    outline: 2px solid $white; // For accessibility tab control
+}
+
 // Header
 .header {
     position: relative;

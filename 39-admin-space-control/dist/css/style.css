@@ -132,6 +132,10 @@ a:hover,
 a:active {
   color: #fff; }
 
+a:focus,
+button:focus {
+  outline: 2px solid #fff; }
+
 .header {
   position: relative;
   display: -webkit-box;
