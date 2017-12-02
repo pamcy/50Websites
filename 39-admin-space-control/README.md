@@ -4,7 +4,7 @@ This coding challenge is from a online tutorial [*Learn the Web*](https://learn-
 
 [**View Demo**](https://pamcy.github.io/50Websites/39-admin-space-control/)
 
-![Responsive Animated Space Control](./dist/imgs/demo-youtube.png)
+![Responsive Animated Space Control](./dist/imgs/demo-space-control.gif)
 
 
 ## What did I learn from this project?
