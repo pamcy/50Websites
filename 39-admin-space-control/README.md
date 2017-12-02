@@ -1,16 +1,18 @@
 # Responsive Animated Space Control
 
-This coding challenge is from a online tutorial [*Learn the Web*](https://learn-the-web.algonquindesign.ca/), a full responsive, animated dashboard website.  
+This coding challenge is from a online tutorial [*Learn the Web*](https://learn-the-web.algonquindesign.ca/).
+
+A full responsive, animated dashboard website with accessibility features.  
 
 [**View Demo**](https://pamcy.github.io/50Websites/39-admin-space-control/)
 
-![Responsive Animated Space Control](./dist/imgs/demo-space-control.gif)
+![Responsive Animated Space Control](./dist/img/demo-space-control.gif)
 
 
 ## What did I learn from this project?
 
 - Responsive  
-It's a mobile first website use of *[LostGrid](http://lostgrid.org/) (A PostCSS Plugin)* and *Flexbox*.
+It's a mobile first website use of *[LostGrid](http://lostgrid.org/)* (A PostCSS Plugin) and *Flexbox*.
 
 - Accessibility  
 Add basic accessibility features to the website, include the keyboard accessibility and tab controls.
