@@ -1,33 +1,31 @@
-# What's Happening Around The World Today?
+# Responsive Animated Space Control
 
-Catch the latest popular videos on Youtube from around the world, look over the source code above if you'd like.  
+This coding challenge is from a online tutorial [*Learn the Web*](https://learn-the-web.algonquindesign.ca/), a full responsive, animated dashboard website.  
 
-[**View Demo**](https://pamcy.github.io/50Websites/37-youtube-popular-videos)
+[**View Demo**](https://pamcy.github.io/50Websites/39-admin-space-control/)
 
-![Expanding image gallery with Flexbox](./public/imgs/demo-youtube.png)
+![Responsive Animated Space Control](./dist/imgs/demo-youtube.png)
 
 
 ## What did I learn from this project?
 
-- Webpack  
-Minify and concat multiple JS files into one single bundle.
+- Responsive  
+It's a mobile first website use of *[LostGrid](http://lostgrid.org/) (A PostCSS Plugin)* and *Flexbox*.
 
-- PostCSS  
-Use [LostGrid](http://lostgrid.org/) (easy responsive Grids) and [CssNano](http://cssnano.co/) (css compression) with task runner **Gulp**.
+- Accessibility  
+Add basic accessibility features to the website, include the keyboard accessibility and tab controls.
 
-- Youtube API  
-Use the [API](https://developers.google.com/youtube/v3/) to fetch all popular videos on Youtube.
+- Slide In Navigation Menu  
+The menu is hidden off screen until the user clicks on a menu icon. (RWD support)
 
-- Infinite Scroll  
-When the user scroll to bottom of page will add next page automatically.
+- Animated Bar Chart  
+Animate the embedded SVG bar chart with CSS animations.
 
-- Modal Popup  
-Build a popup window to play the video.
+- Counting numbers  
+Make the large distance number count up from zero.
 
-- Dropdown Menu  
-Select the desired content region from the dropdown list.
+- Resoponsive table design  
+Styling data table and make it scrolls horizontally on small screen.
 
-- To Top Button  
-Allow users to smoothly scroll back to the top of the page.
-
-- File & Directory Structure
+- Tabs  
+Swtich between different sections of content with CSS and JS.
