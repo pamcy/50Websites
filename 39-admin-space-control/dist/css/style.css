@@ -134,7 +134,7 @@ a:active {
 
 a:focus,
 button:focus {
-  outline: 2px solid #fff; }
+  outline: 1px solid #fff; }
 
 .header {
   position: relative;
@@ -332,7 +332,7 @@ button:focus {
 
 .tab {
   display: inline-block;
-  border-bottom: 1px solid #233e75; }
+  border-bottom: 2px solid #233e75; }
   .tab:not(:first-of-type) {
     margin-left: -4px; }
 
@@ -341,9 +341,9 @@ button:focus {
   padding: 15px 20px; }
 
 .tab__link[aria-selected="true"] {
-  border-left: 1px solid #233e75;
-  border-top: 1px solid #233e75;
-  border-right: 1px solid #233e75; }
+  border-left: 2px solid #233e75;
+  border-top: 2px solid #233e75;
+  border-right: 2px solid #233e75; }
 
 .tab-panel {
   display: none; }

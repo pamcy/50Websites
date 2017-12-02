@@ -19,7 +19,7 @@ a:active {
 
 a:focus,
 button:focus {
-    outline: 2px solid $white; // For accessibility tab control
+    outline: 1px solid $white; // For accessibility tab control
 }
 
 // Header
@@ -254,7 +254,7 @@ button:focus {
 
 .tab {
     display: inline-block;
-    border-bottom: 1px solid $secondary-color;
+    border-bottom: 2px solid $secondary-color;
 
     &:not(:first-of-type) {
         margin-left: -4px;
@@ -267,9 +267,9 @@ button:focus {
 }
 
 .tab__link[aria-selected="true"] {
-    border-left: 1px solid $secondary-color;
-    border-top: 1px solid $secondary-color;
-    border-right: 1px solid $secondary-color;
+    border-left: 2px solid $secondary-color;
+    border-top: 2px solid $secondary-color;
+    border-right: 2px solid $secondary-color;
 }
 
 .tab-panel {
