@@ -3,7 +3,7 @@
     "rules": {
         "indentation": 4,
         "at-rule-no-unknown": [true, {"ignoreAtRules" :[
-            "mixin", "extend", "content", "include", "lost-column", "if"
+            "mixin", "extend", "content", "include", "lost-utility", "lost-column", "if"
           ]}]
     }
 }
