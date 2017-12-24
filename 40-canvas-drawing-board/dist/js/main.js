@@ -1,10 +1,12 @@
-const canvas = document.querySelector('#canvas');
-const content = canvas.getContext('2d');
-let x_last = 0;
-let y_last = 0;
-let hue = 0;
-let is_drawing = false;
-let direction = true;
+'use strict';
+
+var canvas = document.querySelector('#canvas');
+var content = canvas.getContext('2d');
+var x_last = 0;
+var y_last = 0;
+var hue = 0;
+var is_drawing = false;
+var direction = true;
 
 function initializeCanvas() {
     canvas.width = window.innerWidth;
@@ -22,9 +24,12 @@ function drawing(e) {
     content.lineTo(e.offsetX, e.offsetY);
     content.stroke();
 
-    [x_last, y_last] = [e.offsetX, e.offsetY];
+    var _ref = [e.offsetX, e.offsetY];
+    x_last = _ref[0];
+    y_last = _ref[1];
 
-    content.strokeStyle = `hsl(${hue}, 100%, 50%)`;
+
+    content.strokeStyle = 'hsl(' + hue + ', 100%, 50%)';
     if (hue >= 360) {
         hue = 0;
     }
@@ -41,14 +46,16 @@ function drawing(e) {
 }
 
 canvas.addEventListener('mousemove', drawing);
-canvas.addEventListener('mousedown', (e) => {
+canvas.addEventListener('mousedown', function (e) {
     is_drawing = true;
-    [x_last, y_last] = [e.offsetX, e.offsetY];
+    var _ref2 = [e.offsetX, e.offsetY];
+    x_last = _ref2[0];
+    y_last = _ref2[1];
 });
-canvas.addEventListener('mouseup', () => {
+canvas.addEventListener('mouseup', function () {
     is_drawing = false;
 });
-canvas.addEventListener('mouseout', () => {
+canvas.addEventListener('mouseout', function () {
     is_drawing = false;
 });
 
