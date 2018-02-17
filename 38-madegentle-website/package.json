@@ -1,12 +1,12 @@
 {
-  "name": "38-MadeGentle-website",
+  "name": "38-MadeGentle-Website",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "dev": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -22,21 +22,30 @@
     "babel-core": "^6.26.0",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.0",
+    "babel-preset-env": "^1.6.1",
     "browser-sync": "^2.18.13",
+    "css-loader": "^0.28.7",
     "cssnano": "^3.10.0",
     "eslint": "^4.8.0",
     "eslint-config-airbnb-base": "^12.0.1",
     "eslint-plugin-import": "^2.7.0",
+    "extract-text-webpack-plugin": "^3.0.2",
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.0",
+    "gulp-concat": "^2.6.1",
     "gulp-postcss": "^7.0.0",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.1",
     "gulp-uglify": "^3.0.0",
+    "html-webpack-plugin": "^2.30.1",
     "lost": "^8.2.0",
+    "node-sass": "^4.6.1",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.0",
     "stylelint-config-standard": "^17.0.0",
     "uglifyjs-webpack-plugin": "^0.4.6",
-    "webpack": "^3.6.0"
-  }
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.9.4"
+  },
+  "pre-push": []
 }

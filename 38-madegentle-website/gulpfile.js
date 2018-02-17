@@ -6,9 +6,9 @@ const autoprefixer = require('autoprefixer');
 const lost         = require('lost');
 const cssnano      = require('cssnano');
 const browserSync  = require('browser-sync').create();
-// const uglify    = require('gulp-uglify');
-// const babel     = require('gulp-babel')
-
+const uglify       = require('gulp-uglify');
+const concat       = require('gulp-concat');
+const babel        = require('gulp-babel');
 
 /*
  * sub tasks
@@ -29,19 +29,20 @@ gulp.task('make:css', () => {
 });
 
 gulp.task('process:css', ['make:css'], () => {
-    return gulp.src('public/css/**/*.css')
+    return gulp.src('public/css/*.css')
         .pipe(postcss(cssnano))
         .pipe(gulp.dest('public/css'));
 });
 
-// gulp.task('make:js', () => {
-//     return gulp.src('src/js/**/*.js')
-//         // plugin "babel-preset-env"
-//         .pipe(babel({ presets: ['env'] }))
-//         .pipe(uglify())
-//         .pipe(gulp.dest('public/js'))
-//         .pipe(browserSync.stream())
-// })
+gulp.task('make:js', () => {
+    return gulp.src('src/js/*.js')
+        // plugin "babel-preset-env"
+        .pipe(babel({ presets: ['env'] }))
+        .pipe(concat('bundle.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('public/js'))
+        .pipe(browserSync.stream());
+});
 
 gulp.task('copy:html', () => {
     return gulp.src('src/**/*.html')
@@ -62,10 +63,9 @@ gulp.task('browserSync', () => {
  * main tasks
  */
 
-gulp.task('build', ['copy:html', 'process:css']);
-
 // Array of tasks to complete before watch
-gulp.task('default', ['browserSync', 'make:css', 'copy:html'], () => {
+gulp.task('default', ['browserSync', 'make:css', 'make:js', 'copy:html'], () => {
     gulp.watch('src/scss/**/*.scss', ['make:css']);
+    gulp.watch('src/js/*.js', ['make:js']);
     gulp.watch('src/*.html', ['copy:html']);
 });
