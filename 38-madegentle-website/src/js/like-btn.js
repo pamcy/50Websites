@@ -1,5 +1,3 @@
-let isLiked = false;
-
 function toggleLike(e) {
     e.preventDefault();
 
@@ -9,16 +7,14 @@ function toggleLike(e) {
     const $numberValue = $numberField.text();
     let $totalNumber = parseInt($numberValue, 10);
 
-    isLiked = !isLiked;
-
-    if (isLiked) {
-        $likeIcon.removeClass('icon-favorite_border').addClass('icon-favorite');
-        $target.addClass('is-liked');
-        $numberField.text($totalNumber += 1);
-    } else {
+    if ($likeIcon.hasClass('icon-favorite')) {
         $likeIcon.removeClass('icon-favorite').addClass('icon-favorite_border');
         $target.removeClass('is-liked');
         $numberField.text($totalNumber -= 1);
+    } else {
+        $likeIcon.removeClass('icon-favorite_border').addClass('icon-favorite');
+        $target.addClass('is-liked');
+        $numberField.text($totalNumber += 1);
     }
 }
 
