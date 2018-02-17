@@ -1,5 +1,6 @@
 .footer {
-    background: $light-gray;
+    // background: $light-gray;
+    background: #30323d;
 }
 
 .footer__container {
@@ -25,20 +26,36 @@
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 20px;
+    color: $lighter-gray;
 }
 
 .footer-nav__item,
 .footer-nav__copyright {
     @extend %paragraph--14;
 
-    color: $gray;
+    color: $lighter-gray;
+}
+
+.footer-nav__link {
+    &:hover {
+        color: $hover-light-color;
+    }
 }
 
 .footer-social__btn {
     display: inline-block;
+    cursor: pointer;
 
     &:not(:last-of-type) {
         margin-right: 5px;
+    }
+}
+
+.footer-social__icon {
+    color: $lighter-gray;
+
+    &:hover {
+        color: $hover-light-color;
     }
 }
 

@@ -17,15 +17,16 @@
     transform: translateY(-50%);
     padding: 10px;
     border: 1px solid $white;
-    background: transparent;
+    background: $hover-color;
+    color: $white;
     transition: border 0.3s, background 0.3s;
 
     &:hover {
-        background: $hover-color;
-        border-color: $hover-color;
+        background: $hover-light-color;
+        border-color: $hover-light-color;
 
         .hero-carousel__arrow-icon {
-            color: $white;
+            color: $black;
         }
     }
 }
