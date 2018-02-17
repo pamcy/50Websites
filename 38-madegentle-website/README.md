@@ -1,33 +1,8 @@
-# What's Happening Around The World Today?
+# MadeGentle - The online destination for men's style
 
-Catch the latest popular videos on Youtube from around the world, look over the source code above if you'd like.  
+MadeGentle is a website that focus on the latest men's fashion and style. It's simple, modern and fully responsive with a bunch of amazing animations.
 
-[**View Demo**](https://pamcy.github.io/50Websites/37-youtube-popular-videos)
+[**View Demo**](https://pamcy.github.io/50Websites/38-madegentle-website/)
 
-![Expanding image gallery with Flexbox](./public/imgs/demo-youtube.png)
+![MadeGentle](./public/imgs/demo-madegentle.gif)
 
-
-## What did I learn from this project?
-
-- Webpack  
-Minify and concat multiple JS files into one single bundle.
-
-- PostCSS  
-Use [LostGrid](http://lostgrid.org/) (easy responsive Grids) and [CssNano](http://cssnano.co/) (css compression) with task runner **Gulp**.
-
-- Youtube API  
-Use the [API](https://developers.google.com/youtube/v3/) to fetch all popular videos on Youtube.
-
-- Infinite Scroll  
-When the user scroll to bottom of page will add next page automatically.
-
-- Modal Popup  
-Build a popup window to play the video.
-
-- Dropdown Menu  
-Select the desired content region from the dropdown list.
-
-- To Top Button  
-Allow users to smoothly scroll back to the top of the page.
-
-- File & Directory Structure
