@@ -17,7 +17,7 @@ gulp.task('make:css', () => {
     const plugins = [
         autoprefixer({ browsers: ['last 2 versions'] }),
     ];
-    return gulp.src('src/scss/**/*.scss')
+    return gulp.src('src/scss/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(postcss(plugins))
@@ -27,7 +27,7 @@ gulp.task('make:css', () => {
 });
 
 gulp.task('minify:css', ['make:css'], () => {
-    return gulp.src('dist/css/**/*.css')
+    return gulp.src('dist/css/*.css')
         .pipe(postcss(cssnano))
         .pipe(gulp.dest('dist/css'));
 });

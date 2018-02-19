@@ -1,0 +1,53 @@
+@import 'reset';
+
+$main-color: #ede7d9;
+$highlight-color: #fffd82;
+$bg-color: #222;
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #111;
+    color: $main-color;
+}
+
+.header__title {
+    font-size: 1.5em;
+}
+
+.header__btn {
+    padding-left: 5px;
+    padding-right: 5px;
+    transition: color 0.2s;
+    color: $main-color;
+    text-decoration: none;
+
+    &:hover {
+        color: $highlight-color;
+    }
+}
+
+.description {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $highlight-color;
+    user-select: none;
+
+    &.is-hidden {
+        display: none;
+    }
+}
+
+.board {
+    background: $bg-color;
+}
+
