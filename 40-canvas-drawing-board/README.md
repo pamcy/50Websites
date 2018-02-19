@@ -1,33 +1,23 @@
-# Responsive Animated Space Control
+# HTML5 Canvas Drawing Board
 
-This coding challenge is from a online tutorial [*Learn the Web*](https://learn-the-web.algonquindesign.ca/).
+This coding challenge is from a online video course by [Wes Bos](https://javascript30.com/).  
 
-A full responsive, animated dashboard website with accessibility features.  
+A simple drawing board using vanilla javascript and HTML5 Canvas.  
 
-[**View Demo**](https://pamcy.github.io/50Websites/39-admin-space-control/)
+[**View Demo**](https://pamcy.github.io/50Websites/40-canvas-drawing-board/)
 
-![Responsive Animated Space Control](./dist/img/demo-space-control.gif)
-
+![HTML5 Canvas Drawing Board](./dist/img/demo-canvas-board.gif)
 
 ## What did I learn from this project?
 
-- Responsive  
-It's a mobile first website use of *[LostGrid](http://lostgrid.org/)* (A PostCSS Plugin) and *Flexbox*.
+- Canvas HTML5 element 
+Connect and create the path between two points then draw it out. The line is multicolor, and will increase and decrease in width.  
 
-- Accessibility  
-Add basic accessibility features to the website, include the keyboard accessibility and tab controls.
+- Mouse events
+Attach drawing functions for these events: `mousemove`, `mousedown`, `mouseup`, `mouseout`.  
 
-- Slide In Navigation Menu  
-The menu is hidden off screen until the user clicks on a menu icon. (RWD support)
+- HSL color
+I understand how it works, so powerful with javascript to control different colors independently.
 
-- Animated Bar Chart  
-Animate the embedded SVG bar chart with CSS animations.
-
-- Counting numbers  
-Make the large distance number count up from zero.
-
-- Resoponsive table design  
-Styling data table and make it scrolls horizontally on small screen.
-
-- Tabs  
-Swtich between different sections of content with CSS and JS.
+- Download image
+Get the data URL and save the entire canvas content.
