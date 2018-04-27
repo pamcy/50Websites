@@ -2,6 +2,8 @@
 
 I knew that if I was going to succeed at learning to code, I would need to apply knowledge as much as possible. I devoted to build something from what I learned, below is a list of websites I made lately, some took a couple of days to complete. (Still Updating)
 
+- [x] [42 - CSS Grid Image Gallery With Overlay](https://pamcy.github.io/50Websites/42-css-grid-image-gallery/)
+
 - [x] [41 - Lotto Prize Generator](https://pamcy.github.io/50Websites/41-lotto-prize-generator/)
 
 - [x] [40 - HTML5 Canvas Drawing Board](https://pamcy.github.io/50Websites/40-canvas-drawing-board/)

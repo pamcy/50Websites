@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background: #e5e5e5;
+}
+
+.title {
+  color: #555;
+  margin: 40px 0 0;
+  text-align: center;
+}
+
+.overlay {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  z-index: 2;
+}
+
+.overlay.open {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.overlay__inner {
+  background: white;
+  width: 700px;
+  padding: 20px;
+}
+
+.overlay__close {
+  background: none;
+  color: black;
+  border: 0;
+  cursor: pointer;
+}
+
+.overlay__image {
+  width: 100%;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 100px);
+  grid-auto-rows: 100px;
+  grid-auto-flow: dense;
+  justify-content: center;
+  padding: 50px;
+}
+
+.h-2 {
+  grid-column: span 2;
+}
+
+.h-3 {
+  grid-column: span 3;
+}
+
+.h-4 {
+  grid-column: span 4;
+}
+
+.v-2 {
+  grid-row: span 2;
+}
+
+.v-3 {
+  grid-row: span 3;
+}
+
+.v-4 {
+  grid-row: span 4;
+}
+
+.item {
+  overflow: hidden;
+  /* Create an overlap */
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: 1;
+}
+
+.item__image {
+  /* Create an overlap without position absolute */
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item__overlay {
+  /* Create an overlap without position absolute */
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.2);
+  transform: translateY(100%);
+  transition: transform 0.3s;
+}
+
+.item:hover .item__overlay {
+  transform: translateY(0);
+}
+
+.item__view-btn {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 5px 10px;
+  border: 2px solid white;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+}
