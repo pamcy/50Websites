@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Grid article layout</title>
+
+    <!--Stylesheets-->
+    <link rel="stylesheet" href="style.css">
+
+    <!--Google Analytics-->
+    <script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-96360862-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+</head>
+<body>
+    <main class="wrapper">
+        <header class="header">
+            <div class="intro">
+                <span class="intro__feature">Today's Feature Story</span>
+                <h1 class="intro__heading">The Adventures of Tom Sawyer</h1>
+                <p class="intro__description">It is an 1876 novel about a young boy growing up along the Mississippi River.</p>
+                <div class="intro__author">
+                    <img src="" alt="" class="intro__author-img">
+                    <span class="intro__author-name">Mark Twain</span>
+                    <time class="intro__publish-time">Yesterday</time>
+                </div>
+            </div>
+            <figure class="cover-photo">
+                <img src="dist/imgs/tom-04.jpg" alt="" class="cover-photo__img">
+                <figcaption class="cover-photo__caption">A small brick cottage with trees at the back in the middle of a dry plain</figcaption>
+            </figure>
+        </header>
+        <article class="article">
+            <p class="article__content">Tom swept his brush daintily back and forth — stepped back to note the effect — added a touch here and there — criticised the effect again — Ben watching every move and getting more and more interested, more and more absorbed. Presently he said:</p>
+
+            <blockquote class="article__highlight">"Say, Tom, let me whitewash a little."</blockquote>
+
+            <p class="article__content">Tom considered, was about to consent; but he altered his mind:</p>
+
+            <figure class="cover-photo">
+                <img src="dist/imgs/tom-01.jpg" alt="" class="cover-photo__img">
+                <figcaption class="cover-photo__caption">A tall wooden fence painted blue and yellow with a white folk pattern in the middle</figcaption>
+            </figure>
+
+            <p class="article__content">No — no — I reckon it wouldn't hardly do, Ben. You see, Aunt Polly's awful particular about this fence — right here on the street, you know — but if it was the back fence I wouldn't mind and she wouldn't. Yes, she's awful particular about this fence; it's got to be done very careful; I reckon there ain't one boy in a thousand, maybe two thousand, that can do it the way it's got to be done.</p>
+
+            <div class="article__note">
+                <p class="article__note-text"></p>
+            </div>
+
+            <blockquote class="article__highlight">"I'll give you all of it!"</blockquote>
+
+            <p class="article__content">He had had a nice, good, idle time all the while — plenty of company — and the fence had three coats of whitewash on it! If he hadn't run out of whitewash he would have bankrupted every boy in the village.</p>
+
+            <div class="article__note">
+                <img src="dist/imgs/tom-02.jpg" alt="" class="article__note-img">
+            </div>
+
+            <p class="article__content">Tom said to himself that it was not such a hollow world, after all. He had discovered a great law of human action, without knowing it</p>
+
+            <figure class="cover-photo">
+                <img src="dist/imgs/tom-03.jpg" alt="" class="cover-photo__img">
+                <figcaption class="cover-photo__caption">Tourists on the deck of a riverboat with a towering mountain range in the distance</figcaption>
+            </figure>
+
+            <blockquote class="article__highlight">in order to make a man or a boy covet a thing, it is only necessary to make the thing difficult to attain.</blockquote>
+
+            <p class="article__content"> If he had been a great and wise philosopher, like the writer of this book, he would now have comprehended that Work consists of whatever a body is obliged to do, and that Play consists of whatever a body is not obliged to do. And this would help him to understand why constructing artificial flowers or performing on a tread-mill is work, while rolling ten-pins or climbing Mont Blanc is only amusement.</p>
+        </article>
+    </main>
+
+</body>
+</html>
