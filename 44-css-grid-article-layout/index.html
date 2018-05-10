@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CSS Grid article layout</title>
+    <title>Responsive Article Layouts with CSS Grid</title>
 
     <!--Stylesheets-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dist/css/style.css">
 
     <!--Google Analytics-->
     <script>
@@ -29,7 +29,7 @@
                 <h1 class="intro__heading">The Adventures of Tom Sawyer</h1>
                 <p class="intro__description">It is an 1876 novel about a young boy growing up along the Mississippi River.</p>
                 <div class="intro__author">
-                    <img src="" alt="" class="intro__author-img">
+                    <img src="dist/imgs/mark.jpg" alt="" class="intro__author-img">
                     <span class="intro__author-name">Mark Twain</span>
                     <time class="intro__publish-time">Yesterday</time>
                 </div>
@@ -40,43 +40,65 @@
             </figure>
         </header>
         <article class="article">
+            <p class="article__content">Tom gave up the brush with reluctance in his face, but alacrity in his heart. And while the late steamer Big Missouri worked and sweated in the sun, the retired artist sat on a barrel in the shade close by, dangled his legs, munched his apple, and planned the slaughter of more innocents. There was no lack of material; boys happened along every little while; they came to jeer, but remained to whitewash.</p>
+
             <p class="article__content">Tom swept his brush daintily back and forth — stepped back to note the effect — added a touch here and there — criticised the effect again — Ben watching every move and getting more and more interested, more and more absorbed. Presently he said:</p>
 
-            <blockquote class="article__highlight">"Say, Tom, let me whitewash a little."</blockquote>
+            <p class="article__content">"Say, Tom, let me whitewash a little."</p>
 
             <p class="article__content">Tom considered, was about to consent; but he altered his mind:</p>
 
-            <figure class="cover-photo">
-                <img src="dist/imgs/tom-01.jpg" alt="" class="cover-photo__img">
-                <figcaption class="cover-photo__caption">A tall wooden fence painted blue and yellow with a white folk pattern in the middle</figcaption>
+            <figure class="article-photo">
+                <img src="dist/imgs/tom-01.jpg" alt="" class="article-photo__img article-photo__img--wide">
+                <figcaption class="article-photo__caption">A tall wooden fence painted blue and yellow with a white folk pattern in the middle</figcaption>
             </figure>
 
             <p class="article__content">No — no — I reckon it wouldn't hardly do, Ben. You see, Aunt Polly's awful particular about this fence — right here on the street, you know — but if it was the back fence I wouldn't mind and she wouldn't. Yes, she's awful particular about this fence; it's got to be done very careful; I reckon there ain't one boy in a thousand, maybe two thousand, that can do it the way it's got to be done.</p>
-
-            <div class="article__note">
-                <p class="article__note-text"></p>
-            </div>
 
             <blockquote class="article__highlight">"I'll give you all of it!"</blockquote>
 
             <p class="article__content">He had had a nice, good, idle time all the while — plenty of company — and the fence had three coats of whitewash on it! If he hadn't run out of whitewash he would have bankrupted every boy in the village.</p>
 
-            <div class="article__note">
-                <img src="dist/imgs/tom-02.jpg" alt="" class="article__note-img">
+            <div class="article__note article__note--right article__note--span-5">
+                <img src="dist/imgs/tom-02.jpg" alt="" class="article__note-img article__note-img--portrait">
+                <p class="article__note-text">Tom Sawyer is a boy of about 12 years of age, who resides in the fictional town of St. Petersburg, Missouri, in about the year 1845.</p>
+                <p class="article__note-text">He lives with his half-brother Sid, his cousin Mary, and his stern Aunt Polly.</p>
+                <p class="article__note-text">There is no mention of Tom's father, as Tom's mother and father are dead.</p>
             </div>
 
             <p class="article__content">Tom said to himself that it was not such a hollow world, after all. He had discovered a great law of human action, without knowing it</p>
 
-            <figure class="cover-photo">
-                <img src="dist/imgs/tom-03.jpg" alt="" class="cover-photo__img">
-                <figcaption class="cover-photo__caption">Tourists on the deck of a riverboat with a towering mountain range in the distance</figcaption>
-            </figure>
+            <p class="article__content">Jim was only human — this attraction was too much for him. He put down his pail, took the white alley, and bent over the toe with absorbing interest while the bandage was being unwound. </p>
+
+            <p class="article__content">In another moment he was flying down the street with his pail and a tingling rear, Tom was whitewashing with vigor.</p>
+
+            <p class="article__content">Tom gave up the brush with reluctance in his face, but alacrity in his heart. And while the late steamer Big Missouri worked and sweated in the sun, the retired artist sat on a barrel in the shade close by, dangled his legs, munched his apple, and planned the slaughter of more innocents. There was no lack of material; boys happened along every little while; they came to jeer, but remained to whitewash.</p>
 
             <blockquote class="article__highlight">in order to make a man or a boy covet a thing, it is only necessary to make the thing difficult to attain.</blockquote>
 
+            <p class="article__content">By the time Ben was fagged out, Tom had traded the next chance to Billy Fisher for a kite, in good repair; and when he played out, Johnny Miller bought in for a dead rat and a string to swing it with — and so on, and so on, hour after hour.</p>
+
+            <div class="article__note article__note--left article__note--span-2">
+                <p class="article__note-text">Canadian rock band Rush published a song entitled <a href="https://en.wikipedia.org/wiki/Tom_Sawyer_(song)" class="article__note-link">Tom Sawyer</a> in 1981, which is inspired by the book.</p>
+            </div>
+
+            <p class="article__content">And when the middle of the afternoon came, from being a poor poverty-stricken boy in the morning, Tom was literally rolling in wealth. He had besides the things before mentioned, twelve marbles, part of a jews-harp, a piece of blue bottle-glass to look through, a spool cannon, a key that wouldn't unlock anything, a fragment of chalk, a glass stopper of a decanter, a tin soldier, a couple of tadpoles, six fire-crackers, a kitten with only one eye, a brass doorknob, a dog-collar — but no dog — the handle of a knife, four pieces of orange-peel, and a dilapidated old window sash.</p>
+
+            <figure class="article-photo">
+                <img src="dist/imgs/tom-03.jpg" alt="" class="article-photo__img">
+                <figcaption class="article-photo__caption">Tourists on the deck of a riverboat with a towering mountain range in the distance</figcaption>
+            </figure>
+
+            <p class="article__content">There are wealthy gentlemen in England who drive four-horse passenger-coaches twenty or thirty miles on a daily line, in the summer, because the privilege costs them considerable money; but if they were offered wages for the service, that would turn it into work and then they would resign.</p>
+
             <p class="article__content"> If he had been a great and wise philosopher, like the writer of this book, he would now have comprehended that Work consists of whatever a body is obliged to do, and that Play consists of whatever a body is not obliged to do. And this would help him to understand why constructing artificial flowers or performing on a tread-mill is work, while rolling ten-pins or climbing Mont Blanc is only amusement.</p>
+
+            <blockquote class="article__highlight">The secret of getting ahead is getting started.</blockquote>
+
+            <p class="article__content">The boy mused awhile over the substantial change which had taken place in his worldly circumstances, and then wended toward headquarters to report.</p>
+
+            <blockquote class="article__highlight">- Mark Twain</blockquote>
         </article>
     </main>
-
 </body>
 </html>

@@ -1,2 +1,209 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: rgba(0, 0, 0, 0.84); }
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit; }
+
+img {
+  display: block;
+  width: 100%; }
+
+figure {
+  margin: 0; }
+
+.wrapper {
+  display: grid;
+  grid-gap: 25px;
+  max-width: 1200px;
+  margin: 5vh auto;
+  padding: 0 10px; }
+
+/* ---------------------------------
+Header Section
+--------------------------------- */
+.header {
+  display: grid; }
+  @media (min-width: 1025px) {
+    .header {
+      grid-gap: 20px;
+      grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 1024px) {
+    .header {
+      grid-gap: 50px;
+      grid-template-columns: 1fr; } }
+
+.intro__feature {
+  text-transform: uppercase;
+  color: #f85f01;
+  font-family: "Lucida Grande", Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700; }
+
+.intro__heading {
+  color: rgba(0, 0, 0, 0.84); }
+  @media (min-width: 1025px) {
+    .intro__heading {
+      margin: 20px 0;
+      font-size: 3.5rem; } }
+  @media (max-width: 1024px) {
+    .intro__heading {
+      margin: 10px 0;
+      font-size: 2.25rem; } }
+
+.intro__description {
+  font-family: "Lucida Grande", Arial, sans-serif;
+  color: #444; }
+  @media (min-width: 1025px) {
+    .intro__description {
+      font-size: 1.5rem; } }
+  @media (max-width: 1024px) {
+    .intro__description {
+      margin-top: 0;
+      font-size: 1.25rem; } }
+
+.intro__author {
+  display: grid;
+  grid-column-gap: 10px;
+  grid-template-columns: auto 1fr;
+  grid-auto-rows: 25px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.intro__author-img {
+  grid-row: span 2;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%; }
+
+.intro__author-name,
+.intro__publish-time {
+  font-family: "Lucida Grande", Arial, sans-serif;
+  font-size: 0.875rem; }
+
+.intro__publish-time {
+  font-family: "Lucida Grande", Arial, sans-serif;
+  color: #444; }
+
+@media (max-width: 1024px) {
+  .cover-photo {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1; } }
+
+@media (max-width: 1024px) {
+  .cover-photo__img {
+    max-height: 400px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: 100% 90%;
+       object-position: 100% 90%; } }
+
+.cover-photo__caption {
+  margin-top: 5px;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #848484; }
+  @media (max-width: 1024px) {
+    .cover-photo__caption {
+      text-align: center; } }
+
+/* ---------------------------------
+Article Section
+--------------------------------- */
+.article {
+  display: grid;
+  grid-column-gap: 50px;
+  grid-template-columns: [leftside-start] 2fr [leftside-end content-start] 7fr [content-end rightside-start] 3fr [rightside-end];
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start; }
+
+@media (min-width: 851px) {
+  .article > * {
+    grid-column: content; } }
+
+@media (max-width: 850px) {
+  .article > * {
+    grid-column: leftside / rightside; } }
+
+.article__content {
+  text-align: justify;
+  font-size: 1.25rem;
+  line-height: 1.58; }
+
+.article__note {
+  padding: 10px;
+  background: #fafafa;
+  color: #444; }
+  @media (min-width: 851px) {
+    .article__note {
+      -ms-flex-item-align: start;
+          align-self: start; } }
+
+.article__note-text {
+  line-height: 1.3; }
+
+@media (max-width: 850px) {
+  .article__note-img--portrait {
+    max-width: 350px;
+    margin: 0 auto; } }
+
+.article__note-link {
+  font-weight: 600;
+  font-style: italic;
+  -webkit-text-decoration: underline wavy #ffc600;
+          text-decoration: underline wavy #ffc600;
+  color: rgba(0, 0, 0, 0.84); }
+
+.article__note--left {
+  border-right: 2px solid #ffc600; }
+  @media (min-width: 851px) {
+    .article__note--left {
+      grid-column: leftside;
+      text-align: right; } }
+
+.article__note--right {
+  border-left: 2px solid #ffc600; }
+  @media (min-width: 851px) {
+    .article__note--right {
+      grid-column: rightside; } }
+
+.article__note--span-5 {
+  grid-row: span 5; }
+
+.article-photo,
+.article__highlight {
+  grid-column: leftside-start / rightside-end; }
+
+.article-photo {
+  margin: 1.5rem 0; }
+
+.article-photo__img--wide {
+  max-height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover; }
+
+.article-photo__caption {
+  display: block;
+  margin-top: 5px;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #444; }
+
+.article__highlight {
+  text-align: center;
+  font-family: Cambria, Cochin, Times, serif;
+  font-size: 2.8rem;
+  font-weight: 400;
+  font-style: italic;
+  color: #444; }
 
 /*# sourceMappingURL=maps/style.css.map */

@@ -1,8 +1,8 @@
-# Lotto Prize Generator
+# Responsive Article Layouts with CSS Grid
 
-Click on the middle of the circle to draw the lottery. With JS functions to complete the whole operation, including animated progressive movement, speed controll in each step, final prize position and congratulations modal.  
+This project is inspired by the famous Medium article layout using `CSS Grid`, which contains the type of content you'll typically find in Medium. Be sure to shrink or enlarge the browser window to check the responsive design.  
 
-[**View Demo**](https://pamcy.github.io/50Websites/41-lotto-prize-generator/)
+[**View Demo**](https://pamcy.github.io/50Websites/44-css-grid-article-layout/)
 
-![Lotto Prize Generator](./dist/img/demo-lotto-prize.gif)
+![Responsive Article Layouts with CSS Grid](./dist/imgs/demo-css-grid-article-layout.png)
 

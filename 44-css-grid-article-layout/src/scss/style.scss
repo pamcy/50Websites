@@ -1,0 +1,242 @@
+@import '_base.scss';
+
+html {
+    box-sizing: border-box;
+    font-family: $main-font;
+    color: $black;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+figure {
+    margin: 0;
+}
+
+.wrapper {
+    display: grid;
+    grid-gap: 25px;
+    max-width: 1200px;
+    margin: 5vh auto;
+    padding: 0 10px;
+}
+
+/* ---------------------------------
+Header Section
+--------------------------------- */
+.header {
+    display: grid;
+
+    @include media('above-large') {
+        grid-gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media('below-large') {
+        grid-gap: 50px;
+        grid-template-columns: 1fr;
+    }
+}
+
+.intro__feature {
+    text-transform: uppercase;
+    color: $orange;
+    font-family: $secondary-font;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.intro__heading {
+    color: $black;
+
+    @include media('above-large') {
+        margin: 20px 0;
+        font-size: 3.5rem;
+    }
+
+    @include media('below-large') {
+        margin: 10px 0;
+        font-size: 2.25rem;
+    }
+}
+
+.intro__description {
+    font-family: $secondary-font;
+    color: $dark-gray;
+
+    @include media('above-large') {
+        font-size: 1.5rem;
+    }
+
+    @include media('below-large') {
+        margin-top: 0;
+        font-size: 1.25rem;
+    }
+}
+
+.intro__author {
+    display: grid;
+    grid-column-gap: 10px;
+    grid-template-columns: auto 1fr;
+    grid-auto-rows: 25px;
+    align-items: center;
+}
+
+.intro__author-img {
+    grid-row: span 2;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.intro__author-name,
+.intro__publish-time {
+    font-family: $secondary-font;
+    font-size: 0.875rem;
+}
+
+.intro__publish-time {
+    font-family: $secondary-font;
+    color: $dark-gray;
+}
+
+.cover-photo {
+    @include media('below-large') {
+        order: -1;
+    }
+}
+
+.cover-photo__img {
+    @include media('below-large') {
+        max-height: 400px;
+        object-fit: cover;
+        object-position: 100% 90%;
+    }
+}
+
+.cover-photo__caption {
+    margin-top: 5px;
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: lighten($dark-gray, 25%);
+
+    @include media('below-large') {
+        text-align: center;
+    }
+}
+
+/* ---------------------------------
+Article Section
+--------------------------------- */
+.article {
+    display: grid;
+    grid-column-gap: 50px;
+    grid-template-columns: [leftside-start] 2fr [leftside-end content-start] 7fr [content-end rightside-start] 3fr [rightside-end];
+    align-items: start;
+}
+
+.article > * {
+    @include media('above-small') {
+        grid-column: content;
+    }
+
+    @include media('below-small') {
+        grid-column: leftside / rightside;
+    }
+}
+
+.article__content {
+    text-align: justify;
+    font-size: 1.25rem;
+    line-height: 1.58;
+}
+
+.article__note {
+    padding: 10px;
+    background: $gray;
+    color: $dark-gray;
+
+    @include media('above-small') {
+        align-self: start;
+    }
+}
+
+.article__note-text {
+    line-height: 1.3;
+}
+
+.article__note-img--portrait {
+    @include media('below-small') {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+}
+
+.article__note-link {
+    font-weight: 600;
+    font-style: italic;
+    text-decoration: underline wavy $yellow;
+    color: $black;
+}
+
+.article__note--left {
+    border-right: 2px solid $yellow;
+
+    @include media('above-small') {
+        grid-column: leftside;
+        text-align: right;
+    }
+}
+
+.article__note--right {
+    border-left: 2px solid $yellow;
+
+    @include media('above-small') {
+        grid-column: rightside;
+    }
+}
+
+.article__note--span-5 {
+    grid-row: span 5;
+}
+
+.article-photo,
+.article__highlight {
+    grid-column: leftside-start / rightside-end;
+}
+
+.article-photo {
+    margin: 1.5rem 0;
+}
+
+.article-photo__img--wide {
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.article-photo__caption {
+    display: block;
+    margin-top: 5px;
+    text-align: center;
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: $dark-gray;
+}
+
+.article__highlight {
+    text-align: center;
+    font-family: $highlight-font;
+    font-size: 2.8rem;
+    font-weight: 400;
+    font-style: italic;
+    color: $dark-gray;
+}
+

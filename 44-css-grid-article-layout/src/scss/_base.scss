@@ -1,0 +1,30 @@
+// Colors
+$black: rgba(0, 0, 0, 0.84);
+$gray: #fafafa;
+$dark-gray: #444;
+$yellow: #ffc600;
+$orange: #f85f01;
+
+// Fonts
+$main-font: Georgia, "Times New Roman", Times, serif;
+$secondary-font: "Lucida Grande", Arial, sans-serif;
+$highlight-font: Cambria, Cochin, Times, serif;
+
+// Media queries
+@mixin media($point) {
+    @if $point == 'above-large' {
+        @media (min-width: 1025px) { @content; }
+    }
+
+    @if $point == 'below-large' {
+        @media (max-width: 1024px) { @content; }
+    }
+
+    @if $point == 'above-small' {
+        @media (min-width: 851px) { @content; }
+    }
+
+    @if $point == 'below-small' {
+        @media (max-width: 850px) { @content; }
+    }
+}
