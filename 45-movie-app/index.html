@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MovieBuddy - The Movie App</title>
+
+  <!--Stylesheets-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!--Google Analytics-->
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-96360862-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 class="header__heading">Movie Buddy</h1>
+      <div class="header__search">
+        <img src="imgs/search-icon.svg" alt="" class="header__search-icon">
+        <input type="text" name="searchMovie" id="" class="header__search-bar" placeholder="Search Movies...">
+      </div>
+      <div class="header__user">
+        <span class="header__user-name">Hello, Stranger</span>
+        <img src="imgs/avatar.png" alt="" class="header__user-avatar">
+      </div>
+    </header>
+
+    <aside class="sidebar">
+      <ul class="sidebar__list">
+        <li class="sidebar__item" id="js-top-playing" data-tabs-id="menu-tab-1">
+          <span class="sidebar__item-menu">Now Playing</span>
+          <img src="imgs/arrow-icon.svg" alt="" class="sidebar__item-go-icon">
+        </li>
+        <li class="sidebar__item" id="js-upcoming" data-tabs-id="menu-tab-2">
+          <span class="sidebar__item-menu">Upcoming</span>
+          <img src="imgs/arrow-icon.svg" alt="" class="sidebar__item-go-icon">
+        </li>
+        <li class="sidebar__item" id="js-top-rated" data-tabs-id="menu-tab-3">
+          <span class="sidebar__item-menu">Top Rated</span>
+          <img src="imgs/arrow-icon.svg" alt="" class="sidebar__item-go-icon">
+        </li>
+      </ul>
+    </aside>
+
+    <div class="overlay">
+      <div class="overlay__inside">
+        <section class="overlay__backdrop">
+          <div class="overlay__backdrop-items">
+            <img src="" alt="" class="overlay__poster">
+            <span class="overlay__votes"></span>
+          </div>
+        </section>
+        <section class="overlay__summary">
+          <div class="overlay__header">
+            <h2 class="overlay__heading">The Jungle Book 2016</h2>
+            <span class="overlay__runtime">135mins</span>
+            <span class="overlay__category">Crime, Comedy, Action, Thriller</span>
+          </div>
+          <p class="overlay__description">A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground \"fight clubs\" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion.</p>
+        </section>
+        <section class="overlay__cast">
+          <h3 class="overlay__subheading">Cast</h3>
+          <ul class="overlay__cast-list">
+            <li class="overlay__cast-item">
+              <img src="https://image.tmdb.org/t/p/w200/kc3M04QQAuZ9woUvH3Ju5T7ZqG5.jpg" alt="" class="overlay__cast-avatar">
+              <span class="overlay__cast-name">Brad Pitt</span>
+            </li>
+          </ul>
+        </section>
+        <section class="overlay__video">
+          <h3 class="overlay__subheading">Videos</h3>
+          <ul class="overlay__video-list">
+            <li class="overlay__video-item">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/533ec654c3a36854480003eb" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <main class="main">
+      <h2 class="main__heading">Now Playing</h2>
+      <ul class="main__movie-list"></ul>
+    </main>
+
+    <footer class="footer">
+      The movie details come from
+      <a href="https://www.themoviedb.org/" class="footer__link">TMDB API</a>. It's a JS asynchronous learning project made with love by Pamcy.
+    </footer>
+
+    
+    <!-- <h1 class="app__heading">Your weekeng buddy for this weekend</h1>
+    <ul class="movie-list__tags">
+      <li class="movie-list_tag">#NowPlayingMovies</li>
+      <li class="movie-list_tag">#UpComingMovies</li>
+    </ul>
+    <main class="app__main">
+      <div class="overlay">
+
+      </div>
+      <div class="movie-list">
+        <div class="movie-list__items">
+        </div>
+      </div>
+    </main> -->
+
+  </div>
+
+  <!-- scripts -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
