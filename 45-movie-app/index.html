@@ -8,7 +8,7 @@
   <title>MovieBuddy - The Movie App</title>
 
   <!--Stylesheets-->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 
   <!--Google Analytics-->
@@ -57,39 +57,78 @@
 
     <div class="overlay">
       <div class="overlay__inside">
-        <section class="overlay__backdrop">
-          <div class="overlay__backdrop-items">
-            <img src="" alt="" class="overlay__poster">
-            <span class="overlay__votes"></span>
+        <div class="overlay__close">
+          <img src="imgs/close-icon.svg" class="overlay__close-icon">
+        </div>
+
+        <section class="overlay__backdrop" style="background-image: url('https://image.tmdb.org/t/p/w1400_and_h450_face/2qou2R47XZ1N6SlqGZcoCHDyEhN.jpg');"></section>
+
+        <section class="overlay__main">
+          <div class="overlay__main-header">
+            <img src="https://image.tmdb.org/t/p/w500/4oD6VEccFkorEBTEDXtpLAaz0Rl.jpg" class="overlay__poster">
+            <span class="overlay__votes">7.2</span>
+          </div>
+
+          <div class="overlay__main-content">
+            <div class="overlay__info">
+              <div class="overlay__info-title">
+                <h2 class="overlay__info-heading">The Jungle Book 2016</h2>
+                <span class="overlay__info-runtime">135mins</span>
+              </div>
+              <span class="overlay__info-category">Crime, Comedy, Action, Thriller</span>
+              <p class="overlay__info-overview">A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground \"fight clubs\" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion.</p>
+
+            <div class="overlay__container">
+              <div class="overlay__cast">
+                  <h3 class="overlay__subheading">Cast</h3>
+                  <ul class="overlay__cast-list">
+                    <li class="overlay__cast-item">
+                      <div class="overlay__cast-img-container">
+                        <img src="https://image.tmdb.org/t/p/w200/kc3M04QQAuZ9woUvH3Ju5T7ZqG5.jpg" alt="" class="overlay__cast-img">
+                      </div>
+                      <span class="overlay__cast-name">Brad Pitt</span>
+                    </li>
+                    <li class="overlay__cast-item">
+                      <div class="overlay__cast-img-container">
+                        <img src="https://image.tmdb.org/t/p/w200/kc3M04QQAuZ9woUvH3Ju5T7ZqG5.jpg" alt="" class="overlay__cast-img">
+                      </div>
+                      <span class="overlay__cast-name">Bryce Dallas Howard</span>
+                    </li>
+                    <li class="overlay__cast-item">
+                        <div class="overlay__cast-img-container">
+                          <img src="https://image.tmdb.org/t/p/w200/kc3M04QQAuZ9woUvH3Ju5T7ZqG5.jpg" alt="" class="overlay__cast-img">
+                        </div>
+                        <span class="overlay__cast-name">Bryce Dallas Howard</span>
+                      </li>
+                      <li class="overlay__cast-item">
+                          <div class="overlay__cast-img-container">
+                            <img src="https://image.tmdb.org/t/p/w200/kc3M04QQAuZ9woUvH3Ju5T7ZqG5.jpg" alt="" class="overlay__cast-img">
+                          </div>
+                          <span class="overlay__cast-name">Brad Pitt</span>
+                        </li>
+                        <li class="overlay__cast-item">
+                            <div class="overlay__cast-img-container">
+                              <img src="https://image.tmdb.org/t/p/w200/kc3M04QQAuZ9woUvH3Ju5T7ZqG5.jpg" alt="" class="overlay__cast-img">
+                            </div>
+                            <span class="overlay__cast-name">Brad Pitt</span>
+                          </li>
+                            
+                  </ul>
+                </div>
+            </div>
+
+            <div class="overlay__container">
+              <div class="overlay__video">
+                  <h3 class="overlay__subheading">Videos</h3>
+                  <div class="overlay__video-wrapper">
+                      <iframe width="560" height="315" src="https://www.youtube.com/embed/533ec654c3a36854480003eb" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  </div>
+                </div>
+            </div>
           </div>
         </section>
-        <section class="overlay__summary">
-          <div class="overlay__header">
-            <h2 class="overlay__heading">The Jungle Book 2016</h2>
-            <span class="overlay__runtime">135mins</span>
-            <span class="overlay__category">Crime, Comedy, Action, Thriller</span>
-          </div>
-          <p class="overlay__description">A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground \"fight clubs\" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion.</p>
-        </section>
-        <section class="overlay__cast">
-          <h3 class="overlay__subheading">Cast</h3>
-          <ul class="overlay__cast-list">
-            <li class="overlay__cast-item">
-              <img src="https://image.tmdb.org/t/p/w200/kc3M04QQAuZ9woUvH3Ju5T7ZqG5.jpg" alt="" class="overlay__cast-avatar">
-              <span class="overlay__cast-name">Brad Pitt</span>
-            </li>
-          </ul>
-        </section>
-        <section class="overlay__video">
-          <h3 class="overlay__subheading">Videos</h3>
-          <ul class="overlay__video-list">
-            <li class="overlay__video-item">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/533ec654c3a36854480003eb" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </li>
-          </ul>
-        </section>
-      </div>
-    </div>
+      </div> <!-- overlay__inside -->
+    </div> <!-- overlay -->
 
     <main class="main">
       <h2 class="main__heading">Now Playing</h2>
