@@ -406,7 +406,7 @@ Overlay Section
   width: 60px;
   height: 60px;
   object-fit: cover;
-  object-position: top center;
+  object-position: center center;
   border-radius: 50%;
 }
 
@@ -445,6 +445,10 @@ Main Movie List Section
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   list-style-type: none;
   padding: 0;
+}
+
+.main__movie-item {
+  cursor: pointer;
 }
 
 .main__movie-top {
