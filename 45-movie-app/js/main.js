@@ -5,13 +5,16 @@ const heading = document.querySelector('.main__heading');
 const list_container = document.querySelector('.main__movie-list');
 const modal = document.querySelector('.overlay');
 const modal_close_btn = document.querySelector('.overlay__close-icon');
+const search_field = document.querySelector('#js-search');
 const genres_storage = {};
 const now_playing_storage = [];
 const upcoming_storage = [];
 const top_rated_storage = [];
-let details_storage;
-let casts_storage;
-let videos_storage;
+const details_storage = [];
+const casts_storage = [];
+const videos_storage = [];
+const search_storage = [];
+let search_timeout = null;
 
 const api = {
   key: 'ffea606c542fc11ca9059abde95f3e90',
@@ -37,6 +40,9 @@ const api = {
   },
   getVideoUrl(id) {
     return `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${this.key}`;
+  },
+  getSearchUrl(value) {
+    return `https://api.themoviedb.org/3/search/movie?api_key=${this.key}&query=${value}&page=1`;
   },
 };
 
@@ -84,24 +90,51 @@ const movie = {
     return fetch(api.getMovieDetailsUrl(id))
       .then(response => response.json())
       .then((data) => {
-        details_storage = data;
+        const exist = details_storage.findIndex((current) => {
+          return current.id == id;
+        });
+
+        if (exist < 0) {
+          details_storage.push(data);
+        }
+
+        return details_storage;
       });
   },
   fetchCastsData(id) {
     return fetch(api.getCastsUrl(id))
       .then(response => response.json())
       .then((data) => {
-        casts_storage = data.cast;
+        const exist = casts_storage.findIndex((current) => {
+          return current.id == id;
+        });
+
+        if (exist < 0) {
+          casts_storage.push(data);
+        }
+
+        return casts_storage;
       });
   },
   fetchVideosData(id) {
     return fetch(api.getVideoUrl(id))
       .then(response => response.json())
       .then((data) => {
-        videos_storage = data.results;
+        console.log(data);
+
+        const exist = videos_storage.findIndex((current) => {
+          return current.id == id;
+        });
+
+        if (exist < 0) {
+          videos_storage.push(data);
+        }
+
+        console.log(videos_storage);
+        return videos_storage;
       });
   },
-  writeModalContent(e) {
+  renderModalContent(e) {
     const current_movie = e.target.closest('.main__movie-item');
 
     if (!current_movie) {
@@ -109,9 +142,9 @@ const movie = {
     }
 
     const movie_id = current_movie.dataset.id;
-    const details = movie.fetchMovieDetails(movie_id);
-    const casts = movie.fetchCastsData(movie_id);
-    const videos = movie.fetchVideosData(movie_id);
+    const details_data = movie.fetchMovieDetails(movie_id);
+    const casts_data = movie.fetchCastsData(movie_id);
+    const videos_data = movie.fetchVideosData(movie_id);
 
     const backdrop = document.querySelector('.overlay__backdrop');
     const vote = document.querySelector('.overlay__votes');
@@ -123,33 +156,36 @@ const movie = {
     const casts_container = document.querySelector('.overlay__cast-list');
     const video_container = document.querySelector('.overlay__video-wrapper');
 
-    details.then(() => {
-      backdrop.style.backgroundImage = `url('${api.img_prefix}1280/${details_storage.backdrop_path}')`;
+    details_data.then((data) => {
+      const match_data = data.filter(item => item.id == movie_id);
 
-      poster.src = `${api.img_prefix}300/${details_storage.poster_path}`;
+      backdrop.style.backgroundImage = `url('${api.img_prefix}1280/${match_data[0].backdrop_path}')`;
 
-      vote.textContent = `${details_storage.vote_average}`;
+      poster.src = `${api.img_prefix}300/${match_data[0].poster_path}`;
 
-      name.textContent = details_storage.original_title;
+      vote.textContent = `${match_data[0].vote_average}`;
 
-      runtime.textContent = `${details_storage.runtime}mins`;
+      name.textContent = match_data[0].original_title;
+
+      runtime.textContent = `${match_data[0].runtime}mins`;
 
       category.textContent = current_movie.querySelector('.main__movie-category').textContent;
 
-      overview.textContent = `${details_storage.overview}`;
+      overview.textContent = `${match_data[0].overview}`;
     });
 
-    casts.then(() => {
+    casts_data.then((data) => {
       const casts_limit = 6;
-      const all_casts = casts_storage.splice(0, casts_limit);
+      const match_data = data.filter(item => item.id == movie_id);
+      const main_actor = match_data[0].cast.slice(0, casts_limit);
 
-      const casts_content = all_casts.map((cast) => {
+      const casts_content = main_actor.map((actor) => {
         return `
           <li class="overlay__cast-item">
             <div class="overlay__cast-img-container">
-              <img src="${api.img_prefix}200${cast.profile_path}" alt="${cast.name}'s photo" class="overlay__cast-img">
+              <img src="${api.img_prefix}200${actor.profile_path}" alt="${actor.name}'s photo" class="overlay__cast-img">
             </div>
-            <span class="overlay__cast-name">${cast.name}</span>
+            <span class="overlay__cast-name">${actor.name}</span>
           </li>
         `;
       }).join('');
@@ -157,13 +193,54 @@ const movie = {
       casts_container.innerHTML = casts_content;
     });
 
-    videos.then(() => {
-      const youtube_key = videos_storage[0].key;
+    videos_data.then((data) => {
+
+      const match_data = data.filter(item => item.id == movie_id);
+
+      console.log(match_data);
+      const youtube_key = match_data[0].results[0].key;
       const video_content = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${youtube_key}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
 
       video_container.innerHTML = video_content;
     });
   },
+  fetchSearchData() {
+    const search_dalay_time = 800;
+    const search_value = this.value;
+
+    clearTimeout(search_timeout);
+
+    search_timeout = setTimeout(() => {
+      return fetch(api.getSearchUrl(search_value))
+        .then(response => response.json())
+        .then((data) => {
+          search_storage.push(data.results);
+          // console.log(search_storage);
+          // console.log(search_value);
+        });
+    }, search_dalay_time);
+
+    movie.displayLatestMovieLists(search_storage.pop(), '搜尋');
+  },
+  // displaySearchLists() {
+
+  //   const test = search_storage.pop().map((item) => {
+  //     return `
+  //       <li class="main__movie-item" data-id="${item.id}">
+  //         <div class="main__movie-top">
+  //           <img src="${api.img_prefix}500${item.poster_path}" alt="${item.original_title}" class="main__movie-poster">
+  //           <span class="main__movie-votes">${item.vote_average}</span>
+  //         </div>
+  //         <div class="main__movie-bottom">
+  //           <h3 class="main__movie-name">${item.original_title}</h3>
+  //           <h4 class="main__movie-category">${item.genre_ids.map(id => movie.displayGenres(id)).join(', ')}</h4>
+  //         </div>
+  //       </li>
+  //       `;
+  //   }).join('');
+
+  //   list_container.innerHTML = test;
+  // },
   openModal(e) {
     if (e.target.closest('.main__movie-item')) {
       modal.classList.add('is-open');
@@ -171,6 +248,14 @@ const movie = {
   },
   closeModal() {
     modal.classList.remove('is-open');
+  },
+  toggleMenuStyle(e) {
+    const current = e.currentTarget;
+
+    current.parentElement.querySelectorAll('.sidebar__item').forEach((menu) => {
+      menu.classList.remove('is-active');
+    });
+    current.classList.add('is-active');
   },
 };
 
@@ -189,32 +274,23 @@ async function init() {
 
 init();
 
-function toggleMenuStyle(e) {
-  const current = e.currentTarget;
-
-  current.parentElement.querySelectorAll('.sidebar__item').forEach((menu) => {
-    menu.classList.remove('is-active');
-  });
-  current.classList.add('is-active');
-}
-
 top_playing_btn.addEventListener('click', (e) => {
-  toggleMenuStyle(e);
+  movie.toggleMenuStyle(e);
   movie.displayLatestMovieLists(now_playing_storage, e.currentTarget.textContent);
 });
 
 upcoming_btn.addEventListener('click', (e) => {
-  toggleMenuStyle(e);
+  movie.toggleMenuStyle(e);
   movie.displayLatestMovieLists(upcoming_storage, e.currentTarget.textContent);
 });
 
 top_rated_btn.addEventListener('click', (e) => {
-  toggleMenuStyle(e);
+  movie.toggleMenuStyle(e);
   movie.displayLatestMovieLists(top_rated_storage, e.currentTarget.textContent);
 });
 
 list_container.addEventListener('mouseover', (e) => {
-  movie.writeModalContent(e);
+  movie.renderModalContent(e);
 });
 
 list_container.addEventListener('click', (e) => {
@@ -223,23 +299,5 @@ list_container.addEventListener('click', (e) => {
 
 modal_close_btn.addEventListener('click', movie.closeModal);
 
-// menu_items.forEach((item) => {
-//   item.addEventListener('click', (e) => {
-
-//     // const now_playing_storage = [];
-//     // const upcoming_storage = [];
-//     // const top_rated_storage = [];
-//     console.log(e.currentTarget.dataset.item);
-
-//     const menu = {
-//       menu1: 'now_playing_storage',
-//       menu2: 'upcoming_storage',
-//       menu3: 'top_rated_storage',
-//     };
-
-//     if (e.currentTarget.dataset.item == men)
-
-//     movie.displayLatestMovieLists(top_rated_storage, e.target.textContent);
-//     // console.log(e.target);
-//   });
-// });
+search_field.addEventListener('keyup', movie.fetchSearchData);
+search_field.addEventListener('change', movie.fetchSearchData);
