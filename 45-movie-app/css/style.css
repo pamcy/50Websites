@@ -486,3 +486,17 @@ Main Movie List Section
   font-weight: 400;
   color: var(--note-color);
 }
+
+.main__loader {
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+  height: 100px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.main.is-loading .main__loader {
+  display: block;
+}

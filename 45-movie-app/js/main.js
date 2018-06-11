@@ -27,7 +27,7 @@ const api = {
     return `https://api.themoviedb.org/3/movie/now_playing?api_key=${this.key}&language=en-US&page=1`;
   },
   getUpComingUrl() {
-    return `https://api.themoviedb.org/3/movie/upcoming?api_key=${this.key}&language=en-US&page=1`;
+    return `https://api.themoviedb.org/3/movie/upcoming?api_key=${this.key}&language=en-US&region=us&page=1`;
   },
   getTopRatedUrl() {
     return `https://api.themoviedb.org/3/movie/top_rated?api_key=${this.key}&language=en-US&page=1`;
@@ -66,6 +66,8 @@ const movie = {
       .then(data => storage.push(...data.results));
   },
   displayLatestMovieLists(storage, title) {
+    list_container.innerHTML = '';
+
     const list_content = storage
       .map((item) => {
         return `
@@ -120,8 +122,6 @@ const movie = {
     return fetch(api.getVideoUrl(id))
       .then(response => response.json())
       .then((data) => {
-        console.log(data);
-
         const exist = videos_storage.findIndex((current) => {
           return current.id == id;
         });
@@ -130,7 +130,6 @@ const movie = {
           videos_storage.push(data);
         }
 
-        console.log(videos_storage);
         return videos_storage;
       });
   },
@@ -197,7 +196,6 @@ const movie = {
 
       const match_data = data.filter(item => item.id == movie_id);
 
-      console.log(match_data);
       const youtube_key = match_data[0].results[0].key;
       const video_content = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${youtube_key}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
 
@@ -214,33 +212,45 @@ const movie = {
       return fetch(api.getSearchUrl(search_value))
         .then(response => response.json())
         .then((data) => {
-          search_storage.push(data.results);
-          // console.log(search_storage);
-          // console.log(search_value);
-        });
+          const exist = search_storage.findIndex((current) => {
+            return current.value == search_value;
+          });
+
+          if (exist < 0) {
+            search_storage.push({ value: search_value, result: data.results });
+          }
+        })
+        .then(() => movie.displaySearchLists(search_value));
     }, search_dalay_time);
-
-    movie.displayLatestMovieLists(search_storage.pop(), '搜尋');
   },
-  // displaySearchLists() {
+  displaySearchLists(keyword) {
+    list_container.innerHTML = '';
 
-  //   const test = search_storage.pop().map((item) => {
-  //     return `
-  //       <li class="main__movie-item" data-id="${item.id}">
-  //         <div class="main__movie-top">
-  //           <img src="${api.img_prefix}500${item.poster_path}" alt="${item.original_title}" class="main__movie-poster">
-  //           <span class="main__movie-votes">${item.vote_average}</span>
-  //         </div>
-  //         <div class="main__movie-bottom">
-  //           <h3 class="main__movie-name">${item.original_title}</h3>
-  //           <h4 class="main__movie-category">${item.genre_ids.map(id => movie.displayGenres(id)).join(', ')}</h4>
-  //         </div>
-  //       </li>
-  //       `;
-  //   }).join('');
+    const match_data = search_storage.filter((item) => {
+      return item.value == keyword;
+    });
 
-  //   list_container.innerHTML = test;
-  // },
+    // console.log(match_data);
+
+    const search_content = match_data[0].result.map((item) => {
+      return `
+        <li class="main__movie-item" data-id="${item.id}">
+          <div class="main__movie-top">
+            <img src="${api.img_prefix}500${item.poster_path}" alt="${item.original_title}" class="main__movie-poster">
+            <span class="main__movie-votes">${item.vote_average}</span>
+          </div>
+          <div class="main__movie-bottom">
+            <h3 class="main__movie-name">${item.original_title}</h3>
+            <h4 class="main__movie-category">${item.genre_ids.map(id => movie.displayGenres(id)).join(', ')}</h4>
+          </div>
+        </li>
+        `;
+    }).join('');
+
+    heading.textContent = `Search results for ${keyword}`;
+    list_container.innerHTML = search_content;
+    search_field.value = '';
+  },
   openModal(e) {
     if (e.target.closest('.main__movie-item')) {
       modal.classList.add('is-open');
@@ -263,13 +273,11 @@ async function init() {
   await movie.fetchGenre(api.getGenreUrl());
 
   await movie.fetchLatestMovieData(api.getNowPlayingUrl(), now_playing_storage);
-  // await movie.displayLatestMovieLists(now_playing_storage);
+  await movie.displayLatestMovieLists(now_playing_storage);
 
   await movie.fetchLatestMovieData(api.getUpComingUrl(), upcoming_storage);
-  await movie.displayLatestMovieLists(upcoming_storage);
 
   await movie.fetchLatestMovieData(api.getTopRatedUrl(), top_rated_storage);
-  // await movie.displayLatestMovieLists(top_rated_storage);
 }
 
 init();
@@ -300,4 +308,5 @@ list_container.addEventListener('click', (e) => {
 modal_close_btn.addEventListener('click', movie.closeModal);
 
 search_field.addEventListener('keyup', movie.fetchSearchData);
+search_field.addEventListener('keydown', movie.fetchSearchData);
 search_field.addEventListener('change', movie.fetchSearchData);
