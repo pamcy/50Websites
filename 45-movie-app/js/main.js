@@ -4,7 +4,6 @@ const top_rated_btn = document.querySelector('#js-top-rated');
 const heading = document.querySelector('.main__heading');
 const list_container = document.querySelector('.main__movie-list');
 const modal = document.querySelector('.overlay');
-const modal_close_btn = document.querySelector('.overlay__close-icon');
 const search_field = document.querySelector('#js-search');
 const genres_storage = {};
 const now_playing_storage = [];
@@ -289,10 +288,18 @@ const movie = {
   openModal(e) {
     if (e.target.closest('.main__movie-item')) {
       modal.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
     }
   },
-  closeModal() {
-    modal.classList.remove('is-open');
+  closeModal(e) {
+    const modal_close_btn = document.querySelector('.overlay__close-icon');
+    const modal_content = e.target.closest('.overlay__inside');
+
+    if (e.target === modal_close_btn || !modal_content) {
+      modal.classList.remove('is-open');
+    }
+
+    document.body.removeAttribute('style');
   },
   toggleMenuStyle(e) {
     const current = e.currentTarget;
@@ -343,7 +350,7 @@ list_container.addEventListener('click', (e) => {
   movie.openModal(e);
 });
 
-modal_close_btn.addEventListener('click', movie.closeModal);
+modal.addEventListener('click', movie.closeModal);
 
 search_field.addEventListener('keyup', movie.fetchSearchData);
 search_field.addEventListener('keydown', movie.fetchSearchData);

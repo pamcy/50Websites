@@ -71,12 +71,12 @@ Base Styles
   --secondary-color: #d8e7f1;
   --note-color: #617a8b;
   --orange-color: #ffb10a;
-  /* --orange-color: #f1c40f; */
   --main-bg-color: #222b31;
   --header-bg-color: #ff424f;
   --header-bg-dark-color: #f83745;
   --sidebar-bg-color: #191c1f;
   --overlay-bg-color: #202123;
+  --footer-bg-color: #062a2a;
   --link-color: #f5545f;
 }
 
@@ -250,7 +250,7 @@ Overlay Section
   max-width: 700px;
   margin: 20px auto;
   background: var(--overlay-bg-color);
-  overflow: scroll;
+  overflow: auto;
   transform: translateY(-100px);
   transition: transform 0.3s;
 }
@@ -276,7 +276,7 @@ Overlay Section
 
 .overlay__backdrop {
   position: relative;
-  height: 45vh;
+  height: 350px;
   background-size: cover;
   background-position: 50% 50%;
 }
