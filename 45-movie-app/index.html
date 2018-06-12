@@ -27,7 +27,7 @@
 <body>
   <div class="container">
     <header class="header">
-      <h1 class="header__heading">Movie Buddy</h1>
+      <h1 class="header__heading"><a href="./" class="header__heading-link">Movie Buddy</a></h1>
       <div class="header__search">
         <img src="imgs/search-icon.svg" alt="" class="header__search-icon">
         <input type="text" name="searchMovie" id="js-search" class="header__search-bar" placeholder="Search Movies...">
@@ -104,12 +104,14 @@
         <img src="imgs/spinner.svg" class="main__loading-icon">
       </div>
       <ul class="main__movie-list"></ul>
+      <footer class="footer">
+        <span class="footer__text">@ 2018 Pamcy.net</span>
+        <span class="footer__text">The movie details come from <a href="https://www.themoviedb.org/" class="footer__link" target="_blank">TMDB API</a>.</span>
+        <span class="footer__text">It's a JS asynchronous learning project made with love by <a href="https://pamcy.net/" class="footer__link" target="_blank">Pamcy</a>.</span>
+      </footer>
     </main>
 
-    <footer class="footer">
-      The movie details come from
-      <a href="https://www.themoviedb.org/" class="footer__link">TMDB API</a>. It's a JS asynchronous learning project made with love by Pamcy.
-    </footer>
+    
 
     
     <!-- <h1 class="app__heading">Your weekeng buddy for this weekend</h1>

@@ -70,13 +70,14 @@ Base Styles
   --main-color: #fefefe;
   --secondary-color: #d8e7f1;
   --note-color: #617a8b;
+  --gray-light-color: #777878;
+  --gray-dark-color: #454b4f;
   --orange-color: #ffb10a;
   --main-bg-color: #222b31;
   --header-bg-color: #ff424f;
   --header-bg-dark-color: #f83745;
   --sidebar-bg-color: #191c1f;
   --overlay-bg-color: #202123;
-  --footer-bg-color: #062a2a;
   --link-color: #f5545f;
 }
 
@@ -128,6 +129,10 @@ Header Section
   background: var(--header-bg-dark-color);
   text-align: center;
   font-size: 1.5rem;
+}
+
+.header__heading-link {
+  color: var(--main-color);
 }
 
 .header__search {
@@ -547,4 +552,21 @@ Main Movie List Section
 
 .main.is-loading .main__loader {
   display: block;
+}
+
+/* ---------------------------------
+Footer Section
+--------------------------------- */
+.footer {
+  margin-top: 80px;
+  font-size: 0.82rem;
+  color: var(--gray-dark-color);
+}
+
+.footer__text {
+  display: block;
+}
+
+.footer__link {
+  color: var(--gray-light-color);
 }
