@@ -70,10 +70,16 @@ const movie = {
 
     const list_content = storage
       .map((item) => {
+        let poster_image = '';
+
+        if (item.poster_path) {
+          poster_image = `<img src="${api.img_prefix}500${item.poster_path}" alt="${item.original_title}" class="main__movie-poster">`;
+        }
+
         return `
-        <li class="main__movie-item" data-id="${item.id}">
+        <li class="main__movie-item" data-id="${item.id}" data-date=${item.release_date}>
           <div class="main__movie-top">
-            <img src="${api.img_prefix}500${item.poster_path}" alt="${item.original_title}" class="main__movie-poster">
+            ${poster_image}
             <span class="main__movie-votes">${item.vote_average}</span>
           </div>
           <div class="main__movie-bottom">
@@ -82,8 +88,7 @@ const movie = {
           </div>
         </li>
         `;
-      })
-      .join('');
+      }).join('');
 
     list_container.innerHTML = list_content;
     heading.textContent = title || 'Now Playing';
@@ -149,6 +154,8 @@ const movie = {
     const vote = document.querySelector('.overlay__votes');
     const poster = document.querySelector('.overlay__poster');
     const name = document.querySelector('.overlay__info-heading');
+    const release_date = document.querySelector('.overlay__info-release');
+    const release_date_text = current_movie.dataset.date;
     const runtime = document.querySelector('.overlay__info-runtime');
     const category = document.querySelector('.overlay__info-category');
     const overview = document.querySelector('.overlay__info-overview');
@@ -158,15 +165,29 @@ const movie = {
     details_data.then((data) => {
       const match_data = data.filter(item => item.id == movie_id);
 
-      backdrop.style.backgroundImage = `url('${api.img_prefix}1280/${match_data[0].backdrop_path}')`;
+      if (match_data[0].backdrop_path) {
+        backdrop.style.backgroundImage = `url('${api.img_prefix}1280/${match_data[0].backdrop_path}')`;
+      } else {
+        backdrop.style.backgroundImage = '';
+      }
 
-      poster.src = `${api.img_prefix}300/${match_data[0].poster_path}`;
+      if (match_data[0].poster_path) {
+        poster.src = `${api.img_prefix}300/${match_data[0].poster_path}`;
+      } else {
+        poster.src = '';
+      }
 
       vote.textContent = `${match_data[0].vote_average}`;
 
       name.textContent = match_data[0].original_title;
 
-      runtime.textContent = `${match_data[0].runtime}mins`;
+      release_date.textContent = release_date_text;
+
+      if (match_data[0].runtime) {
+        runtime.textContent = `${match_data[0].runtime}mins`;
+      } else {
+        runtime.textContent = 'Unknown';
+      }
 
       category.textContent = current_movie.querySelector('.main__movie-category').textContent;
 
@@ -179,10 +200,16 @@ const movie = {
       const main_actor = match_data[0].cast.slice(0, casts_limit);
 
       const casts_content = main_actor.map((actor) => {
+        let castImgUrl = '';
+
+        if (actor.profile_path) {
+          castImgUrl = `<img src="${api.img_prefix}200${actor.profile_path}" class="overlay__cast-img">`;
+        }
+
         return `
           <li class="overlay__cast-item">
             <div class="overlay__cast-img-container">
-              <img src="${api.img_prefix}200${actor.profile_path}" alt="${actor.name}'s photo" class="overlay__cast-img">
+              ${castImgUrl}
             </div>
             <span class="overlay__cast-name">${actor.name}</span>
           </li>
@@ -193,13 +220,16 @@ const movie = {
     });
 
     videos_data.then((data) => {
-
       const match_data = data.filter(item => item.id == movie_id);
 
-      const youtube_key = match_data[0].results[0].key;
-      const video_content = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${youtube_key}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+      if (match_data[0].results.length > 0) {
+        const youtube_key = match_data[0].results[0].key;
+        const video_content = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${youtube_key}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
 
-      video_container.innerHTML = video_content;
+        video_container.innerHTML = video_content;
+      } else {
+        video_container.innerHTML = 'No videos have been added.';
+      }
     });
   },
   fetchSearchData() {
@@ -230,13 +260,17 @@ const movie = {
       return item.value == keyword;
     });
 
-    // console.log(match_data);
-
     const search_content = match_data[0].result.map((item) => {
+      let poster_image = '';
+
+      if (item.poster_path) {
+        poster_image = `<img src="${api.img_prefix}500${item.poster_path}" alt="${item.original_title}" class="main__movie-poster">`;
+      }
+
       return `
-        <li class="main__movie-item" data-id="${item.id}">
+        <li class="main__movie-item" data-id="${item.id}" data-date=${item.release_date}>
           <div class="main__movie-top">
-            <img src="${api.img_prefix}500${item.poster_path}" alt="${item.original_title}" class="main__movie-poster">
+            ${poster_image}
             <span class="main__movie-votes">${item.vote_average}</span>
           </div>
           <div class="main__movie-bottom">
@@ -247,9 +281,10 @@ const movie = {
         `;
     }).join('');
 
-    heading.textContent = `Search results for ${keyword}`;
+    const highlight_text = `<span class="main__heading-highlight">${keyword}</span>`;
+
+    heading.innerHTML = `Search results for ${highlight_text}`;
     list_container.innerHTML = search_content;
-    search_field.value = '';
   },
   openModal(e) {
     if (e.target.closest('.main__movie-item')) {
@@ -285,16 +320,19 @@ init();
 top_playing_btn.addEventListener('click', (e) => {
   movie.toggleMenuStyle(e);
   movie.displayLatestMovieLists(now_playing_storage, e.currentTarget.textContent);
+  search_field.value = '';
 });
 
 upcoming_btn.addEventListener('click', (e) => {
   movie.toggleMenuStyle(e);
   movie.displayLatestMovieLists(upcoming_storage, e.currentTarget.textContent);
+  search_field.value = '';
 });
 
 top_rated_btn.addEventListener('click', (e) => {
   movie.toggleMenuStyle(e);
   movie.displayLatestMovieLists(top_rated_storage, e.currentTarget.textContent);
+  search_field.value = '';
 });
 
 list_container.addEventListener('mouseover', (e) => {

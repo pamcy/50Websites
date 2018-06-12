@@ -325,18 +325,33 @@ Overlay Section
   align-items: end;
 }
 
-.overlay__poster {
-  max-width: 200px;
-  margin-right: 25px;
+.overlay__poster-wrapper {
+  position: relative;
+  background: url('/imgs/placeholder_movie_list_item.jpg') no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  padding-top: 150%;
+  width: 200px;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+.overlay__poster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .overlay__votes {
   display: inline-block;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  text-align: center;
   font-size: 1.75rem;
   margin-right: 50px;
   margin-left: 25px;
-  padding: 15px;
   border-radius: 50%;
   background: var(--orange-color);
   color: var(--main-color);
@@ -359,6 +374,7 @@ Overlay Section
 
 .overlay__info-title {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
 }
@@ -368,9 +384,10 @@ Overlay Section
   font-size: 1.75rem;
 }
 
-.overlay__info-runtime {
+.overlay__info-tag {
+  margin: 5px 3px;
   padding: 2px 3px;
-  background: var(--orange-color);
+  background: var(--note-color);
   border-radius: 6px;
   font-size: 0.75rem;
 }
@@ -402,9 +419,22 @@ Overlay Section
   align-items: center;
 }
 
-.overlay__cast-img {
+.overlay__cast-img-container {
+  position: relative;
+  background: url('/imgs/placeholder_cast_avatar.png') no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  border-radius: 50%;
   width: 60px;
   height: 60px;
+}
+
+.overlay__cast-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: cover;
   object-position: center center;
   border-radius: 50%;
@@ -429,6 +459,7 @@ Overlay Section
 Main Movie List Section
 --------------------------------- */
 .main {
+  height: 100%;
   background-color: var(--main-bg-color);
   padding: 40px;
 }
@@ -437,6 +468,11 @@ Main Movie List Section
   font-size: 2rem;
   font-weight: 300;
   color: var(--main-color);
+}
+
+.main__heading-highlight {
+  background: var(--link-color);
+  padding: 0 5px;
 }
 
 .main__movie-list {
@@ -453,6 +489,18 @@ Main Movie List Section
 
 .main__movie-top {
   position: relative;
+  background: url('/imgs/placeholder_movie_list_item.jpg') no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  padding-top: 150%;
+}
+
+.main__movie-poster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .main__movie-votes {

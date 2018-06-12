@@ -28,10 +28,10 @@
   <div class="container">
     <header class="header">
       <h1 class="header__heading">Movie Buddy</h1>
-      <form class="header__search">
+      <div class="header__search">
         <img src="imgs/search-icon.svg" alt="" class="header__search-icon">
         <input type="text" name="searchMovie" id="js-search" class="header__search-bar" placeholder="Search Movies...">
-      </form>
+      </div>
       <div class="header__user">
         <span class="header__user-name">Hello, Stranger</span>
         <img src="imgs/avatar.png" alt="" class="header__user-avatar">
@@ -65,7 +65,9 @@
 
         <section class="overlay__main">
           <div class="overlay__main-header">
-            <img src="" class="overlay__poster">
+            <div class="overlay__poster-wrapper">
+              <img src="" class="overlay__poster">
+            </div>
             <span class="overlay__votes"></span>
           </div>
 
@@ -73,7 +75,8 @@
             <div class="overlay__info">
               <div class="overlay__info-title">
                 <h2 class="overlay__info-heading"></h2>
-                <span class="overlay__info-runtime"></span>
+                <span class="overlay__info-tag overlay__info-release"></span>
+                <span class="overlay__info-tag overlay__info-runtime"></span>
               </div>
               <span class="overlay__info-category"></span>
               <p class="overlay__info-overview"></p>
