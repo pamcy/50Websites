@@ -268,14 +268,19 @@ Overlay Section
   transition: visibility 0.3s, opacity 0.3s;
 }
 
-.overlay.is-open {
+.modal-is-open {
+  overflow: hidden;
+}
+
+.modal-is-open .overlay {
   visibility: visible;
   opacity: 1;
 }
 
 .overlay__inside {
   height: 100%;
-  max-width: 700px;
+  width: 700px;
+  max-width: 100%;
   margin: 20px auto;
   background: var(--overlay-bg-color);
   overflow: auto;
@@ -283,7 +288,7 @@ Overlay Section
   transition: transform 0.3s;
 }
 
-.overlay.is-open .overlay__inside {
+.modal-is-open .overlay__inside {
   transform: translateY(0);
 }
 

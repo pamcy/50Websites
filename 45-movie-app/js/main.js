@@ -299,9 +299,11 @@ const movie = {
     name.textContent = '';
   },
   openModal(e) {
+    const body = document.body;
+
     if (e.target.closest('.main__movie-item')) {
-      modal.classList.add('is-open');
-      document.body.style.overflow = 'hidden';
+      body.classList.add('modal-is-open');
+      body.style.overflow = 'hidden';
     }
   },
   closeModal(e) {
@@ -309,7 +311,7 @@ const movie = {
     const modal_content = e.target.closest('.overlay__inside');
 
     if (e.target === modal_close_btn || !modal_content) {
-      modal.classList.remove('is-open');
+      document.body.classList.remove('modal-is-open');
     }
 
     document.body.removeAttribute('style');
