@@ -1,12 +1,13 @@
 const container = document.querySelector('.container');
 const hamburger_open_btn = document.querySelector('.header__nav-hambuger-icon');
 const hamburger_close_btn = document.querySelector('.sidebar__close');
+const search_icon_btn = document.querySelector('.header__search-icon');
+const search_field = document.querySelector('#js-search');
 const top_playing_btn = document.querySelector('#js-top-playing');
 const upcoming_btn = document.querySelector('#js-upcoming');
 const top_rated_btn = document.querySelector('#js-top-rated');
 const heading = document.querySelector('.main__heading');
 const list_container = document.querySelector('.main__movie-list');
-const search_field = document.querySelector('#js-search');
 const modal = document.querySelector('.overlay');
 const backdrop = document.querySelector('.overlay__backdrop');
 const vote = document.querySelector('.overlay__votes');
@@ -341,6 +342,9 @@ const movie = {
       main_section.style.marginTop = 0;
     }
   },
+  toggleSearchBar() {
+    search_field.classList.toggle('search-is-open');
+  },
 };
 
 async function init() {
@@ -358,21 +362,25 @@ init();
 
 hamburger_open_btn.addEventListener('click', movie.openMenuList);
 hamburger_close_btn.addEventListener('click', movie.closeMenuList);
+search_icon_btn.addEventListener('click', movie.toggleSearchBar);
 
 top_playing_btn.addEventListener('click', (e) => {
   movie.toggleMenuStyle(e);
+  movie.closeMenuList(e);
   movie.displayLatestMovieLists(now_playing_storage, e.currentTarget.textContent);
   search_field.value = '';
 });
 
 upcoming_btn.addEventListener('click', (e) => {
   movie.toggleMenuStyle(e);
+  movie.closeMenuList(e);
   movie.displayLatestMovieLists(upcoming_storage, e.currentTarget.textContent);
   search_field.value = '';
 });
 
 top_rated_btn.addEventListener('click', (e) => {
   movie.toggleMenuStyle(e);
+  movie.closeMenuList(e);
   movie.displayLatestMovieLists(top_rated_storage, e.currentTarget.textContent);
   search_field.value = '';
 });
@@ -391,5 +399,3 @@ search_field.addEventListener('keyup', movie.fetchSearchData);
 search_field.addEventListener('keydown', movie.fetchSearchData);
 search_field.addEventListener('change', movie.fetchSearchData);
 
-// movie.checkMediaQuery();
-// window.addEventListener('resize', movie.checkMediaQuery);

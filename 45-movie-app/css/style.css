@@ -166,6 +166,7 @@ Header Section
   margin-right: 5px;
   width: 25px;
   height: 25px;
+  cursor: pointer;
 }
 
 .header__search-bar {
@@ -649,9 +650,21 @@ Responsive breakpoints
     font-size: 1rem;
   }
 
+  .header__search {
+    justify-content: flex-end;
+  }
+
   .header__search-icon {
     width: 20px;
     height: 20px;
+  }
+
+  .header__search-bar {
+    display: none;
+  }
+
+  .search-is-open.header__search-bar {
+    display: block;
   }
 
   .header__user {
