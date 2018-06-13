@@ -27,7 +27,10 @@
 <body>
   <div class="container">
     <header class="header">
-      <h1 class="header__heading"><a href="./" class="header__heading-link">Movie Buddy</a></h1>
+      <div class="header__nav">
+        <img src="imgs/hambuger_menu.svg" alt="MovieBuddy logo" class="header__nav-hambuger-icon">
+        <h1 class="header__nav-heading"><a href="./" class="header__nav-heading-link">Movie Buddy</a></h1>
+      </div>
       <div class="header__search">
         <img src="imgs/search-icon.svg" alt="" class="header__search-icon">
         <input type="text" name="searchMovie" id="js-search" class="header__search-bar" placeholder="Search Movies...">
@@ -39,6 +42,9 @@
     </header>
 
     <aside class="sidebar">
+      <div class="sidebar__close">
+        <img src="imgs/close-menu-icon.svg" class="sidebar__close-icon">
+      </div>
       <ul class="sidebar__list">
         <li class="sidebar__item" id="js-top-playing" data-tabs-id="menu-tab-1">
           <span class="sidebar__item-menu">Now Playing</span>

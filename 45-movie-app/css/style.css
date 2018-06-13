@@ -84,13 +84,14 @@ Base Styles
 html {
   height: 100%;
   box-sizing: border-box;
+  background: var(--main-bg-color);
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
 }
 
-/* body {
-  overflow: hidden;
-} */
+body {
+  margin: 0;
+}
 
 img {
   display: block;
@@ -98,7 +99,6 @@ img {
 }
 
 .container {
-  border: 1px solid pink;
   display: grid;
   grid-template-columns: 230px 1fr;
   /* height: 100%;
@@ -114,24 +114,37 @@ Header Section
   grid-gap: 40px;
   grid-template-columns: 230px 1fr auto;
   align-items: center;
+  width: 100%;
   height: 70px;
+  padding: 0 10px;
   background: var(--header-bg-color);
   color: var(--main-color);
 }
 
-.header__heading {
+.header__nav {
   display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, auto);
+  justify-content: flex-start;
   align-items: center;
-  width: 100%;
   height: 100%;
-  margin: 0;
-  padding: 5px;
-  background: var(--header-bg-dark-color);
-  text-align: center;
-  font-size: 1.5rem;
 }
 
-.header__heading-link {
+.header__nav-hambuger-icon {
+  display: none;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.header__nav-heading {
+  margin: 0;
+  line-height: 0.5;
+}
+
+.header__nav-heading-link {
+  line-height: 2.5;
+  font-size: 1.5rem;
   color: var(--main-color);
 }
 
@@ -156,7 +169,7 @@ Header Section
 }
 
 .header__search-bar {
-  width: 60%;
+  width: 80%;
 }
 
 .header__user-name {
@@ -173,7 +186,16 @@ Header Section
 Sidebar Section
 --------------------------------- */
 .sidebar {
+  position: relative;
+  left: 0;
+  height: 100%;
+  transition: all 0.3s;
   background: var(--sidebar-bg-color);
+}
+
+.sidebar__close {
+  display: none;
+  cursor: pointer;
 }
 
 .sidebar__list {
@@ -414,7 +436,7 @@ Overlay Section
 .overlay__cast-list {
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
 .overlay__cast-item {
@@ -570,3 +592,69 @@ Footer Section
 .footer__link {
   color: var(--gray-light-color);
 }
+
+/* ---------------------------------
+Responsive breakpoints
+--------------------------------- */
+@media (max-width: 768px) {
+  .header__nav-hambuger-icon {
+    display: block;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 230px;
+    height: 100vh;
+  }
+
+  .menu-is-open .sidebar {
+    left: 0;
+    z-index: 1;
+  }
+
+  .menu-is-open .sidebar__close {
+    display: block;
+    position: absolute;
+    right: 0;
+    padding: 15px;
+  }
+
+  .menu-is-open .sidebar__close-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .menu-is-open .sidebar__list {
+    margin-top: 80px;
+  }
+
+  .main {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+    position: fixed;
+    height: 45px;
+    grid-gap: 30px;
+    grid-template-columns: auto 1fr;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
+
+  .header__nav-heading-link {
+    font-size: 1rem;
+  }
+
+  .header__search-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .header__user {
+    display: none;
+  }
+} 
