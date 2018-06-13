@@ -299,11 +299,9 @@ const movie = {
     name.textContent = '';
   },
   openModal(e) {
-    const body = document.body;
-
     if (e.target.closest('.main__movie-item')) {
-      body.classList.add('modal-is-open');
-      body.style.overflow = 'hidden';
+      document.body.classList.add('modal-is-open');
+      document.body.style.overflow = 'hidden';
     }
   },
   closeModal(e) {

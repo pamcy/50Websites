@@ -283,7 +283,8 @@ Overlay Section
   max-width: 100%;
   margin: 20px auto;
   background: var(--overlay-bg-color);
-  overflow: auto;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   transform: translateY(-100px);
   transition: transform 0.3s;
 }
