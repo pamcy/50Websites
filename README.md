@@ -2,6 +2,8 @@
 
 I knew that if I was going to succeed at learning to code, I would need to apply knowledge as much as possible. I devoted to build something from what I learned, below is a list of websites I made lately, some took a couple of days to complete. (Still Updating)
 
+- [x] [45 - MovieBuddy - Discover and find your favorite movies](https://pamcy.github.io/50Websites/45-movie-app/)
+
 - [x] [44 - Responsive Article Layouts with CSS Grid](https://pamcy.github.io/50Websites/44-css-grid-article-layout/)
 
 - [x] [42 - CSS Grid Image Gallery With Overlay](https://pamcy.github.io/50Websites/42-css-grid-image-gallery/)

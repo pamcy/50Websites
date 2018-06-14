@@ -4,5 +4,5 @@ I love movies, it's the most interesting project I've ever done! Using latest Ja
 
 [**View Demo**](https://pamcy.github.io/50Websites/45-movie-app/)
 
-![Lotto Prize Generator](./dist/img/demo-moviebuddy.gif)
+![Lotto Prize Generator](./imgs/demo-moviebuddy.gif)
 
