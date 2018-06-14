@@ -313,10 +313,10 @@ const movie = {
 
     if (e.target === modal_close_btn || !modal_content) {
       document.body.classList.remove('modal-is-open');
+      movie.clearModalContent();
     }
 
     document.body.removeAttribute('style');
-    movie.clearModalContent();
   },
   openMenuList() {
     container.classList.add('menu-is-open');
