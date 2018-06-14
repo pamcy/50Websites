@@ -1,8 +1,8 @@
-# Lotto Prize Generator
+# MovieBuddy - Discover and find your favorite movies
 
-Click on the middle of the circle to draw the lottery. With JS functions to complete the whole operation, including animated progressive movement, speed controll in each step, final prize position and congratulations modal.  
+I love movies, it's the most interesting project I've ever done! Using latest Javascript ES6, along with promise, async and await to fetch multiple APIs and display movie information in parallel.
 
-[**View Demo**](https://pamcy.github.io/50Websites/41-lotto-prize-generator/)
+[**View Demo**](https://pamcy.github.io/50Websites/45-movie-app/)
 
-![Lotto Prize Generator](./dist/img/demo-lotto-prize.gif)
+![Lotto Prize Generator](./dist/img/demo-moviebuddy.gif)
 
