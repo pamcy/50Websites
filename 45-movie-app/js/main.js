@@ -158,6 +158,11 @@ const movie = {
 
     clearTimeout(search_timeout);
 
+    if (!search_field.value) {
+      movie.displayLatestMovieLists(now_playing_storage);
+      return;
+    }
+
     search_timeout = setTimeout(() => {
       fetch(api.getSearchUrl(search_value))
         .then(response => response.json())
