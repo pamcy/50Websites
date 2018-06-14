@@ -361,7 +361,7 @@ Overlay Section
 
 .overlay__poster-wrapper {
   position: relative;
-  background: url('/imgs/placeholder_movie_list_item.jpg') no-repeat;
+  background: url('../imgs/placeholder_movie_list_item.jpg') no-repeat;
   background-position: 50% 50%;
   background-size: cover;
   padding-top: 150%;
@@ -455,7 +455,7 @@ Overlay Section
 
 .overlay__cast-img-container {
   position: relative;
-  background: url('/imgs/placeholder_cast_avatar.png') no-repeat;
+  background: url('../imgs/placeholder_cast_avatar.png') no-repeat;
   background-position: 50% 50%;
   background-size: cover;
   border-radius: 50%;

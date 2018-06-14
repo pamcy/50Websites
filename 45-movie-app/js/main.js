@@ -87,7 +87,7 @@ const movie = {
         let poster_image = '';
 
         if (item.poster_path) {
-          poster_image = `<img class="lazyload" src="/imgs/placeholder_movie_list_item.jpg" data-src="${api.img_prefix}500${item.poster_path}" alt="${item.original_title}" class="main__movie-poster">`;
+          poster_image = `<img class="lazyload" src="./imgs/placeholder_movie_list_item.jpg" data-src="${api.img_prefix}500${item.poster_path}" alt="${item.original_title}" class="main__movie-poster">`;
         }
 
         return `
@@ -191,7 +191,7 @@ const movie = {
       let poster_image = '';
 
       if (item.poster_path) {
-        poster_image = `<img class="lazyload" src="/imgs/placeholder_movie_list_item.jpg" data-src="${api.img_prefix}500${item.poster_path}" alt="${item.original_title}" class="main__movie-poster">`;
+        poster_image = `<img class="lazyload" src="./imgs/placeholder_movie_list_item.jpg" data-src="${api.img_prefix}500${item.poster_path}" alt="${item.original_title}" class="main__movie-poster">`;
       }
 
       return `
@@ -272,7 +272,7 @@ const movie = {
         let castImgUrl = '';
 
         if (actor.profile_path) {
-          castImgUrl = `<img class="overlay__cast-img lazyload" src="/imgs/placeholder_cast_avatar.png" data-src="${api.img_prefix}200${actor.profile_path}" class="overlay__cast-img">`;
+          castImgUrl = `<img class="overlay__cast-img lazyload" src="./imgs/placeholder_cast_avatar.png" data-src="${api.img_prefix}200${actor.profile_path}" class="overlay__cast-img">`;
         }
 
         return `
