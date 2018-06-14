@@ -518,7 +518,7 @@ Main Movie List Section
 
 .main__movie-top {
   position: relative;
-  background: url('/imgs/placeholder_movie_list_item.jpg') no-repeat;
+  background: url('../imgs/placeholder_movie_list_item.jpg') no-repeat;
   background-position: 50% 50%;
   background-size: cover;
 }
