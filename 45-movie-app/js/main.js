@@ -27,7 +27,6 @@ const details_storage = [];
 const casts_storage = [];
 const videos_storage = [];
 const search_storage = [];
-let menu_is_open = false;
 let search_timeout = null;
 
 const api = {
@@ -112,9 +111,7 @@ const movie = {
     return fetch(api.getMovieDetailsUrl(id))
       .then(response => response.json())
       .then((data) => {
-        const exist = details_storage.findIndex((current) => {
-          return current.id == id;
-        });
+        const exist = details_storage.findIndex(current => current.id == id);
 
         if (exist < 0) {
           details_storage.push(data);
@@ -127,9 +124,7 @@ const movie = {
     return fetch(api.getCastsUrl(id))
       .then(response => response.json())
       .then((data) => {
-        const exist = casts_storage.findIndex((current) => {
-          return current.id == id;
-        });
+        const exist = casts_storage.findIndex(current => current.id == id);
 
         if (exist < 0) {
           casts_storage.push(data);
@@ -142,9 +137,7 @@ const movie = {
     return fetch(api.getVideoUrl(id))
       .then(response => response.json())
       .then((data) => {
-        const exist = videos_storage.findIndex((current) => {
-          return current.id == id;
-        });
+        const exist = videos_storage.findIndex(current => current.id == id);
 
         if (exist < 0) {
           videos_storage.push(data);
@@ -168,9 +161,7 @@ const movie = {
       fetch(api.getSearchUrl(search_value))
         .then(response => response.json())
         .then((data) => {
-          const exist = search_storage.findIndex((current) => {
-            return current.value == search_value;
-          });
+          const exist = search_storage.findIndex(current => current.value == search_value);
 
           if (exist < 0) {
             search_storage.push({ value: search_value, result: data.results });
@@ -183,15 +174,15 @@ const movie = {
   displaySearchLists(keyword) {
     list_container.innerHTML = '';
 
-    const match_data = search_storage.filter((item) => {
-      return item.value == keyword;
-    });
+    const match_data = search_storage.filter(item => item.value == keyword);
 
     const search_content = match_data[0].result.map((item) => {
       let poster_image = '';
 
       if (item.poster_path) {
         poster_image = `<img class="lazyload" src="./imgs/placeholder_movie_list_item.jpg" data-src="${api.img_prefix}500${item.poster_path}" alt="${item.original_title}" class="main__movie-poster">`;
+      } else {
+        poster_image = `<img class ="lazyload" data-src="./imgs/placeholder_movie_list_item.jpg" alt="${item.original_title}" class="main__movie-poster">`;
       }
 
       return `
@@ -364,7 +355,6 @@ async function init() {
   await movie.displayLatestMovieLists(now_playing_storage);
 
   await movie.fetchLatestMovieData(api.getUpComingUrl(), upcoming_storage);
-
   await movie.fetchLatestMovieData(api.getTopRatedUrl(), top_rated_storage);
 }
 

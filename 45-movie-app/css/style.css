@@ -101,8 +101,6 @@ img {
 .container {
   display: grid;
   grid-template-columns: 230px 1fr;
-  /* height: 100%;
-  overflow: hidden; */
 }
 
 /* ---------------------------------
@@ -519,6 +517,9 @@ Main Movie List Section
 
 .main__movie-top {
   position: relative;
+  background: url('/imgs/placeholder_movie_list_item.jpg') no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
 }
 
 .main__movie-poster {
@@ -668,4 +669,5 @@ Responsive breakpoints
   .header__user {
     display: none;
   }
-} 
+}
+
