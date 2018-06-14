@@ -464,13 +464,9 @@ Overlay Section
 }
 
 .overlay__cast-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  object-position: center center;
   border-radius: 50%;
 }
 
@@ -519,14 +515,6 @@ Main Movie List Section
 
 .main__movie-item {
   cursor: pointer;
-}
-
-.main__movie-top {
-  position: relative;
-  background: url('/imgs/placeholder_movie_list_item.jpg') no-repeat;
-  background-position: 50% 50%;
-  background-size: cover;
-  padding-top: 150%;
 }
 
 .main__movie-poster {

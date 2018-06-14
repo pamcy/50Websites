@@ -87,7 +87,7 @@ const movie = {
         let poster_image = '';
 
         if (item.poster_path) {
-          poster_image = `<img src="${api.img_prefix}500${item.poster_path}" alt="${item.original_title}" class="main__movie-poster">`;
+          poster_image = `<img class="lazyload" src="/imgs/placeholder_movie_list_item.jpg" data-src="${api.img_prefix}500${item.poster_path}" alt="${item.original_title}" class="main__movie-poster">`;
         }
 
         return `
@@ -106,6 +106,7 @@ const movie = {
 
     list_container.innerHTML = list_content;
     heading.textContent = title || 'Now Playing';
+    lazyload();
   },
   fetchMovieDetails(id) {
     return fetch(api.getMovieDetailsUrl(id))
@@ -190,7 +191,7 @@ const movie = {
       let poster_image = '';
 
       if (item.poster_path) {
-        poster_image = `<img src="${api.img_prefix}500${item.poster_path}" alt="${item.original_title}" class="main__movie-poster">`;
+        poster_image = `<img class="lazyload" src="/imgs/placeholder_movie_list_item.jpg" data-src="${api.img_prefix}500${item.poster_path}" alt="${item.original_title}" class="main__movie-poster">`;
       }
 
       return `
@@ -210,7 +211,10 @@ const movie = {
     const highlight_text = `<span class="main__heading-highlight">${keyword}</span>`;
 
     heading.innerHTML = `Search results for ${highlight_text}`;
+
     list_container.innerHTML = search_content;
+
+    lazyload();
 
     document.querySelector('.main').classList.remove('is-loading');
   },
@@ -268,7 +272,7 @@ const movie = {
         let castImgUrl = '';
 
         if (actor.profile_path) {
-          castImgUrl = `<img src="${api.img_prefix}200${actor.profile_path}" class="overlay__cast-img">`;
+          castImgUrl = `<img class="overlay__cast-img lazyload" src="/imgs/placeholder_cast_avatar.png" data-src="${api.img_prefix}200${actor.profile_path}" class="overlay__cast-img">`;
         }
 
         return `
@@ -282,6 +286,7 @@ const movie = {
       }).join('');
 
       casts_container.innerHTML = casts_content;
+      lazyload();
     });
 
     videos_data.then((data) => {
@@ -390,11 +395,12 @@ top_rated_btn.addEventListener('click', (e) => {
   search_field.value = '';
 });
 
-list_container.addEventListener('mouseover', (e) => {
-  movie.renderModalContent(e);
-});
+// list_container.addEventListener('mouseover', (e) => {
+//   movie.renderModalContent(e);
+// });
 
 list_container.addEventListener('click', (e) => {
+  movie.renderModalContent(e);
   movie.openModal(e);
 });
 
