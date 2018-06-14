@@ -281,6 +281,7 @@ Overlay Section
   max-width: 100%;
   margin: 20px auto;
   background: var(--overlay-bg-color);
+  overflow-x: hidden;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   transform: translateY(-100px);
@@ -668,6 +669,17 @@ Responsive breakpoints
 
   .header__user {
     display: none;
+  }
+
+  .overlay__main,
+  .overlay__main-header {
+    padding: 0 15px;
+  }
+
+  .overlay__votes {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
   }
 }
 

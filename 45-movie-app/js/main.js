@@ -87,6 +87,8 @@ const movie = {
 
         if (item.poster_path) {
           poster_image = `<img class="lazyload" src="./imgs/placeholder_movie_list_item.jpg" data-src="${api.img_prefix}500${item.poster_path}" alt="${item.original_title}" class="main__movie-poster">`;
+        } else {
+          poster_image = `<img class ="lazyload" data-src="./imgs/placeholder_movie_list_item.jpg" alt="${item.original_title}" class="main__movie-poster">`;
         }
 
         return `
