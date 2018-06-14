@@ -517,6 +517,10 @@ Main Movie List Section
   cursor: pointer;
 }
 
+.main__movie-top {
+  position: relative;
+}
+
 .main__movie-poster {
   position: absolute;
   top: 0;
