@@ -2,7 +2,7 @@
 SCSS Variables & Mixins
 --------------------------------- */
 $main-color: #181818;
-$white: #ffffff;
+$white: #fff;
 $bg-light-color: #f5f5f5;
 $bg-dark-color: #e6e6e6;
 $gray-dark: #2a2a2a;
@@ -17,21 +17,31 @@ $font-12: 0.75rem;
 $font-10: 0.625rem;
 
 @mixin media($point) {
-   @if $point == 'max-1024' {
-      @media (max-width: 1024px)  { @content; }
-   }
-   @if $point == 'max-768' {
-      @media (max-width: 768px)  { @content; }
-   }
-   @if $point == 'max-550' {
-      @media (max-width: 550px)  { @content; }
-   }
+  @if $point == "max-1024" {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  }
+
+  @if $point == "max-768" {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $point == "max-550" {
+    @media (max-width: 550px) {
+      @content;
+    }
+  }
 }
 
 @font-face {
-  font-family: 'fontello';
-  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/829617/fontello.woff2') format('woff2'),
-       url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/829617/fontello.woff') format('woff');
+  font-family: "fontello";
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/829617/fontello.woff2")
+      format("woff2"),
+    url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/829617/fontello.woff")
+      format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -40,462 +50,464 @@ $font-10: 0.625rem;
 Default Styles
 --------------------------------- */
 html {
-   box-sizing: border-box;
-   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-      Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-   font-size: 16px;
-   background: $bg-light-color;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  background: $bg-light-color;
 }
 
 *,
-*:before,
-*:after {
-   box-sizing: inherit;
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 input[type="number"],
 input[type="text"] {
-   margin: 0;
-   outline: 0;
-   border-radius: 0;
-   background: none;
-   vertical-align: middle;
-   -webkit-appearance: none
+  margin: 0;
+  outline: 0;
+  border-radius: 0;
+  background: none;
+  vertical-align: middle;
+  -webkit-appearance: none;
 }
 
 button {
-	background: none;
-	border: none;
-	outline: none;
-	cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 /* ---------------------------------
 Settings
 --------------------------------- */
 .settings {
-   position: fixed;
-   width: 100%;
-   transform: translatey(-88%);
-   z-index: 3;
-   transition: transform 0.3s ease-in-out;
+  position: fixed;
+  width: 100%;
+  transform: translateY(-89%);
+  z-index: 3;
+  transition: transform 0.3s ease-in-out;
 }
 
 .settings__panel {
-   padding: 1.25rem 0 2.5rem;
-   background: $gray-dark;
-   border-bottom: 4px solid $coral;
+  padding: 1.25rem 0 2.5rem;
+  background: $gray-dark;
+  border-bottom: 4px solid $coral;
 }
 
 .settings__panel-wrap {
-   max-width: 1024px;
-   margin: auto;
+  max-width: 1024px;
+  margin: auto;
 }
 
 .settings__btn-holder {
-   display: flex;
-   justify-content: center;
-   margin-top: -1px;
-   
-   &.settings__btn-holder--right {
-      justify-content: flex-end;
-   }
+  display: flex;
+  justify-content: center;
+  margin-top: -1px;
+
+  &.settings__btn-holder--right {
+    justify-content: flex-end;
+  }
 }
 
 .settings__add-btn {
-   position: relative;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   padding: 0.875rem;
-   background: $main-color;
-   color: $white;
-   border-radius: 50%;
-   
-   &::before {
-      content: attr(title);
-      display: none;
-      position: absolute;
-      right: calc(100% + 5px);
-      width: 80px;
-      padding: 3px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.875rem;
+  background: $main-color;
+  color: $white;
+  border-radius: 50%;
+
+  &::before {
+    content: attr(title);
+    display: none;
+    position: absolute;
+    right: calc(100% + 5px);
+    width: 80px;
+    padding: 3px;
+    background: $white;
+  }
+
+  &::after {
+    display: none;
+    content: "";
+    position: absolute;
+    right: 100%;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-left-color: $white;
+    border-right-width: 0;
+  }
+
+  &:hover {
+    background: $white;
+
+    &::before,
+    &::after {
+      display: inline-block;
+    }
+
+    &::before {
+      color: $main-color;
+    }
+
+    .icon-plus::before {
       background: $white;
-   }
-   
-   &::after {
-      display: none;
-      content: '';
-      position: absolute;
-      right: 100%;
-      width: 0;
-      height: 0;
-      border: 5px solid transparent;
-      border-left-color: $white;
-      border-right-width: 0;
-   }
-   
-   &:hover {
-      background: $white;
-      
-      &::before,
-      &::after {
-         display: inline-block;
-      }
-      
-      &::before {
-         color: $main-color;
-      }
-      
-      .icon-plus::before {
-         background: $white;
-         color: $main-color;
-      }
-   }
+      color: $main-color;
+    }
+  }
 }
 
 .icon-plus::before {
-   display: inline-block;
-   content: '\e800';
-   font-family: "fontello";
-   width: 1em;
-   color: $white;
-   font-size: $font-18;
-   text-align: center;
+  display: inline-block;
+  content: "\e800";
+  font-family: "fontello";
+  width: 1em;
+  color: $white;
+  font-size: $font-18;
+  text-align: center;
 }
 
 .settings__list {
-   margin-bottom: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .settings__item {
-   display: grid;
-   grid-column-gap: 15px;
-   grid-template-columns: 40px 60px 60px 70px 260px 400px auto;
-   align-items: center;
-   padding: 0.625rem;
-   background: $white;
+  display: grid;
+  grid-column-gap: 15px;
+  grid-template-columns: 40px 60px 60px 70px 260px 400px auto;
+  align-items: center;
+  padding: 0.625rem;
+  background: $white;
 }
 
 .settings__item--header {
-   background: transparent;
+  background: transparent;
 }
 
 .settings__column--header {
-   font-size: $font-14;
-   color: $gray-light;
+  font-size: $font-14;
+  color: $gray-light;
 }
 
 .settings__select,
 .settings__number,
 .settings__text {
-   width: 100%;
-   height: 30px;
-   padding: 5px;
-   border: 1px solid $gray-lighter;
-   outline: 0;
-   font-size: 1rem;
-   line-height: 2;
+  width: 100%;
+  height: 30px;
+  padding: 5px;
+  border: 1px solid $gray-lighter;
+  outline: 0;
+  font-size: 1rem;
+  line-height: 2;
 }
 
 .settings__delete-icon {
-   width: 20px;
-   cursor: pointer;
+  width: 20px;
+  cursor: pointer;
 }
 
 .settings__submit-btn {
-   padding: 0.625rem;
-   background: $main-color;
-   color: $white;
-   border-radius: 5px;
-   font-size: 1rem;
-   font-weight: bold;
-   letter-spacing: 1px;
-   transition: all 0.3s;
-   
-   &:hover {
-      background: $white;
-      color: $main-color;
-   }
+  padding: 0.625rem;
+  background: $main-color;
+  color: $white;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+
+  &:hover {
+    background: $white;
+    color: $main-color;
+  }
 }
 
 .settings__edit-btn {
-   padding: 1rem 1.25rem;
-   background: $coral;
-   color: $white;
-   font-size: 1rem;
-   font-weight: bold;
-   letter-spacing: 1px;
-   transition: background 0.3s;
-   
-   &:hover {
-      background: darken($coral, 3%);
-   }
+  padding: 1rem 1.25rem;
+  background: $coral;
+  color: $white;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: background 0.3s;
+
+  &:hover {
+    background: darken($coral, 3%);
+  }
 }
 
 /* ---------------------------------
 Preview Loading Animation
 --------------------------------- */
 .feature-wrap {
-   position: relative;
-   display: flex;
-   
-   &.is-loading {
-       &::before {
-         content: '';
-         position: absolute;
-         top: 0;
-         left: 0;
-         width: 100%;
-         height: 100%;
-         background: $main-color;
-         opacity: 0.3;
-         z-index: 3;
-      }
-   }
-   
-   @include media('max-1024') {
-      display: block;
-   }
+  position: relative;
+  display: flex;
+
+  &.is-loading {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: $main-color;
+      opacity: 0.3;
+      z-index: 3;
+    }
+  }
+
+  @include media("max-1024") {
+    display: block;
+  }
 }
 
 .bounce-loading {
-   display: none;
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   width: 80px;
-   z-index: 4;
-   
-   .is-loading & {
-      display: block;
-   }
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  z-index: 4;
+
+  .is-loading & {
+    display: block;
+  }
 }
 
 .bounce-loading__dot {
-   display: inline-block;
-   width: 18px;
-   height: 18px;
-   border-radius: 50%;
-   background: $white;
-   animation: loadingContent 1.4s ease-in-out 0s infinite both;
-   
-   &.bounce-loading__dot--1 {
-      animation-delay: -0.32s;
-   }
-   
-   &.bounce-loading__dot--2 {
-      animation-delay: -0.16s;
-   }
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: $white;
+  animation: loadingContent 1.4s ease-in-out 0s infinite both;
+
+  &.bounce-loading__dot--1 {
+    animation-delay: -0.32s;
+  }
+
+  &.bounce-loading__dot--2 {
+    animation-delay: -0.16s;
+  }
 }
 
 @keyframes loadingContent {
-   0%, 80%, 100% {
-      transform: scale(0);
-   }
-   
-   40% {
-      transform: scale(1);
-   }
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+  }
+
+  40% {
+    transform: scale(1);
+  }
 }
 
 /* ---------------------------------
 Feature Zoom
 --------------------------------- */
 .feature-zoom {
-   width: 100%;
-   height: 100vh;
-   z-index: 1;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
 
-   @include media('max-1024') {
-      height: 80vh;
-   }
+  @include media("max-1024") {
+    height: 80vh;
+  }
 
-   @include media('max-550') {
-      height: 50vh;
-   }
+  @include media("max-550") {
+    height: 50vh;
+  }
 }
 
 .feature-zoom__img {
-   position: relative;
-   width: 100%;
-   height: 100%;
-   background-repeat: no-repeat;
-   background-size: 100%;
-   background-position: 50% 50%;
-   transition: all 0.4s ease-in-out;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 50% 50%;
+  transition: all 0.4s ease-in-out;
 
-   &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: $bg-dark-color;
-      z-index: -1;
-   }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $bg-dark-color;
+    z-index: -1;
+  }
 }
 
 /* ---------------------------------
 Feature Carousel
 --------------------------------- */
 .feature-carousel {
-   position: absolute;
-   top: 50%;
-   right: 5rem;
-   max-width: 550px;
-   width: 100%;
-   transform: translatey(-50%);
-   z-index: 2;
+  position: absolute;
+  top: 50%;
+  right: 5rem;
+  max-width: 550px;
+  width: 100%;
+  transform: translateY(-50%);
+  z-index: 2;
 
-   @include media('max-1024') {
-      position: relative;
-      top: 0;
-      right: auto;
-      width: calc(100% - 5rem);
-      margin: -3.75rem auto 0;
-      transform: none;
-   }
+  @include media("max-1024") {
+    position: relative;
+    top: 0;
+    right: auto;
+    width: calc(100% - 5rem);
+    margin: -3.75rem auto 0;
+    transform: none;
+  }
 }
 
 .feature-carousel__list {
-   padding: 3.75rem 0;
-   background: $white;
+  padding: 3.75rem 0;
+  background: $white;
 }
 
 .feature-carousel__item {
-   padding: 0 3.75rem;
-   
-   @include media('max-1024') {
-      padding: 0 1.25rem;
-   }
+  padding: 0 3.75rem;
+
+  @include media("max-1024") {
+    padding: 0 1.25rem;
+  }
 }
 
 .feature-carousel__btn {
-   position: relative;
-   width: 3.25rem;
-   height: 3.25rem;
-   margin: 0;
-   padding: 0;
+  position: relative;
+  width: 3.25rem;
+  height: 3.25rem;
+  margin: 0;
+  padding: 0;
 
-   &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: $white;
-      border-radius: 50%;
-      transform: scale(0);
-      transition: transform 0.4s;
-   }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $white;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.4s;
+  }
 
-   &:hover {
-      &::before {
-         transform: scale(1);
-      }
-   }
+  &:hover {
+    &::before {
+      transform: scale(1);
+    }
+  }
 
-   &::after {
-      content: '';
-      display: block;
-      width: 12px;
-      height: 12px;
-      margin: auto;
-      border-top: 2px solid $main-color;
-      border-left: 2px solid $main-color;
-      transform: rotate(-45deg);
-   }
+  &::after {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    margin: auto;
+    border-top: 2px solid $main-color;
+    border-left: 2px solid $main-color;
+    transform: rotate(-45deg);
+  }
 
-   &.feature-carousel__btn--prev,
-   &.feature-carousel__btn--next {
-      position: absolute;
-      top: -3.75rem;
+  &.feature-carousel__btn--prev,
+  &.feature-carousel__btn--next {
+    position: absolute;
+    top: -3.75rem;
 
-      @include media('max-1024') {
-         top: 50%;
-      }
-   }
+    @include media("max-1024") {
+      top: 50%;
+    }
+  }
 
-   &.feature-carousel__btn--prev {
-      right: 5rem;
-      
-      @include media('max-1024') {
-         left: -2.5rem;
-         right: 0;
-      }
-   }
+  &.feature-carousel__btn--prev {
+    right: 5rem;
 
-   &.feature-carousel__btn--next {
+    @include media("max-1024") {
+      left: -2.5rem;
       right: 0;
+    }
+  }
 
-      &::after {
-         transform: rotate(135deg);
-      };
-      
-      @include media('max-1024') {
-         right: -2.5rem;
-      }
-   }
+  &.feature-carousel__btn--next {
+    right: 0;
 
-   &.slick-disabled {
-      &::before,
-      &::after {
-         opacity: 0.25;  
-      }
-   }
+    &::after {
+      transform: rotate(135deg);
+    }
 
-   @include media('max-550') {
-      width: 2.5rem;
-      height: 2.5rem;
-   }
+    @include media("max-1024") {
+      right: -2.5rem;
+    }
+  }
+
+  &.slick-disabled {
+    &::before,
+    &::after {
+      opacity: 0.25;
+    }
+  }
+
+  @include media("max-550") {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
 }
 
 .feature-carousel__label {
-   display: flex;
-   align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .feature-carousel__label-line {
-   display: inline-block;
-   width: 3.625rem;
-   height: 1px;
-   margin: 0 0.625rem;
-   background-color: $main-color;
-   transform: scaleX(0);
-   transform-origin: 0 0;
-   transition: transform 0.4s ease-out 0.3s;
+  display: inline-block;
+  width: 3.625rem;
+  height: 1px;
+  margin: 0 0.625rem;
+  background-color: $main-color;
+  transform: scaleX(0);
+  transform-origin: 0 0;
+  transition: transform 0.4s ease-out 0.3s;
 
-   .slick-active & {
-      transform: scaleX(1);
-   }
+  .slick-active & {
+    transform: scaleX(1);
+  }
 
-   @include media('max-550') {
-      width: 3rem;
-   }
+  @include media("max-550") {
+    width: 3rem;
+  }
 }
 
 .feature-carousel__label-text {
-   font-size: $font-14;
-   font-weight: bold;
+  font-size: $font-14;
+  font-weight: bold;
 
-   @include media('max-550') {
-      font-size: $font-10;
-   }
+  @include media("max-550") {
+    font-size: $font-10;
+  }
 }
 
 .feature-carousel__description {
-   margin-top: 3.75rem;
-   font-size: $font-24;
-   line-height: 1.6;
+  margin-top: 3.75rem;
+  font-size: $font-24;
+  line-height: 1.6;
 
-   @include media('max-1024') {
-      font-size: $font-18;
-   }
+  @include media("max-1024") {
+    font-size: $font-18;
+  }
 
-   @include media('max-550') {
-      font-size: inherit;
-   }
+  @include media("max-550") {
+    font-size: inherit;
+  }
 }

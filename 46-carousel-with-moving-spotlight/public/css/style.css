@@ -2,7 +2,7 @@
 SCSS Variables & Mixins
 --------------------------------- */
 @font-face {
-  font-family: 'fontello';
+  font-family: "fontello";
   src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/829617/fontello.woff2") format("woff2"), url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/829617/fontello.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
@@ -11,17 +11,15 @@ SCSS Variables & Mixins
 Default Styles
 --------------------------------- */
 html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 16px;
   background: #f5f5f5; }
 
 *,
-*:before,
-*:after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit; }
+*::before,
+*::after {
+  box-sizing: inherit; }
 
 input[type="number"],
 input[type="text"] {
@@ -44,13 +42,9 @@ Settings
 .settings {
   position: fixed;
   width: 100%;
-  -webkit-transform: translatey(-88%);
-          transform: translatey(-88%);
+  transform: translateY(-89%);
   z-index: 3;
-  -webkit-transition: -webkit-transform 0.3s ease-in-out;
-  transition: -webkit-transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out; }
+  transition: transform 0.3s ease-in-out; }
 
 .settings__panel {
   padding: 1.25rem 0 2.5rem;
@@ -62,32 +56,20 @@ Settings
   margin: auto; }
 
 .settings__btn-holder {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   margin-top: -1px; }
   .settings__btn-holder.settings__btn-holder--right {
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end; }
+    justify-content: flex-end; }
 
 .settings__add-btn {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   padding: 0.875rem;
   background: #181818;
-  color: #ffffff;
+  color: #fff;
   border-radius: 50%; }
   .settings__add-btn::before {
     content: attr(title);
@@ -96,33 +78,33 @@ Settings
     right: calc(100% + 5px);
     width: 80px;
     padding: 3px;
-    background: #ffffff; }
+    background: #fff; }
   .settings__add-btn::after {
     display: none;
-    content: '';
+    content: "";
     position: absolute;
     right: 100%;
     width: 0;
     height: 0;
     border: 5px solid transparent;
-    border-left-color: #ffffff;
+    border-left-color: #fff;
     border-right-width: 0; }
   .settings__add-btn:hover {
-    background: #ffffff; }
+    background: #fff; }
     .settings__add-btn:hover::before, .settings__add-btn:hover::after {
       display: inline-block; }
     .settings__add-btn:hover::before {
       color: #181818; }
     .settings__add-btn:hover .icon-plus::before {
-      background: #ffffff;
+      background: #fff;
       color: #181818; }
 
 .icon-plus::before {
   display: inline-block;
-  content: '\e800';
+  content: "\e800";
   font-family: "fontello";
   width: 1em;
-  color: #ffffff;
+  color: #fff;
   font-size: 1.125rem;
   text-align: center; }
 
@@ -133,11 +115,9 @@ Settings
   display: grid;
   grid-column-gap: 15px;
   grid-template-columns: 40px 60px 60px 70px 260px 400px auto;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   padding: 0.625rem;
-  background: #ffffff; }
+  background: #fff; }
 
 .settings__item--header {
   background: transparent; }
@@ -164,25 +144,23 @@ Settings
 .settings__submit-btn {
   padding: 0.625rem;
   background: #181818;
-  color: #ffffff;
+  color: #fff;
   border-radius: 5px;
   font-size: 1rem;
   font-weight: bold;
   letter-spacing: 1px;
-  -webkit-transition: all 0.3s;
   transition: all 0.3s; }
   .settings__submit-btn:hover {
-    background: #ffffff;
+    background: #fff;
     color: #181818; }
 
 .settings__edit-btn {
   padding: 1rem 1.25rem;
   background: #ff634e;
-  color: #ffffff;
+  color: #fff;
   font-size: 1rem;
   font-weight: bold;
   letter-spacing: 1px;
-  -webkit-transition: background 0.3s;
   transition: background 0.3s; }
   .settings__edit-btn:hover {
     background: #ff563f; }
@@ -192,11 +170,9 @@ Preview Loading Animation
 --------------------------------- */
 .feature-wrap {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex; }
   .feature-wrap.is-loading::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -214,8 +190,7 @@ Preview Loading Animation
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: 80px;
   z-index: 4; }
   .is-loading .bounce-loading {
@@ -226,31 +201,20 @@ Preview Loading Animation
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: #ffffff;
-  -webkit-animation: loadingContent 1.4s ease-in-out 0s infinite both;
-          animation: loadingContent 1.4s ease-in-out 0s infinite both; }
+  background: #fff;
+  animation: loadingContent 1.4s ease-in-out 0s infinite both; }
   .bounce-loading__dot.bounce-loading__dot--1 {
-    -webkit-animation-delay: -0.32s;
-            animation-delay: -0.32s; }
+    animation-delay: -0.32s; }
   .bounce-loading__dot.bounce-loading__dot--2 {
-    -webkit-animation-delay: -0.16s;
-            animation-delay: -0.16s; }
-
-@-webkit-keyframes loadingContent {
-  0%, 80%, 100% {
-    -webkit-transform: scale(0);
-            transform: scale(0); }
-  40% {
-    -webkit-transform: scale(1);
-            transform: scale(1); } }
+    animation-delay: -0.16s; }
 
 @keyframes loadingContent {
-  0%, 80%, 100% {
-    -webkit-transform: scale(0);
-            transform: scale(0); }
+  0%,
+  80%,
+  100% {
+    transform: scale(0); }
   40% {
-    -webkit-transform: scale(1);
-            transform: scale(1); } }
+    transform: scale(1); } }
 
 /* ---------------------------------
 Feature Zoom
@@ -273,10 +237,9 @@ Feature Zoom
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: 50% 50%;
-  -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out; }
   .feature-zoom__img::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -294,8 +257,7 @@ Feature Carousel
   right: 5rem;
   max-width: 550px;
   width: 100%;
-  -webkit-transform: translatey(-50%);
-          transform: translatey(-50%);
+  transform: translateY(-50%);
   z-index: 2; }
   @media (max-width: 1024px) {
     .feature-carousel {
@@ -304,12 +266,11 @@ Feature Carousel
       right: auto;
       width: calc(100% - 5rem);
       margin: -3.75rem auto 0;
-      -webkit-transform: none;
-              transform: none; } }
+      transform: none; } }
 
 .feature-carousel__list {
   padding: 3.75rem 0;
-  background: #ffffff; }
+  background: #fff; }
 
 .feature-carousel__item {
   padding: 0 3.75rem; }
@@ -324,33 +285,27 @@ Feature Carousel
   margin: 0;
   padding: 0; }
   .feature-carousel__btn::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: #ffffff;
+    background: #fff;
     border-radius: 50%;
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    -webkit-transition: -webkit-transform 0.4s;
-    transition: -webkit-transform 0.4s;
-    transition: transform 0.4s;
-    transition: transform 0.4s, -webkit-transform 0.4s; }
+    transform: scale(0);
+    transition: transform 0.4s; }
   .feature-carousel__btn:hover::before {
-    -webkit-transform: scale(1);
-            transform: scale(1); }
+    transform: scale(1); }
   .feature-carousel__btn::after {
-    content: '';
+    content: "";
     display: block;
     width: 12px;
     height: 12px;
     margin: auto;
     border-top: 2px solid #181818;
     border-left: 2px solid #181818;
-    -webkit-transform: rotate(-45deg);
-            transform: rotate(-45deg); }
+    transform: rotate(-45deg); }
   .feature-carousel__btn.feature-carousel__btn--prev, .feature-carousel__btn.feature-carousel__btn--next {
     position: absolute;
     top: -3.75rem; }
@@ -366,8 +321,7 @@ Feature Carousel
   .feature-carousel__btn.feature-carousel__btn--next {
     right: 0; }
     .feature-carousel__btn.feature-carousel__btn--next::after {
-      -webkit-transform: rotate(135deg);
-              transform: rotate(135deg); }
+      transform: rotate(135deg); }
     @media (max-width: 1024px) {
       .feature-carousel__btn.feature-carousel__btn--next {
         right: -2.5rem; } }
@@ -379,12 +333,8 @@ Feature Carousel
       height: 2.5rem; } }
 
 .feature-carousel__label {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center; }
+  align-items: center; }
 
 .feature-carousel__label-line {
   display: inline-block;
@@ -392,17 +342,11 @@ Feature Carousel
   height: 1px;
   margin: 0 0.625rem;
   background-color: #181818;
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-  -webkit-transform-origin: 0 0;
-          transform-origin: 0 0;
-  -webkit-transition: -webkit-transform 0.4s ease-out 0.3s;
-  transition: -webkit-transform 0.4s ease-out 0.3s;
-  transition: transform 0.4s ease-out 0.3s;
-  transition: transform 0.4s ease-out 0.3s, -webkit-transform 0.4s ease-out 0.3s; }
+  transform: scaleX(0);
+  transform-origin: 0 0;
+  transition: transform 0.4s ease-out 0.3s; }
   .slick-active .feature-carousel__label-line {
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1); }
+    transform: scaleX(1); }
   @media (max-width: 550px) {
     .feature-carousel__label-line {
       width: 3rem; } }

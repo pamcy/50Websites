@@ -30,11 +30,13 @@ const paths = {
   output: 'public/',
   pages: '*.html',
   styles: {
-    input: 'src/scss/**/*.scss',
+    // input: 'src/scss/**/*.scss',
+    input: 'src/scss/',
     output: 'public/css/'
   },
   scripts: {
-    input: 'src/js/**/*.js',
+    // input: 'src/js/**/*.js',
+    input: 'src/js/',
     output: 'public/js/'
   },
 }
@@ -45,56 +47,41 @@ const paths = {
  */
 
 gulp.task('build:css', () => {
-  const plugins = [
-    autoprefixer({ browsers: ['last 2 versions'] }),
-  ];
-
-  return gulp.src(paths.styles.input)
+  return gulp.src(paths.styles.input + '**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
-    .pipe(postcss(plugins))
     .pipe(sourcemaps.write('./maps'))
     .pipe(gulp.dest(paths.styles.output))
     .pipe(browserSync.stream());
 });
 
 gulp.task('minify:css', ['clean:public', 'build:css'], () => {
-  return gulp.src(paths.styles.output + '*.css')
-    .pipe(postcss(cssnano))
-    .pipe(rename({
-      suffix: '.min',
-    }))
+  const plugins = [
+    autoprefixer({ browsers: ['last 2 versions'] }),
+    cssnano,
+  ];
+
+  return gulp.src([paths.styles.input + 'plugins/*.css', paths.styles.output + '*.css'])
+    .pipe(concat('style.min.css'))
+    .pipe(postcss(plugins))
     .pipe(gulp.dest(paths.styles.output));
 });
 
-gulp.task('minify-plugin:css', () => {
-  return gulp.src('src/scss/plugins/**/*.css')
-    .pipe(concat('vendors.css'))
-    .pipe(postcss(cssnano))
-    .pipe(rename({
-      suffix: '.min',
-    }))
-    .pipe(gulp.dest(paths.styles.output));
-});
-
-gulp.task('build:js', () => {
-  return gulp.src(paths.scripts.input)
-    .pipe(babel({ presets: ['env'] })) // plugin "babel-preset-env"
+gulp.task('minify:js', ['clean:public', 'minify-plugins:js'], () => {
+  return gulp.src([paths.scripts.input + '**/*.js', !paths.scripts.input + 'plugins/*.js'])
     .pipe(gulp.dest(paths.scripts.output))
-    .pipe(browserSync.stream());
-});
-
-gulp.task('minify:js', ['clean:public', 'build:js'], () => {
-  return gulp.src(paths.scripts.output + '*.js')
+    .pipe(sourcemaps.init())
+    .pipe(babel({ presets: ['env'] })) // plugin "babel-preset-env"
     .pipe(uglify())
     .pipe(rename({
       suffix: '.min',
     }))
+    .pipe(sourcemaps.write('./maps'))
     .pipe(gulp.dest(paths.scripts.output))
 });
 
-gulp.task('minify-plugin:js', () => {
-  return gulp.src('src/js/plugins/**/*.js')
+gulp.task('minify-plugins:js', () => {
+  return gulp.src(paths.scripts.input + 'plugins/*.js')
     .pipe(concat('vendors.js'))
     .pipe(uglify())
     .pipe(rename({
@@ -122,10 +109,9 @@ gulp.task('serve', () => {
     },
   });
 
-  gulp.watch(paths.styles.input, ['build:css']);
-  gulp.watch(paths.scripts.input, ['build:js']);
+  gulp.watch(paths.styles.input + '**/*.scss', ['build:css']);
+  gulp.watch(paths.scripts.input + '**/*.js').on('change', browserSync.reload);
   gulp.watch(paths.pages).on('change', browserSync.reload);
 });
-gulp.task('default', ['build:css', 'build:js', 'serve']);
-gulp.task('build', ['build:css', 'build:js']);
+gulp.task('default', ['build:css', 'serve']);
 gulp.task('minify', ['minify:css', 'minify:js']);
