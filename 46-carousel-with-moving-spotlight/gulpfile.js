@@ -68,7 +68,7 @@ gulp.task('minify:css', ['clean:public', 'build:css'], () => {
 });
 
 gulp.task('minify:js', ['clean:public', 'minify-plugins:js'], () => {
-  return gulp.src([paths.scripts.input + '**/*.js', !paths.scripts.input + 'plugins/*.js'])
+  return gulp.src([paths.scripts.input + '**/*.js', '!' + paths.scripts.input + 'plugins/*.js'])
     .pipe(gulp.dest(paths.scripts.output))
     .pipe(sourcemaps.init())
     .pipe(babel({ presets: ['env'] })) // plugin "babel-preset-env"
