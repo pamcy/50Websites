@@ -33,7 +33,7 @@ snowDrop(150, randomInt(1035, 1280));
 function countDown() {
 
 	var now = new Date(),
-		xmasDate = new Date(2017, 11, 25),
+		xmasDate = new Date(2018, 11, 25),
 		currentTime = now.getTime(),
 		xmasTime = xmasDate.getTime(),
 		untilTime = xmasTime - currentTime,
