@@ -2,6 +2,8 @@
 
 I knew that if I was going to succeed at learning to code, I would need to apply knowledge as much as possible. I devoted to build something from what I learned, below is a list of websites I made lately, some took a couple of days to complete. (Still Updating)
 
+- [x] [50 - Flying space rockets](https://codepen.io/pamcy/full/xyYYBd)
+
 - [x] [49 - Recreate Yosemite Epicurrence Parallax](https://codepen.io/pamcy/full/mjRoGd)
 
 - [x] [48 - Border-zooming Slideshow](https://codepen.io/pamcy/full/rodgjv)
