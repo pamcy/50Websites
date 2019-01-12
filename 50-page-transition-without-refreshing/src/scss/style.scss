@@ -1,0 +1,316 @@
+/* ---------------------------------
+SCSS Settings
+--------------------------------- */
+$white: #fefefe;
+$black: #000;
+$red: #b30606;
+
+// Mixin
+@mixin media($point) {
+  @if $point == "max-1024" {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  }
+
+  @if $point == "max-768" {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $point == "max-550" {
+    @media (max-width: 550px) {
+      @content;
+    }
+  }
+}
+
+// Extend
+%full-width {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+// Function
+@function rem($pixel) {
+  @return $pixel / 16 + rem;
+}
+
+
+/* ---------------------------------
+Default Styles
+--------------------------------- */
+html {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  background: $black;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------------------------------
+Settings
+--------------------------------- */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; // Be able to select the title, menu on the background
+  z-index: 2;
+}
+
+.overlay__bg,
+.overlay__bg::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay__bg {
+  background-color: $black;
+
+  .shrink & {
+     // fill-mode: 定義元素在動畫播放外(動畫開始前及結束後)的狀態
+     // https://developer.mozilla.org/zh-TW/docs/Web/CSS/animation-fill-mode
+
+     // name, duration, delay, iterations, direction, fill-mode, timeing function
+     animation: swipeOutOverlay 0.7s 0s 1 normal both ease-in-out;
+  }
+
+  .grow & {
+     animation: swipeInOverlay 0.7s 0s 1 normal both ease-in-out;
+  }
+
+  &::before {
+     content: '';
+     background-color: $red;
+
+     .shrink & {
+        transform: scaleX(0); // hide red background color
+     }
+
+     .grow & {
+        animation: swipeInOverlayBreak 0.85s 0s 1 normal both ease-in-out;
+        transform-origin: 100% 0%; // Or the animation will expand from the center
+     }
+  }
+}
+
+@keyframes swipeOutOverlay {
+  0% {
+     transform: translate(0);
+  }
+
+  100% {
+     transform: translate(100%);
+  }
+}
+
+@keyframes swipeInOverlay {
+  0% {
+     transform: translate(-100%);
+  }
+
+  100% {
+     transform: translate(0);
+  }
+}
+
+@keyframes swipeInOverlayBreak {
+  0% {
+     transform: scaleX(1);
+  }
+
+  100% {
+     transform: scaleX(0);
+  }
+}
+
+.overlay__logo {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  z-index: 1;
+
+  .shrink & {
+     animation: fadeOutLogo 0.4s 0s 1 normal both ease-in-out;
+  }
+
+  .grow & {
+     animation: fadeInLogo 0.7s 0.1s 1 normal both ease-in-out;
+  }
+}
+
+.overlay__logo-img {
+  width: 140px;
+  height: auto;
+  max-width: 100%;
+}
+
+@keyframes fadeInLogo {
+  0% {
+     opacity: 0;
+     transform: translateX(-60px);
+  }
+
+  100% {
+     opacity: 1;
+     transform: translateX(0);
+  }
+}
+
+@keyframes fadeOutLogo {
+  0% {
+     opacity: 1;
+     transform: translateX(0);
+  }
+
+  100% {
+     opacity: 0;
+     transform: translateX(60px);
+  }
+}
+
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.logo__link {
+  display: block;
+  padding: rem(45);
+}
+
+.logo__img {
+  width: 140px;
+  height: 140px;
+  max-width: 100%;
+}
+
+.menu {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: auto;
+  height: 100px;
+  z-index: 1;
+}
+
+.menu__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-right: rem(10);
+}
+
+.menu__link {
+  text-decoration: none;
+  margin: 0 rem(8);
+  padding: 0 rem(16);
+}
+
+.menu__item {
+  &::after {
+     content: '';
+     display: block;
+     position: relative;
+     bottom: -3px;
+     left: 0;
+     width: 100%;
+     height: 2px;
+     border-bottom: 2px solid $white;
+     transform: scaleX(0);
+     transition: all 0.3s;
+  }
+
+  &:hover {
+     &::after {
+        transform: scaleX(1);
+     }
+  }
+}
+
+.menu__title {
+  font-size: rem(14);
+  font-weight: 600;
+  text-transform: uppercase;
+  color: $white;
+  line-height: 2;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.hero__bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+}
+
+.hero__bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__body {
+  position: absolute;
+  top: 0;
+  left: 20%;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.hero__body-wrapper {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 0.7s;
+
+  .is-showing & {
+     opacity: 1;
+     transform: translateX(0);
+  }
+}
+
+.hero__heading {
+  margin: 0;
+  font-size: rem(150);
+  color: $white;
+}

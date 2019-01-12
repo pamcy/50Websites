@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Amazing | Page transition without reloading pages</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--Stylesheets-->
+  <link rel="stylesheet" href="public/css/style.css">
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-N4NNP8M');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Sentry -->
+  <script src="https://browser.sentry-cdn.com/4.4.1/bundle.min.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N4NNP8M" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Preload Hero Images -->
+  <div class="preload" style="display: none;">
+    <div class="preload__img" data-src="https://res.cloudinary.com/pamcy/image/upload/v1546913211/coding/xmas_01.jpg"></div>
+    <div class="preload__img" data-src="https://res.cloudinary.com/pamcy/image/upload/v1546913211/coding/xmas_02.jpg"></div>
+    <div class="preload__img" data-src="https://res.cloudinary.com/pamcy/image/upload/v1546913211/coding/xmas_03.jpg"></div>
+  </div>
+
+  <!-- Page Transitions -->
+  <div class="overlay shrink">
+    <div class="overlay__bg"></div>
+    <div class="overlay__logo">
+      <img src="https://res.cloudinary.com/pamcy/image/upload/v1547094956/coding/logo_holaday_transparent.png" alt=""
+        class="overlay__logo-img">
+    </div>
+  </div>
+
+  <!-- Logo -->
+  <div class="logo">
+    <a href="index.html" class="logo__link">
+      <img src="https://res.cloudinary.com/pamcy/image/upload/v1547094599/coding/logo_holaday.png" alt="" class="logo__img">
+    </a>
+  </div>
+
+  <!-- Menu list -->
+  <nav class="menu">
+    <div class="menu__wrapper">
+      <a href="index.html" class="menu__link">
+        <div class="menu__item">
+          <span class="menu__title">Amazing</span>
+        </div>
+      </a>
+      <a href="smooth.html" class="menu__link">
+        <div class="menu__item">
+          <span class="menu__title">Smooth</span>
+        </div>
+      </a>
+      <a href="transition.html" class="menu__link">
+        <div class="menu__item">
+          <span class="menu__title">Transition</span>
+        </div>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Main section -->
+  <main class="main-content">
+    <section class="hero">
+      <div class="hero__bg">
+        <img src="https://res.cloudinary.com/pamcy/image/upload/v1546913211/coding/xmas_01.jpg" alt="" class="hero__bg-img">
+      </div>
+      <div class="hero__body">
+        <div class="hero__body-wrapper">
+          <h1 class="hero__heading">Amazing</h1>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!--Scripts-->
+  <script src="src/js/main.js"></script>
+</body>
+
+</html>
