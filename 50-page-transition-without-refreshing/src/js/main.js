@@ -10,13 +10,14 @@ const transition = (() => {
   //
   // Methods
   //
-  function preloadHeroImg() {
-    const hero_imgs = document.querySelectorAll('.preload__img');
+  function preloadHeroImgs() {
+    const hero_imgs = [
+      'https://res.cloudinary.com/pamcy/image/upload/v1546913211/coding/xmas_01.jpg', 'https://res.cloudinary.com/pamcy/image/upload/v1546913211/coding/xmas_02.jpg', 'https://res.cloudinary.com/pamcy/image/upload/v1546913211/coding/xmas_03.jpg',
+    ];
 
     hero_imgs.forEach((hero_img) => {
-      const hero_url = hero_img.dataset.src;
       const new_img = new Image();
-      new_img.src = hero_url;
+      new_img.src = hero_img;
     });
   }
 
@@ -84,7 +85,7 @@ const transition = (() => {
   function init() {
     const hero_body = document.querySelector('.hero__body');
 
-    preloadHeroImg();
+    preloadHeroImgs();
     hero_body.classList.add('is-showing');
   }
 
@@ -102,10 +103,10 @@ const transition = (() => {
     const href = e.currentTarget.href;
 
     transitionController(href);
-    window.history.pushState(href, null, href);
+    window.history.pushState(null, null, href);
   }));
 
-  window.addEventListener('popstate', (e) => {
-    transitionController(e.state);
+  window.addEventListener('popstate', () => {
+    transitionController(window.location.href);
   });
 })();
