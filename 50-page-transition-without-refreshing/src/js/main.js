@@ -4,9 +4,9 @@ const transition = (() => {
   //
   const menu_links = document.querySelectorAll('.menu__link');
   const overlay = document.querySelector('.overlay');
+  let is_clicked = false;
 
-  let inClick = false;
-  let animationTimer;
+
   //
   // Methods
   //
@@ -23,7 +23,6 @@ const transition = (() => {
   function addTransition() {
     overlay.classList.remove('shrink');
     overlay.classList.add('grow');
-    // hero_body.classList.remove('is-showing');
   }
 
   function removeTransition() {
@@ -34,9 +33,15 @@ const transition = (() => {
     hero_body.classList.add('is-showing');
   }
 
-  function handleAnimationEnd() {
-    removeTransition();
-    overlay.removeEventListener('animationend', handleAnimationEnd);
+  function setTransitionEndTimer() {
+    const seconds = 1000;
+    const timer = setInterval(() => {
+      // Only if the content have loaded
+      if (is_clicked === false) {
+        removeTransition();
+        clearInterval(timer);
+      }
+    }, seconds);
   }
 
   function fetchPageURL(url) {
@@ -45,7 +50,6 @@ const transition = (() => {
   }
 
   function loadContent(url) {
-    inClick = true;
     const main_section = document.querySelector('.main-content');
     const old_hero_content = document.querySelector('.hero');
 
@@ -62,51 +66,46 @@ const transition = (() => {
         // Remove the old content
         old_hero_content.parentNode.removeChild(old_hero_content);
 
-        // Change the window location
+        // Change the window tile
         document.title = div.getElementsByTagName('title')[0].textContent;
-        // window.history.pushState(url, title, url);
 
-        console.log(window.history);
-        inClick = false;
+        is_clicked = false;
       });
-
-      animationTimer = setInterval(() => {
-        if (inClick === false) {
-          handleAnimationEnd();
-          clearInterval(animationTimer);
-        }
-      }, 1000);
   }
 
   function transitionController(url) {
+    is_clicked = true;
+
     addTransition();
     loadContent(url);
-    // overlay.addEventListener('animationend', handleAnimationEnd);
+    setTransitionEndTimer();
+  }
+
+  function init() {
+    const hero_body = document.querySelector('.hero__body');
+
+    preloadHeroImg();
+    hero_body.classList.add('is-showing');
   }
 
 
   //
   // Inits & Event Listeners
   //
-  preloadHeroImg();
+  init();
 
   menu_links.forEach(link => link.addEventListener('click', (e) => {
-    if (inClick === true) {
-      return;
-    }
     e.preventDefault();
 
-    const url = e.currentTarget.href;
+    if (is_clicked) return;
 
-    transitionController(url);
+    const href = e.currentTarget.href;
 
-    window.history.pushState(url, null, url);
+    transitionController(href);
+    window.history.pushState(href, null, href);
   }));
 
-  window.addEventListener('popstate', function (e) {
-    transitionController(window.location.href);
+  window.addEventListener('popstate', (e) => {
+    transitionController(e.state);
   });
-
-
-  document.querySelector('.hero__body').classList.add('is-showing');
 })();
