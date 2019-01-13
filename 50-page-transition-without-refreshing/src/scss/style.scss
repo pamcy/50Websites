@@ -5,27 +5,6 @@ $white: #fefefe;
 $black: #000;
 $red: #b30606;
 
-// Mixin
-@mixin media($point) {
-  @if $point == "max-1024" {
-    @media (max-width: 1024px) {
-      @content;
-    }
-  }
-
-  @if $point == "max-768" {
-    @media (max-width: 768px) {
-      @content;
-    }
-  }
-
-  @if $point == "max-550" {
-    @media (max-width: 550px) {
-      @content;
-    }
-  }
-}
-
 // Extend
 %full-width {
   position: absolute;
@@ -37,7 +16,7 @@ $red: #b30606;
 
 // Function
 @function rem($pixel) {
-  @return $pixel / 16 + rem;
+  @return $pixel / 16+rem;
 }
 
 
@@ -89,59 +68,59 @@ Settings
   background-color: $black;
 
   .shrink & {
-     // fill-mode: 定義元素在動畫播放外(動畫開始前及結束後)的狀態
-     // https://developer.mozilla.org/zh-TW/docs/Web/CSS/animation-fill-mode
+    // fill-mode: 定義元素在動畫播放外(動畫開始前及結束後)的狀態
+    // https://developer.mozilla.org/zh-TW/docs/Web/CSS/animation-fill-mode
 
-     // name, duration, delay, iterations, direction, fill-mode, timeing function
-     animation: swipeOutOverlay 0.7s 0s 1 normal both ease-in-out;
+    // name, duration, delay, iterations, direction, fill-mode, timeing function
+    animation: swipeOutOverlay 0.7s 0s 1 normal both ease-in-out;
   }
 
   .grow & {
-     animation: swipeInOverlay 0.7s 0s 1 normal both ease-in-out;
+    animation: swipeInOverlay 0.7s 0s 1 normal both ease-in-out;
   }
 
   &::before {
-     content: '';
-     background-color: $red;
+    content: '';
+    background-color: $red;
 
-     .shrink & {
-        transform: scaleX(0); // hide red background color
-     }
+    .shrink & {
+      transform: scaleX(0); // hide red background color
+    }
 
-     .grow & {
-        animation: swipeInOverlayBreak 0.85s 0s 1 normal both ease-in-out;
-        transform-origin: 100% 0%; // Or the animation will expand from the center
-     }
+    .grow & {
+      animation: swipeInOverlayBreak 0.85s 0s 1 normal both ease-in-out;
+      transform-origin: 100% 0%; // Or the animation will expand from the center
+    }
   }
 }
 
 @keyframes swipeOutOverlay {
   0% {
-     transform: translate(0);
+    transform: translate(0);
   }
 
   100% {
-     transform: translate(100%);
+    transform: translate(100%);
   }
 }
 
 @keyframes swipeInOverlay {
   0% {
-     transform: translate(-100%);
+    transform: translate(-100%);
   }
 
   100% {
-     transform: translate(0);
+    transform: translate(0);
   }
 }
 
 @keyframes swipeInOverlayBreak {
   0% {
-     transform: scaleX(1);
+    transform: scaleX(1);
   }
 
   100% {
-     transform: scaleX(0);
+    transform: scaleX(0);
   }
 }
 
@@ -154,11 +133,11 @@ Settings
   z-index: 1;
 
   .shrink & {
-     animation: fadeOutLogo 0.4s 0s 1 normal both ease-in-out;
+    animation: fadeOutLogo 0.4s 0s 1 normal both ease-in-out;
   }
 
   .grow & {
-     animation: fadeInLogo 0.7s 0.1s 1 normal both ease-in-out;
+    animation: fadeInLogo 0.7s 0.1s 1 normal both ease-in-out;
   }
 }
 
@@ -170,25 +149,25 @@ Settings
 
 @keyframes fadeInLogo {
   0% {
-     opacity: 0;
-     transform: translateX(-60px);
+    opacity: 0;
+    transform: translateX(-60px);
   }
 
   100% {
-     opacity: 1;
-     transform: translateX(0);
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
 @keyframes fadeOutLogo {
   0% {
-     opacity: 1;
-     transform: translateX(0);
+    opacity: 1;
+    transform: translateX(0);
   }
 
   100% {
-     opacity: 0;
-     transform: translateX(60px);
+    opacity: 0;
+    transform: translateX(60px);
   }
 }
 
@@ -237,22 +216,22 @@ Settings
 
 .menu__item {
   &::after {
-     content: '';
-     display: block;
-     position: relative;
-     bottom: -3px;
-     left: 0;
-     width: 100%;
-     height: 2px;
-     border-bottom: 2px solid $white;
-     transform: scaleX(0);
-     transition: all 0.3s;
+    content: '';
+    display: block;
+    position: relative;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    border-bottom: 2px solid $white;
+    transform: scaleX(0);
+    transition: all 0.3s;
   }
 
   &:hover {
-     &::after {
-        transform: scaleX(1);
-     }
+    &::after {
+      transform: scaleX(1);
+    }
   }
 }
 
@@ -304,13 +283,13 @@ Settings
   transition: all 0.7s;
 
   .is-showing & {
-     opacity: 1;
-     transform: translateX(0);
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
 .hero__heading {
   margin: 0;
-  font-size: rem(150);
+  font-size: 8.5vw;
   color: $white;
 }
